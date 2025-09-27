@@ -1,0 +1,4 @@
+# Web scraping dependencies
+playwright==1.48.0
+beautifulsoup4==4.12.3
+lxml==4.9.3

@@ -30,6 +30,8 @@ class ClarificationAgent:
         self.impatience_indicators = ["just", "any", "whatever", "anything", "don't care", "quick"]
         
     def ask_clarification(self, state: OutfitterState) -> Dict[str, Any]:
+        print(f"🔍 DEBUG: ClarificationAgent received state:")
+        print(f"  - search_criteria: {state.get('search_criteria', {})}")
         """
         Intelligently ask ONE focused clarification question based on context analysis.
         
@@ -52,6 +54,8 @@ class ClarificationAgent:
         try:
             # Extract and analyze current conversation context
             context_analysis = self._analyze_conversation_context(state)
+            print(f"  - latest_user_input: '{context_analysis['latest_user_input']}'")
+  
             
             # Determine if we have enough information to proceed
             sufficiency_check = self._assess_information_sufficiency(context_analysis)
@@ -65,6 +69,9 @@ class ClarificationAgent:
             
             # Update search criteria with any new extracted information
             updated_criteria = self._extract_and_update_criteria(context_analysis, state)
+            print(f"  - updated_criteria after extraction: {updated_criteria}")
+            print(f"  - missing_critical_info: {context_analysis['missing_critical_info']}")
+   
             
             return {
                 "messages": [AIMessage(content=next_question)],
@@ -318,11 +325,29 @@ Only include fields where you're confident about the information. Return empty o
             current_criteria.update(self._simple_keyword_extraction(latest_message))
         
         return current_criteria
-    
+    # Replace the _simple_keyword_extraction method in your ClarificationAgent with this:
+
     def _simple_keyword_extraction(self, message: str) -> Dict[str, Any]:
-        """Simple fallback extraction using keyword matching"""
+        """Enhanced fallback extraction using keyword matching - now includes categories!"""
         extracted = {}
         message_lower = message.lower()
+        
+        # CATEGORY extraction (THIS WAS MISSING!)
+        category_keywords = {
+            "shirts": ["shirt", "tshirt", "t-shirt", "tee", "top", "blouse"],
+            "hoodies": ["hoodie", "sweatshirt", "jumper", "pullover"], 
+            "pants": ["pants", "trousers", "jeans", "chinos", "slacks"],
+            "shorts": ["shorts", "short"],
+            "shoes": ["shoes", "sneakers", "boots", "sandals", "trainers"],
+            "jackets": ["jacket", "coat", "blazer", "cardigan"],
+            "dresses": ["dress", "gown"],
+            "accessories": ["hat", "cap", "belt", "bag", "watch", "sunglasses"]
+        }
+        
+        for category, keywords in category_keywords.items():
+            if any(keyword in message_lower for keyword in keywords):
+                extracted["category"] = category
+                break
         
         # Size extraction
         sizes = ["xs", "s", "m", "l", "xl", "xxl", "small", "medium", "large"]
@@ -332,7 +357,7 @@ Only include fields where you're confident about the information. Return empty o
                 break
         
         # Color extraction  
-        colors = ["black", "white", "red", "blue", "green", "navy", "grey", "brown"]
+        colors = ["black", "white", "red", "blue", "green", "navy", "grey", "brown", "gray", "yellow", "pink", "purple"]
         for color in colors:
             if color in message_lower:
                 extracted["color_preference"] = color
@@ -344,7 +369,7 @@ Only include fields where you're confident about the information. Return empty o
             extracted["budget_max"] = float(budget_match.group(1))
         
         return extracted
-    
+
     def _count_previous_questions(self, messages: List) -> int:
         """Count how many clarification questions we've already asked"""
         question_count = 0
