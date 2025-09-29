@@ -330,14 +330,13 @@ Be especially careful with:
         
         # Handle multi-intent scenarios
         if len(analysis.secondary_intents) > 0:
-            # If there's urgency or complaint, handle that first
             if "complaint" in analysis.secondary_intents or analysis.urgency == "high":
                 return "general_responder"
         
-        # Standard intent mapping with context
+        # FIXED: Map to actual nodes in your graph
         intent_actions = {
             "greeting": "greeter",
-            "search": "needs_analyzer",
+            "search": "clarification_asker",  # ← Changed from needs_analyzer
             "selection": "selection_handler", 
             "checkout": "checkout_handler",
             "general": "general_responder",
@@ -348,12 +347,13 @@ Be especially careful with:
         
         # Context-based refinements
         if analysis.primary_intent == "search" and context.products_shown > 10:
-            return "refinement_asker"  # Too many results, need refinement
+            return "clarification_asker"  # Changed from refinement_asker
         
         if analysis.primary_intent == "search" and not analysis.extracted_entities:
-            return "clarification_asker"  # Need more details
+            return "clarification_asker"
         
         return base_action
+
     
     def _convert_to_state_update(self, analysis: IntentAnalysis, context: ConversationContext) -> Dict[str, Any]:
         """Convert analysis to LangGraph state update format"""
@@ -388,13 +388,13 @@ Be especially careful with:
         """Simple intent to action mapping"""
         mapping = {
             "greeting": "greeter",
-            "search": "needs_analyzer",
+            "search": "clarification_asker",  # ← Changed from needs_analyzer
             "selection": "selection_handler",
             "checkout": "checkout_handler",
             "general": "general_responder"
         }
         return mapping.get(intent, "general_responder")
-    
+        
     def _handle_empty_message(self) -> Dict[str, Any]:
         """Handle empty or invalid messages"""
         return {

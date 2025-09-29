@@ -11,6 +11,7 @@ from langgraph.graph.message import add_messages
 from langchain_core.messages import BaseMessage
 from pydantic import BaseModel
 from datetime import datetime
+from dataclasses import dataclass
 
 class OutfitterState(TypedDict):
     """
@@ -44,18 +45,17 @@ class OutfitterState(TypedDict):
     session_id: str
     created_at: str
 
-class ProductData(BaseModel):
-    """Structure for product information from CultureKings"""
+@dataclass
+class ProductData:
+    """Individual product data"""
     name: str
     price: str
-    price_value: Optional[float] = None
-    store: str = "CultureKings"
-    category: Optional[str] = None
-    url: str
+    brand: str
+    url: Optional[str] = None
     image_url: Optional[str] = None
-    available_sizes: List[str] = []
-    colors: List[str] = []
-    description: Optional[str] = None
+    store_name: str = ""
+    is_on_sale: bool = False
+    extracted_at: Optional[datetime] = None
 
 class SearchCriteria(BaseModel):
     """Structure for user shopping needs in Outfitter.ai"""
