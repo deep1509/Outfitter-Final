@@ -1426,9 +1426,11 @@ dependencies = [
     { name = "langgraph" },
     { name = "lxml" },
     { name = "pandas" },
+    { name = "pillow" },
     { name = "playwright" },
     { name = "pydantic" },
     { name = "python-dotenv" },
+    { name = "requests" },
 ]
 
 [package.dev-dependencies]
@@ -1448,9 +1450,11 @@ requires-dist = [
     { name = "langgraph", specifier = ">=0.6.7" },
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "pandas", specifier = ">=2.3.2" },
+    { name = "pillow", specifier = ">=11.3.0" },
     { name = "playwright", specifier = ">=1.55.0" },
     { name = "pydantic", specifier = ">=2.11.9" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
+    { name = "requests", specifier = ">=2.32.5" },
 ]
 
 [package.metadata.requires-dev]

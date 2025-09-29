@@ -48,6 +48,8 @@ class OutfitterAssistant:
         self.memory = MemorySaver()
         self.graph = None
         self.session_id = str(uuid.uuid4())
+        
+        self.last_products = []
 
     def setup_graph(self):
         """Build the LangGraph workflow with FIXED state propagation"""
@@ -336,7 +338,7 @@ class OutfitterAssistant:
     
     def _product_presenter_node(self, state: OutfitterState) -> Dict[str, Any]:
         """
-        Present products with simple AI verification to ensure relevance.
+        Present products with relevance verification AND store for Gradio access.
         """
         print("📱 Formatting products for presentation with AI verification...")
         
@@ -345,17 +347,24 @@ class OutfitterAssistant:
         search_query = state.get("search_query", "items")
         
         if not search_results:
+            self.last_products = []  # Clear stored products
             return self._handle_empty_presentation(search_query)
         
         # BUILD USER REQUEST STRING
         user_request = self._build_user_request_string(search_criteria, search_query)
         
         # AI VERIFICATION - Simple and direct
+        from tools.simple_product_verifier import SimpleProductVerifier  # Make sure this import works
         verifier = SimpleProductVerifier()
         relevant_products = verifier.filter_relevant_products(user_request, search_results)
         
+        # CRITICAL: STORE PRODUCTS FOR GRADIO ACCESS
+        self.last_products = relevant_products  # This is what Gradio will access
+        print(f"🔗 Stored {len(relevant_products)} products for Gradio access")
+        
         if not relevant_products:
-            # No relevant products after AI filtering
+            self.last_products = []  # Clear stored products
+            
             message = f"""I found {len(search_results)} products but none actually matched your request for "{user_request}".
 
     The products were different categories or colors than what you asked for.
@@ -395,7 +404,6 @@ class OutfitterAssistant:
             "awaiting_selection": True,
             "verification_completed": True
         }
-
 
     # ============ ENHANCED ROUTING LOGIC ============
     
