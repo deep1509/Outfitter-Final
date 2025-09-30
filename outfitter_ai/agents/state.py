@@ -44,6 +44,11 @@ class OutfitterState(TypedDict):
     conversation_stage: str  # greeting, discovery, presenting, selecting, checkout
     session_id: str
     created_at: str
+    
+    verification_failed: Optional[bool]
+    
+    awaiting_selection: Optional[bool]      
+    verification_completed: Optional[bool]
 
 @dataclass
 class ProductData:

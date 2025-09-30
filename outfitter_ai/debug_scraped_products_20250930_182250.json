@@ -1,0 +1,164 @@
+{
+  "timestamp": "2025-09-30T18:22:50.880656",
+  "search_query": "white hoodies",
+  "search_criteria": {
+    "category": "hoodies",
+    "color": "white",
+    "gender": "mens",
+    "size": "M",
+    "color_preference": "white"
+  },
+  "products_found": 15,
+  "products": [
+    {
+      "name": "Carre All Star Joggers Black",
+      "price": "$109.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/carre-all-star-joggers-black-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.389369"
+    },
+    {
+      "name": "Carre International Hoodie Black",
+      "price": "$99.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/carre-international-hoodie-black-2-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.235551"
+    },
+    {
+      "name": "Carre Prestige Script Hoodie Grey Marle",
+      "price": "$99.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/carre-prestige-script-hoodie-grey-marle-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.122202"
+    },
+    {
+      "name": "Loiter Premium Essentials Sweatpants Grey Marle",
+      "price": "$99.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/loiter-premium-essentials-sweatpants-grey-marle-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.305292"
+    },
+    {
+      "name": "Loiter Seek N Destroy Long Sleeve T-Shirt Vintage Black",
+      "price": "$89.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/loiter-seek-n-destroy-long-sleeve-t-shirt-vintage-black-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.471704"
+    },
+    {
+      "name": "Majestic Athletic Las Vegas Raiders Champs Serial Mono Hoodie Black",
+      "price": "$119.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/majestic-athletic-las-vegas-raiders-champs-serial-mono-hoodie-black-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.150791"
+    },
+    {
+      "name": "Saint Morta Amplus Sidewinder Jeans Dirty Denim/Off White",
+      "price": "$119.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/saint-morta-amplus-sidewinder-jeans-dirty-denim-off-white-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.353379"
+    },
+    {
+      "name": "Saint Morta Monogram Pants Black",
+      "price": "$99.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/saint-morta-monogram-pants-black-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.447471"
+    },
+    {
+      "name": "Saint Morta Studios Logo Boxy Hoodie Washed Black",
+      "price": "$99.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/saint-morta-studios-logo-boxy-hoodie-washed-black-mens",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:49.199353"
+    },
+    {
+      "name": "Dickies Relaxed Fit Carpenter Shorts Light Indigo",
+      "price": "$79.99",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/dickies-relaxed-fit-carpenter-shorts-light-indigo",
+      "image_url": null,
+      "store_name": "CultureKings",
+      "is_on_sale": false,
+      "extracted_at": "2025-09-30T18:22:49.418363"
+    },
+    {
+      "name": "2K Sing 2.0 Hooded Fleece Ecru Marle",
+      "price": "$129.99",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/rusty-2k-sing-hooded-fleece-ecru-marle",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406812_US_000_20x_crop_center.jpg?v=1743915926",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:50.579600"
+    },
+    {
+      "name": "Big Dawgs Jean Used Black",
+      "price": "$129.99",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-big-dawgs-jean-used-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203123_US_026_20x_crop_center.jpg?v=1759208514",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:50.835852"
+    },
+    {
+      "name": "Big Dawgs Jean Worn Blue",
+      "price": "$129.99",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-big-dawgs-jean-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203124_US_047_20x_crop_center.jpg?v=1744172612",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:50.795738"
+    },
+    {
+      "name": "Compose Heavyweight Easy Tee White",
+      "price": "$60.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-compose-heavyweight-easy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404542_US_000_20x_crop_center.jpg?v=1729740403",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:50.447363"
+    },
+    {
+      "name": "Gravity Hooded Sherpa Jacket Charcoal",
+      "price": "$160.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-gravity-hooded-sherpa-jacket-charcoal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406545_US_009_20x_crop_center.jpg?v=1751613291",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-09-30T18:22:50.487062"
+    }
+  ]
+}

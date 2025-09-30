@@ -10,7 +10,11 @@ from typing import Dict, Any, List
 from datetime import datetime
 from dotenv import load_dotenv
 
-from langgraph.graph import StateGraph, START, END
+from langgraph.graph import StateGraph
+
+# START and END are string constants in newer LangGraph versions
+START = "__start__"
+END = "__end__"
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.messages import AIMessage
 from agents.conversation_agents.needsAnalyzer import NeedsAnalyzer
@@ -21,6 +25,10 @@ from agents.intent_classifier import RobustIntentClassifier
 from agents.conversation_agents.greeterAgent import GreeterAgent
 from agents.conversation_agents.clarificationAgent import ClarificationAgent
 from agents.conversation_agents.generalResponderAgent import SimpleGeneralResponder
+
+from agents.conversation_agents.selectionHandler import SelectionHandler
+from tools.variant_extractor import VariantExtractor, get_product_variants
+
 
 from tools.simple_product_verifier import SimpleProductVerifier
 
@@ -37,12 +45,15 @@ class OutfitterAssistant:
     """
         
     def __init__(self):
-        # Initialize all conversation agents
+# Initialize all conversation agents
         self.intent_classifier = RobustIntentClassifier()
         self.greeter = GreeterAgent()
-        self.needs_analyzer = NeedsAnalyzer()  # NEW
-        self.clarification_asker = SimpleClarificationAsker()  # UPDATED
+        self.needs_analyzer = NeedsAnalyzer()
+        self.clarification_asker = SimpleClarificationAsker()
         self.general_responder = SimpleGeneralResponder()
+        
+        self.selection_handler = SelectionHandler()
+        self.variant_extractor = VariantExtractor()
         
         # Memory for conversation persistence
         self.memory = MemorySaver()
@@ -52,13 +63,13 @@ class OutfitterAssistant:
         self.last_products = []
 
     def setup_graph(self):
-        """Build the LangGraph workflow with FIXED state propagation"""
+        """Build the LangGraph workflow - FIXED VERSION"""
         print("Setting up Outfitter.ai LangGraph with real scraping integration...")
         
         # Create the graph
         workflow = StateGraph(OutfitterState)
         
-        # Add all nodes (keep your existing ones)
+        # Add all nodes with explicit names
         workflow.add_node("intent_classifier", self._intent_classifier_node)
         workflow.add_node("greeter", self._greeter_node)
         workflow.add_node("needs_analyzer", self._needs_analyzer_node)
@@ -69,8 +80,8 @@ class OutfitterAssistant:
         workflow.add_node("selection_handler", self._enhanced_selection_handler)
         workflow.add_node("checkout_handler", self._mock_checkout_handler)
         
-        # CRITICAL FIX: Ensure state updates propagate properly
-        workflow.add_edge(START, "intent_classifier")
+        # Set entry point
+        workflow.set_entry_point("intent_classifier")
         
         # Intent routing
         workflow.add_conditional_edges(
@@ -92,11 +103,11 @@ class OutfitterAssistant:
             self._route_after_greeting,
             {
                 "needs_analyzer": "needs_analyzer",
-                "wait_for_user": END
+                "END": END  # FIXED: proper END connection
             }
         )
         
-        # Needs analyzer routing
+        # Needs analyzer routing - SIMPLIFIED
         workflow.add_conditional_edges(
             "needs_analyzer",
             self._route_after_needs_analysis,
@@ -106,10 +117,10 @@ class OutfitterAssistant:
             }
         )
         
-        # FIXED: Parallel searcher routing with proper state handling
+        # Parallel searcher routing
         workflow.add_conditional_edges(
             "parallel_searcher",
-            self._route_after_search,  # ← USE THIS INSTEAD
+            self._route_after_search,
             {
                 "product_presenter": "product_presenter",
                 "clarification_asker": "clarification_asker",
@@ -117,17 +128,17 @@ class OutfitterAssistant:
             }
         )
         
-        # Clarification routing  
+        # Clarification routing - FIXED
         workflow.add_conditional_edges(
             "clarification_asker",
             self._route_after_clarification,
             {
                 "needs_analyzer": "needs_analyzer",
-                "wait_for_user": END
+                "End": END  # FIXED: proper END connection
             }
         )
         
-        # End states
+        # CRITICAL: Add END connections for all terminal nodes
         workflow.add_edge("product_presenter", END)
         workflow.add_edge("general_responder", END)
         workflow.add_edge("selection_handler", END)
@@ -137,6 +148,19 @@ class OutfitterAssistant:
         self.graph = workflow.compile(checkpointer=self.memory)
         print("✅ Real scraping integration setup complete!")
 
+    def write_mermaid(self, path: str = "graph.md"):
+        """Write graph as Mermaid diagram (requires grandalf)"""
+        try:
+            mermaid = self.graph.get_graph().draw_mermaid()
+            with open(path, "w", encoding="utf-8") as f:
+                f.write("```mermaid\n" + mermaid + "\n```")
+            print(f"📊 Graph saved to {path}")
+        except AttributeError:
+            print("📊 Mermaid diagram not available in this LangGraph version")
+        except ImportError:
+            print("📊 Mermaid export requires 'grandalf' package. Install with: pip install grandalf")
+        except Exception as e:
+            print(f"📊 Mermaid export failed: {e}")
             
   
     # ============ ENHANCED AGENT NODE WRAPPERS ============
@@ -171,17 +195,11 @@ class OutfitterAssistant:
 
     def _real_parallel_searcher(self, state: OutfitterState) -> Dict[str, Any]:
         """
-        ENHANCED: Real parallel searcher with comprehensive state debugging
+        Real parallel searcher with DEBUG FILE LOGGING
         """
         print("🔍 Starting real parallel search across stores...")
-        print(f"📥 SEARCHER INPUT STATE DEBUG:")
-        print(f"   🔑 Input state keys: {list(state.keys())}")
-        print(f"   📋 search_criteria: {state.get('search_criteria', {})}")
         
-        # Extract search criteria from needs analyzer
         search_criteria = state.get("search_criteria", {})
-        
-        # Build search query from criteria
         search_query = self._build_search_query_from_criteria(search_criteria)
         
         if not search_query:
@@ -190,7 +208,7 @@ class OutfitterAssistant:
         print(f"🔎 Searching for: '{search_query}' with criteria: {search_criteria}")
         
         try:
-            # Run async scraping in sync context
+            # Run async scraping
             products = asyncio.run(search_all_stores(
                 query=search_query,
                 max_products=15
@@ -198,7 +216,7 @@ class OutfitterAssistant:
             
             print(f"✅ Found {len(products)} products from scraping")
             
-            # Convert ProductData objects to dictionary format for state
+            # Convert ProductData to dicts
             product_dicts = []
             for product in products:
                 product_dict = {
@@ -213,47 +231,40 @@ class OutfitterAssistant:
                 }
                 product_dicts.append(product_dict)
             
-            if len(product_dicts) > 0:
-                # Build result state with ALL success indicators
-                result_state = {
-                    "messages": [AIMessage(content=f"Great! I found {len(product_dicts)} products from multiple stores. Let me show you what I found:")],
-                    "search_results": product_dicts,        # ← Actual products
-                    "search_query": search_query,
-                    "search_successful": True,              # ← Success flag
-                    "conversation_stage": "presenting",     # ← Stage indicator  
-                    "next_step": "product_presenter",       # ← Explicit routing
-                    "products_found_count": len(product_dicts),  # ← Additional indicator
-                    "scraping_completed": True              # ← Completion flag
-                }
-                
-                print(f"📤 SEARCHER OUTPUT STATE DEBUG:")
-                print(f"   🔑 Output state keys: {list(result_state.keys())}")
-                print(f"   📦 search_results count: {len(result_state.get('search_results', []))}")
-                print(f"   ✅ search_successful: {result_state.get('search_successful')}")
-                print(f"   ➡️  next_step: {result_state.get('next_step')}")
-                print(f"   🎭 conversation_stage: {result_state.get('conversation_stage')}")
-                print(f"   🔢 products_found_count: {result_state.get('products_found_count')}")
-                print(f"   ✨ scraping_completed: {result_state.get('scraping_completed')}")
-                
-                # Additional verification
-                print(f"   📊 Sample products:")
-                for i, product in enumerate(product_dicts[:3]):  # Show first 3
-                    print(f"      {i+1}. {product.get('name', 'No name')} - {product.get('price', 'No price')}")
-                
-                print("✅ SUCCESS: Setting search_successful=True with comprehensive state")
-                return result_state
+            # ============ DEBUG: SAVE TO FILE ============
+            import json
+            from datetime import datetime
             
+            debug_data = {
+                "timestamp": datetime.now().isoformat(),
+                "search_query": search_query,
+                "search_criteria": search_criteria,
+                "products_found": len(product_dicts),
+                "products": product_dicts
+            }
+            
+            # Save to debug file
+            debug_filename = f"debug_scraped_products_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(debug_filename, 'w', encoding='utf-8') as f:
+                json.dump(debug_data, f, indent=2, ensure_ascii=False)
+            
+            print(f"💾 DEBUG: Saved scraped products to {debug_filename}")
+            # ============================================
+            
+            if len(product_dicts) > 0:
+                return {
+                    "messages": [AIMessage(content=f"Great! I found {len(product_dicts)} products. Let me show you:")],
+                    "search_results": product_dicts,
+                    "conversation_stage": "presenting",
+                    "next_step": "product_presenter"
+                }
             else:
-                print("❌ No products in final list - routing to clarification")
                 return self._handle_no_products_found_sync(search_query, search_criteria)
                 
         except Exception as e:
             print(f"❌ Scraping error: {e}")
-            import traceback
-            print(f"📍 Traceback: {traceback.format_exc()}")
             return self._handle_scraping_error_sync(search_query, str(e))
-    
- 
+
     # Make sure you also have these helper methods:
     def _handle_no_products_found_sync(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
         """Handle case where no products are found"""
@@ -376,7 +387,7 @@ class OutfitterAssistant:
 
             return {
                 "messages": [AIMessage(content=message)],
-                "products_shown": [],
+                "search_results": [],
                 "verification_failed": True,
                 "conversation_stage": "discovery",
                 "next_step": "clarification_asker"
@@ -398,7 +409,7 @@ class OutfitterAssistant:
         
         return {
             "messages": [AIMessage(content=full_message)],
-            "products_shown": relevant_products,
+            "search_results": relevant_products,
             "conversation_stage": "presenting", 
             "next_step": "wait_for_user",
             "awaiting_selection": True,
@@ -425,24 +436,41 @@ class OutfitterAssistant:
         return next_step
 
     def _route_after_greeting(self, state: OutfitterState) -> str:
-        """Route after enhanced greeting based on user context"""
-        next_step = state.get("next_step", "wait_for_user")
+        """Route after greeting"""
+        next_step = state.get("next_step", "END")
         
-        # Enhanced greeter might fast-track urgent users
         if next_step == "needs_analyzer":
             return "needs_analyzer"
         
-        return "wait_for_user"
-    
-    def _route_after_needs_analysis(self, state: OutfitterState) -> str:
-        """Route after needs analysis based on sufficiency assessment"""
-        return state.get("next_step", "clarification_asker")
+        return "END"  # Changed from "wait_for_user"
 
+    def _route_after_needs_analysis(self, state: OutfitterState) -> str:
+        """
+        Route after needs analysis.
+        CRITICAL: Respect the sufficiency decision from NeedsAnalyzer.
+        """
+        next_step = state.get("next_step")
+        needs_clarification = state.get("needs_clarification", False)
+        
+        # If NeedsAnalyzer says insufficient → go to clarification
+        if needs_clarification or next_step == "clarification_asker":
+            print("🔄 Routing to clarification (insufficient info)")
+            return "clarification_asker"
+        
+        # If NeedsAnalyzer says sufficient → go to search
+        elif next_step == "parallel_searcher":
+            print("🔄 Routing to search (sufficient info)")
+            return "parallel_searcher"
+        
+        # Default fallback
+        else:
+            print("🔄 Routing to clarification (unclear next step)")
+            return "clarification_asker"
     
     def _route_after_clarification(self, state: OutfitterState) -> str:
         """Route after clarification questioning - always wait for user"""
         # Clarification asker always waits for user input
-        return "wait_for_user"
+        return "End" #changed from wait_for_user
     
     def _route_after_search(self, state: OutfitterState) -> str:
         """
@@ -707,7 +735,7 @@ Would you like to:
 
         return {
             "messages": [AIMessage(content=message)],
-            "products_shown": [],
+            "search_results": [],
             "conversation_stage": "discovery",
             "next_step": "clarification_asker"
         }
@@ -715,43 +743,128 @@ Would you like to:
     # ============ ENHANCED SELECTION HANDLER ============
     
     def _enhanced_selection_handler(self, state: OutfitterState) -> Dict[str, Any]:
-        """Enhanced selection handler that works with real products"""
-        products_shown = state.get("products_shown", [])
+        """
+        STAGE 1: Enhanced selection handler using AI to parse natural language selections.
+        Extracts product variants for proper cart integration.
+        """
+        print("🎯 STAGE 1: Enhanced selection handler activated")
         
-        if not products_shown:
-            return {
-                "messages": [AIMessage(content="I don't see any products that were shown to select from. Would you like me to search for something?")],
-                "conversation_stage": "discovery",
-                "next_step": "clarification_asker"
-            }
+        # Use the new SelectionHandler agent
+        selection_result = self.selection_handler.handle_selection(state)
         
-        # Get user message for selection analysis
-        messages = state.get("messages", [])
-        user_input = ""
-        for msg in reversed(messages):
-            if hasattr(msg, 'content') and isinstance(msg.content, str) and not isinstance(msg, AIMessage):
-                user_input = msg.content
-                break
+        # If products were selected, extract their variants for cart preparation
+        selected_products = selection_result.get("selected_products", [])
         
-        response = f"""I can see you're interested in selecting from the {len(products_shown)} products I showed you.
-
-Your selection: "{user_input}"
-
-🔧 [SELECTION PROCESSING]
-Enhanced selection handling with real products will be fully implemented in the next stage. For now, I can help you with:
-
-• More details about specific products
-• Different search queries  
-• Styling advice and recommendations
-• General shopping questions
-
-What would you like to explore?"""
+        if selected_products and len(selected_products) > 0:
+            print(f"📦 Extracting variants for {len(selected_products)} selected products...")
+            
+            # Extract variants asynchronously for selected products
+            enriched_products = asyncio.run(self._enrich_products_with_variants(selected_products))
+            selection_result["selected_products"] = enriched_products
+            
+            print(f"✅ Products enriched with variant data")
         
-        return {
-            "messages": [AIMessage(content=response)],
-            "conversation_stage": "presenting",
-            "next_step": "wait_for_user"
-        }
+        return selection_result
+    
+    async def _enrich_products_with_variants(self, products: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Enrich selected products with variant information (sizes, colors, variant IDs).
+        This prepares products for cart management in Stage 2.
+        """
+        enriched_products = []
+        
+        for product in products[:3]:  # Limit to 3 for performance
+            product_url = product.get("url")
+            store_name = product.get("store_name", "")
+            
+            if product_url:
+                try:
+                    # Extract variants from product page
+                    variants = await self.variant_extractor.extract_variants(
+                        product_url, 
+                        store_name
+                    )
+                    
+                    # Add variant data to product
+                    enriched_product = product.copy()
+                    enriched_product["variants"] = variants
+                    enriched_product["variant_extraction_completed"] = True
+                    
+                    enriched_products.append(enriched_product)
+                    
+                    print(f"   ✅ {product.get('name', 'Product')}: {len(variants.get('sizes', []))} sizes available")
+                    
+                except Exception as e:
+                    print(f"   ⚠️ Failed to extract variants for {product.get('name', 'product')}: {e}")
+                    # Add product without variants
+                    enriched_product = product.copy()
+                    enriched_product["variant_extraction_failed"] = True
+                    enriched_products.append(enriched_product)
+            else:
+                # No URL available, skip variant extraction
+                enriched_products.append(product)
+        
+        return enriched_products
+
+
+# ============ ADD HELPER METHOD FOR VARIANT DISPLAY ============
+    def _format_variant_options(self, variants: Dict[str, Any]) -> str:
+        """Format variant options for display to user"""
+        
+        if not variants or variants.get("extraction_failed"):
+            return "Variant information unavailable. Please visit the product page for sizing details."
+        
+        parts = []
+        
+        # Format sizes
+        sizes = variants.get("sizes", [])
+        if sizes:
+            available_sizes = [s["size"] for s in sizes if s.get("available", True)]
+            if available_sizes:
+                parts.append(f"**Available Sizes:** {', '.join(available_sizes[:10])}")
+        
+        # Format colors
+        colors = variants.get("colors", [])
+        if colors:
+            parts.append(f"**Colors:** {', '.join(colors[:5])}")
+        
+        # Price
+        base_price = variants.get("base_price", "")
+        if base_price:
+            parts.append(f"**Price:** {base_price}")
+        
+        return "\n".join(parts) if parts else "Check product page for full details."
+
+
+# ============ OPTIONAL: ENHANCE PRODUCT PRESENTATION ============
+    def _build_selection_instructions(self, product_count: int) -> str:
+        """
+        UPDATED for Stage 1: Enhanced instructions that mention variant selection.
+        """
+        
+        if product_count <= 3:
+            return """💡 **What would you like to do?**
+• Tell me the number of any item (e.g., "I like #1" or "Show me the second one")
+• Ask about sizing, colors, or availability
+• Request different options or a new search
+• Get styling advice for any items"""
+        
+        elif product_count <= 8:
+            return """💡 **How to proceed:**
+• Select items by number (e.g., "Show me #2 and #5" or "I want the first one") 
+• Ask for sizing and color options
+• Request to narrow down or try different search
+• Get outfit suggestions"""
+        
+        else:
+            return """💡 **Next steps:**
+• Choose specific items by number (e.g., "I'm interested in #1, #3, and #7")
+• Ask to filter by price, style, or store
+• Request details about sizing and availability
+• Let me know if you'd like styling recommendations"""
+
+
+
     
     # ============ REMAINING MOCK NODES ============
     
@@ -803,8 +916,12 @@ What would you like to explore?"""
         }
         
         try:
-            # Run the enhanced conversation graph with real scraping
-            result = await self.graph.ainvoke(state, config=config)
+            # Run the enhanced conversation graph with real scraping and recursion limit
+            config_with_limit = {
+                **config,
+                "recursion_limit": 30  # Set reasonable limit to prevent infinite recursion
+            }
+            result = await self.graph.ainvoke(state, config=config_with_limit)
             # In run_conversation method, after result = await self.graph.ainvoke(state, config=config)
             print(f"🔄 DEBUG: Graph execution result keys: {list(result.keys())}")
             print(f"🔄 DEBUG: Final state conversation_stage: {result.get('conversation_stage')}")
@@ -830,7 +947,14 @@ What would you like to explore?"""
             import traceback
             traceback.print_exc()
             
-            # Enhanced error handling
+            # Handle recursion limit specifically
+            if "recursion limit" in str(e).lower() or "recursion" in str(e).lower():
+                print("🔄 Recursion limit reached - providing fallback response")
+                user_msg = {"role": "user", "content": message}
+                fallback_msg = {"role": "assistant", "content": "I'm having trouble processing that request right now. Let me help you in a simpler way - what specific clothing item are you looking for?"}
+                return history + [user_msg, fallback_msg]
+            
+            # Enhanced error handling for other errors
             user_msg = {"role": "user", "content": message}
             error_msg = {"role": "assistant", "content": "I apologize for the technical hiccup. I'm your fashion and shopping assistant - what can I help you find today?"}
             return history + [user_msg, error_msg]
@@ -848,6 +972,7 @@ def main():
     
     assistant = OutfitterAssistant()
     assistant.setup_graph()
+    assistant.write_mermaid("graph.md")
     
     print("\n✅ Real scraping integration setup complete!")
     print("🎯 Stage 2.3 Features:")

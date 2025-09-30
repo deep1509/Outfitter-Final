@@ -42,7 +42,7 @@ Returns enhanced state updates with confidence, reasoning, and extracted shoppin
 from typing import Dict, Any, List, Optional
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 from agents.state import OutfitterState
 import json
@@ -356,19 +356,22 @@ Be especially careful with:
 
     
     def _convert_to_state_update(self, analysis: IntentAnalysis, context: ConversationContext) -> Dict[str, Any]:
-        """Convert analysis to LangGraph state update format"""
+        """Convert analysis to LangGraph state update format - ONLY VALID STATE FIELDS"""
+        
+        # Log the full analysis for debugging (optional)
+        print(f"🧠 Intent Analysis: {analysis.primary_intent} (confidence: {analysis.confidence:.2f})")
+        print(f"   Reasoning: {analysis.reasoning}")
+        if analysis.extracted_entities:
+            print(f"   Extracted: {analysis.extracted_entities}")
+        
+        # ONLY return fields that exist in OutfitterState
         return {
             "current_intent": analysis.primary_intent,
-            "secondary_intents": analysis.secondary_intents,
-            "intent_confidence": analysis.confidence,
-            "intent_reasoning": analysis.reasoning,
             "next_step": analysis.next_recommended_action,
             "conversation_stage": self._update_conversation_stage(analysis, context),
-            "extracted_entities": analysis.extracted_entities,
-            "customer_sentiment": analysis.sentiment,
-            "urgency_level": analysis.urgency,
-            "classification_timestamp": datetime.now().isoformat(),
-            "needs_clarification": analysis.primary_intent == "clarification"
+            "needs_clarification": analysis.primary_intent == "clarification",
+            # Merge extracted entities into search_criteria if they exist
+            "search_criteria": analysis.extracted_entities if analysis.extracted_entities else {}
         }
     
     def _update_conversation_stage(self, analysis: IntentAnalysis, context: ConversationContext) -> str:

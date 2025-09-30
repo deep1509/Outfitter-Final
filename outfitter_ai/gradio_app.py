@@ -954,7 +954,6 @@ def create_complete_interface():
                     label="",
                     height=500,
                     show_label=False,
-                    avatar_images=("👤", "🤖"),
                     bubble_full_width=False,
                     show_copy_button=True,
                     elem_classes=["chat-container"]
