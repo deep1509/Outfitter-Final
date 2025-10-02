@@ -1,0 +1,107 @@
+{
+  "query": "red shoes",
+  "timestamp": "2025-10-02T15:57:32.423359",
+  "products_found": 10,
+  "products": [
+    {
+      "name": "Arch Support Thong Black$27.00 USD/",
+      "price": "$27.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422624"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Mocca$137.00 USD/",
+      "price": "$137.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422572"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Stone$137.00 USD/",
+      "price": "$137.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-mens-arizona-birkibuc-regular-stone",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422729"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Velvet Grey$137.00 USD/",
+      "price": "$137.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birkibuc-regular-velvet-grey",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422705"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black$125.00 USD/",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422473"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Oiled Tobacco$156.00 USD/",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-oiled-leather-regular-oiled-tobacco",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422546"
+    },
+    {
+      "name": "Arizona Smooth Leather Regular Black Smooth$144.00 USD/",
+      "price": "$144.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-smooth-leather-regular-black-smooth",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422679"
+    },
+    {
+      "name": "Boston Oiled Leather Regular Tobacco Brown$202.00 USD/",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-oiled-leather-regular-tobacco-brown",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422651"
+    },
+    {
+      "name": "Boston Tabacco Oiled Leather Narrow Brown$202.00 USD/",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-tabacco-oiled-leather-narrow-brown",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422599"
+    },
+    {
+      "name": "Classic Elephant$54.00 USD/",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-mens-classic-elephant",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:32.422774"
+    }
+  ]
+}

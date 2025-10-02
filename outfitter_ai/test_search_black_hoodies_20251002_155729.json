@@ -1,0 +1,107 @@
+{
+  "query": "black hoodies",
+  "timestamp": "2025-10-02T15:57:29.500559",
+  "products_found": 10,
+  "products": [
+    {
+      "name": "College Boxy Hoodie Black$68.00 USD/",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-college-boxy-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.016088"
+    },
+    {
+      "name": "Cottle Sweatshirt Light Grey Marle$54.00 USD/",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/reebok-cottle-sweatshirt-light-grey-marle",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.015986"
+    },
+    {
+      "name": "Flora Boxy Hoodie Off White$68.00 USD/",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-flora-boxy-hoodie-off-white",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.016065"
+    },
+    {
+      "name": "Glory Quarter Zip Fleece Washed Black$81.00 USD/",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/thrills-glory-quarter-zip-fleece-washed-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.016040"
+    },
+    {
+      "name": "Nova Street Hoodie Black$81.00 USD/",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-nova-street-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.015825"
+    },
+    {
+      "name": "Nova Street Hoodie Off White$81.00 USD/",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-nova-street-hoodie-off-white",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.015883"
+    },
+    {
+      "name": "PC Hood Forest~~$81.00 USD~~ $48.00 USD/",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/barney-cools-pc-hood-forest",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.015907"
+    },
+    {
+      "name": "Striker Quarter Zip Polar Fleece Black$81.00 USD/",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/worship-striker-quarter-zip-polar-fleece-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.015960"
+    },
+    {
+      "name": "Surge Zip Through Street Hoodie Sunfade Black$95.00 USD/",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-surge-zip-through-street-hoodie-sunfade-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.016014"
+    },
+    {
+      "name": "Tide Raglan Boxy Hoodie Asphalt$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-tide-raglan-boxy-hoodie-asphalt",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:28.015934"
+    }
+  ]
+}

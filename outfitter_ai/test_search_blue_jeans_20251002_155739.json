@@ -1,0 +1,107 @@
+{
+  "query": "blue jeans",
+  "timestamp": "2025-10-02T15:57:39.732135",
+  "products_found": 10,
+  "products": [
+    {
+      "name": "A6 Big Baggy Bazza Jean Washed Black$81.00 USD/",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a6-big-baggy-bazza-jean-washed-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255745"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Onyx$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-behemoth-super-baggy-jean-onyx",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255440"
+    },
+    {
+      "name": "Big Dawg Pay Up Jean Worship Blues$95.00 USD/",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawg-pay-up-jean-worship-blues",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255387"
+    },
+    {
+      "name": "Big Dawgs Jean Used Black$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawgs-jean-used-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255237"
+    },
+    {
+      "name": "Big Dawgs Jean Worn Blue$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawgs-jean-worn-blue",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255488"
+    },
+    {
+      "name": "Big Lounger Hangtime Jean Worship Blew$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-lounger-hangtime-jean-worship-blew",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255704"
+    },
+    {
+      "name": "Carpenter Jean Washed Black$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-carpenter-jean-washed-black-1",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255599"
+    },
+    {
+      "name": "Carpenter Jean Worship Worn Blue$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-worship-carpenter-jean-worship-worn-blue",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255331"
+    },
+    {
+      "name": "Slacker Jean Dusk Black$88.00 USD/",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/wrangler-slacker-jean-dusk-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255648"
+    },
+    {
+      "name": "Try Again Big Lounger Jean Dirty Rage Blue$95.00 USD/",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-try-again-big-lounger-jean-dirty-rage-blue",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-02T15:57:39.255550"
+    }
+  ]
+}

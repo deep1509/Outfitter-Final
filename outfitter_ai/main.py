@@ -16,6 +16,8 @@ from langchain_core.messages import AIMessage
 from agents.conversation_agents.needsAnalyzer import NeedsAnalyzer
 from agents.conversation_agents.simpleClarificationAsker import SimpleClarificationAsker
 
+from tools.hybrid_scraper import search_all_stores
+
 from agents.state import OutfitterState
 from agents.intent_classifier import RobustIntentClassifier
 from agents.conversation_agents.greeterAgent import GreeterAgent
@@ -24,8 +26,7 @@ from agents.conversation_agents.generalResponderAgent import SimpleGeneralRespon
 
 from tools.simple_product_verifier import SimpleProductVerifier
 
-# NEW: Import real scraping tools
-from tools.scraping_tools import search_all_stores, MultiStoreScraper
+
 
 # Load environment variables
 load_dotenv()
@@ -171,17 +172,10 @@ class OutfitterAssistant:
 
     def _real_parallel_searcher(self, state: OutfitterState) -> Dict[str, Any]:
         """
-        ENHANCED: Real parallel searcher with comprehensive state debugging
+        Real parallel searcher with client-side filtering and debug logging
         """
         print("🔍 Starting real parallel search across stores...")
-        print(f"📥 SEARCHER INPUT STATE DEBUG:")
-        print(f"   🔑 Input state keys: {list(state.keys())}")
-        print(f"   📋 search_criteria: {state.get('search_criteria', {})}")
-        
-        # Extract search criteria from needs analyzer
         search_criteria = state.get("search_criteria", {})
-        
-        # Build search query from criteria
         search_query = self._build_search_query_from_criteria(search_criteria)
         
         if not search_query:
@@ -190,15 +184,15 @@ class OutfitterAssistant:
         print(f"🔎 Searching for: '{search_query}' with criteria: {search_criteria}")
         
         try:
-            # Run async scraping in sync context
+            # Run async scraping
             products = asyncio.run(search_all_stores(
                 query=search_query,
-                max_products=15
+                max_products=30  # Get more since we'll filter
             ))
             
             print(f"✅ Found {len(products)} products from scraping")
             
-            # Convert ProductData objects to dictionary format for state
+            # Convert ProductData to dicts
             product_dicts = []
             for product in products:
                 product_dict = {
@@ -213,47 +207,60 @@ class OutfitterAssistant:
                 }
                 product_dicts.append(product_dict)
             
+            # ============ CLIENT-SIDE FILTERING ============
+            # Universal Store search doesn't work via URL, so filter client-side
             if len(product_dicts) > 0:
-                # Build result state with ALL success indicators
-                result_state = {
-                    "messages": [AIMessage(content=f"Great! I found {len(product_dicts)} products from multiple stores. Let me show you what I found:")],
-                    "search_results": product_dicts,        # ← Actual products
-                    "search_query": search_query,
-                    "search_successful": True,              # ← Success flag
-                    "conversation_stage": "presenting",     # ← Stage indicator  
-                    "next_step": "product_presenter",       # ← Explicit routing
-                    "products_found_count": len(product_dicts),  # ← Additional indicator
-                    "scraping_completed": True              # ← Completion flag
-                }
+                from tools.simple_product_verifier import SimpleProductVerifier
+                verifier = SimpleProductVerifier()
                 
-                print(f"📤 SEARCHER OUTPUT STATE DEBUG:")
-                print(f"   🔑 Output state keys: {list(result_state.keys())}")
-                print(f"   📦 search_results count: {len(result_state.get('search_results', []))}")
-                print(f"   ✅ search_successful: {result_state.get('search_successful')}")
-                print(f"   ➡️  next_step: {result_state.get('next_step')}")
-                print(f"   🎭 conversation_stage: {result_state.get('conversation_stage')}")
-                print(f"   🔢 products_found_count: {result_state.get('products_found_count')}")
-                print(f"   ✨ scraping_completed: {result_state.get('scraping_completed')}")
+                # Build user request from criteria
+                user_request = self._build_user_request_string(search_criteria, search_query)
                 
-                # Additional verification
-                print(f"   📊 Sample products:")
-                for i, product in enumerate(product_dicts[:3]):  # Show first 3
-                    print(f"      {i+1}. {product.get('name', 'No name')} - {product.get('price', 'No price')}")
+                print(f"🔍 Applying AI filter for: '{user_request}'")
+                original_count = len(product_dicts)
                 
-                print("✅ SUCCESS: Setting search_successful=True with comprehensive state")
-                return result_state
+                # Filter to only relevant products
+                product_dicts = verifier.filter_relevant_products(user_request, product_dicts)
+                
+                print(f"📊 Filtering result: {original_count} → {len(product_dicts)} products")
+            # ============================================
             
+            # ============ DEBUG: SAVE TO FILE ============
+            import json
+            from datetime import datetime
+            
+            debug_data = {
+                "timestamp": datetime.now().isoformat(),
+                "search_query": search_query,
+                "search_criteria": search_criteria,
+                "products_found_after_filtering": len(product_dicts),
+                "products": product_dicts
+            }
+            
+            # Save to debug file
+            debug_filename = f"debug_scraped_products_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(debug_filename, 'w', encoding='utf-8') as f:
+                json.dump(debug_data, f, indent=2, ensure_ascii=False)
+            
+            print(f"💾 DEBUG: Saved scraped products to {debug_filename}")
+            # ============================================
+            
+            if len(product_dicts) > 0:
+                return {
+                    "messages": [AIMessage(content=f"Great! I found {len(product_dicts)} products from multiple stores. Let me show you:")],
+                    "search_results": product_dicts,
+                    "conversation_stage": "presenting",
+                    "next_step": "product_presenter"
+                }
             else:
-                print("❌ No products in final list - routing to clarification")
                 return self._handle_no_products_found_sync(search_query, search_criteria)
                 
         except Exception as e:
             print(f"❌ Scraping error: {e}")
             import traceback
-            print(f"📍 Traceback: {traceback.format_exc()}")
+            traceback.print_exc()
             return self._handle_scraping_error_sync(search_query, str(e))
-    
- 
+
     # Make sure you also have these helper methods:
     def _handle_no_products_found_sync(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
         """Handle case where no products are found"""
