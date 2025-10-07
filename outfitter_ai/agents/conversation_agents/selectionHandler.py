@@ -20,15 +20,11 @@ class SelectionHandler:
     def __init__(self):
         self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
     
+
     def handle_selection(self, state: OutfitterState) -> Dict[str, Any]:
         """
         Main handler for processing product selections.
-        
-        Args:
-            state: Current conversation state with products_shown
-            
-        Returns:
-            Updated state with selected products
+        FIXED: Uses pending_cart_additions to preserve existing cart
         """
         print("🛒 SelectionHandler: Processing product selection...")
         
@@ -69,28 +65,34 @@ class SelectionHandler:
             return self._handle_no_selection(user_message, products_shown)
         
         # Get selected products with default variants
-        selected_products = []
+        newly_selected = []
         for idx in selected_indices:
             if 0 <= idx < len(products_shown):
                 product = products_shown[idx].copy()
                 # Add default variant info
-                product['selected_variant'] = 'default'  # Simplified
-                product['selected_size'] = 'M'  # Default to Medium
-                selected_products.append(product)
+                product['selected_variant'] = 'default'
+                product['selected_size'] = 'M'
+                newly_selected.append(product)
         
-        print(f"   ✓ Selected {len(selected_products)} products")
+        print(f"   ✓ Selected {len(newly_selected)} products")
         
         # Build response
-        response = self._build_selection_confirmation(selected_products)
+        response = self._build_selection_confirmation(newly_selected)
         
+        # CRITICAL FIX: Get existing cart and preserve it
+        existing_cart = state.get("selected_products", [])
+        
+        # CRITICAL FIX: Use pending_cart_additions so cart_manager can merge properly
+        # Don't modify selected_products here - let cart_manager handle it
         return {
             "messages": [{"role": "assistant", "content": response}],
-            "selected_products": selected_products,
+            "pending_cart_additions": newly_selected,  # NEW items to add
+            "selected_products": existing_cart,  # PRESERVE existing cart
             "conversation_stage": "cart",
-            "next_step": "cart_manager",
+            "next_step": "cart_manager",  # Route to cart_manager to merge
             "awaiting_cart_action": True
         }
-    
+
     def _parse_selections_with_ai(self, user_message: str, num_products: int) -> List[int]:
         """
         Use AI to parse product selections from natural language.

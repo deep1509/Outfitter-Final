@@ -246,36 +246,51 @@ Analyze this customer message like an experienced salesperson would. Consider:
         """Build context-aware system prompt"""
         return f"""You are an expert intent classifier for Outfitter.ai, a premium shopping assistant.
 
-You understand customer psychology and shopping behavior. Your job is to determine what customers really want, even when they don't express it clearly.
+    You understand customer psychology and shopping behavior. Your job is to determine what customers really want, even when they don't express it clearly.
 
-AVAILABLE INTENTS:
-- greeting: Welcome, hello, initial contact
-- search: Looking for products, browsing, filtering
-- selection: Choosing specific items, comparing options
-- checkout: Ready to buy, purchase intent, cart management
-- general: Questions, help, information requests
-- clarification: Need more details to proceed
-- complaint: Problems, issues, dissatisfaction
+    AVAILABLE INTENTS:
+    - greeting: Welcome, hello, initial contact
+    - search: Looking for products, browsing, filtering
+    - selection: Choosing specific items, comparing options
+    - cart: Cart operations (add, view, remove, clear)  # NEW
+    - checkout: Ready to buy, purchase intent, cart management
+    - general: Questions, help, information requests
+    - clarification: Need more details to proceed
+    - complaint: Problems, issues, dissatisfaction
 
-CUSTOMER CONTEXT UNDERSTANDING:
-- Early conversation (turns 1-3): Often greeting or search intent
-- Mid conversation with products shown: Likely selection or refinement
-- Late conversation with cart items: Likely checkout or modification
-- Negative language: Could be complaint or clarification need
-- Multiple topics: Identify primary and secondary intents
+    CART INTENT DETECTION:  # NEW SECTION
+    Detect "cart" intent when user wants to:
+    - View their cart: "show my cart", "what's in my cart", "view cart"
+    - Remove items: "remove #2", "delete item 1", "take out the hoodie"
+    - Clear cart: "clear cart", "empty my cart", "start over"
+    - Ask about cart: "how much is my total", "what did I select"
 
-SALESPERSON MINDSET:
-- Always prioritize customer satisfaction
-- Understand implied needs (saying "expensive" might mean budget constraint)
-- Recognize emotional cues (frustration, excitement, hesitation)
-- Consider the full customer journey
+    CUSTOMER CONTEXT UNDERSTANDING:
+    - Early conversation (turns 1-3): Often greeting or search intent
+    - Mid conversation with products shown: Likely selection or refinement
+    - Late conversation with cart items: Likely cart or checkout
+    - Negative language: Could be complaint or clarification need
+    - Multiple topics: Identify primary and secondary intents
 
-Be especially careful with:
-- Negation ("I don't want..." is not a search intent)
-- Ambiguous pronouns ("that one" needs context)
-- Multi-intent messages (handle both primary and secondary needs)
-- Cultural/slang expressions
-"""
+    SELECTION vs CART DISTINCTION:  # NEW
+    - "I want #2" → selection (adding to cart for first time)
+    - "add #2" → selection (adding new item)
+    - "show my cart" → cart (viewing existing cart)
+    - "remove #1" → cart (modifying existing cart)
+
+    SALESPERSON MINDSET:
+    - Always prioritize customer satisfaction
+    - Understand implied needs (saying "expensive" might mean budget constraint)
+    - Recognize emotional cues (frustration, excitement, hesitation)
+    - Consider the full customer journey
+
+    Be especially careful with:
+    - Negation ("I don't want..." is not a search intent)
+    - Ambiguous pronouns ("that one" needs context)
+    - Multi-intent messages (handle both primary and secondary needs)
+    - Cultural/slang expressions
+    """
+
 
     def _manual_classification_fallback(self, message: str, context: ConversationContext) -> IntentAnalysis:
         """Manual classification when AI fails"""
@@ -325,6 +340,9 @@ Be especially careful with:
         
         return analysis
     
+    # ALTERNATIVE FIX: Update the _determine_optimal_next_action method
+# Replace the section that uses _get_latest_message_lower with this:
+
     def _determine_optimal_next_action(self, analysis: IntentAnalysis, context: ConversationContext) -> str:
         """Determine the best next action for customer experience"""
         
@@ -333,11 +351,12 @@ Be especially careful with:
             if "complaint" in analysis.secondary_intents or analysis.urgency == "high":
                 return "general_responder"
         
-        # FIXED: Map to actual nodes in your graph
+        # Map to actual nodes in your graph
         intent_actions = {
             "greeting": "greeter",
-            "search": "clarification_asker",  # ← Changed from needs_analyzer
+            "search": "clarification_asker",
             "selection": "selection_handler", 
+            "cart": "cart_manager",
             "checkout": "checkout_handler",
             "general": "general_responder",
             "clarification": "clarification_asker"
@@ -347,17 +366,46 @@ Be especially careful with:
         
         # Context-based refinements
         if analysis.primary_intent == "search" and context.products_shown > 10:
-            return "clarification_asker"  # Changed from refinement_asker
+            return "clarification_asker"
         
         if analysis.primary_intent == "search" and not analysis.extracted_entities:
             return "clarification_asker"
         
+        # FIXED: Cart-specific routing (simplified without _get_latest_message_lower)
+        if analysis.primary_intent == "cart":
+            # Cart operations will be determined by cart_manager itself
+            return "cart_manager"
+        
         return base_action
+
+
+    def _extract_cart_operation(self, message: str) -> str:
+        """
+        Extract what cart operation the user wants.
+        Returns: "view", "remove", "clear", or "add"
+        """
+        message_lower = message.lower()
+        
+        # View cart
+        if any(word in message_lower for word in ["view", "show", "see", "what's in", "display"]):
+            return "view"
+        
+        # Remove from cart
+        if any(word in message_lower for word in ["remove", "delete", "take out", "get rid"]):
+            return "remove"
+        
+        # Clear cart
+        if any(word in message_lower for word in ["clear", "empty", "reset", "start over"]):
+            return "clear"
+        
+        # Default to add (when adding new items)
+        return "add"
 
     
     def _convert_to_state_update(self, analysis: IntentAnalysis, context: ConversationContext) -> Dict[str, Any]:
         """Convert analysis to LangGraph state update format"""
-        return {
+        
+        state_update = {
             "current_intent": analysis.primary_intent,
             "secondary_intents": analysis.secondary_intents,
             "intent_confidence": analysis.confidence,
@@ -370,6 +418,63 @@ Be especially careful with:
             "classification_timestamp": datetime.now().isoformat(),
             "needs_clarification": analysis.primary_intent == "clarification"
         }
+        
+        # FIXED: Cart operation handling without missing method
+        if analysis.primary_intent == "cart":
+            # Extract cart operation from the analysis reasoning or entities
+            # The AI model should have already determined the operation type
+            cart_operation = "view"  # Default to view
+            
+            # Try to determine from analysis reasoning
+            reasoning_lower = analysis.reasoning.lower()
+            if any(word in reasoning_lower for word in ["remove", "delete"]):
+                cart_operation = "remove"
+            elif any(word in reasoning_lower for word in ["clear", "empty"]):
+                cart_operation = "clear"
+            elif any(word in reasoning_lower for word in ["add"]):
+                cart_operation = "add"
+            
+            state_update["cart_operation"] = cart_operation
+        
+        return state_update
+    
+    def _extract_removal_indices(self, message: str) -> List[int]:
+        """Extract item indices to remove from cart."""
+        import re
+        
+        # Find all numbers in message
+        numbers = re.findall(r'\b(\d+)\b', message)
+        
+        # Convert to 0-based indices
+        indices = [int(n) - 1 for n in numbers]
+        
+        # Filter valid indices
+        valid_indices = [i for i in indices if i >= 0]
+        
+        return valid_indices
+    
+    def _get_latest_message_lower(self, context: ConversationContext) -> str:
+        """
+        Extract the latest user message in lowercase.
+        Helper method for cart operation detection.
+        """
+        # This is a simplified version - adjust based on your context structure
+        # The context should have some way to access the latest message
+        
+        # If you have messages in context
+        if hasattr(context, 'user_mentioned_entities'):
+            # Try to get from the conversation
+            # You'll need to adapt this based on your actual context structure
+            return ""
+        
+        return ""
+
+    def _get_latest_message(self, context: ConversationContext) -> str:
+        """
+        Extract the latest user message.
+        Helper method for cart operation detection.
+        """
+        return ""
     
     def _update_conversation_stage(self, analysis: IntentAnalysis, context: ConversationContext) -> str:
         """Update conversation stage based on analysis"""
@@ -417,6 +522,8 @@ Be especially careful with:
             "reasoning": f"Emergency fallback due to error: {error}",
             "system_error": True
         }
+        
+    
 
 # Example usage and testing
 def test_robust_classifier():
@@ -438,6 +545,8 @@ def test_robust_classifier():
         print(f"\nMessage: {message}")
         # Would need full state for real testing
         print("Would classify with full context...")
+        
+        
 
 if __name__ == "__main__":
     test_robust_classifier()

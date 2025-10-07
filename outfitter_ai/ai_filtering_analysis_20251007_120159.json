@@ -1,0 +1,462 @@
+{
+  "timestamp": "2025-10-07T12:01:59.005574",
+  "user_request": "red hoodies size M",
+  "total_original": 62,
+  "total_kept": 0,
+  "total_filtered": 62,
+  "overall_filtering_rate": "100.0%",
+  "store_analysis": {
+    "CultureKings": {
+      "original_count": 30,
+      "kept_count": 0,
+      "filtered_count": 30,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Universal Store": {
+      "original_count": 32,
+      "kept_count": 0,
+      "filtered_count": 32,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    }
+  },
+  "kept_products": [],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Carre International Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 1,
+      "name": "Jordan Brooklyn Fleece Printed Hoodie Black/Sail",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 2,
+      "name": "Jordan Essential Fleece Pullover Hoodie Hemp/Sail",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 3,
+      "name": "Reebok X Market All Over Print Hoodie Real Tree Camo",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 4,
+      "name": "Saint Morta Sacred Script Hoodie Brown",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "red"
+    },
+    {
+      "index": 5,
+      "name": "Saint Morta Shadow Mark Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 6,
+      "name": "The Anti Order Alpha Logo Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 7,
+      "name": "The Anti Order Reverse Logo Hoodie Charcoal Grey",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 8,
+      "name": "Carre Premium Essentials Hoodie Light Brown",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "brown"
+    },
+    {
+      "index": 9,
+      "name": "Carre Rivet Hoodie Charcoal",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 10,
+      "name": "Jordan Brooklyn Collegiate Pullover Hoodie Birch Heather Grey",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 11,
+      "name": "Jordan Brooklyn Fleece Pullover Hoodie Grey Heather/White",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 12,
+      "name": "Loiter Slither Zip Hoodie Grey",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 13,
+      "name": "Loiter Weezy Rhinestone Zip Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 14,
+      "name": "Loiter Weezy Rhinestone Zip Hoodie Pink",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "pink"
+    },
+    {
+      "index": 15,
+      "name": "Nike Club Pullover Fleece Hoodie Dark Grey Heather",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 16,
+      "name": "Nike Club Pullover Fleece Hoodie White/White/Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 17,
+      "name": "Nike Nocta Fleece Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 18,
+      "name": "Nike Nocta Fleece Hoodie Khaki",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 19,
+      "name": "Nike Nocta Fleece Hoodie Lt Orewood Brown",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "brown"
+    },
+    {
+      "index": 20,
+      "name": "Nike Sportswear Tech Fleece Windrunner Jacket Dusty Sage",
+      "store_name": "CultureKings",
+      "category": "jacket",
+      "color": "unknown"
+    },
+    {
+      "index": 21,
+      "name": "Puma X Scuderia Ferrari Monza Hoodie Rosso Corsa",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 22,
+      "name": "Puma X Scuderia Ferrari Monza Hoodie Steer Blue",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "blue"
+    },
+    {
+      "index": 23,
+      "name": "S Double Choose Your Weapon Hoodie Washed White",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 24,
+      "name": "S Double Combo Platter Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 25,
+      "name": "S Double Combo Platter Hoodie Washed Chocolate",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 26,
+      "name": "S Double Crown Dot Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 27,
+      "name": "S Double Goosebumps Hoodie Washed Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 28,
+      "name": "S Double Small Stock Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 29,
+      "name": "X-Large Mark Zip Through Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 30,
+      "name": "Better Zip Hood Ash grey",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "grey"
+    },
+    {
+      "index": 31,
+      "name": "Cities Boxy Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 32,
+      "name": "Minimal Boxy Hoodie Washed Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 33,
+      "name": "PCR Hood Slate",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 34,
+      "name": "2K Sing 2.0 Hooded Fleece Ecru Marle",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 35,
+      "name": "Blitz Street Hoodie Sunfade Light Blue",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "blue"
+    },
+    {
+      "index": 36,
+      "name": "Bolter Crew Fleece Navy Blue",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "blue"
+    },
+    {
+      "index": 37,
+      "name": "Botanica Boxy Hoodie Coffee Brown",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "brown"
+    },
+    {
+      "index": 38,
+      "name": "Boxy Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 39,
+      "name": "Boxy Hoodie Cocoa Brown",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "brown"
+    },
+    {
+      "index": 40,
+      "name": "Boxy Hoodie Washed Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 41,
+      "name": "Cena Zip Through Street Hoodie Camo",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 42,
+      "name": "Cities Boxy Hoodie Misty Blue",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "blue"
+    },
+    {
+      "index": 43,
+      "name": "Compose Boxy Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 44,
+      "name": "Flora Boxy Hoodie Off White",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 45,
+      "name": "Form Quarter Zip Sweater Ecru",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 46,
+      "name": "Freestyle Street Hoodie Asphalt",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 47,
+      "name": "Glory Quarter Zip Fleece Washed Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 48,
+      "name": "Gloves Up Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 49,
+      "name": "Interval Street Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 50,
+      "name": "Kaen Street Hoodie Grey",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 51,
+      "name": "Nova Street Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 52,
+      "name": "Nova Street Hoodie Off White",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 53,
+      "name": "NWO Knit Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 54,
+      "name": "Panela Anderson 2.0 Hooded Fleece Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 55,
+      "name": "Panela Anderson Hooded Fleece Atlantic Blue",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "blue"
+    },
+    {
+      "index": 56,
+      "name": "Running Dept Hoodie Grey",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 57,
+      "name": "Slipstream Street Hoodie Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 58,
+      "name": "Striker Quarter Zip Polar Fleece Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 59,
+      "name": "Surge Zip Through Street Hoodie Sunfade Black",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 60,
+      "name": "Throttle Elastic Quarter Zip Crew Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 61,
+      "name": "Tide Raglan Boxy Hoodie Asphalt",
+      "store_name": "Universal Store",
+      "category": "hoodie",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": []
+}

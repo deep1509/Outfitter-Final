@@ -15,32 +15,37 @@ from dataclasses import dataclass
 class OutfitterState(TypedDict):
     """
     Core state for Outfitter.ai shopping assistant conversation.
-    Stage 3: Added selection and cart management fields.
+    UPDATED: Added cart management fields
     """
     # Core conversation
     messages: Annotated[List[BaseMessage], add_messages]
     
     # User intent and context
-    current_intent: Optional[str]  # greeting, search, selection, checkout, general
+    current_intent: Optional[str]
     
     # Shopping criteria extracted from user
-    search_criteria: Dict[str, Any]  # category, size, color, budget, etc.
+    search_criteria: Dict[str, Any]
     
-    # Products and selections - UPDATED for Stage 3
-    search_results: List[Dict[str, Any]]  # products from scraping
-    selected_products: List[Dict[str, Any]]  # items in user's cart
-    products_shown: List[Dict[str, Any]]  # products currently displayed to user
+    # Products and selections
+    search_results: List[Dict[str, Any]]
+    selected_products: List[Dict[str, Any]]  # MAIN CART - persists across turns
+    products_shown: List[Dict[str, Any]]
+    
+    # Cart-specific fields (ADD THESE)
+    pending_cart_additions: Optional[List[Dict[str, Any]]]  # Items waiting to be added
+    cart_operation: Optional[str]  # "add", "remove", "view", "clear"
+    cart_removal_indices: Optional[List[int]]  # Indices to remove from cart
     
     # Conversation flow control
-    next_step: Optional[str]  # which node to execute next
-    needs_clarification: Optional[bool]  # whether we need more info from user
+    next_step: Optional[str]
+    needs_clarification: Optional[bool]
     
-    # Selection and cart flags - NEW for Stage 3
-    awaiting_selection: Optional[bool]  # waiting for user to select products
-    awaiting_cart_action: Optional[bool]  # waiting for cart action (checkout, add more, etc.)
+    # Selection and cart flags
+    awaiting_selection: Optional[bool]
+    awaiting_cart_action: Optional[bool]
     
     # Session context
-    conversation_stage: Optional[str]  # greeting, discovery, presenting, selecting, cart, checkout
+    conversation_stage: Optional[str]
     session_id: Optional[str]
     created_at: Optional[str]
 
@@ -90,49 +95,59 @@ class SelectedProduct(BaseModel):
     added_at: Optional[str] = None
 
 
-# Example of how state evolves through the conversation:
+# ============================================================================
+# EXAMPLE STATE EVOLUTION WITH CART
+# ============================================================================
 
 """
-STAGE 1 - Greeting:
+INITIAL STATE (Empty Cart):
 {
     "messages": [...],
-    "conversation_stage": "greeting",
-    "next_step": "wait_for_user"
+    "selected_products": [],
+    "conversation_stage": "greeting"
 }
 
-STAGE 2 - Discovery & Search:
+AFTER FIRST SELECTION:
 {
     "messages": [...],
-    "search_criteria": {"category": "hoodies", "color_preference": "black"},
-    "conversation_stage": "discovery",
-    "next_step": "parallel_searcher"
-}
-
-STAGE 3 - Presenting Products:
-{
-    "messages": [...],
-    "search_results": [product1, product2, ...],
-    "products_shown": [product1, product2, ...],  # NEW
-    "awaiting_selection": True,  # NEW
-    "conversation_stage": "presenting",
-    "next_step": "wait_for_user"
-}
-
-STAGE 4 - Selection Made:
-{
-    "messages": [...],
-    "products_shown": [product1, product2, ...],
-    "selected_products": [product2],  # User selected #2
-    "awaiting_cart_action": True,  # NEW
-    "conversation_stage": "cart",
+    "products_shown": [product1, product2, product3],
+    "pending_cart_additions": [product2],  # User selected #2
+    "selected_products": [],  # Not yet in cart
     "next_step": "cart_manager"
 }
 
-STAGE 5 - Checkout:
+AFTER CART_MANAGER PROCESSES:
 {
     "messages": [...],
-    "selected_products": [product2, product5],
-    "conversation_stage": "checkout",
-    "next_step": "checkout_handler"
+    "products_shown": [product1, product2, product3],
+    "pending_cart_additions": [],  # Cleared after processing
+    "selected_products": [product2],  # NOW in cart
+    "conversation_stage": "cart",
+    "awaiting_cart_action": True
+}
+
+AFTER USER ASKS QUESTION (Cart Persists):
+{
+    "messages": [...user question, assistant answer...],
+    "products_shown": [product1, product2, product3],
+    "selected_products": [product2],  # CART STILL HAS PRODUCT2
+    "conversation_stage": "cart"
+}
+
+AFTER USER ADDS ANOTHER ITEM:
+{
+    "messages": [...],
+    "products_shown": [product1, product2, product3],
+    "pending_cart_additions": [product3],  # User selected #3
+    "selected_products": [product2],  # Existing cart unchanged yet
+    "next_step": "cart_manager"
+}
+
+AFTER CART_MANAGER MERGES:
+{
+    "messages": [...],
+    "pending_cart_additions": [],
+    "selected_products": [product2, product3],  # BOTH products now in cart
+    "conversation_stage": "cart"
 }
 """

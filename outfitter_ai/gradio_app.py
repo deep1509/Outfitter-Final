@@ -1,6 +1,6 @@
 """
-Finalized Gradio App for Outfitter.ai Shopping Assistant
-Complete production-ready implementation with real backend integration
+Complete Gradio App for Outfitter.ai with Cart Functionality
+Production-ready implementation with real backend integration and shopping cart
 """
 
 import gradio as gr
@@ -9,6 +9,7 @@ from typing import List, Dict, Any, Tuple, Optional
 from main import OutfitterAssistant
 import html
 import json
+import re
 
 class ProductionShoppingUI:
     def __init__(self):
@@ -16,68 +17,50 @@ class ProductionShoppingUI:
         self.assistant.setup_graph()
         self.conversation_history = []
         self.current_products = []
-        self.selected_products = []
+        self.current_cart = []
         
     def extract_products_from_state(self, conversation_result: List[Dict]) -> List[Dict[str, Any]]:
         """
-        Extract products from your conversation state.
+        Extract products from conversation state.
         Works with your existing backend to get real product data.
         """
         
         try:
-            # Method 1: Check if the assistant has stored products in its state
-            # This is the most reliable method if your backend supports it
+            # Method 1: Check if the assistant has stored products
             if hasattr(self.assistant, 'last_products') and self.assistant.last_products:
                 print(f"🔍 Found {len(self.assistant.last_products)} products from assistant state")
                 return self.assistant.last_products
             
-            # Method 2: Access the conversation graph state if available
-            # Your LangGraph should maintain state between calls
-            if hasattr(self.assistant, 'graph') and hasattr(self.assistant, 'session_id'):
-                try:
-                    # Try to get the latest state from the graph
-                    config = {"configurable": {"thread_id": self.assistant.session_id}}
-                    # Note: This is a simplified approach - you might need to adjust based on your LangGraph setup
-                    
-                    # Check if we can access the current state
-                    if hasattr(self.assistant.graph, 'get_state'):
-                        current_state = self.assistant.graph.get_state(config)
-                        if current_state and 'search_results' in current_state.values:
-                            products = current_state.values.get('search_results', [])
-                            if products:
-                                print(f"🔍 Found {len(products)} products from graph state")
-                                return products
-                except Exception as e:
-                    print(f"⚠️ Could not access graph state: {e}")
-            
-            # Method 3: Parse from conversation messages
-            if not conversation_result:
-                return []
-            
-            # Check the latest assistant message for product indicators
-            latest_message = ""
-            for msg in reversed(conversation_result):
-                if isinstance(msg, dict) and msg.get("role") == "assistant":
-                    latest_message = msg.get("content", "")
-                    break
-            
-            print(f"🔍 Analyzing message for products: '{latest_message[:100]}...'")
-            
-            # Check if products were found based on message content
-            product_indicators = [
-                "found" in latest_message.lower() and ("product" in latest_message.lower() or "item" in latest_message.lower()),
-                "🛍️" in latest_message,
-                "🏪" in latest_message,
-                "great options" in latest_message.lower(),
-                "here's what i found" in latest_message.lower()
-            ]
-            
-            if any(product_indicators):
-                print("🔍 Product indicators found in message - products likely available")
+            # Method 2: Access from graph state
+            if hasattr(self.assistant, '_last_state'):
+                products = self.assistant._last_state.get('products_shown', [])
+                if not products:
+                    products = self.assistant._last_state.get('search_results', [])
                 
-                # Method 4: Try to trigger a state refresh to get products
-                # This forces the backend to provide current products
-                return self._attempt_product_retrieval()
+                if products:
+                    print(f"🔍 Found {len(products)} products from graph state")
+                    return products
+            
+            # Method 3: Check conversation messages for product indicators
+            if conversation_result:
+                latest_message = ""
+                for msg in reversed(conversation_result):
+                    if isinstance(msg, dict) and msg.get("role") == "assistant":
+                        latest_message = msg.get("content", "")
+                        break
+                
+                # Check if products were mentioned in message
+                product_indicators = [
+                    "found" in latest_message.lower() and "product" in latest_message.lower(),
+                    "🛍️" in latest_message,
+                    "🏪" in latest_message,
+                ]
+                
+                if any(product_indicators):
+                    print("🔍 Product indicators found in message")
+                    # Try to get from state one more time
+                    if hasattr(self.assistant, 'get_current_products'):
+                        return self.assistant.get_current_products()
             
             print("🔍 No products found in conversation state")
             return []
@@ -86,124 +69,201 @@ class ProductionShoppingUI:
             print(f"❌ Error extracting products: {e}")
             return []
 
-    def _attempt_product_retrieval(self) -> List[Dict[str, Any]]:
+    def extract_cart_from_state(self, conversation_result: List[Dict]) -> List[Dict[str, Any]]:
         """
-        Attempt to retrieve products from the current conversation state.
-        This is a fallback method when direct state access isn't available.
+        Extract cart items from conversation state.
+        Returns list of cart items with quantities.
         """
         
         try:
-            # Check if we can access any stored state
-            if hasattr(self.assistant, 'memory') and self.assistant.memory:
-                # Try to get the latest state from memory
-                config = {"configurable": {"thread_id": self.assistant.session_id}}
-                
-                # This is a simplified approach - adjust based on your memory implementation
-                # You might need to call a method to get the current state
-                
-                print("🔍 Attempting to retrieve products from conversation memory...")
-                
-                # Placeholder: Return realistic mock products that match your data structure
-                # Replace this with actual retrieval from your conversation state
-                return self._get_realistic_mock_products()
+            # Method 1: Check if assistant has get_current_cart method
+            if hasattr(self.assistant, 'get_current_cart'):
+                cart_items = self.assistant.get_current_cart()
+                print(f"🛒 Found {len(cart_items)} items from get_current_cart()")
+                return cart_items
             
+            # Method 2: Access from last state
+            if hasattr(self.assistant, '_last_state'):
+                cart_items = self.assistant._last_state.get('selected_products', [])
+                print(f"🛒 Found {len(cart_items)} items from _last_state")
+                return cart_items
+            
+            # Method 3: Try to get from graph state
+            if hasattr(self.assistant, 'graph') and hasattr(self.assistant, 'session_id'):
+                try:
+                    config = {"configurable": {"thread_id": self.assistant.session_id}}
+                    if hasattr(self.assistant.graph, 'get_state'):
+                        current_state = self.assistant.graph.get_state(config)
+                        if current_state and hasattr(current_state, 'values'):
+                            cart_items = current_state.values.get('selected_products', [])
+                            print(f"🛒 Found {len(cart_items)} items from graph.get_state()")
+                            return cart_items
+                except Exception as e:
+                    print(f"⚠️ Could not access graph state for cart: {e}")
+            
+            print("🛒 No cart items found")
             return []
             
         except Exception as e:
-            print(f"⚠️ Product retrieval attempt failed: {e}")
+            print(f"❌ Error extracting cart: {e}")
             return []
-
-    def _get_realistic_mock_products(self) -> List[Dict[str, Any]]:
-        """
-        Realistic mock products that match your actual data structure.
-        This should be replaced with actual product extraction once you implement state access.
-        """
-        
-        return [
-            {
-                "name": "Carre International Hoodie Black",
-                "price": "$99.95",
-                "brand": "Carre",
-                "url": "https://culturekings.com.au/products/carre-international-hoodie-black-2-mens",
-                "image_url": "https://cdn.culturekings.com.au/media/catalog/product/c/a/carre-international-hoodie-black-2-mens_1.jpg",
-                "store_name": "CultureKings",
-                "is_on_sale": True,
-                "relevance_score": 9.2,
-                "extracted_at": "2024-01-20T10:30:00Z"
-            },
-            {
-                "name": "Nike Sportswear Club Fleece Pullover Hoodie Black",
-                "price": "$129.99", 
-                "brand": "Nike",
-                "url": "https://www.universalstore.com/products/nike-sportswear-club-fleece-pullover-hoodie-black",
-                "image_url": "https://images.universalstore.com/products/nike-hoodie-black.jpg",
-                "store_name": "Universal Store",
-                "is_on_sale": False,
-                "relevance_score": 8.8,
-                "extracted_at": "2024-01-20T10:30:00Z"
-            },
-            {
-                "name": "Essential Basic Hoodie Black",
-                "price": "$79.95",
-                "brand": "Essential",
-                "url": "https://culturekings.com.au/products/essential-basic-hoodie-black",
-                "image_url": "https://cdn.culturekings.com.au/media/catalog/product/e/s/essential-hoodie-black.jpg", 
-                "store_name": "CultureKings",
-                "is_on_sale": False,
-                "relevance_score": 8.5,
-                "extracted_at": "2024-01-20T10:30:00Z"
-            }
-        ]
     
-    async def handle_conversation(self, message: str, history: List) -> Tuple[List, str, gr.update]:
-        """Complete conversation handler with product extraction"""
+    def format_cart_for_display(self, cart_items: List[Dict[str, Any]]) -> str:
+        """
+        Format cart items as HTML for Gradio display.
+        Shows items grouped by store with totals.
+        """
+        if not cart_items:
+            return """
+            <div class="cart-container">
+                <div class="empty-cart">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h3>Your cart is empty</h3>
+                    <p>Select products from search results to add them to your cart</p>
+                </div>
+            </div>
+            """
+        
+        # Group by store
+        by_store = {}
+        total_items = 0
+        total_price = 0.0
+        
+        for item in cart_items:
+            store = item.get("store_name", "Unknown Store")
+            if store not in by_store:
+                by_store[store] = []
+            by_store[store].append(item)
+            
+            quantity = item.get("quantity", 1)
+            total_items += quantity
+            
+            # Calculate price
+            price_str = item.get("price", "$0.00")
+            price_match = re.search(r'\d+\.?\d*', price_str.replace(',', ''))
+            if price_match:
+                price_value = float(price_match.group())
+                total_price += price_value * quantity
+        
+        # Build HTML
+        html_parts = [f"""
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>🛒 Your Cart</h2>
+                <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+            </div>
+        """]
+        
+        # Add items by store
+        cart_index = 0
+        for store_name, items in by_store.items():
+            html_parts.append(f"""
+            <div class="cart-store-section">
+                <h3 class="cart-store-name">🏪 {html.escape(store_name)}</h3>
+                <div class="cart-items">
+            """)
+            
+            for item in items:
+                quantity = item.get("quantity", 1)
+                qty_badge = f'<span class="quantity-badge">x{quantity}</span>' if quantity > 1 else ''
+                
+                # Get product image
+                image_url = item.get("image_url", "")
+                if image_url:
+                    image_html = f'<img src="{image_url}" alt="{html.escape(item.get("name", ""))}" onerror="this.src=\'https://via.placeholder.com/80x80/f1f5f9/64748b?text=No+Image\'">'
+                else:
+                    image_html = '<div class="cart-no-image">📦</div>'
+                
+                price_str = item.get("price", "N/A")
+                
+                html_parts.append(f"""
+                <div class="cart-item" data-cart-index="{cart_index}">
+                    <div class="cart-item-image">
+                        {image_html}
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">{html.escape(item.get('name', 'Unknown Product'))}</div>
+                        <div class="cart-item-price">{html.escape(price_str)}{qty_badge}</div>
+                        <div class="cart-item-meta">
+                            <span class="cart-item-size">Size: {html.escape(item.get('selected_size', 'M'))}</span>
+                        </div>
+                    </div>
+                </div>
+                """)
+                
+                cart_index += 1
+            
+            html_parts.append("</div></div>")  # Close cart-items and cart-store-section
+        
+        # Add cart summary
+        html_parts.append(f"""
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-amount">${total_price:.2f}</span>
+            </div>
+            <div class="cart-info">
+                <p style="margin: 0; font-size: 0.875rem; color: #64748b; text-align: center;">
+                    💡 Use chat to view cart details, remove items, or continue shopping
+                </p>
+            </div>
+        </div>
+        </div>
+        """)
+        
+        return "\n".join(html_parts)
+    
+    async def handle_conversation(self, message: str, history: List) -> Tuple[List, str, str]:
+        """
+        Complete conversation handler with product and cart extraction.
+        Returns: (updated_history, products_html, cart_html)
+        """
         
         if not message.strip():
-            return history, self.create_empty_products_html(), gr.update()
+            return history, self.create_empty_products_html(), self.format_cart_for_display([])
         
         try:
-            # Convert Gradio messages format to dictionary format for the assistant
+            # Convert Gradio messages format to dictionary format
             history_dicts = []
             for msg in history:
                 if isinstance(msg, dict) and "role" in msg and "content" in msg:
-                    # Already in correct format
                     history_dicts.append(msg)
                 elif isinstance(msg, list) and len(msg) == 2:
-                    # Old tuple format - convert
                     user_msg, assistant_msg = msg
                     if user_msg:
                         history_dicts.append({"role": "user", "content": user_msg})
                     if assistant_msg:
                         history_dicts.append({"role": "assistant", "content": assistant_msg})
             
-            # Process message with your backend
+            # Process message with backend
             updated_history_dicts = await self.assistant.run_conversation(message, history_dicts)
             
-            # Return dictionary format for Gradio messages type
-            updated_history = updated_history_dicts
-            
-            # Extract products from the conversation
+            # Extract products and cart
             products = self.extract_products_from_state(updated_history_dicts)
+            cart_items = self.extract_cart_from_state(updated_history_dicts)
             
+            # Update internal state
             if products:
                 self.current_products = products
-                products_html = self.create_products_grid_html(products)
-                
-                # Show product actions if products found
-                actions_update = gr.update(visible=True)
-            else:
-                products_html = self.create_empty_products_html()
-                actions_update = gr.update(visible=False)
             
-            return updated_history, products_html, actions_update
+            self.current_cart = cart_items
+            
+            # Format displays
+            products_html = self.create_products_grid_html(products) if products else self.create_empty_products_html()
+            cart_html = self.format_cart_for_display(cart_items)
+            
+            return updated_history_dicts, products_html, cart_html
             
         except Exception as e:
             print(f"❌ Error in handle_conversation: {e}")
             import traceback
             traceback.print_exc()
             error_msg = f"I encountered an error while processing your request. Please try again."
-            error_history = history + [{"role": "user", "content": message}, {"role": "assistant", "content": error_msg}]
-            return error_history, self.create_error_html(str(e)), gr.update(visible=False)
+            error_history = history + [
+                {"role": "user", "content": message}, 
+                {"role": "assistant", "content": error_msg}
+            ]
+            return error_history, self.create_error_html(str(e)), self.format_cart_for_display([])
 
     def create_modern_css(self):
         """Modern CSS styling for high-quality appearance"""
@@ -229,7 +289,7 @@ class ProductionShoppingUI:
         
         /* Global Overrides */
         .gradio-container {
-            max-width: 1400px !important;
+            max-width: 1600px !important;
             margin: 0 auto !important;
             background: var(--surface) !important;
         }
@@ -266,44 +326,6 @@ class ProductionShoppingUI:
             overflow: hidden !important;
         }
         
-        /* Input Styling */
-        .input-container {
-            background: var(--background) !important;
-            border: 2px solid var(--border) !important;
-            border-radius: var(--radius) !important;
-            transition: border-color 0.3s ease !important;
-        }
-        
-        .input-container:focus-within {
-            border-color: var(--primary-color) !important;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
-        }
-        
-        /* Button Styling */
-        .modern-btn {
-            background: var(--primary-color) !important;
-            color: white !important;
-            border: none !important;
-            border-radius: var(--radius-sm) !important;
-            padding: 0.75rem 1.5rem !important;
-            font-weight: 600 !important;
-            font-size: 1rem !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            box-shadow: var(--shadow) !important;
-        }
-        
-        .modern-btn:hover {
-            background: var(--primary-hover) !important;
-            transform: translateY(-1px) !important;
-            box-shadow: var(--shadow-lg) !important;
-        }
-        
-        .secondary-btn {
-            background: var(--secondary-color) !important;
-            color: white !important;
-        }
-        
         /* Products Container */
         .products-container {
             background: var(--background) !important;
@@ -314,17 +336,13 @@ class ProductionShoppingUI:
         }
         
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .main-header h1 {
                 font-size: 2rem !important;
             }
             
             .main-header p {
                 font-size: 1rem !important;
-            }
-            
-            .gradio-container {
-                padding: 1rem !important;
             }
         }
         """
@@ -355,21 +373,6 @@ class ProductionShoppingUI:
             font-size: 0.875rem;
         }
         
-        .products-filters {
-            display: flex;
-            gap: 0.75rem;
-        }
-        
-        .filter-select, .sort-select {
-            padding: 0.5rem 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            background: var(--background);
-            color: var(--text-primary);
-            font-size: 0.875rem;
-            cursor: pointer;
-        }
-        
         /* Products Grid */
         .products-grid {
             display: grid;
@@ -394,11 +397,6 @@ class ProductionShoppingUI:
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
             border-color: var(--primary-color);
-        }
-        
-        .product-card.selected {
-            border: 2px solid var(--primary-color);
-            background: rgba(37, 99, 235, 0.02);
         }
         
         /* Product Image */
@@ -446,18 +444,6 @@ class ProductionShoppingUI:
             z-index: 2;
         }
         
-        .relevance-score {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            z-index: 2;
-        }
-        
         /* Product Content */
         .product-content {
             padding: 1rem;
@@ -476,10 +462,6 @@ class ProductionShoppingUI:
             -webkit-box-orient: vertical;
         }
         
-        .product-price-container {
-            margin-bottom: 1rem;
-        }
-        
         .product-price {
             font-size: 1.125rem;
             font-weight: 700;
@@ -490,9 +472,10 @@ class ProductionShoppingUI:
         .product-actions {
             display: flex;
             gap: 0.5rem;
+            margin-top: 1rem;
         }
         
-        .select-btn, .view-btn {
+        .view-btn {
             flex: 1;
             padding: 0.625rem 0.75rem;
             border: none;
@@ -507,25 +490,6 @@ class ProductionShoppingUI:
             align-items: center;
             justify-content: center;
             gap: 0.25rem;
-        }
-        
-        .select-btn {
-            background: var(--surface);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-        
-        .select-btn:hover {
-            background: var(--border);
-        }
-        
-        .select-btn.selected {
-            background: var(--success-color);
-            color: white;
-            border-color: var(--success-color);
-        }
-        
-        .view-btn {
             background: var(--primary-color);
             color: white;
         }
@@ -534,44 +498,220 @@ class ProductionShoppingUI:
             background: var(--primary-hover);
         }
         
-        /* Selection Summary */
-        .selection-summary {
-            text-align: center;
-            padding: 1rem;
-            background: var(--surface);
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
-        }
-        
-        .selection-count {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
         /* Responsive Design */
         @media (max-width: 768px) {
-            .products-header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .products-filters {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .filter-select, .sort-select {
-                width: 100%;
-            }
-            
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: 1rem;
             }
-            
-            .product-actions {
-                flex-direction: column;
-            }
+        }
+        """
+    
+    def create_cart_css(self):
+        """CSS for cart display"""
+        return """
+        /* Cart Container */
+        .cart-container {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .cart-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .cart-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        /* Empty Cart */
+        .empty-cart {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .empty-cart-icon {
+            font-size: 64px;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+        
+        .empty-cart h3 {
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .empty-cart p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Store Section */
+        .cart-store-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-store-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+        }
+        
+        /* Cart Items */
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+        }
+        
+        .cart-item:hover {
+            background: var(--border);
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: white;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-no-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            background: var(--surface);
+        }
+        
+        .cart-item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .quantity-badge {
+            background: var(--success-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+        
+        .cart-item-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .cart-item-size {
+            background: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+        
+        /* Cart Summary */
+        .cart-summary {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .cart-total-amount {
+            color: var(--success-color);
+            font-size: 1.5rem;
+        }
+        
+        .cart-info {
+            padding: 0.75rem;
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+        }
+        
+        /* Scrollbar Styling */
+        .cart-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .cart-container::-webkit-scrollbar-track {
+            background: var(--surface);
+            border-radius: 4px;
+        }
+        
+        .cart-container::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        
+        .cart-container::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
         }
         """
     
@@ -580,7 +720,7 @@ class ProductionShoppingUI:
         return """
         <div class="main-header">
             <h1>🛍️ Outfitter.ai</h1>
-            <p>Your AI-powered shopping assistant for CultureKings & Universal Store</p>
+            <p>Your AI-powered shopping assistant with smart cart management</p>
         </div>
         """
     
@@ -604,31 +744,17 @@ class ProductionShoppingUI:
         url = product.get("url", "#")
         image_url = product.get("image_url", "https://via.placeholder.com/300x300/f1f5f9/64748b?text=No+Image")
         
-        # Create fallback image URL for better loading
-        fallback_url = "https://via.placeholder.com/400x400/f1f5f9/64748b?text=Loading+Image..."
+        fallback_url = "https://via.placeholder.com/400x400/f1f5f9/64748b?text=Loading..."
         store = html.escape(product.get("store_name", "Unknown Store"))
         is_on_sale = product.get("is_on_sale", False)
-        relevance_score = product.get("relevance_score", 0)
         
         # Sale badge
-        sale_badge = """
-        <div class="sale-badge">
-            <span>🔥 SALE</span>
-        </div>
-        """ if is_on_sale else ""
-        
-        # Relevance indicator (for debugging, can remove later)
-        relevance_indicator = f"""
-        <div class="relevance-score" title="AI Relevance Score">
-            <span>🎯 {relevance_score:.1f}/10</span>
-        </div>
-        """ if relevance_score > 0 else ""
+        sale_badge = '<div class="sale-badge"><span>🔥 SALE</span></div>' if is_on_sale else ""
         
         # Store badge
         store_colors = {
             "CultureKings": "#ff6b35",
             "Universal Store": "#2563eb", 
-            "Cotton On": "#059669"
         }
         store_color = store_colors.get(store, "#64748b")
         
@@ -641,10 +767,8 @@ class ProductionShoppingUI:
                     class="product-image"
                     onerror="this.src='{fallback_url}'"
                     loading="lazy"
-                    style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
                 />
                 {sale_badge}
-                {relevance_indicator}
                 <div class="store-badge" style="background-color: {store_color};">
                     {store}
                 </div>
@@ -658,11 +782,6 @@ class ProductionShoppingUI:
                 </div>
                 
                 <div class="product-actions">
-                    <button class="select-btn" onclick="toggleProduct({index})">
-                        <span class="select-text">Select</span>
-                        <span class="selected-text" style="display: none;">✓ Selected</span>
-                    </button>
-                    
                     <a href="{url}" target="_blank" rel="noopener noreferrer" class="view-btn">
                         <span>View Product</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -682,27 +801,12 @@ class ProductionShoppingUI:
         if not products:
             return self.create_empty_products_html()
         
-        # Header with product count and filters
+        # Header with product count
         header = f"""
         <div class="products-header">
             <div class="products-count">
                 <h3>Found {len(products)} products</h3>
-                <p>Click products to select them for comparison</p>
-            </div>
-            
-            <div class="products-filters">
-                <select class="filter-select" onchange="filterProducts(this.value)">
-                    <option value="all">All Stores</option>
-                    <option value="CultureKings">CultureKings</option>
-                    <option value="Universal Store">Universal Store</option>
-                </select>
-                
-                <select class="sort-select" onchange="sortProducts(this.value)">
-                    <option value="relevance">Sort by Relevance</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="store">Store</option>
-                </select>
+                <p>Use chat to select products by number (e.g., "I want #2")</p>
             </div>
         </div>
         """
@@ -710,122 +814,26 @@ class ProductionShoppingUI:
         # Product cards grid
         cards_html = '<div class="products-grid">'
         
-        for index, product in enumerate(products):
+        for index, product in enumerate(products, 1):
             cards_html += self.create_product_card_html(product, index)
         
         cards_html += '</div>'
-        
-        # JavaScript for interactivity
-        javascript = """
-        <script>
-        let selectedProducts = [];
-        
-        function toggleProduct(index) {
-            const card = document.querySelector(`[data-index="${index}"]`);
-            const selectBtn = card.querySelector('.select-btn');
-            const selectText = selectBtn.querySelector('.select-text');
-            const selectedText = selectBtn.querySelector('.selected-text');
-            
-            if (selectedProducts.includes(index)) {
-                // Deselect
-                selectedProducts = selectedProducts.filter(i => i !== index);
-                card.classList.remove('selected');
-                selectText.style.display = 'inline';
-                selectedText.style.display = 'none';
-                selectBtn.classList.remove('selected');
-            } else {
-                // Select
-                selectedProducts.push(index);
-                card.classList.add('selected');
-                selectText.style.display = 'none';
-                selectedText.style.display = 'inline';
-                selectBtn.classList.add('selected');
-            }
-            
-            updateSelectionUI();
-        }
-        
-        function updateSelectionUI() {
-            const countElement = document.querySelector('.selection-count');
-            if (countElement) {
-                countElement.textContent = `${selectedProducts.length} selected`;
-            }
-        }
-        
-        function filterProducts(store) {
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                const storeBadge = card.querySelector('.store-badge').textContent.trim();
-                if (store === 'all' || storeBadge === store) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-        
-        function sortProducts(sortBy) {
-            const grid = document.querySelector('.products-grid');
-            const cards = Array.from(grid.children);
-            
-            cards.sort((a, b) => {
-                switch(sortBy) {
-                    case 'price-low':
-                        return parsePrice(a) - parsePrice(b);
-                    case 'price-high':
-                        return parsePrice(b) - parsePrice(a);
-                    case 'store':
-                        return getStore(a).localeCompare(getStore(b));
-                    default:
-                        return 0;
-                }
-            });
-            
-            cards.forEach(card => grid.appendChild(card));
-        }
-        
-        function parsePrice(card) {
-            const priceText = card.querySelector('.product-price').textContent;
-            return parseFloat(priceText.replace(/[^\\d.]/g, '')) || 0;
-        }
-        
-        function getStore(card) {
-            return card.querySelector('.store-badge').textContent.trim();
-        }
-        </script>
-        """
         
         return f"""
         <div class="products-container">
             {header}
             {cards_html}
-            <div class="selection-summary">
-                <span class="selection-count">0 selected</span>
-            </div>
         </div>
-        {javascript}
         """
 
-    def create_loading_html(self, message: str = "Loading...") -> str:
-        """Create loading state HTML"""
-        return f"""
-        <div class="products-container">
-            <div class="loading-state">
-                <div class="loading-spinner"></div>
-                <h3>{message}</h3>
-                <p>This may take a few seconds...</p>
-            </div>
-        </div>
-        """
-    
     def create_error_html(self, error: str) -> str:
         """Create error state HTML"""
         return f"""
         <div class="products-container">
-            <div class="error-state">
+            <div style="text-align: center; color: #dc2626; padding: 3rem;">
                 <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
                 <h3>Something went wrong</h3>
-                <p>Please try your search again or contact support if the issue persists.</p>
+                <p>Please try your search again.</p>
                 <details style="margin-top: 1rem;">
                     <summary>Error Details</summary>
                     <code>{html.escape(error)}</code>
@@ -834,84 +842,23 @@ class ProductionShoppingUI:
         </div>
         """
     
-    def handle_product_selection(self, selected_indices: str) -> str:
-        """Handle product selection from frontend"""
-        try:
-            indices = json.loads(selected_indices) if selected_indices else []
-            selected_products = [self.current_products[i] for i in indices if i < len(self.current_products)]
-            
-            if not selected_products:
-                return "No products selected."
-            
-            # Create selection summary
-            summary = f"Selected {len(selected_products)} products:\n\n"
-            for i, product in enumerate(selected_products, 1):
-                summary += f"{i}. {product['name']} - {product['price']} ({product['store_name']})\n"
-            
-            return summary
-            
-        except Exception as e:
-            return f"Error processing selection: {str(e)}"
-    
     def get_example_searches(self) -> List[str]:
         """Get example search queries"""
         return [
             "Show me black hoodies",
-            "I need white sneakers size 10", 
+            "I need white sneakers", 
             "Looking for casual shirts under $50",
-            "Red dresses for a party",
-            "Blue jeans size 32",
-            "Winter jackets on sale"
+            "Red hoodies size L",
+            "Blue jeans",
+            "Show my cart"
         ]
     
     def create_complete_css(self) -> str:
-        """Complete CSS including all phases"""
-        return self.create_modern_css() + self.create_product_cards_css() + """
-        /* Loading States */
-        .loading-state, .error-state {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-secondary);
-        }
-        
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--border);
-            border-top: 4px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem auto;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .error-state details {
-            text-align: left;
-            background: var(--surface);
-            padding: 1rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
-        }
-        
-        .error-state code {
-            font-size: 0.875rem;
-            color: var(--error-color);
-        }
-        
-        /* Enhanced Responsive */
-        @media (max-width: 1024px) {
-            .gradio-container {
-                max-width: 95% !important;
-            }
-        }
-        """
+        """Complete CSS including all components"""
+        return self.create_modern_css() + self.create_product_cards_css() + self.create_cart_css()
 
 def create_complete_interface():
-    """Create the complete production-ready Gradio interface"""
+    """Create the complete production-ready Gradio interface with cart"""
     
     ui = ProductionShoppingUI()
     
@@ -924,17 +871,17 @@ def create_complete_interface():
             text_size="md"
         ),
         css=ui.create_complete_css(),
-        title="Outfitter.ai - AI Shopping Assistant",
+        title="Outfitter.ai - AI Shopping Assistant with Cart",
         analytics_enabled=False
     ) as interface:
         
         # Header
         gr.HTML(ui.create_header_html())
         
-        # Main layout
-        with gr.Row(equal_height=True):
-            # Left: Chat Interface
-            with gr.Column(scale=1, min_width=400):
+        # Main layout - 3 columns: Chat, Products, Cart
+        with gr.Row(equal_height=False):
+            # LEFT: Chat Interface
+            with gr.Column(scale=1, min_width=350):
                 gr.Markdown("### 💬 Chat with Assistant")
                 
                 chatbot = gr.Chatbot(
@@ -952,17 +899,15 @@ def create_complete_interface():
                 with gr.Row():
                     msg = gr.Textbox(
                         label="",
-                        placeholder="Tell me what you're looking for... (e.g., 'black hoodies size M')",
+                        placeholder="Tell me what you're looking for...",
                         lines=1,
                         show_label=False,
-                        elem_classes=["input-container"],
                         scale=4
                     )
                     
                     send_btn = gr.Button(
                         "Send",
                         variant="primary",
-                        elem_classes=["modern-btn"],
                         scale=1
                     )
                 
@@ -971,65 +916,60 @@ def create_complete_interface():
                     clear_btn = gr.Button(
                         "Clear Chat",
                         variant="secondary",
-                        elem_classes=["secondary-btn"],
                         scale=1
                     )
                     
                     examples_dropdown = gr.Dropdown(
                         choices=ui.get_example_searches(),
-                        label="Example Searches",
+                        label="Examples",
                         value=None,
                         scale=2
                     )
             
-            # Right: Products Display
-            with gr.Column(scale=1, min_width=400):
+            # MIDDLE: Products Display
+            with gr.Column(scale=2, min_width=400):
                 gr.Markdown("### 🛍️ Products Found")
                 
                 products_display = gr.HTML(
                     value=ui.create_empty_products_html(),
                     elem_classes=["products-container"]
                 )
+            
+            # RIGHT: Shopping Cart
+            with gr.Column(scale=1, min_width=300):
+                gr.Markdown("### 🛒 Shopping Cart")
                 
-                # Product interaction panel
-                with gr.Row(visible=False) as product_actions:
-                    with gr.Column():
-                        selection_display = gr.Textbox(
-                            label="Selected Products",
-                            lines=3,
-                            interactive=False
-                        )
-                        
-                        with gr.Row():
-                            compare_btn = gr.Button("Compare Selected", size="sm")
-                            save_btn = gr.Button("Save Favorites", size="sm")
-        
-        # Hidden states
-        conversation_state = gr.State([])
-        products_state = gr.State([])
-        selection_state = gr.State([])
+                cart_display = gr.HTML(
+                    value=ui.format_cart_for_display([]),
+                    elem_classes=["cart-container"]
+                )
+                
+                # Cart instructions
+                gr.Markdown("""
+                **Cart Commands:**
+                - "I want #2" - Add item to cart
+                - "Show my cart" - View cart details
+                - "Remove #1" - Remove item
+                - "Clear cart" - Empty cart
+                """, elem_classes=["cart-instructions"])
         
         # Event handlers
         async def send_message(message, history):
             return await ui.handle_conversation(message, history)
         
         def clear_conversation():
-            return [], ui.create_empty_products_html(), gr.update(visible=False), ""
+            empty_products = ui.create_empty_products_html()
+            empty_cart = ui.format_cart_for_display([])
+            return [], empty_products, empty_cart, ""
         
         def use_example(example):
             return example if example else ""
-        
-        def compare_products():
-            return "Product comparison feature coming soon!"
-        
-        def save_favorites():
-            return "Favorites feature coming soon!"
         
         # Event bindings
         send_btn.click(
             send_message,
             inputs=[msg, chatbot],
-            outputs=[chatbot, products_display, product_actions]
+            outputs=[chatbot, products_display, cart_display]
         ).then(
             lambda: "",
             outputs=[msg]
@@ -1038,7 +978,7 @@ def create_complete_interface():
         msg.submit(
             send_message,
             inputs=[msg, chatbot],
-            outputs=[chatbot, products_display, product_actions]
+            outputs=[chatbot, products_display, cart_display]
         ).then(
             lambda: "",
             outputs=[msg]
@@ -1046,7 +986,7 @@ def create_complete_interface():
         
         clear_btn.click(
             clear_conversation,
-            outputs=[chatbot, products_display, product_actions, selection_display]
+            outputs=[chatbot, products_display, cart_display, msg]
         )
         
         examples_dropdown.change(
@@ -1056,16 +996,6 @@ def create_complete_interface():
         ).then(
             lambda: None,
             outputs=[examples_dropdown]
-        )
-        
-        compare_btn.click(
-            compare_products,
-            outputs=[selection_display]
-        )
-        
-        save_btn.click(
-            save_favorites,
-            outputs=[selection_display]
         )
     
     return interface

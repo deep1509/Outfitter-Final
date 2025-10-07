@@ -1,6 +1,6 @@
 """
-Updated main.py with real scraping integration
-Replace your current main.py with this version
+Updated main.py with real scraping integration and complete cart management
+All cart persistence fixes applied
 """
 
 import os
@@ -26,8 +26,7 @@ from agents.conversation_agents.generalResponderAgent import SimpleGeneralRespon
 
 from tools.simple_product_verifier import SimpleProductVerifier
 from agents.conversation_agents.selectionHandler import SelectionHandler
-
-
+from agents.conversation_agents.cartManager import CartManager
 
 # Load environment variables
 load_dotenv()
@@ -35,35 +34,36 @@ load_dotenv()
 class OutfitterAssistant:
     """
     Main Outfitter.ai shopping assistant using LangGraph with real scraping integration.
-    Stage 2.3: Real Universal Store + CultureKings product search and presentation.
+    Includes full cart management with state persistence.
     """
         
     def __init__(self):
         # Initialize all conversation agents
         self.intent_classifier = RobustIntentClassifier()
         self.greeter = GreeterAgent()
-        self.needs_analyzer = NeedsAnalyzer()  # NEW
-        self.clarification_asker = SimpleClarificationAsker()  # UPDATED
+        self.needs_analyzer = NeedsAnalyzer()
+        self.clarification_asker = SimpleClarificationAsker()
         self.general_responder = SimpleGeneralResponder()
         self.selection_handler = SelectionHandler()
+        self.cart_manager = CartManager()
         
         # Memory for conversation persistence
         self.memory = MemorySaver()
         self.graph = None
         self.session_id = str(uuid.uuid4())
         
-        
-        
+        # Store products and state for Gradio access
         self.last_products = []
+        self._last_state = {}  # ADDED: Track last state for cart access
 
     def setup_graph(self):
-        """Build the LangGraph workflow with FIXED state propagation"""
+        """Build the LangGraph workflow with complete cart management"""
         print("Setting up Outfitter.ai LangGraph with real scraping integration...")
         
         # Create the graph
         workflow = StateGraph(OutfitterState)
         
-        # Add all nodes (keep your existing ones)
+        # Add all nodes
         workflow.add_node("intent_classifier", self._intent_classifier_node)
         workflow.add_node("greeter", self._greeter_node)
         workflow.add_node("needs_analyzer", self._needs_analyzer_node)
@@ -71,10 +71,11 @@ class OutfitterAssistant:
         workflow.add_node("general_responder", self._general_responder_node)
         workflow.add_node("parallel_searcher", self._real_parallel_searcher)
         workflow.add_node("product_presenter", self._product_presenter_node)
-        workflow.add_node("checkout_handler", self._mock_checkout_handler)
         workflow.add_node("selection_handler", self._selection_handler_node)
+        workflow.add_node("cart_manager", self._cart_manager_node)
+        workflow.add_node("checkout_handler", self._mock_checkout_handler)
         
-        # CRITICAL FIX: Ensure state updates propagate properly
+        # Start edge
         workflow.add_edge(START, "intent_classifier")
         
         # Intent routing
@@ -84,7 +85,8 @@ class OutfitterAssistant:
             {
                 "greeter": "greeter",
                 "needs_analyzer": "needs_analyzer",
-                "selection_handler": "selection_handler", 
+                "selection_handler": "selection_handler",
+                "cart_manager": "cart_manager",  # ADDED: Direct cart routing
                 "checkout_handler": "checkout_handler",
                 "general_responder": "general_responder",
                 "clarification_asker": "clarification_asker"
@@ -111,10 +113,10 @@ class OutfitterAssistant:
             }
         )
         
-        # FIXED: Parallel searcher routing with proper state handling
+        # Parallel searcher routing
         workflow.add_conditional_edges(
             "parallel_searcher",
-            self._route_after_search,  # ← USE THIS INSTEAD
+            self._route_after_search,
             {
                 "product_presenter": "product_presenter",
                 "clarification_asker": "clarification_asker",
@@ -132,6 +134,7 @@ class OutfitterAssistant:
             }
         )
         
+        # Product presenter routing
         workflow.add_conditional_edges(
             "product_presenter",
             self._route_after_presentation,
@@ -141,29 +144,38 @@ class OutfitterAssistant:
             }
         )
         
-        #routing from selection_handler
+        # Selection handler routing - CRITICAL for cart
         workflow.add_conditional_edges(
             "selection_handler",
             self._route_after_selection,
             {
+                "cart_manager": "cart_manager",  # Route to cart manager
                 "checkout_handler": "checkout_handler",
                 "product_presenter": "product_presenter",
                 "wait_for_user": END
             }
         )
         
+        # ADDED: Cart manager routing
+        workflow.add_conditional_edges(
+            "cart_manager",
+            self._route_after_cart_action,
+            {
+                "wait_for_user": END,
+                "product_presenter": "product_presenter",
+                "checkout_handler": "checkout_handler"
+            }
+        )
+        
         # End states
         workflow.add_edge("general_responder", END)
-        workflow.add_edge("selection_handler", END)
         workflow.add_edge("checkout_handler", END)
         
         # Compile with memory
         self.graph = workflow.compile(checkpointer=self.memory)
         print("✅ Real scraping integration setup complete!")
 
-            
-  
-    # ============ ENHANCED AGENT NODE WRAPPERS ============
+    # ============ AGENT NODE WRAPPERS ============
     
     def _intent_classifier_node(self, state: OutfitterState) -> Dict[str, Any]:
         """Enhanced AI-powered intent classification node"""
@@ -172,52 +184,83 @@ class OutfitterAssistant:
     def _needs_analyzer_node(self, state: OutfitterState) -> Dict[str, Any]:
         """AI-powered needs analysis and extraction node"""
         return self.needs_analyzer.analyze_needs(state)
-
     
     def _greeter_node(self, state: OutfitterState) -> Dict[str, Any]:
         """Enhanced personalized greeting node"""
         return self.greeter.greet_user(state)
     
-
-    
-    # UPDATE THE CLARIFICATION NODE METHOD (replace existing _clarification_node method)
     def _clarification_node(self, state: OutfitterState) -> Dict[str, Any]:
         """Simple clarification question generator node"""  
         return self.clarification_asker.ask_clarification(state)
     
-
     def _general_responder_node(self, state: OutfitterState) -> Dict[str, Any]:
-        """Enhanced AI-powered general response node"""
+        """
+        Enhanced AI-powered general response node.
+        CRITICAL FIX: Preserves cart state across questions.
+        """
         print("💬 GeneralResponder: Handling general query...")
         
         result = self.general_responder.respond_to_general_query(state)
         
         # CRITICAL: Preserve products_shown and awaiting_selection
-        # So user can still select after asking questions
         products_shown = state.get("products_shown", [])
         awaiting_selection = state.get("awaiting_selection", False)
+        
+        # CRITICAL FIX: Preserve cart state
+        selected_products = state.get("selected_products", [])
         
         if products_shown and awaiting_selection:
             print(f"   ✓ Preserving {len(products_shown)} shown products for selection")
             result["products_shown"] = products_shown
             result["awaiting_selection"] = True
-            result["conversation_stage"] = "presenting"  # Stay in presenting mode
+            result["conversation_stage"] = "presenting"
+        
+        # CRITICAL FIX: Always preserve cart
+        if selected_products:
+            print(f"   ✓ Preserving {len(selected_products)} items in cart")
+            result["selected_products"] = selected_products
+        else:
+            # Even if empty, explicitly set it to preserve the field
+            result["selected_products"] = []
         
         return result
     
-    # NEW NODE: Selection Handler
     def _selection_handler_node(self, state: OutfitterState) -> Dict[str, Any]:
-        """Handle product selections"""
-        return self.selection_handler.handle_selection(state)
+        """
+        Handle product selections.
+        ADDED: Debug logging to track cart flow.
+        """
+        print("🛒 SelectionHandler: Processing product selection...")
+        
+        result = self.selection_handler.handle_selection(state)
+        
+        # DEBUG: Track what's being set
+        print(f"   🔍 Selection result next_step: {result.get('next_step')}")
+        print(f"   🔍 Pending additions: {len(result.get('pending_cart_additions', []))}")
+        print(f"   🔍 Existing cart preserved: {len(result.get('selected_products', []))}")
+        
+        return result
+    
+    def _cart_manager_node(self, state: OutfitterState) -> Dict[str, Any]:
+        """
+        Handle cart operations - add, remove, view, clear.
+        ADDED: Comprehensive debug logging.
+        """
+        print(f"🛒 CART MANAGER NODE CALLED")
+        print(f"   📦 Current cart: {len(state.get('selected_products', []))} items")
+        print(f"   ➕ Pending additions: {len(state.get('pending_cart_additions', []))} items")
+        print(f"   🔧 Operation: {state.get('cart_operation', 'add')}")
+        
+        result = self.cart_manager.process_cart_action(state)
+        
+        print(f"   ✅ After processing: {len(result.get('selected_products', []))} items in cart")
+        
+        return result
     
     # ============ REAL SCRAPING INTEGRATION NODES ============
-        
-    # MAKE SURE your _real_parallel_searcher method returns this when products are found:
-
+    
     def _real_parallel_searcher(self, state: OutfitterState) -> Dict[str, Any]:
-        """
-        Real parallel searcher with client-side filtering and debug logging
-        """
+        """Real parallel searcher with client-side filtering and debug logging"""
         print("🔍 Starting real parallel search across stores...")
         search_criteria = state.get("search_criteria", {})
         search_query = self._build_search_query_from_criteria(search_criteria)
@@ -231,7 +274,7 @@ class OutfitterAssistant:
             # Run async scraping
             products = asyncio.run(search_all_stores(
                 query=search_query,
-                max_products=100  # Get more since we'll filter
+                max_products=100
             ))
             
             print(f"✅ Found {len(products)} products from scraping")
@@ -251,89 +294,19 @@ class OutfitterAssistant:
                 }
                 product_dicts.append(product_dict)
             
-            # ============ DEBUG: SAVE PRODUCTS BY STORE BEFORE FILTERING ============
-            import json
-            from datetime import datetime
-            
-            # Group products by store before filtering
-            products_by_store_before = {}
-            for product in product_dicts:
-                store_name = product.get("store_name", "Unknown Store")
-                if store_name not in products_by_store_before:
-                    products_by_store_before[store_name] = []
-                products_by_store_before[store_name].append(product)
-            
-            # Save before filtering debug data
-            debug_before_data = {
-                "timestamp": datetime.now().isoformat(),
-                "search_query": search_query,
-                "search_criteria": search_criteria,
-                "stage": "before_ai_filtering",
-                "total_products": len(product_dicts),
-                "products_by_store": products_by_store_before,
-                "store_counts": {store: len(products) for store, products in products_by_store_before.items()}
-            }
-            
-            debug_before_filename = f"debug_products_before_filtering_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-            with open(debug_before_filename, 'w', encoding='utf-8') as f:
-                json.dump(debug_before_data, f, indent=2, ensure_ascii=False)
-            
-            print(f"💾 DEBUG: Saved {len(product_dicts)} products BEFORE filtering to {debug_before_filename}")
-            print(f"📊 Store breakdown BEFORE filtering: {debug_before_data['store_counts']}")
-            # ============================================
-            
-            # ============ CLIENT-SIDE FILTERING ============
-            # Universal Store search doesn't work via URL, so filter client-side
+            # Client-side filtering
             if len(product_dicts) > 0:
                 from tools.simple_product_verifier import SimpleProductVerifier
                 verifier = SimpleProductVerifier()
                 
-                # Build user request from criteria
                 user_request = self._build_user_request_string(search_criteria, search_query)
                 
                 print(f"🔍 Applying AI filter for: '{user_request}'")
                 original_count = len(product_dicts)
                 
-                # Filter to only relevant products
                 product_dicts = verifier.filter_relevant_products(user_request, product_dicts)
                 
                 print(f"📊 Filtering result: {original_count} → {len(product_dicts)} products")
-            # ============================================
-            
-            # ============ DEBUG: SAVE PRODUCTS BY STORE AFTER FILTERING ============
-            # Group products by store after filtering
-            products_by_store_after = {}
-            for product in product_dicts:
-                store_name = product.get("store_name", "Unknown Store")
-                if store_name not in products_by_store_after:
-                    products_by_store_after[store_name] = []
-                products_by_store_after[store_name].append(product)
-            
-            # Save after filtering debug data
-            debug_after_data = {
-                "timestamp": datetime.now().isoformat(),
-                "search_query": search_query,
-                "search_criteria": search_criteria,
-                "stage": "after_ai_filtering",
-                "total_products": len(product_dicts),
-                "products_by_store": products_by_store_after,
-                "store_counts": {store: len(products) for store, products in products_by_store_after.items()},
-                "filtering_summary": {
-                    "original_total": original_count,
-                    "filtered_total": len(product_dicts),
-                    "filtered_out": original_count - len(product_dicts),
-                    "filtering_rate": f"{((original_count - len(product_dicts)) / original_count * 100):.1f}%" if original_count > 0 else "0%"
-                }
-            }
-            
-            debug_after_filename = f"debug_products_after_filtering_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-            with open(debug_after_filename, 'w', encoding='utf-8') as f:
-                json.dump(debug_after_data, f, indent=2, ensure_ascii=False)
-            
-            print(f"💾 DEBUG: Saved {len(product_dicts)} products AFTER filtering to {debug_after_filename}")
-            print(f"📊 Store breakdown AFTER filtering: {debug_after_data['store_counts']}")
-            print(f"📊 Filtering summary: {debug_after_data['filtering_summary']}")
-            # ============================================
             
             if len(product_dicts) > 0:
                 return {
@@ -350,88 +323,6 @@ class OutfitterAssistant:
             import traceback
             traceback.print_exc()
             return self._handle_scraping_error_sync(search_query, str(e))
-
-    # Make sure you also have these helper methods:
-    def _handle_no_products_found_sync(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle case where no products are found"""
-        message = f"""I searched for '{query}' but couldn't find any products right now. 
-
-    Would you like me to:
-    1. Try a broader search with different terms
-    2. Search for similar items  
-    3. Help you refine your search criteria"""
-
-        return {
-            "messages": [AIMessage(content=message)],
-            "search_results": [],
-            "search_query": query,
-            "search_successful": False,
-            "needs_clarification": True,
-            "conversation_stage": "discovery", 
-            "next_step": "clarification_asker"
-        }
-
-    def _handle_scraping_error_sync(self, query: str, error: str) -> Dict[str, Any]:
-        """Handle scraping errors"""
-        message = """I'm having trouble accessing the stores right now. Let me help you in other ways - what would you like to know about fashion or styling?"""
-
-        return {
-            "messages": [AIMessage(content=message)],
-            "search_results": [],
-            "search_query": query,
-            "search_successful": False,
-            "scraping_error": True,
-            "conversation_stage": "general",
-            "next_step": "general_responder"
-        }
-    # Also add these SYNCHRONOUS helper methods:
-    def _handle_no_products_found_sync(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle case where no products are found - SYNC version"""
-        
-        message = f"""I searched for '{query}' but couldn't find any products right now. This might be because:
-
-    • The stores might be experiencing high traffic
-    • Your specific criteria might be very specific  
-    • There could be temporary connectivity issues
-
-    Would you like me to:
-    1. Try a broader search with different terms
-    2. Search for similar items
-    3. Help you refine your search criteria"""
-
-        return {
-            "messages": [AIMessage(content=message)],
-            "search_results": [],
-            "search_query": query,
-            "search_successful": False,
-            "needs_clarification": True,
-            "conversation_stage": "discovery",
-            "next_step": "clarification_asker"
-        }
-
-    def _handle_scraping_error_sync(self, query: str, error: str) -> Dict[str, Any]:
-        """Handle scraping errors with user-friendly message - SYNC version"""
-        
-        print(f"Scraping error details: {error}")
-        
-        message = """I'm having trouble accessing the stores right now. This could be a temporary issue.
-
-    Let me try to help you in other ways:
-    • I can provide fashion advice and styling tips
-    • We can refine what you're looking for and try again  
-    • I can suggest general product categories to explore
-
-    What would you prefer to do?"""
-
-        return {
-            "messages": [AIMessage(content=message)],
-            "search_results": [],
-            "search_query": query,
-            "search_successful": False,
-            "scraping_error": True,
-            "conversation_stage": "general",
-            "next_step": "general_responder"
-        }
     
     def _product_presenter_node(self, state: OutfitterState) -> Dict[str, Any]:
         """
@@ -444,99 +335,33 @@ class OutfitterAssistant:
         search_query = state.get("search_query", "items")
         
         if not search_results:
-            self.last_products = []  # Clear stored products
+            self.last_products = []
             return self._handle_empty_presentation(search_query)
         
-        # BUILD USER REQUEST STRING
+        # Build user request string
         user_request = self._build_user_request_string(search_criteria, search_query)
         
-        # AI VERIFICATION - Simple and direct
-        from tools.simple_product_verifier import SimpleProductVerifier  # Make sure this import works
+        # AI verification
+        from tools.simple_product_verifier import SimpleProductVerifier
         verifier = SimpleProductVerifier()
-        
-        # ============ DEBUG: SAVE PRODUCTS BEFORE AI VERIFICATION IN PRESENTER ============
-        import json
-        from datetime import datetime
-        
-        # Group products by store before AI verification in presenter
-        products_by_store_presenter_before = {}
-        for product in search_results:
-            store_name = product.get("store_name", "Unknown Store")
-            if store_name not in products_by_store_presenter_before:
-                products_by_store_presenter_before[store_name] = []
-            products_by_store_presenter_before[store_name].append(product)
-        
-        # Save before AI verification in presenter
-        debug_presenter_before_data = {
-            "timestamp": datetime.now().isoformat(),
-            "search_query": search_query,
-            "search_criteria": search_criteria,
-            "stage": "before_ai_verification_in_presenter",
-            "total_products": len(search_results),
-            "products_by_store": products_by_store_presenter_before,
-            "store_counts": {store: len(products) for store, products in products_by_store_presenter_before.items()}
-        }
-        
-        debug_presenter_before_filename = f"debug_products_presenter_before_verification_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        with open(debug_presenter_before_filename, 'w', encoding='utf-8') as f:
-            json.dump(debug_presenter_before_data, f, indent=2, ensure_ascii=False)
-        
-        print(f"💾 DEBUG: Saved {len(search_results)} products BEFORE AI verification in presenter to {debug_presenter_before_filename}")
-        print(f"📊 Store breakdown BEFORE AI verification: {debug_presenter_before_data['store_counts']}")
-        # ============================================
         
         relevant_products = verifier.filter_relevant_products(user_request, search_results)
         
-        # ============ DEBUG: SAVE PRODUCTS AFTER AI VERIFICATION IN PRESENTER ============
-        # Group products by store after AI verification in presenter
-        products_by_store_presenter_after = {}
-        for product in relevant_products:
-            store_name = product.get("store_name", "Unknown Store")
-            if store_name not in products_by_store_presenter_after:
-                products_by_store_presenter_after[store_name] = []
-            products_by_store_presenter_after[store_name].append(product)
-        
-        # Save after AI verification in presenter
-        debug_presenter_after_data = {
-            "timestamp": datetime.now().isoformat(),
-            "search_query": search_query,
-            "search_criteria": search_criteria,
-            "stage": "after_ai_verification_in_presenter",
-            "total_products": len(relevant_products),
-            "products_by_store": products_by_store_presenter_after,
-            "store_counts": {store: len(products) for store, products in products_by_store_presenter_after.items()},
-            "verification_summary": {
-                "original_total": len(search_results),
-                "verified_total": len(relevant_products),
-                "filtered_out": len(search_results) - len(relevant_products),
-                "verification_rate": f"{((len(search_results) - len(relevant_products)) / len(search_results) * 100):.1f}%" if len(search_results) > 0 else "0%"
-            }
-        }
-        
-        debug_presenter_after_filename = f"debug_products_presenter_after_verification_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        with open(debug_presenter_after_filename, 'w', encoding='utf-8') as f:
-            json.dump(debug_presenter_after_data, f, indent=2, ensure_ascii=False)
-        
-        print(f"💾 DEBUG: Saved {len(relevant_products)} products AFTER AI verification in presenter to {debug_presenter_after_filename}")
-        print(f"📊 Store breakdown AFTER AI verification: {debug_presenter_after_data['store_counts']}")
-        print(f"📊 Verification summary: {debug_presenter_after_data['verification_summary']}")
-        # ============================================
-        
-        # CRITICAL: STORE PRODUCTS FOR GRADIO ACCESS
-        self.last_products = relevant_products  # This is what Gradio will access
+        # CRITICAL: Store products for Gradio access
+        self.last_products = relevant_products
         print(f"🔗 Stored {len(relevant_products)} products for Gradio access")
         
         if not relevant_products:
-            self.last_products = []  # Clear stored products
+            self.last_products = []
             
             message = f"""I found {len(search_results)} products but none actually matched your request for "{user_request}".
 
-    The products were different categories or colors than what you asked for.
+The products were different categories or colors than what you asked for.
 
-    Would you like me to:
-    1. Show you similar items anyway?
-    2. Try a different search?
-    3. Help refine your request?"""
+Would you like me to:
+1. Show you similar items anyway?
+2. Try a different search?
+3. Help refine your request?"""
 
             return {
                 "messages": [AIMessage(content=message)],
@@ -547,7 +372,7 @@ class OutfitterAssistant:
                 "awaiting_selection": True
             }
         
-        # PRESENT ONLY RELEVANT PRODUCTS using existing logic
+        # Group by store and build presentation
         products_by_store = {}
         for product in relevant_products:
             store_name = product.get("store_name", "Unknown Store")
@@ -555,7 +380,6 @@ class OutfitterAssistant:
                 products_by_store[store_name] = []
             products_by_store[store_name].append(product)
         
-        # Build the presentation message
         presentation = self._build_product_presentation(products_by_store, user_request)
         selection_instructions = self._build_selection_instructions(len(relevant_products))
         
@@ -569,16 +393,12 @@ class OutfitterAssistant:
             "awaiting_selection": True,
             "verification_completed": True
         }
-
-    # ============ ENHANCED ROUTING LOGIC ============
+    
+    # ============ ROUTING LOGIC ============
     
     def _route_after_intent_classification(self, state: OutfitterState) -> str:
         """
-        Smart routing based on intent - UPDATED for Stage 3
-        
-        When products are shown:
-        - Questions/advice → general_responder
-        - Selections → selection_handler
+        Smart routing based on intent with cart awareness.
         """
         import re
         
@@ -602,7 +422,7 @@ class OutfitterAssistant:
                 
                 content_lower = content.lower()
                 
-                # SELECTION INDICATORS - Clear intent to select products
+                # Selection indicators
                 selection_keywords = [
                     '#', 'number', 'option',
                     'i want', 'i\'ll take', 'i like', 
@@ -610,7 +430,7 @@ class OutfitterAssistant:
                     'get me', 'buy', 'purchase'
                 ]
                 
-                # QUESTION INDICATORS - Asking for help/advice
+                # Question indicators
                 question_keywords = [
                     'how', 'what', 'why', 'which', 'when', 'where',
                     'should i', 'can you', 'tell me', 'show me more',
@@ -618,7 +438,7 @@ class OutfitterAssistant:
                     'recommend', 'suggest', 'help', 'think'
                 ]
                 
-                # Check for ordinal numbers (first, second, third)
+                # Check for ordinal numbers
                 ordinals = ['first', 'second', 'third', 'fourth', 'fifth']
                 has_ordinal = any(ord in content_lower for ord in ordinals)
                 
@@ -648,7 +468,12 @@ class OutfitterAssistant:
                     print(f"   🔢 Routing: Numbers detected → selection_handler")
                     return "selection_handler"
         
-        # Existing routing logic for other intents
+        # Cart intent routing
+        if current_intent == "cart":
+            print(f"   🛒 Routing: CART intent → cart_manager")
+            return "cart_manager"
+        
+        # Existing routing logic
         if next_step == "clarification_asker" and current_intent == "search":
             return "needs_analyzer"
         
@@ -658,278 +483,194 @@ class OutfitterAssistant:
         return next_step
 
     def _route_after_greeting(self, state: OutfitterState) -> str:
-        """Route after enhanced greeting based on user context"""
+        """Route after greeting"""
         next_step = state.get("next_step", "wait_for_user")
         
-        # Enhanced greeter might fast-track urgent users
         if next_step == "needs_analyzer":
             return "needs_analyzer"
         
         return "wait_for_user"
     
     def _route_after_needs_analysis(self, state: OutfitterState) -> str:
-        """Route after needs analysis based on sufficiency assessment"""
+        """Route after needs analysis"""
         return state.get("next_step", "clarification_asker")
-
     
     def _route_after_clarification(self, state: OutfitterState) -> str:
-        """Route after clarification questioning - always wait for user"""
-        # Clarification asker always waits for user input
+        """Route after clarification - always wait for user"""
         return "wait_for_user"
     
     def _route_after_search(self, state: OutfitterState) -> str:
-        """
-        UPDATED: Route after parallel search with enhanced debugging and multiple routing strategies.
-        Handles LangGraph state propagation issues by checking multiple success indicators.
-        """
+        """Route after parallel search"""
         
-        print(f"🔄 ROUTING AFTER SEARCH - ENHANCED DEBUG:")
-        print(f"   📊 All state keys: {list(state.keys())}")
+        print(f"🔄 ROUTING AFTER SEARCH:")
         
-        # Extract all relevant state information
         search_results = state.get("search_results", [])
-        search_successful = state.get("search_successful", False)
         next_step = state.get("next_step", None)
         conversation_stage = state.get("conversation_stage", "unknown")
         scraping_error = state.get("scraping_error", False)
-        search_query = state.get("search_query", "unknown")
         
         print(f"   🔍 search_results count: {len(search_results)}")
-        print(f"   ✅ search_successful flag: {search_successful}")
         print(f"   ➡️  next_step: {next_step}")
         print(f"   🎭 conversation_stage: {conversation_stage}")
-        print(f"   ❌ scraping_error: {scraping_error}")
-        print(f"   🔎 search_query: {search_query}")
         
-        # STRATEGY 1: Route by explicit next_step (highest priority)
+        # Route by explicit next_step
         if next_step == "product_presenter":
-            print("✅ ROUTING STRATEGY 1: Using explicit next_step = product_presenter")
+            print("✅ Routing to product_presenter")
             return "product_presenter"
         
-        # STRATEGY 2: Route by results count (most reliable indicator)
+        # Route by results count
         if len(search_results) > 0:
-            print(f"✅ ROUTING STRATEGY 2: Found {len(search_results)} products - routing to product_presenter")
-            print(f"   📦 Sample product: {search_results[0].get('name', 'Unknown') if search_results else 'None'}")
+            print(f"✅ Found {len(search_results)} products - routing to product_presenter")
             return "product_presenter"
         
-        # STRATEGY 3: Route by success flag (if state propagated correctly)
-        if search_successful:
-            print("✅ ROUTING STRATEGY 3: search_successful=True - routing to product_presenter")
-            return "product_presenter"
-        
-        # STRATEGY 4: Route by conversation stage
-        if conversation_stage == "presenting":
-            print("✅ ROUTING STRATEGY 4: conversation_stage=presenting - routing to product_presenter")
-            return "product_presenter"
-        
-        # ERROR HANDLING: Route scraping errors to general responder
+        # Error handling
         if scraping_error:
-            print("❌ ROUTING TO GENERAL_RESPONDER: scraping_error=True")
+            print("❌ Routing to general_responder (scraping error)")
             return "general_responder"
         
-        # DEFAULT: Route to clarification if no success indicators found
-        print("🤔 ROUTING TO CLARIFICATION_ASKER: No success indicators detected")
-        print("   💡 This suggests either:")
-        print("      - No products were actually found")
-        print("      - LangGraph state is not propagating correctly")
-        print("      - There's an issue in _real_parallel_searcher return values")
-        
+        # Default
+        print("🔄 Routing to clarification_asker")
         return "clarification_asker"
     
     def _route_after_selection(self, state: OutfitterState) -> str:
-        """Route after user makes selection"""
-        next_step = state.get("next_step", "wait_for_user")
+        """
+        Route after selection - CRITICAL for cart persistence.
+        """
+        next_step = state.get("next_step", "cart_manager")
         
-        # If user wants to checkout
+        print(f"   🔄 Routing after selection: next_step = {next_step}")
+        
         if next_step == "checkout_handler":
             return "checkout_handler"
         
-        # If user wants to see more products
         if next_step == "product_presenter":
             return "product_presenter"
         
-        # Default: wait for user action
-        return "wait_for_user"
+        # DEFAULT: Route to cart_manager to persist selections
+        print(f"   🔄 → cart_manager (to add items)")
+        return "cart_manager"
     
-    # NEW ROUTING: After product presentation
     def _route_after_presentation(self, state: OutfitterState) -> str:
         """Route after showing products"""
-        # If products were shown, wait for selection
         products_shown = state.get("products_shown", [])
         
         if products_shown:
-            # Check if next message is a selection
-            # This will be determined by intent classifier on next turn
             return "wait_for_user"
         
         return "wait_for_user"
-
-
+    
+    def _route_after_cart_action(self, state: OutfitterState) -> str:
+        """
+        Route after cart operation completes.
+        ADDED: Critical routing method for cart flow.
+        """
+        next_step = state.get("next_step", "wait_for_user")
+        
+        print(f"   🔄 Routing after cart action: {next_step}")
+        
+        if next_step == "product_presenter":
+            return "product_presenter"
+        
+        if next_step == "checkout_handler":
+            return "checkout_handler"
+        
+        return "wait_for_user"
+    
+    # ============ HELPER METHODS ============
+    
     def _build_search_query_from_criteria(self, criteria: Dict[str, Any]) -> str:
-        """
-        Build a search query string from extracted user criteria.
-        Combines category, color, style preferences into searchable terms.
-        """
+        """Build a search query string from extracted user criteria"""
         query_parts = []
         
-        # Add color preference
         color = criteria.get("color_preference", "").strip()
         if color:
             query_parts.append(color)
         
-        # Add category (most important)
         category = criteria.get("category", "").strip()
         if category:
             query_parts.append(category)
         else:
-            # Default to common clothing types if no category specified
             query_parts.append("clothing")
         
-        # Add style preference
         style = criteria.get("style_preference", "").strip()
         if style:
             query_parts.append(style)
         
-        # Build final query
         if query_parts:
             return " ".join(query_parts)
         
-        return "clothing"  # Safe fallback
-
-    async def _handle_no_products_found(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle case where no products are found"""
+        return "clothing"
+    
+    def _build_user_request_string(self, criteria: Dict[str, Any], query: str) -> str:
+        """Build clear user request string for AI verification"""
+        parts = []
         
-        message = f"""I searched for '{query}' but couldn't find any products right now. This might be because:
-
-• The stores might be experiencing high traffic
-• Your specific criteria might be very specific
-• There could be temporary connectivity issues
-
-Would you like me to:
-1. Try a broader search with different terms
-2. Search for similar items
-3. Help you refine your search criteria"""
-
-        return {
-            "messages": [AIMessage(content=message)],
-            "search_results": [],
-            "search_query": query,
-            "search_successful": False,
-            "needs_clarification": True,
-            "conversation_stage": "discovery",
-            "next_step": "clarification_asker"
-        }
-
-    async def _handle_scraping_error(self, query: str, error: str) -> Dict[str, Any]:
-        """Handle scraping errors with user-friendly message"""
+        color = criteria.get("color_preference", "")
+        if color:
+            parts.append(color)
         
-        print(f"Scraping error details: {error}")  # For debugging
+        category = criteria.get("category", "")
+        if category:
+            parts.append(category)
         
-        message = """I'm having trouble accessing the stores right now. This could be a temporary issue.
-
-Let me try to help you in other ways:
-• I can provide fashion advice and styling tips
-• We can refine what you're looking for and try again
-• I can suggest general product categories to explore
-
-What would you prefer to do?"""
-
-        return {
-            "messages": [AIMessage(content=message)],
-            "search_results": [],
-            "search_query": query,
-            "search_successful": False,
-            "scraping_error": True,
-            "conversation_stage": "general",
-            "next_step": "general_responder"
-        }
+        size = criteria.get("size", "")
+        if size:
+            parts.append(f"size {size}")
+        
+        style = criteria.get("style_preference", "")
+        if style:
+            parts.append(style)
+        
+        if parts:
+            return " ".join(parts)
+        
+        return query if query != "items" else "clothing"
     
     def _build_product_presentation(self, products_by_store: Dict[str, List[Dict]], query: str) -> str:
         """Build formatted product presentation organized by store"""
-        
         presentation_parts = []
         item_number = 1
         
-        # Add header
         total_products = sum(len(products) for products in products_by_store.values())
         store_count = len(products_by_store)
         
         presentation_parts.append(f"🛍️ Found {total_products} great options from {store_count} stores for '{query}':")
         presentation_parts.append("")
         
-        # Present products by store
         for store_name, products in products_by_store.items():
             if not products:
                 continue
                 
             presentation_parts.append(f"🏪 **{store_name}:**")
             
-            for product in products[:5]:  # Limit to 5 per store for readability
+            for product in products[:5]:
                 product_line = self._format_single_product(product, item_number)
                 presentation_parts.append(product_line)
                 item_number += 1
             
-            presentation_parts.append("")  # Space between stores
+            presentation_parts.append("")
         
         return "\n".join(presentation_parts)
     
-    def _build_user_request_string(self, criteria: Dict[str, Any], query: str) -> str:
-        """Build clear user request string for AI verification"""
-        
-        parts = []
-        
-        # Add color if specified
-        color = criteria.get("color_preference", "")
-        if color:
-            parts.append(color)
-        
-        # Add category if specified  
-        category = criteria.get("category", "")
-        if category:
-            parts.append(category)
-        
-        # Add size if specified
-        size = criteria.get("size", "")
-        if size:
-            parts.append(f"size {size}")
-        
-        # Add style if specified
-        style = criteria.get("style_preference", "")
-        if style:
-            parts.append(style)
-        
-        # If we have structured parts, use those
-        if parts:
-            return " ".join(parts)
-        
-        # Otherwise use the original query
-        return query if query != "items" else "clothing"
-
     def _format_single_product(self, product: Dict[str, Any], item_number: int) -> str:
         """Format a single product for display"""
-        
         name = product.get("name", "Unknown Product")
         price = product.get("price", "Price unavailable")
         is_on_sale = product.get("is_on_sale", False)
         url = product.get("url", "")
         
-        # Build the product line
         sale_indicator = " 🔥" if is_on_sale else ""
         
-        # Format with item number for easy selection
         product_line = f"{item_number}. **{name}**{sale_indicator}"
         product_line += f"\n   💰 {price}"
         
         if url:
-            # Truncate long URLs for readability
-            display_url = url
-            product_line += f"\n   🔗 {display_url}"
+            product_line += f"\n   🔗 {url}"
         
         return product_line
-
+    
     def _build_selection_instructions(self, product_count: int) -> str:
         """Build clear instructions for product selection"""
-        
         if product_count <= 3:
             return """💡 **What would you like to do?**
 • Tell me the number of any item you're interested in (e.g., "I like #1")
@@ -950,10 +691,9 @@ What would you prefer to do?"""
 • Ask me to narrow down options based on price, style, or store preference
 • Request more details about any items that caught your eye
 • Let me know if you'd like styling advice or outfit suggestions"""
-
+    
     def _handle_empty_presentation(self, query: str) -> Dict[str, Any]:
         """Handle case where no products to present"""
-        
         message = f"""I don't have any products to show you right now for '{query}'. 
 
 This could be because:
@@ -973,20 +713,73 @@ Would you like to:
             "next_step": "clarification_asker"
         }
     
-   
-    def _mock_checkout_handler(self, state: OutfitterState) -> Dict[str, Any]:
-        """Mock checkout handler - will be implemented in Stage 4"""
+    def _handle_no_products_found_sync(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
+        """Handle case where no products are found"""
+        message = f"""I searched for '{query}' but couldn't find any products right now. 
+
+Would you like me to:
+1. Try a broader search with different terms
+2. Search for similar items  
+3. Help you refine your search criteria"""
+
         return {
-            "messages": [AIMessage(content="🔧 [MOCK CHECKOUT] Checkout processing will be implemented in Stage 4 with cart management!")],
+            "messages": [AIMessage(content=message)],
+            "search_results": [],
+            "search_query": query,
+            "search_successful": False,
+            "needs_clarification": True,
+            "conversation_stage": "discovery", 
+            "next_step": "clarification_asker"
+        }
+
+    def _handle_scraping_error_sync(self, query: str, error: str) -> Dict[str, Any]:
+        """Handle scraping errors"""
+        print(f"Scraping error details: {error}")
+        
+        message = """I'm having trouble accessing the stores right now. Let me help you in other ways - what would you like to know about fashion or styling?"""
+
+        return {
+            "messages": [AIMessage(content=message)],
+            "search_results": [],
+            "search_query": query,
+            "search_successful": False,
+            "scraping_error": True,
+            "conversation_stage": "general",
+            "next_step": "general_responder"
+        }
+    
+    def _mock_checkout_handler(self, state: OutfitterState) -> Dict[str, Any]:
+        """Mock checkout handler"""
+        return {
+            "messages": [AIMessage(content="🔧 Checkout feature coming soon! Your cart has been saved.")],
             "next_step": "wait_for_user"
         }
+    
+    # ============ GRADIO INTERFACE METHODS ============
+    
+    def get_current_cart(self) -> List[Dict[str, Any]]:
+        """
+        Get current cart items for Gradio UI.
+        ADDED: Essential method for cart display.
+        """
+        try:
+            if hasattr(self, '_last_state'):
+                cart = self._last_state.get("selected_products", [])
+                print(f"🛒 get_current_cart(): Returning {len(cart)} items")
+                return cart
+            
+            print(f"🛒 get_current_cart(): No _last_state, returning empty cart")
+            return []
+        except Exception as e:
+            print(f"❌ Error getting cart: {e}")
+            return []
     
     # ============ MAIN INTERFACE ============
     
     async def run_conversation(self, message: str, history: List[Dict]) -> List[Dict]:
         """
-        Run conversation with enhanced agents and real scraping integration.
-        Handles the complete conversation flow with AI-powered responses and real products.
+        Run conversation with complete cart management.
+        UPDATED: Stores state for cart access.
         """
         print(f"🤖 Processing: '{message}' with {len(history)} history items")
         
@@ -1004,7 +797,7 @@ Would you like to:
         # Add new user message
         messages.append(HumanMessage(content=message))
         
-        # Build enhanced state with conversation context
+        # Build state
         user_message_count = len([msg for msg in messages if isinstance(msg, HumanMessage)])
         
         state = {
@@ -1021,14 +814,16 @@ Would you like to:
         }
         
         try:
-            # Run the enhanced conversation graph with real scraping
+            # Run the conversation graph
             result = await self.graph.ainvoke(state, config=config)
-            # In run_conversation method, after result = await self.graph.ainvoke(state, config=config)
-            print(f"🔄 DEBUG: Graph execution result keys: {list(result.keys())}")
+            
+            # CRITICAL: Store state for cart access
+            self._last_state = result
+            
+            # Debug logging
             print(f"🔄 DEBUG: Final state conversation_stage: {result.get('conversation_stage')}")
-            print(f"🔄 DEBUG: Final state search_criteria: {result.get('search_criteria')}")
-            print(f"🔄 DEBUG: Final state next_step: {result.get('next_step')}")
-            print(f"✅ Real scraping integration graph execution completed")
+            print(f"🔄 DEBUG: Final cart items: {len(result.get('selected_products', []))}")
+            print(f"✅ Graph execution completed")
             
             # Extract the latest assistant message
             assistant_messages = [msg for msg in result.get("messages", []) if isinstance(msg, AIMessage)]
@@ -1044,39 +839,37 @@ Would you like to:
             return history + [user_msg, assistant_msg]
             
         except Exception as e:
-            print(f"❌ Enhanced conversation error: {e}")
+            print(f"❌ Conversation error: {e}")
             import traceback
             traceback.print_exc()
             
-            # Enhanced error handling
+            # Error handling
             user_msg = {"role": "user", "content": message}
             error_msg = {"role": "assistant", "content": "I apologize for the technical hiccup. I'm your fashion and shopping assistant - what can I help you find today?"}
             return history + [user_msg, error_msg]
     
     def cleanup(self):
-        """Clean up enhanced conversation resources"""
-        print("🧹 Cleaning up enhanced conversation resources...")
+        """Clean up conversation resources"""
+        print("🧹 Cleaning up conversation resources...")
 
 
 # ============ MAIN EXECUTION ============
 
 def main():
-    """Test the enhanced Outfitter.ai setup with real scraping"""
-    print("🚀 Starting Enhanced Outfitter.ai with Real Scraping Integration...")
+    """Test the Outfitter.ai setup"""
+    print("🚀 Starting Outfitter.ai with Complete Cart Management...")
     
     assistant = OutfitterAssistant()
     assistant.setup_graph()
     
-    print("\n✅ Real scraping integration setup complete!")
-    print("🎯 Stage 2.3 Features:")
-    print("   ✓ AI-powered intent classification with context awareness")
-    print("   ✓ Personalized greetings that adapt to user type") 
-    print("   ✓ Smart clarification questions (one at a time)")
-    print("   ✓ Fashion expert general responses")
-    print("   ✓ REAL Universal Store + CultureKings product search")
-    print("   ✓ Professional product presentation with sale indicators")
-    print("   ✓ Error handling for scraping failures")
-    print("\n🛍️ Ready to provide real shopping assistance with live product data!")
+    print("\n✅ Setup complete!")
+    print("🎯 Features:")
+    print("   ✓ AI-powered intent classification")
+    print("   ✓ Smart clarification questions")
+    print("   ✓ Real product search and presentation")
+    print("   ✓ Complete cart management with persistence")
+    print("   ✓ Cart survives questions and interactions")
+    print("\n🛍️ Ready to shop!")
 
 if __name__ == "__main__":
     main()
