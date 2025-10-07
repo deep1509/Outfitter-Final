@@ -1,0 +1,198 @@
+{
+  "timestamp": "2025-10-07T15:55:38.491675",
+  "user_request": "shirts size M graphic",
+  "total_original": 16,
+  "total_kept": 16,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "CultureKings": {
+      "original_count": 16,
+      "kept_count": 16,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Adidas Chip In NYC Graphic T-Shirt White",
+      "price": "$60.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/adidas-chip-in-nyc-graphic-t-shirt-white-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055381-YW100_mens_0010.jpg?v=1759266806",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127306"
+    },
+    {
+      "name": "Adidas Teamgeist T-Shirt Green/Black",
+      "price": "$60.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/adidas-teamgeist-t-shirt-green-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055078-YG604_mens_0010.jpg?v=1759266764",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127309"
+    },
+    {
+      "name": "Adidas Teamgeist T-Shirt White/Black",
+      "price": "$60.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/adidas-teamgeist-t-shirt-white-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054742-YW110_mens_0010.jpg?v=1759267966",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127312"
+    },
+    {
+      "name": "American Thrift Block Fit T-Shirt Off White",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-off-white-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YO007_mens_0010.jpg?v=1759363410",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127289"
+    },
+    {
+      "name": "American Thrift Block Fit T-Shirt White",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-white-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YW100_mens_0010.jpg?v=1759363434",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127286"
+    },
+    {
+      "name": "American Thrift Everyday Oversized T-Shirt Black",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YB001_mens_0010.jpg?v=1759363326",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127299"
+    },
+    {
+      "name": "New Era Chicago Bulls Paisley Oversized T-Shirt Black",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-chicago-bulls-paisley-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053087-YB001_mens_0010.jpg?v=1758672721",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127332"
+    },
+    {
+      "name": "New Era Chicago White Sox 'Hyperfly Katakana x MLB' T-Shirt Black",
+      "price": "$85.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-chicago-white-sox-hyperfly-katakana-x-mlb-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054452-YB001_mens_0010.jpg?v=1758578306",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127360"
+    },
+    {
+      "name": "New Era Detroit Tigers Paisley Oversized T-Shirt White",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-detroit-tigers-paisley-oversized-t-shirt-white-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053088-YW100_mens_0010.jpg?v=1758672601",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127335"
+    },
+    {
+      "name": "New Era Las Vegas Raiders Paisley Oversized T-Shirt Black",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-las-vegas-raiders-paisley-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053089-YB001_mens_0010.jpg?v=1758578528",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127354"
+    },
+    {
+      "name": "New Era Los Angeles Dodgers Paisley Oversized T-Shirt Black",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-los-angeles-dodgers-paisley-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053090-YB001_mens_0010.jpg?v=1758672867",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127326"
+    },
+    {
+      "name": "New Era New York Yankees Paisley Oversized T-Shirt White",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-new-york-yankees-paisley-oversized-t-shirt-white-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053091-YW100_mens_0010.jpg?v=1758672838",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127329"
+    },
+    {
+      "name": "New Era San Diego Padres 'Hyperfly Katakana x MLB' T-Shirt Dark Brown",
+      "price": "$85.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-san-diego-padres-hyperfly-katakana-x-mlb-t-shirt-dark-brown-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054456-YX564_mens_0010.jpg?v=1758578465",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127363"
+    },
+    {
+      "name": "Snoop Dogg Long Beach T-Shirt Black",
+      "price": "$59.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/snoop-dogg-long-beach-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055558-YB001_mens_0010.jpg?v=1758671987",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127344"
+    },
+    {
+      "name": "Snoop Dogg Smoke Session T-Shirt Black",
+      "price": "$59.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/snoop-dogg-smoke-session-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055073-YB001_mens_0010.jpg?v=1758671742",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127351"
+    },
+    {
+      "name": "Snoop Dogg The Dogg T-Shirt Sand",
+      "price": "$59.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/snoop-dogg-the-dogg-t-shirt-sand-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055559-YS214_mens_0010.jpg?v=1758671961",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T15:55:35.127348"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

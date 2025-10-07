@@ -55,7 +55,11 @@ class CartManager:
         existing_cart = state.get("selected_products", [])
         new_selections = state.get("pending_cart_additions", [])
         
+        print(f"   🔍 DEBUG: existing_cart has {len(existing_cart)} items")
+        print(f"   🔍 DEBUG: new_selections has {len(new_selections)} items")
+        
         if not new_selections:
+            print("   ⚠️ No new selections to add")
             return {
                 "messages": [AIMessage(content="I didn't catch which items you want to add. Could you tell me the product numbers?")],
                 "conversation_stage": "presenting",
@@ -93,24 +97,48 @@ class CartManager:
         }
     
     def _remove_from_cart(self, state: OutfitterState) -> Dict[str, Any]:
-        """Remove items from cart by index."""
+        """Remove items from cart by index or by product matching."""
         print("   ➖ Removing items from cart...")
         
         cart = state.get("selected_products", [])
         indices_to_remove = state.get("cart_removal_indices", [])
+        pending_removals = state.get("pending_cart_additions", [])  # Items to remove
         
-        if not indices_to_remove or not cart:
+        print(f"   🔍 DEBUG: cart has {len(cart)} items")
+        print(f"   🔍 DEBUG: indices_to_remove: {indices_to_remove}")
+        print(f"   🔍 DEBUG: pending_removals: {len(pending_removals)} items")
+        
+        if not cart:
             return {
-                "messages": [AIMessage(content="Which items would you like to remove? (e.g., 'remove #1 and #3')")],
+                "messages": [AIMessage(content="Your cart is empty! There's nothing to remove.")],
                 "conversation_stage": "cart",
                 "next_step": "wait_for_user"
             }
         
-        # Remove items (in reverse order to maintain indices)
         removed_items = []
-        for idx in sorted(indices_to_remove, reverse=True):
-            if 0 <= idx < len(cart):
-                removed_items.append(cart.pop(idx))
+        
+        # Method 1: Remove by indices (if provided)
+        if indices_to_remove:
+            for idx in sorted(indices_to_remove, reverse=True):
+                if 0 <= idx < len(cart):
+                    removed_items.append(cart.pop(idx))
+        
+        # Method 2: Remove by product matching (from pending_cart_additions)
+        elif pending_removals:
+            for item_to_remove in pending_removals:
+                # Find matching item in cart by name or URL
+                for i, cart_item in enumerate(cart):
+                    if (cart_item.get("name") == item_to_remove.get("name") or 
+                        cart_item.get("url") == item_to_remove.get("url")):
+                        removed_items.append(cart.pop(i))
+                        break
+        
+        if not removed_items:
+            return {
+                "messages": [AIMessage(content="I couldn't find the items you want to remove. Please specify which items to remove (e.g., 'remove #1 and #3')")],
+                "conversation_stage": "cart",
+                "next_step": "wait_for_user"
+            }
         
         response = self._build_removal_response(removed_items, cart)
         
@@ -118,6 +146,7 @@ class CartManager:
             "messages": [AIMessage(content=response)],
             "selected_products": cart,
             "cart_removal_indices": [],
+            "pending_cart_additions": [],  # Clear pending removals
             "conversation_stage": "cart" if cart else "presenting",
             "next_step": "wait_for_user"
         }

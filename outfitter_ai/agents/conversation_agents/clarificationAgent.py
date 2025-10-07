@@ -3,6 +3,7 @@ from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
 from agents.state import OutfitterState
 import uuid
+import re
 from datetime import datetime
 
 class ClarificationAgent:
@@ -18,12 +19,12 @@ class ClarificationAgent:
         # Information priority for effective product search
         self.question_priority = {
             "category": 10,     # Most critical - what type of item
-            "size": 8,          # Very important for filtering
-            "color": 6,         # Helpful for personalization
+            "color": 8,         # Very helpful for personalization
             "budget": 7,        # Important for relevant results
-            "style": 5,         # Nice to have
+            "style": 6,         # Nice to have
+            "occasion": 6,      # Context-dependent importance
             "brand": 4,         # Lowest priority
-            "occasion": 6       # Context-dependent importance
+            "size": 3           # Optional - not required for search
         }
         
         # Question fatigue indicators

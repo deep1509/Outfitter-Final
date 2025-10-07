@@ -1,0 +1,972 @@
+{
+  "category": "accessories",
+  "store": "universalstore",
+  "last_updated": "2025-10-07T14:47:18.217135",
+  "total_products": 64,
+  "products": [
+    {
+      "name": "Tri State Bucket Hat Washed Black",
+      "price": "$38.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/rusty-tri-state-bucket-hat-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410246_US_002.jpg?width=1200&height=1200&v=1758780026",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056149",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "9Twenty Wool Plaid New York Yankees Cap Rust/Brown",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/new-era-9twenty-wool-plaid-new-york-yankees-cap-rust-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409990_US_001.jpg?width=1200&height=1200&v=1755223212",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056290",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Dead End Dad Cap Grey Camo",
+      "price": "$32.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/rusty-dead-end-dad-cap-grey-camo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410244_US_001.jpg?width=1200&height=1200&v=1759220292",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056345",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Overdye Wash Dad Cap Chocolate/Red",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-overdye-wash-dad-cap-chocolate-red",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410143_US_001.jpg?width=1200&height=1200&v=1758779845",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056407",
+      "colors": [
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Stringer Bucket Hat Carbon",
+      "price": "$38.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/rusty-stringer-bucket-hat-carbon",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410247_US_005.jpg?width=1200&height=1200&v=1758780024",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056457",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Casual Classic Canvas Chainstitch New York Yankees Cap Moss/Moss UV",
+      "price": "$38.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/new-era-casual-classic-canvas-chainstitch-new-york-yankees-cap-moss-moss-uv",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407859_US_001.jpg?width=1200&height=1200&v=1759220211",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056537",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Washed Black Canvas Embroidery Patch Destroyed Wash Cap Black Wash/Grey Embro",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-washed-black-canvas-embroidery-patch-destroyed-wash-cap-black-wash-grey-embro",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203281_020.jpg?width=1200&height=1200&v=1758869942",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056634",
+      "colors": [
+        "black",
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Small Signature 32 Dad Cap Yellow/Green Embroidery",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-small-signature-32-dad-cap-yellow-green-embroidery",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410161_US_000.jpg?width=1200&height=1200&v=1758780033",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056696",
+      "colors": [
+        "green",
+        "yellow"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Wildstyle Distressed Dad Cap Stone",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-wildstyle-distressed-dad-cap-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402705_US_001.jpg?width=1200&height=1200&v=1720160792",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:51.056757",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Two-Tone Camo Dad Cap Camo/White",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-two-tone-camo-dad-cap-camo-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410142_US_001.jpg?width=1200&height=1200&v=1758779849",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056817",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic 5 Panel Cap Brown",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/common-need-classic-5-panel-cap-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400213_US_001.jpg?width=1200&height=1200&v=1699031351",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056876",
+      "colors": [
+        "brown"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Grey & White Trucker White/Grey",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-grey-white-trucker-white-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/194968_020.jpg?width=1200&height=1200&v=1758869905",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.056942",
+      "colors": [
+        "white",
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Dad Cap Embroidery Patch Destroyed Khaki",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-grey-denim-embroidery-patch-destroyed-wash-cap-grey-yellow-patch",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203280_US_001.jpg?width=1200&height=1200&v=1699033604",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057007",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Bleach Torn Patch Dad Cap Washed Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-bleach-torn-patch-dad-cap-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410138_US_001.jpg?width=1200&height=1200&v=1758780067",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057073",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Erosion Dad Cap Washed Brown",
+      "price": "$17.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-erosion-dad-cap-washed-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405289_US_001.jpg?width=1200&height=1200&v=1732492173",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:51.057131",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Washed Camo Dad Cap Camo",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-washed-camo-dad-cap-camo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/206564_US_1645.jpg?width=1200&height=1200&v=1754628755",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057193",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Nova 5 Panel Cap Dark Grey",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-nova-5-panel-cap-dark-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404649_US_001.jpg?width=1200&height=1200&v=1729226906",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057242",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Orbit Cord Six Panel Cap Coal",
+      "price": "$32.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/rusty-orbit-cord-six-panel-cap-coal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410245_US_000.jpg?width=1200&height=1200&v=1758780020",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057295",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Famous Recycled Distressed Dad Cap Washed Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-famous-distressed-dad-cap-washed-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408524_US_007.jpg?width=1200&height=1200&v=1745475343",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057355",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Canvas 5 Panel Camp Cap Black",
+      "price": "$21.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/common-need-canvas-5-panel-camp-cap-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/172739_020.jpg?width=1200&height=1200&v=1758869780",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057406",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Galaxy Distressed Dad Cap Washed Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-galaxy-distressed-dad-cap-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403090_US_001.jpg?width=1200&height=1200&v=1721973631",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057472",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Eternal Distressed Dad Cap Washed Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-eternal-distressed-dad-cap-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400801_US_001.jpg?width=1200&height=1200&v=1702619357",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057536",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Onyx 5 Panel Cap Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-onyx-5-panel-cap-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409085_US_002.jpg?width=1200&height=1200&v=1748573041",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057581",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Redline Cap Merch Black",
+      "price": "$27.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/thrills-redline-cap-merch-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/156188_1724_1.jpg?width=1200&height=1200&v=1719987433",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057640",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Fuel 5 Panel Cap Black",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-fuel-5-panel-cap-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/401601_001.jpg?width=1200&height=1200&v=1705647602",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057685",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Built to Outlast Foamy Valin Trucker Black",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/american-needle-built-to-outlast-foamy-valin-trucker-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/208968_US_001.jpg?width=1200&height=1200&v=1754033359",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057753",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Vinyl Two Tone Cord 5 Panel Cap Off White/Teal",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/common-need-vinyl-two-tone-cord-5-panel-cap-off-white-teal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402716_US_002.jpg?width=1200&height=1200&v=1723182264",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057812",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Contrast Stitch Trucker Hat Black",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/von-dutch-contrast-stitch-trucker-hat-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/206839_022.jpg?width=1200&height=1200&v=1758869654",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057870",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "9Twenty Frayed Tonal New York Yankees Cap Navy",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/new-era-9twenty-frayed-tonal-new-york-yankees-cap-navy",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404607_US_001.jpg?width=1200&height=1200&v=1738298014",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057926",
+      "colors": [
+        "navy"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Twin Turbo Dad Cap Washed Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-twin-turbo-dad-cap-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400940_US_001.jpg?width=1200&height=1200&v=1705032176",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.057983",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Galaxy Distressed Dad Cap Mid Blue Denim",
+      "price": "$17.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/neovision-galaxy-distressed-dad-cap-mid-blue-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405047_001.jpg?width=1200&height=1200&v=1731641061",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:51.058046",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Ibiza Two Tone Dad Cap Cream",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hats/products/common-need-ibiza-two-tone-dad-cap-ecru-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400629_US_001.jpg?width=1200&height=1200&v=1699031525",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:51.058104",
+      "colors": [
+        "cream"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Corduroy Backpack Black",
+      "price": "$21.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/dickies-corduroy-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/175044_001.jpg?width=1200&height=1200&v=1699030955",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.049567",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Stretton Student Backpack Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/dickies-stretton-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/170702_001.jpg?width=1200&height=1200&v=1698981401",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.049812",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Go 2 Backpack Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/converse-go-2-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/160573_00001.jpg?width=1200&height=1200&v=1699032560",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.049881",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Obstacle Sling Backpack Black",
+      "price": "$17.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-obstacle-sling-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402454_US_001.jpg?width=1200&height=1200&v=1720160788",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.050001",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Straight Edge Backpack Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/converse-straight-edge-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/146155_001.jpg?width=1200&height=1200&v=1699030671",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.050102",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Dimension Sling Backpack Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-dimension-sling-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403127_US_001.jpg?width=1200&height=1200&v=1738733719",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.050202",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Corduroy Crossbody Bag Black",
+      "price": "$7.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/dickies-corduroy-crossbody-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/175043_001.jpg?width=1200&height=1200&v=1698979861",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.050293",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Basic Courier Satchel Bag Black",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/dickies-basic-courier-satchel-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203725_US_002.jpg?width=1200&height=1200&v=1699032366",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.050390",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Stretton Black",
+      "price": "$17.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/dickies-stretton-bum-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/179463_US_001.jpg?width=1200&height=1200&v=1722482264",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.050466",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Propane Messenger Bag Black Denim",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-propane-messenger-bag-black-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405193_US_019.jpg?width=1200&height=1200&v=1734055214",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.050596",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Canvas Crossbody Bag Black",
+      "price": "$11.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/common-need-canvas-crossbody-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189370_US_006.jpg?width=1200&height=1200&v=1722482734",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.050721",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Minimal Thrills Hip Bag Black",
+      "price": "$17.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/thrills-minimal-thrills-hip-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403346_US_001_1.jpg?width=1200&height=1200&v=1727413923",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.050813",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Slappy Hip Bag Black",
+      "price": "$27.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/thrills-slappy-hip-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/200367_US_001.jpg?width=1200&height=1200&v=1719987669",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.050904",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Xperiment Ripstop Bumbag Grey",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-xperiment-ripstop-bumbag-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403714_US_001_1.jpg?width=1200&height=1200&v=1726798101",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.051001",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Energy Canvas Bumbag Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/common-need-energy-canvas-bumbag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408247_US_001.jpg?width=1200&height=1200&v=1744786243",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051100",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Fixie Sling Bag Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/rusty-fixie-sling-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408635_US_001.jpg?width=1200&height=1200&v=1754628681",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051179",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Striker Hip Bag Black",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/worship-striker-hip-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407679_US_001.jpg?width=1200&height=1200&v=1748573062",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051284",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Strappy Crossover Bag Black",
+      "price": "$11.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-strappy-crossover-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189384_US_001_1.jpg?width=1200&height=1200&v=1708668201",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.051379",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Tazer Sling Backpack Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-tazer-sling-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405192_US_001.jpg?width=1200&height=1200&v=1732845880",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051469",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Ribbon Cutter Hip Bag Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/thrills-ribbon-cutter-hip-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405832_US_005.jpg?width=1200&height=1200&v=1739421872",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051560",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Supply Crossbody Bag Black",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/open-archive-supply-crossbody-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407101_US_437.jpg?width=1200&height=1200&v=1740025940",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.051650",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Gilmer Messenger Bag Black",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/dickies-gilmer-messenger-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/154444_001.jpg?width=1200&height=1200&v=1699030458",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051738",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Lockstar Hip Bag Black",
+      "price": "$27.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/thrills-lockstar-hip-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/208932_US_002.jpg?width=1200&height=1200&v=1721973684",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051821",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Go 2 Backpack Pale Surplus",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/converse-go-2-backpack-pale-surplus",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412296_US_000.jpg?width=1200&height=1200&v=1755741621",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051898",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Ace Clip Crossbody Bag Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-ace-clip-crossbody-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/401211_001.jpg?width=1200&height=1200&v=1705647601",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.051988",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Heritage Backpack Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/herschel-supply-co-heritage-backpack-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189835_US_001.jpg?width=1200&height=1200&v=1699031408",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.052084",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Speed 3 Backpack Converse Black",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/converse-speed-3-backpack-converse-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/201870_US_001.jpg?width=1200&height=1200&v=1699587080",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.052164",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Cortex Hip Bag Black Black",
+      "price": "$27.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/thrills-cortex-hip-bag-black-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408721_US_001.jpg?width=1200&height=1200&v=1753321508",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.052261",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Cena Canvas Bumbag Camo",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/neovision-cena-canvas-bumbag-camo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410695_US_001.jpg?width=1200&height=1200&v=1757906122",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.052347",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Common Need",
+      "price": "$11.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/common-need-koi-fish-shopper-tote-bag-natural",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410206_US_001.jpg?width=1200&height=1200&v=1752213404",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.052437",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Nanobot Sling Bag Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/rusty-nanobot-sling-bag-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407797_US_002.jpg?width=1200&height=1200&v=1736472264",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:06.052520",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Core Hip Bag Black",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-bags/products/worship-core-hip-bag-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/209185_US_001.jpg?width=1200&height=1200&v=1720160312",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:06.052620",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    }
+  ]
+}

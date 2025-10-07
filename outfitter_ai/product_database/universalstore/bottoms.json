@@ -1,0 +1,1934 @@
+{
+  "category": "bottoms",
+  "store": "universalstore",
+  "last_updated": "2025-10-07T14:42:49.617906",
+  "total_products": 128,
+  "products": [
+    {
+      "name": "Big Dawgs Jean Used Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawgs-jean-used-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203123_US_026.jpg?width=1200&height=1200&v=1759208514",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.358264",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Dawg Pay Up Jean Worship Blues",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawg-pay-up-jean-worship-blues",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203647_US_032.jpg?width=1200&height=1200&v=1743990184",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.358573",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Onyx",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-behemoth-super-baggy-jean-onyx",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406361_US_025.jpg?width=1200&height=1200&v=1755223232",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.358712",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Carpenter Jean Worship Worn Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-worship-carpenter-jean-worship-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/200704_US_035.jpg?width=1200&height=1200&v=1754009908",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.358844",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Bones Denim Jean Black Rinse",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-bones-denim-jean-black-rinse",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412447_US_004.jpg?width=1200&height=1200&v=1759219324",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.358966",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Relaxed Denim Jean Serenity Blue",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-slacker-relaxed-denim-jean-serenity-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410753_US_005.jpg?width=1200&height=1200&v=1758779172",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359086",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Slacker Jean Raw Indigo",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-big-slacker-jean-raw-indigo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413051_US_004.jpg?width=1200&height=1200&v=1758779151",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359184",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Jean Stoned Blues",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-slacker-jean-stoned-blues",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413048_US_004.jpg?width=1200&height=1200&v=1758779297",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359277",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Infinite Dopamine Slacker Jean Light Ash Blue",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-infinite-dopamine-slacker-jean-light-ash-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413050_US_002.jpg?width=1200&height=1200&v=1758779290",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359400",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Dawgs Jean Worn Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawgs-jean-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203124_US_047.jpg?width=1200&height=1200&v=1744172612",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359491",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "A6 Big Baggy Bazza Jean Washed Black",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a6-big-baggy-bazza-jean-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/206248_us_023_a243e178-cbdb-4265-ad3e-79819a5467da.jpg?width=1200&height=1200&v=1756341925",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359579",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "A5 Baggy Harris Harris",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a5-baggy-harris-harris",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410394_US_005.jpg?width=1200&height=1200&v=1759219098",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359663",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Carpenter Jean Washed Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-carpenter-jean-washed-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407735_US_007.jpg?width=1200&height=1200&v=1743990361",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359747",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "A6 Big Baggy Donny Donny",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a6-big-baggy-donny-donny",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410397_US_002.jpg?width=1200&height=1200&v=1759219153",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359829",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Jean Dusk",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-slacker-jean-dusk",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413049_US_000.jpg?width=1200&height=1200&v=1758779328",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.359908",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Radical Behemoth Super Baggy Jean Onyx",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-radical-behemoth-super-baggy-jean-onyx",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409044_US_006.jpg?width=1200&height=1200&v=1749514149",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360012",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Dawg Smile More Jean Black Rinse Black Rinse",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawg-smile-more-jean-black-rinse-black-rinse",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/205333_US_001.jpg?width=1200&height=1200&v=1743990201",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360123",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Raw Indigo",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-behemoth-super-baggy-jean-raw-indigo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/universal_stay_cosy1662.jpg?width=1200&height=1200&v=1746685366",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360238",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Ruins Dirty Blue",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-behemoth-super-baggy-jean-ruins-dirty-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409438_US_022_1.jpg?width=1200&height=1200&v=1749514167",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360353",
+      "colors": [
+        "blue"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Jean Dusk Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/wrangler-slacker-jean-dusk-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405200_US_000.jpg?width=1200&height=1200&v=1743047749",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360442",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "A3 Crop Bazza Washed Black",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a3-crop-bazza-jean-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407003_US_036.jpg?width=1200&height=1200&v=1744172685",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360523",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "A5 Baggy Jean Shane Shane",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a5-baggy-jean-shane-shane",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413059_US_007.jpg?width=1200&height=1200&v=1758255436",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360599",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Chasm Goliath Extreme Baggy Jean Black",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-chasm-goliath-extreme-baggy-jean-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409031_US_000.jpg?width=1200&height=1200&v=1759209836",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360712",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Be Cool Big Lounger Jean Black Rinse",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-be-cool-big-lounger-jean-black-rinse",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405541_US_007.jpg?width=1200&height=1200&v=1736318417",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360819",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Dawg Jean Washed Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-big-dawg-jean-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408886_US_000.jpg?width=1200&height=1200&v=1750831699",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.360907",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Try Again Big Lounger Jean Dirty Rage Blue",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/worship-try-again-big-lounger-jean-dirty-rage-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407734_US_005.jpg?width=1200&height=1200&v=1745985582",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361010",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Barrel Leg Denim Jean Aged Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-barrel-leg-denim-jean-aged-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410496_US_001.jpg?width=1200&height=1200&v=1755223456",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361103",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Blanco Pleated Jean Raw Indigo",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/common-need-blanco-pleated-jean-raw-indigo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410585_us_022.jpg?width=1200&height=1200&v=1756170541",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361204",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "A Chopped Straight Jean Walkman",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/abrand-a-chopped-straight-jean-walkman",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/168627_US_001.jpg?width=1200&height=1200&v=1743990085",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361296",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Tusk Goliath Extreme Baggy Jean Ash Blue",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/neovision-tusk-goliath-extreme-baggy-jean-ash-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410589_US_005.jpg?width=1200&height=1200&v=1755223093",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361404",
+      "colors": [
+        "blue"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Denim Jean Coal",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/thrills-slacker-denim-jean-coal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405863_US_004.jpg?width=1200&height=1200&v=1744172692",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361502",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Jean Mantra Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jeans/products/wrangler-slacker-jean-mantra-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405199_US_002.jpg?width=1200&height=1200&v=1743047754",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:18.361592",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Ritual Wide Zip Off Cargo Pant Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-ritual-wide-zip-off-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406299_US_040.jpg?width=1200&height=1200&v=1737087435",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.104338",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Blanco Pleated Tailored Trouser Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-blanco-pleated-tailored-trouser-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/1200x1800_0056_hero_1.jpg?width=1200&height=1200&v=1758785800",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.104567",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "fitted",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Slacker Cargo Pant Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/thrills-slacker-cargo-pant-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203877_US_035.jpg?width=1200&height=1200&v=1747367594",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.104658",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sway Zip Off Cargo Pant Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-sway-zip-off-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405635_US_009_1.jpg?width=1200&height=1200&v=1734669163",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.104764",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sorrento Baggy Linen Pant White",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-sorrento-baggy-linen-pant-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404265_US_020.jpg?width=1200&height=1200&v=1749167560",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.104865",
+      "colors": [
+        "white"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Blanco Pleated Tailored Trouser Ecru",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-blanco-pleated-tailored-trouser-ecru-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/image.jpg?width=1200&height=1200&v=1758787134",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.104963",
+      "colors": [
+        "red"
+      ],
+      "style": "fitted",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Oscillate Baggy Sweatpant Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-oscillate-baggy-sweatpant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409027_US_001.jpg?width=1200&height=1200&v=1749097498",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105066",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "91 Cargo Pant Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/xlarge-91-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413719_US_003.jpg?width=1200&height=1200&v=1759219392",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105138",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Jaxon Baggy Tailored Trouser Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-jaxon-baggy-tailored-trouser-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411275_US_000.jpg?width=1200&height=1200&v=1758089069",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105243",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Volt Zip Off Cargo Pant Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-volt-zip-off-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412051_US_004.jpg?width=1200&height=1200&v=1759220205",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105337",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "247 Pant Loose Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/dickies-247-pant-loose-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406851_US_005.jpg?width=1200&height=1200&v=1758089112",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105410",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Koi Fish Baggy Linen Pant Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-koi-fish-baggy-linen-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405158_US_001.jpg?width=1200&height=1200&v=1730859200",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105507",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Vinyl Organic Cargo Pant Washed Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-vinyl-cargo-pant-washed-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408772_US_039.jpg?width=1200&height=1200&v=1745472886",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105607",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Strukt Zip Off Cargo Pant Black/Teal",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-metrik-zip-off-cargo-pant-black-teal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410177_US_031.jpg?width=1200&height=1200&v=1752574222",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:27.105718",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Hard Yakka x Thrills Slacker Cargo Pant Unchleached",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/thrills-hard-yakka-x-thrills-slacker-cargo-pant",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/178451_US_011.jpg?width=1200&height=1200&v=1747367559",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.105828",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Fame Tricot Trackpant Brown",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-fame-tricot-trackpant-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409424_us_022.jpg?width=1200&height=1200&v=1750124089",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:27.105936",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Tribal Super Baggy Sweatpant Snow Marle",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-tribal-super-baggy-sweatpant-snow-marle",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411262_US_003.jpg?width=1200&height=1200&v=1758256132",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106036",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Sorrento Baggy Linen Pant Brown",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-sorrento-baggy-linen-pant-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410584_US_005.jpg?width=1200&height=1200&v=1754628180",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106131",
+      "colors": [
+        "brown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Costa Baggy Pant Blue Stripe",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-costa-baggy-pant-blue-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410583_US_003.jpg?width=1200&height=1200&v=1754628097",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106223",
+      "colors": [
+        "blue"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Cena Wide Zip Off Cargo Pant Camo",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-cena-wide-zip-off-cargo-pant-camo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410587_US_005.jpg?width=1200&height=1200&v=1757634576",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106320",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Running Dept Pant Black Wash",
+      "price": "$94.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/front-runner-running-dept-pant-black-wash",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411120_US_000.jpg?width=1200&height=1200&v=1757631834",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106415",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Leisure Pant Black",
+      "price": "$94.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/front-runner-leisure-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407872_US_025.jpg?width=1200&height=1200&v=1744786250",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106501",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Offset Elastic Cuff Sweat Pant Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-offset-elastic-cuff-sweat-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410586_US_002_1.jpg?width=1200&height=1200&v=1754628624",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106599",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Big Slacker Union Utility Pant Unbleached",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/thrills-big-slacker-union-utility-pant-unbleached",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407743_US_000.jpg?width=1200&height=1200&v=1752210987",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106701",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Briggs Elastic Waist Cargo Jean Fog Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-briggs-elastic-waist-cargo-jean-fog-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411277_US_003.jpg?width=1200&height=1200&v=1756874837",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106808",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Vinyl Cargo Pant Washed Brown",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-vinyl-cargo-pant-washed-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408145_US_008.jpg?width=1200&height=1200&v=1749097146",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.106905",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Dune Baggy Cargo Pant Washed Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-dune-baggy-cargo-pant-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406322_US_007.jpg?width=1200&height=1200&v=1736472700",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.107002",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Flip Daddy Elastic Pant Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/rusty-flip-daddy-elastic-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412294_US_002.jpg?width=1200&height=1200&v=1758089139",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.107088",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Zip-Off Parachute Cargo Pant Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-zip-off-parachute-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400393_US_056.jpg?width=1200&height=1200&v=1741926439",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.107191",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Tribal Baggy Sweatpant Washed Night Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/neovision-tribal-baggy-sweatpant-washed-night-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407371_US_003.jpg?width=1200&height=1200&v=1747114462",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.107298",
+      "colors": [
+        "black"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Harbor Cargo Zip Off Pant Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-harbor-cargo-zip-off-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409418_US_018.jpg?width=1200&height=1200&v=1749097110",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:27.107394",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Slacker Union Utility Pant Petrol",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/thrills-big-slacker-union-utility-pant-petrol",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407745_US_002.jpg?width=1200&height=1200&v=1750143315",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:27.107496",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Carpenter Jean Short Used Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/worship-carpenter-jean-short-used-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203127_US_004_1.jpg?width=1200&height=1200&v=1757563754",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759243",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Big Dawgs Jean Short Black Rinse",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/worship-big-dawgs-jean-short-black-rinse",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/200814_US_022.jpg?width=1200&height=1200&v=1749167551",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759485",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Big Dawgs Jean Short Raged Blue",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/worship-big-dawgs-jean-short-raged-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/200815_US_022_1.jpg?width=1200&height=1200&v=1755223226",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759585",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Island Linen Short Dark Brown",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-island-linen-short-dark-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411978_US_009.jpg?width=1200&height=1200&v=1759219168",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759684",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Ned Big Dawg Jean Short Worship Worn Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/worship-ned-big-dawg-jean-short-worship-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409167_US_000.jpg?width=1200&height=1200&v=1752211025",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759792",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Levels Above Fight Short Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/engage-levels-above-fight-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412424_US_026.jpg?width=1200&height=1200&v=1758093644",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759896",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Oval Denim Shorts Washed Black",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/von-dutch-oval-denim-shorts-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408287_US_000.jpg?width=1200&height=1200&v=1758780019",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.759992",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "OS Back Denim Shorts Mid Blue Denim",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/von-dutch-os-back-denim-shorts-mid-blue-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408288_US_017.jpg?width=1200&height=1200&v=1758842946",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760103",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Global Short Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/engage-global-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412427_US_026.jpg?width=1200&height=1200&v=1758608250",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760184",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Training Short Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/engage-training-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412429_us_023.jpg?width=1200&height=1200&v=1758608262",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760268",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Syndicate Swim Short Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/wndrr-syndicate-swim-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409360_US_000.jpg?width=1200&height=1200&v=1758779346",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760351",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Island Linen Short Natural",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-island-linen-short-natural",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404143_US_000.jpg?width=1200&height=1200&v=1727412985",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760443",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Truman Baggy Short Brown Check",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-truman-baggy-short-brown-check",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410579_US_005.jpg?width=1200&height=1200&v=1759219289",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760536",
+      "colors": [
+        "brown"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Carpenter Jean Short Worship Worn Blue",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/worship-carpenter-jean-short-worship-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203126_US_000_7e6dacdd-9ea7-4258-ba5c-5ba31363233d.jpg?width=1200&height=1200&v=1756170473",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760637",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Essential Short Dusty Brown",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-essential-short-dusty-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400745_US_020.jpg?width=1200&height=1200&v=1749167553",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760727",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Salt Organic Cord Short Cream",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-salt-organic-cord-short-cream",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400125_US_000.jpg?width=1200&height=1200&v=1699030937",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760821",
+      "colors": [
+        "cream"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Global Short Off White",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/engage-global-short-off-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412430_US_029.jpg?width=1200&height=1200&v=1758093586",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760904",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Slacker Cargo Short Unbleached",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/thrills-slacker-cargo-short-unbleached",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/180924_US_000_1.jpg?width=1200&height=1200&v=1723182573",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.760995",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Relaxed Cargo Short Light Blue Denim",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-relaxed-cargo-short-light-blue-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406865_US_006.jpg?width=1200&height=1200&v=1741225084",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761096",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Rush Cargo Short Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/neovision-rush-cargo-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406870_US_006.jpg?width=1200&height=1200&v=1740630120",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761180",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Slacker Cargo Short Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/thrills-slacker-cargo-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/173354_US_006.jpg?width=1200&height=1200&v=1701911902",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761266",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Marine Swim Short Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-marine-swim-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410155_US_001.jpg?width=1200&height=1200&v=1752806741",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761365",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Spray Bull Denim 91 Short Washed Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/xlarge-spray-bull-denim-91-short-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406690_US_043.jpg?width=1200&height=1200&v=1741926363",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761450",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Salt Organic Cord Short Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-salt-organic-cord-short-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400172_US_011.jpg?width=1200&height=1200&v=1738889289",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761543",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Tim Slim Short Hard On Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/rollas-tim-slim-short-hard-on-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/161674_US_000_1.jpg?width=1200&height=1200&v=1699030908",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761633",
+      "colors": [
+        "black"
+      ],
+      "style": "fitted",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Bull Denim 91 Short Washed Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/bull-denim-91-short-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/194358_US_000.jpg?width=1200&height=1200&v=1724220774",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761726",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Organic Cotton Essential Short 2.0 Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-organic-cotton-essential-short-2-0-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400121_US_007.jpg?width=1200&height=1200&v=1738889278",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761818",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Essential Short 2.0 Natural",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-essential-short-2-0-natural",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/159205_US_000.jpg?width=1200&height=1200&v=1699033834",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761907",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Flip Rambo Jort Camo",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/rusty-flip-rambo-jort-camo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408626_US_000.jpg?width=1200&height=1200&v=1756875525",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.761984",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Salt Organic Cord Short Taupe",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-salt-organic-cord-short-taupe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400124_US_000_1.jpg?width=1200&height=1200&v=1738889284",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.762076",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Santorini Elastic Waist Short Navy Stripe",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-santorini-elastic-waist-short-navy-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411272_US_006.jpg?width=1200&height=1200&v=1756274023",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.762203",
+      "colors": [
+        "navy"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Sanctuary Organic Elastic Waist Cargo Short Beige",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shorts/products/common-need-sanctuary-organic-elastic-waist-cargo-short-beige",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411278_US_003.jpg?width=1200&height=1200&v=1757657796",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:37.762315",
+      "colors": [
+        "beige"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Compose Heavyweight Easy Tee White",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-compose-heavyweight-easy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404542_US_000.jpg?width=1200&height=1200&v=1729740403",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853539",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Panela Anderson Hooded Fleece Atlantic Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/rusty-panela-anderson-hooded-fleece-atlantic-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406807_US_000.jpg?width=1200&height=1200&v=1745985540",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853587",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Washed Black Canvas Embroidery Patch Destroyed Wash Cap Black Wash/Grey Embro",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/von-dutch-washed-black-canvas-embroidery-patch-destroyed-wash-cap-black-wash-grey-embro",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203281_020.jpg?width=1200&height=1200&v=1758869942",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853662",
+      "colors": [
+        "black",
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Running Dept. Tee Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/front-runner-running-dept-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404590_US_000.jpg?width=1200&height=1200&v=1730424802",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853704",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "The Quencher H2.O Flowstate Tumbler 40oz Rose Quartz",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/stanley-the-quencher-h2-o-flowstate-tumbler-40oz-rose-quartz",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405487_US_001.jpg?width=1200&height=1200&v=1728531709",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853747",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853791",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sway Zip Off Cargo Pant Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-sway-zip-off-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405635_US_009_1.jpg?width=1200&height=1200&v=1734669163",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853832",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nova Street Hoodie Off White",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-nova-street-hoodie-off-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407310_us_044.jpg?width=1200&height=1200&v=1750748801",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853873",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Austin Pleated Polo Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-austin-pleated-polo-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404804_001.jpg?width=1200&height=1200&v=1741333393",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853913",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Mocca",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/152637_001.jpg?width=1200&height=1200&v=1699029881",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.853955",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Kamen Oversize Super Heavy Tee Washed Basil",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-kamen-oversize-super-heavy-tee-washed-basil",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410421_US_025.jpg?width=1200&height=1200&v=1758090736",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854003",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arkos Street Super Heavy Tee White",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-arkos-street-super-heavy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411177_US_000.jpg?width=1200&height=1200&v=1756875274",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854045",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Carpenter Jean Short Worship Worn Blue",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-carpenter-jean-short-worship-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203126_US_000_7e6dacdd-9ea7-4258-ba5c-5ba31363233d.jpg?width=1200&height=1200&v=1756170473",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854090",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Throttle Elastic Quarter Zip Crew Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-throttle-elastic-quarter-zip-crew-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405980_US_007.jpg?width=1200&height=1200&v=1758498801",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854135",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nullvoid Cropped Street Super Heavy Tee Acid Snow Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-nullvoid-cropped-street-super-heavy-tee-acid-snow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409970_US_000.jpg?width=1200&height=1200&v=1758089779",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854187",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic 5 Panel Cap Brown",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-classic-5-panel-cap-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400213_US_001.jpg?width=1200&height=1200&v=1699031351",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854223",
+      "colors": [
+        "brown"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Strukt Zip Off Cargo Pant Black/Teal",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-metrik-zip-off-cargo-pant-black-teal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410177_US_031.jpg?width=1200&height=1200&v=1752574222",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:39.854273",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Rosebud Oversized Super Heavy Tee ASPHALT",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-rosebud-oversized-super-heavy-tee-asphalt",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408853_us_022.jpg?width=1200&height=1200&v=1754550014",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854318",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Machine Black",
+      "price": "$24.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/unity-eyewear-machine-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189130_US_002_1.jpg?width=1200&height=1200&v=1729834547",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854354",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Red Stripe",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-royalty-boxy-cropped-resort-shirt-red-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410550_us_022.jpg?width=1200&height=1200&v=1756170407",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854408",
+      "colors": [
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Habana",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-arizona-oiled-leather-regular-habana",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147271_001.jpg?width=1200&height=1200&v=1731641155",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854453",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Onyx",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-behemoth-super-baggy-jean-onyx",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406361_US_025.jpg?width=1200&height=1200&v=1755223232",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854494",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Imperium Rugby Shirt Off White/Brown",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-imperium-rugby-shirt-off-white-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407435_US_000.jpg?width=1200&height=1200&v=1743046346",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854538",
+      "colors": [
+        "white",
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Wildstyle Distressed Dad Cap Stone",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-wildstyle-distressed-dad-cap-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402705_US_001.jpg?width=1200&height=1200&v=1720160792",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:39.854582",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Blanco Pleated Tailored Trouser Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-blanco-pleated-tailored-trouser-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/1200x1800_0056_hero_1.jpg?width=1200&height=1200&v=1758785800",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854625",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "fitted",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Carpenter Jean Short Used Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-carpenter-jean-short-used-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203127_US_004_1.jpg?width=1200&height=1200&v=1757563754",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854666",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Tee Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/front-runner-modern-classic-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/205485_US_000_1.jpg?width=1200&height=1200&v=1708990284",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854711",
+      "colors": [
+        "black"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Spray Bull Denim 91 Short Washed Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/xlarge-spray-bull-denim-91-short-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406690_US_043.jpg?width=1200&height=1200&v=1741926363",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854750",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Blue/White Stripe",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-royalty-boxy-resort-shirt-blue-white-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408123_US_019.jpg?width=1200&height=1200&v=1758583223",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854800",
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Organic Cropped Street Tee Black",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/open-archive-organic-cropped-street-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410090_US_000.jpg?width=1200&height=1200&v=1754628249",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854844",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Relaxed Cargo Short Light Blue Denim",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-relaxed-cargo-short-light-blue-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406865_US_006.jpg?width=1200&height=1200&v=1741225084",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854889",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "On Lock Oversize Shirt Blue Check",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-on-lock-oversize-shirt-blue-check",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405928_US_002.jpg?width=1200&height=1200&v=1759120194",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:39.854931",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    }
+  ]
+}

@@ -119,13 +119,22 @@ class SimpleGeneralResponder:
                 user_query = msg.get('content', '')
                 break
         
+        # Get cart context
+        selected_products = state.get("selected_products", [])
+        cart_summary = ""
+        if selected_products:
+            cart_items = []
+            for item in selected_products:
+                cart_items.append(f"• {item.get('name', 'Unknown')} - {item.get('price', 'N/A')}")
+            cart_summary = f"\n\nCART CONTEXT: User currently has {len(selected_products)} item(s) in their cart:\n" + "\n".join(cart_items)
+        
         # Build context-aware system prompt
         if products_shown:
-            product_context = f"\n\nCURRENT CONTEXT: You are currently showing {len(products_shown)} products to the user:\n"
-            for i, product in enumerate(products_shown[:5], 1):
-                product_context += f"{i}. {product.get('name', 'Unknown')} - {product.get('price', 'N/A')}\n"
+            product_context = f"\n\nCURRENT PRODUCTS: You are currently showing {len(products_shown)} products to the user:\n"
+            for i, product in enumerate(products_shown[:8], 1):  # Show more products
+                product_context += f"{i}. {product.get('name', 'Unknown')} - {product.get('price', 'N/A')} ({product.get('store_name', 'Unknown Store')})\n"
             
-            product_context += "\nReference these products naturally when answering. Remind user they can select by number when ready."
+            product_context += "\n• Reference these products naturally when answering\n• Help them compare and choose between options\n• Give specific styling advice for the products shown\n• Remind user they can select by number when ready"
         else:
             product_context = ""
         
@@ -133,18 +142,33 @@ class SimpleGeneralResponder:
 
 Your expertise includes:
 - Streetwear fashion trends and styling
-- Color coordination and outfit matching
+- Color coordination and outfit matching  
 - Seasonal fashion advice
 - Brand knowledge (especially Australian streetwear)
 - Helping customers make confident purchase decisions
+- Understanding what works well together
 
 CONVERSATION STYLE:
 - Friendly, enthusiastic, but not pushy
 - Give specific, actionable advice
 - Reference products by number when relevant (e.g., "#1 would look great with...")
-- Ask follow-up questions to understand their style better{product_context}
+- Ask follow-up questions to understand their style better
+- Be conversational and natural
+- Show genuine interest in helping them find the perfect items
 
-Respond naturally and helpfully to their question."""
+CONTEXT AWARENESS:
+- If they're asking about styling, consider what's in their cart AND what's currently shown
+- Suggest complementary items that would work with their existing cart
+- Help them visualize complete outfits
+- Give specific reasons why certain combinations work well{product_context}{cart_summary}
+
+SMART RESPONSE EXAMPLES:
+- If they ask "will white sneakers look good?", reference their current items and explain WHY it works
+- If they ask about styling, suggest specific products from what's shown that would complement their cart
+- If they're unsure between options, help them decide based on their style and existing items
+- Always be encouraging and help them feel confident in their choices
+
+Respond naturally and helpfully to their question. Be specific and give them actionable advice they can use right away."""
 
         try:
             response = self.llm.invoke([
@@ -154,17 +178,35 @@ Respond naturally and helpfully to their question."""
             
             response_text = response.content
             
+            # Add smart follow-up suggestions if products are shown
+            if products_shown and len(products_shown) > 1:
+                if "which" in user_query.lower() or "should i" in user_query.lower() or "better" in user_query.lower():
+                    # Add helpful comparison note
+                    response_text += f"\n\n💡 **Quick tip:** You can select any of these {len(products_shown)} products by number (e.g., 'I'll take #2') when you're ready!"
+                elif "style" in user_query.lower() or "wear" in user_query.lower() or "match" in user_query.lower():
+                    # Add styling encouragement
+                    response_text += f"\n\n✨ **Ready to build your look?** Just let me know which items catch your eye and I'll help you put together the perfect outfit!"
+            
+            # CRITICAL: Preserve cart state and products shown
+            selected_products = state.get("selected_products", [])
+            
             return {
                 "messages": [AIMessage(content=response_text)],
                 "conversation_stage": "presenting" if products_shown else "general",
+                "products_shown": products_shown,  # PRESERVE: Products currently shown
+                "selected_products": selected_products,  # PRESERVE: Cart items
                 "next_step": "wait_for_user"
             }
             
         except Exception as e:
             print(f"   Error: {e}")
+            # CRITICAL: Preserve cart state even in error case
+            selected_products = state.get("selected_products", [])
             return {
                 "messages": [AIMessage(content="I'd be happy to help with that! What would you like to know?")],
                 "conversation_stage": "general",
+                "products_shown": products_shown,  # PRESERVE: Products currently shown
+                "selected_products": selected_products,  # PRESERVE: Cart items
                 "next_step": "wait_for_user"
             }
 

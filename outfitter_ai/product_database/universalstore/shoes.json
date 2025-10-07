@@ -1,0 +1,1971 @@
+{
+  "category": "shoes",
+  "store": "universalstore",
+  "last_updated": "2025-10-07T14:46:42.737566",
+  "total_products": 130,
+  "products": [
+    {
+      "name": "Club C Revenge Sneaker Chalk/Burgundy",
+      "price": "$115.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-revenge-sneaker-chalk-burgundy",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407121_US_001.jpg?width=1200&height=1200&v=1753321291",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595432",
+      "colors": [
+        "burgundy"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Classic Az Sneaker Shadow",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-classic-az-sneaker-shadow",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407106_US_001.jpg?width=1200&height=1200&v=1750999326",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595527",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Army Trainer Sneaker Warm White Puma Red",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/puma-army-trainer-sneaker-warm-white-puma-red",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405723_US_001.jpg?width=1200&height=1200&v=1744786241",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595566",
+      "colors": [
+        "white",
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Leather Chalk Breakaway Green",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-classic-leather-chalk-breakaway-green",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403588_US_001.jpg?width=1200&height=1200&v=1745475091",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595603",
+      "colors": [
+        "green"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Club C 85 Chalk",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-85-chalk",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/180896_US_001.jpg?width=1200&height=1200&v=1699028016",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595628",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Club C 85 White/Royal/Gum",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-85-white-royal-gum",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158731_000012.jpg?width=1200&height=1200&v=1698980526",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595655",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sport Casual Sneaker Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/converse-sport-casual-sneaker-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404230_US_001.jpg?width=1200&height=1200&v=1730424756",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595689",
+      "colors": [
+        "black"
+      ],
+      "style": "athletic",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Smash Edge Beige",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-smash-edge-beige",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/206986_US_001.jpg?width=1200&height=1200&v=1726192952",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595717",
+      "colors": [
+        "beige"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Star Player 76 Egret",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/converse-star-player-76-egret",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404231_US_002.jpg?width=1200&height=1200&v=1742358716",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595744",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Puma Club II Era Suede Black Alpine",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/puma-puma-club-ii-era-suede-black-alpine",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404225_US_001.jpg?width=1200&height=1200&v=1743916128",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595779",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Club C Revenge FTWR White/Black/FTWR White",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-revenge-ftwr-white-black-ftwr-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189784_US_002.jpg?width=1200&height=1200&v=1705030904",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595816",
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Progrid Guide 7 Sneaker Grey Multi",
+      "price": "$149.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/saucony-progrid-guide-7-sneaker-grey-multi",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407670_US_001.jpg?width=1200&height=1200&v=1756874884",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595846",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Run Star Trainer Sneaker Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/converse-run-star-trainer-sneaker-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406168_US_001.jpg?width=1200&height=1200&v=1730247138",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.595880",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Club C 85 White/Green",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-85-white-green",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158733_25302.jpg?width=1200&height=1200&v=1699029727",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595906",
+      "colors": [
+        "white",
+        "green"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Mens All Star Hi Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/converse-mens-all-star-hi-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/103941_00001.jpg?width=1200&height=1200&v=1699034263",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595936",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Club C Revenge Sneaker White/Navy",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-revenge-sneaker-white-navy",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407120_US_002.jpg?width=1200&height=1200&v=1750143923",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.595968",
+      "colors": [
+        "white",
+        "navy"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Hammer Street Sneaker Matte Silver",
+      "price": "$122.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-hammer-street-sneaker-matte-silver",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407112_US_002.jpg?width=1200&height=1200&v=1755741137",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596001",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "MTE Ultrarange 2.0 SE Sneaker Black White",
+      "price": "$122.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/vans-mte-ultrarange-2-0-se-sneaker-black-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408194_US_001.jpg?width=1200&height=1200&v=1757905826",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596031",
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Classic Az White Luxe Grey",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-classic-az-white-luxe-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407107_US_001.jpg?width=1200&height=1200&v=1757905831",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596062",
+      "colors": [
+        "white",
+        "grey"
+      ],
+      "style": "vintage",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Club C Grounds UK Sneaker Vector Red",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-club-c-grounds-uk-sneaker-vector-red",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407105_US_002.jpg?width=1200&height=1200&v=1751508532",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.596098",
+      "colors": [
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Nylon Sneaker Campus Brown",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-classic-nylon-sneaker-campus-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407115_US_001.jpg?width=1200&height=1200&v=1758779328",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596131",
+      "colors": [
+        "brown"
+      ],
+      "style": "vintage",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Hammer Street Sneaker Black White",
+      "price": "$122.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-hammer-street-sneaker-black-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407125_US_010.jpg?width=1200&height=1200&v=1754032815",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596163",
+      "colors": [
+        "black",
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Japan S Blueberry",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/asics-japan-s-blueberry",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403827_US_001.jpg?width=1200&height=1200&v=1745475076",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596190",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Mens All Star Ox Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/converse-mens-all-star-ox-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/103943_000012.jpg?width=1200&height=1200&v=1699032523",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596221",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Japan S White/White",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/asics-japan-s-white-white-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203497_us_001.jpg?width=1200&height=1200&v=1708670232",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596247",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Classic Az Sneaker Collegiatte Gold",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/reebok-classic-az-sneaker-collegiatte-gold",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407113_US_000.jpg?width=1200&height=1200&v=1755741142",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:42:56.596281",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Gel-Venture 6 Mantle Green Black From",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sneakers/products/asics-gel-venture-6-mantle-green-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403819_US_001.jpg?width=1200&height=1200&v=1743131728",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:42:56.596309",
+      "colors": [
+        "black",
+        "green"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arch Support Thong Chocolate Brown",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-chocolate-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413172_US_001.jpg?width=1200&height=1200&v=1758780043",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.574651",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Krispy Kreme Classic Clog Golden Hour",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-krispy-kreme-classic-clog-golden-hour",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408072_US_001.jpg?width=1200&height=1200&v=1758255655",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.574805",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arch Support Slides Chocolate Brown",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-slides-chocolate-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413174_US_001.jpg?width=1200&height=1200&v=1758779819",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.574911",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Mocca",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/152637_001.jpg?width=1200&height=1200&v=1699029881",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575009",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575106",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Top Surfer Thong New Graphite",
+      "price": "$31.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/havaianas-top-surfer-thong-new-graphite",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408038_US_001.jpg?width=1200&height=1200&v=1758779332",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575204",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Boston Oiled Leather Regular Tobacco Brown",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-oiled-leather-regular-tobacco-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/177275_US_000.jpg?width=1200&height=1200&v=1699035340",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575312",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Classic Nylon Sneaker Campus Brown",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-classic-nylon-sneaker-campus-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407115_US_001.jpg?width=1200&height=1200&v=1758779328",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575407",
+      "colors": [
+        "brown"
+      ],
+      "style": "vintage",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arch Support Thong Black",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/0004_407632_us_001.jpg?width=1200&height=1200&v=1733368722",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575508",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Oiled Tobacco",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-oiled-leather-regular-oiled-tobacco",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/154387_US_002.jpg?width=1200&height=1200&v=1709274635",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575615",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Classic Elephant",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-mens-classic-elephant",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/191947_US_001.jpg?width=1200&height=1200&v=1699034137",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575698",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birkibuc Narrow Stone",
+      "price": "$131.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birkibuc-narrow-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408658_US_001.jpg?width=1200&height=1200&v=1742358709",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575792",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Rubber Logo Black Blue",
+      "price": "$27.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/havaianas-rubber-logo-black-blue-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/413694_US_001.jpg?width=1200&height=1200&v=1759278291",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575895",
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Arch Support Slides Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-slides-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409242_US_001.jpg?width=1200&height=1200&v=1743916730",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.575989",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Smooth Leather Regular Black Smooth",
+      "price": "$144.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-smooth-leather-regular-black-smooth",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147270_45_1.jpg?width=1200&height=1200&v=1732846094",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576096",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Stone",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-mens-arizona-birkibuc-regular-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/167910_us_00007.jpg?width=1200&height=1200&v=1733101087",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576189",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birko Flor Narrow Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-narrow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/159068_001.jpg?width=1200&height=1200&v=1736319632",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576284",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Velvet Grey",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birkibuc-regular-velvet-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411134_US_001.jpg?width=1200&height=1200&v=1750999289",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576384",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Classic Clog Atmosphere",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-classic-clog-atmosphere",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/194146_US_001.jpg?width=1200&height=1200&v=1699034650",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576465",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Vegan Regular Thyme",
+      "price": "$131.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-vegan-regular-thyme",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408317_US_201.jpg?width=1200&height=1200&v=1743135771",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576555",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Ghostbuster Classic Clog Multi",
+      "price": "$78.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-ghostbuster-classic-clog-multi",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408074_US_001.jpg?width=1200&height=1200&v=1758255652",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576644",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Boston Tabacco Oiled Leather Narrow Brown",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-tabacco-oiled-leather-narrow-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411128_US_002.jpg?width=1200&height=1200&v=1750999313",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576748",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arch Support Thong White",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/0005_407633_us_001.jpg?width=1200&height=1200&v=1733368670",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576841",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Classic Clog Minecraft",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-classic-clog-minecraft",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404388_US_253.jpg?width=1200&height=1200&v=1758255648",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.576940",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Club C 85 Chalk",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-club-c-85-chalk",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/180896_US_001.jpg?width=1200&height=1200&v=1699028016",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.577008",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Frozen Elsa Classic Clog Toddler Multi",
+      "price": "$21.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-frozen-elsa-classic-clog-multi",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/207211_US_001.jpg?width=1200&height=1200&v=1728624646",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:18.577118",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Club C 85 White/Royal/Gum",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-club-c-85-white-royal-gum",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158731_000012.jpg?width=1200&height=1200&v=1698980526",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.577206",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Boston Sfb Suede Leather Narrow Mocca",
+      "price": "$215.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-sfb-suede-leather-narrow-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411131_US_001.jpg?width=1200&height=1200&v=1750999304",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.577308",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Bluey Classic Clog Blue",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-bluey-classic-clog-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402890_US_001.jpg?width=1200&height=1200&v=1732492170",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:18.577389",
+      "colors": [
+        "blue"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Club C Revenge Sneaker Chalk/Burgundy",
+      "price": "$115.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-club-c-revenge-sneaker-chalk-burgundy",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407121_US_001.jpg?width=1200&height=1200&v=1753321291",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.577486",
+      "colors": [
+        "burgundy"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Natural Leather Regular Vintage Wood Black",
+      "price": "$163.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-natural-leather-regular-vintage-wood-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411137_US_002.jpg?width=1200&height=1200&v=1750999309",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.577624",
+      "colors": [
+        "black"
+      ],
+      "style": "vintage",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Boston Suede Leather Regular Stone Coin",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-suede-leather-regular-stone-coin",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411000_US_001.jpg?width=1200&height=1200&v=1750143016",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:18.577726",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Saxon Brown Oil Suede",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/windsor-smith-saxon-brown-oil-suede",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409993_US_001.jpg?width=1200&height=1200&v=1746768625",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:25.002116",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Sebastian Brown Oil Suede",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/windsor-smith-sebastian-brown-oil-suede",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409991_US_003.jpg?width=1200&height=1200&v=1746768616",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:25.002249",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Jace Black Leather",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/windsor-smith-jace-black-leather",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409995_US_004.jpg?width=1200&height=1200&v=1746768634",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:25.002301",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Brazen Boot Brown",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/uncut-brazen-boot-brown-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406535_US_001.jpg?width=1200&height=1200&v=1730247271",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:25.002348",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Beau Dark Brown Tumbled Burnished Leathe",
+      "price": "$135.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/windsor-smith-beau-dark-brown-tumbled-burnished-leathe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409994_US_001.jpg?width=1200&height=1200&v=1746768630",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:25.002407",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sebastian Taupe Oil Suede",
+      "price": "$115.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/windsor-smith-sebastian-taupe-oil-suede",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409992_US_001.jpg?width=1200&height=1200&v=1746768621",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:25.002462",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Tasman Chestnut",
+      "price": "$122.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-boots/products/ugg-tasman-chestnut",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404343_US_003.jpg?width=1200&height=1200&v=1747365472",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:25.002504",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.124767",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Mocca",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/152637_001.jpg?width=1200&height=1200&v=1699029881",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.124979",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Boston Oiled Leather Regular Tobacco Brown",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-boston-oiled-leather-regular-tobacco-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/177275_US_000.jpg?width=1200&height=1200&v=1699035340",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125094",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Habana",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-oiled-leather-regular-habana",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147271_001.jpg?width=1200&height=1200&v=1731641155",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125196",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Frozen Elsa Classic Clog Toddler Multi",
+      "price": "$21.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-frozen-elsa-classic-clog-multi",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/207211_US_001.jpg?width=1200&height=1200&v=1728624646",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:33.125305",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Boston Sfb Suede Leather Narrow Mocca",
+      "price": "$215.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-boston-sfb-suede-leather-narrow-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411131_US_001.jpg?width=1200&height=1200&v=1750999304",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125407",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Oiled Tobacco",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-oiled-leather-regular-oiled-tobacco",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/154387_US_002.jpg?width=1200&height=1200&v=1709274635",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125513",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Classic Elephant",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-mens-classic-elephant",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/191947_US_001.jpg?width=1200&height=1200&v=1699034137",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125589",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birkibuc Narrow Stone",
+      "price": "$131.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-birkibuc-narrow-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408658_US_001.jpg?width=1200&height=1200&v=1742358709",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125693",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Bluey Classic Clog Blue",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-bluey-classic-clog-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402890_US_001.jpg?width=1200&height=1200&v=1732492170",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:33.125777",
+      "colors": [
+        "blue"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Boston Suede Leather Regular Stone Coin",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-boston-suede-leather-regular-stone-coin",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411000_US_001.jpg?width=1200&height=1200&v=1750143016",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125880",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arch Support Slides Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/archies-footwear-arch-support-slides-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409242_US_001.jpg?width=1200&height=1200&v=1743916730",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.125984",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Boston Oiled Leather Regular Oiled Habana",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-boston-oiled-leather-regular-oiled-habana",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/151342_001.jpg?width=1200&height=1200&v=1736319618",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126087",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Mens Arizona BF NU Narrow Mocca",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-mens-arizona-bf-nu-narrow-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/157918_003.jpg?width=1200&height=1200&v=1699035243",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126179",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Smooth Leather Regular Black Smooth",
+      "price": "$144.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-smooth-leather-regular-black-smooth",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147270_45_1.jpg?width=1200&height=1200&v=1732846094",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126286",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Pokemon Print Classic Clog Multi",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-pokemon-print-classic-clog-multi",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406182_US_001.jpg?width=1200&height=1200&v=1751508523",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:33.126378",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Desert Dust Vegan BirkiBuc Narrow Black",
+      "price": "$131.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-desert-dust-vegan-birkibuc-narrow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/195025_US_001.jpg?width=1200&height=1200&v=1699027793",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126489",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Boston Tabacco Oiled Leather Narrow Brown",
+      "price": "$202.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-boston-tabacco-oiled-leather-narrow-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411128_US_002.jpg?width=1200&height=1200&v=1750999313",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126592",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arizona Birko Flor Narrow Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-birko-flor-narrow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/159068_001.jpg?width=1200&height=1200&v=1736319632",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126686",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Stone",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-mens-arizona-birkibuc-regular-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/167910_us_00007.jpg?width=1200&height=1200&v=1733101087",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126780",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Boston SFB Narrow Suede Black",
+      "price": "$215.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-boston-sfb-narrow-suede-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/205515_US_001.jpg?width=1200&height=1200&v=1699034294",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126872",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Velvet Grey",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-birkibuc-regular-velvet-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411134_US_001.jpg?width=1200&height=1200&v=1750999289",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.126972",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Krispy Kreme Classic Clog Golden Hour",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-krispy-kreme-classic-clog-golden-hour",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408072_US_001.jpg?width=1200&height=1200&v=1758255655",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127065",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Classic Clog Dark Algae",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-classic-clog-dark-algae",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406188_US_001.jpg?width=1200&height=1200&v=1746150684",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:33.127146",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Clog Atmosphere",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-classic-clog-atmosphere",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/194146_US_001.jpg?width=1200&height=1200&v=1699034650",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127224",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Orange Zing",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-classic-orange-zing-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/191949_US_002.jpg?width=1200&height=1200&v=1699032523",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:33.127345",
+      "colors": [
+        "orange"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Vegan Regular Thyme",
+      "price": "$131.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-vegan-regular-thyme",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408317_US_201.jpg?width=1200&height=1200&v=1743135771",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127436",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Ghostbuster Classic Clog Multi",
+      "price": "$78.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-ghostbuster-classic-clog-multi",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408074_US_001.jpg?width=1200&height=1200&v=1758255652",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127522",
+      "colors": [
+        "unknown"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona SFB Oiled Leather Regular Iron",
+      "price": "$169.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-mens-arizona-sfb-iron",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/151399_4.jpg?width=1200&height=1200&v=1698979924",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127608",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arizona Natural Leather Regular Vintage Wood Black",
+      "price": "$163.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-natural-leather-regular-vintage-wood-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411137_US_002.jpg?width=1200&height=1200&v=1750999309",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127726",
+      "colors": [
+        "black"
+      ],
+      "style": "vintage",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Arizona Vegan Birko-flor Narrow Desert Dust Espresso/Grey Taupe",
+      "price": "$131.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/birkenstock-arizona-vegan-birko-flor-narrow-desert-dust-espresso-grey-taupe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411136_US_001.jpg?width=1200&height=1200&v=1750999301",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:33.127863",
+      "colors": [
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Classic Clog Cyber Yellow",
+      "price": "$34.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-sandals/products/crocs-classic-clog-cyber-yellow",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406196_US_001.jpg?width=1200&height=1200&v=1751508518",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:33.127955",
+      "colors": [
+        "yellow"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Compose Heavyweight Easy Tee White",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-compose-heavyweight-easy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404542_US_000.jpg?width=1200&height=1200&v=1729740403",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.165373",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Panela Anderson Hooded Fleece Atlantic Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/rusty-panela-anderson-hooded-fleece-atlantic-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406807_US_000.jpg?width=1200&height=1200&v=1745985540",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.165551",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Washed Black Canvas Embroidery Patch Destroyed Wash Cap Black Wash/Grey Embro",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/von-dutch-washed-black-canvas-embroidery-patch-destroyed-wash-cap-black-wash-grey-embro",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203281_020.jpg?width=1200&height=1200&v=1758869942",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.165793",
+      "colors": [
+        "black",
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Running Dept. Tee Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/front-runner-running-dept-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404590_US_000.jpg?width=1200&height=1200&v=1730424802",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.165930",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "The Quencher H2.O Flowstate Tumbler 40oz Rose Quartz",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/stanley-the-quencher-h2-o-flowstate-tumbler-40oz-rose-quartz",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405487_US_001.jpg?width=1200&height=1200&v=1728531709",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.166081",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.166228",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sway Zip Off Cargo Pant Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-sway-zip-off-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405635_US_009_1.jpg?width=1200&height=1200&v=1734669163",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.166480",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nova Street Hoodie Off White",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-nova-street-hoodie-off-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407310_us_044.jpg?width=1200&height=1200&v=1750748801",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.166622",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Austin Pleated Polo Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-austin-pleated-polo-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404804_001.jpg?width=1200&height=1200&v=1741333393",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.166745",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Mocca",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/152637_001.jpg?width=1200&height=1200&v=1699029881",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.166872",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Kamen Oversize Super Heavy Tee Washed Basil",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-kamen-oversize-super-heavy-tee-washed-basil",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410421_US_025.jpg?width=1200&height=1200&v=1758090736",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167021",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arkos Street Super Heavy Tee White",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-arkos-street-super-heavy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411177_US_000.jpg?width=1200&height=1200&v=1756875274",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167186",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Carpenter Jean Short Worship Worn Blue",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-carpenter-jean-short-worship-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203126_US_000_7e6dacdd-9ea7-4258-ba5c-5ba31363233d.jpg?width=1200&height=1200&v=1756170473",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167321",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Throttle Elastic Quarter Zip Crew Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-throttle-elastic-quarter-zip-crew-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405980_US_007.jpg?width=1200&height=1200&v=1758498801",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167460",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nullvoid Cropped Street Super Heavy Tee Acid Snow Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-nullvoid-cropped-street-super-heavy-tee-acid-snow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409970_US_000.jpg?width=1200&height=1200&v=1758089779",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167620",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic 5 Panel Cap Brown",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-classic-5-panel-cap-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400213_US_001.jpg?width=1200&height=1200&v=1699031351",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167726",
+      "colors": [
+        "brown"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Strukt Zip Off Cargo Pant Black/Teal",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-metrik-zip-off-cargo-pant-black-teal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410177_US_031.jpg?width=1200&height=1200&v=1752574222",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:35.167856",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Rosebud Oversized Super Heavy Tee ASPHALT",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-rosebud-oversized-super-heavy-tee-asphalt",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408853_us_022.jpg?width=1200&height=1200&v=1754550014",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.167988",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Machine Black",
+      "price": "$24.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/unity-eyewear-machine-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189130_US_002_1.jpg?width=1200&height=1200&v=1729834547",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168103",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Red Stripe",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-royalty-boxy-cropped-resort-shirt-red-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410550_us_022.jpg?width=1200&height=1200&v=1756170407",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168242",
+      "colors": [
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Habana",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-arizona-oiled-leather-regular-habana",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147271_001.jpg?width=1200&height=1200&v=1731641155",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168358",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Onyx",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-behemoth-super-baggy-jean-onyx",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406361_US_025.jpg?width=1200&height=1200&v=1755223232",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168451",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Imperium Rugby Shirt Off White/Brown",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-imperium-rugby-shirt-off-white-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407435_US_000.jpg?width=1200&height=1200&v=1743046346",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168550",
+      "colors": [
+        "white",
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Wildstyle Distressed Dad Cap Stone",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-wildstyle-distressed-dad-cap-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402705_US_001.jpg?width=1200&height=1200&v=1720160792",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:46:35.168648",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Blanco Pleated Tailored Trouser Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-blanco-pleated-tailored-trouser-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/1200x1800_0056_hero_1.jpg?width=1200&height=1200&v=1758785800",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168744",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "fitted",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Carpenter Jean Short Used Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-carpenter-jean-short-used-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203127_US_004_1.jpg?width=1200&height=1200&v=1757563754",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168837",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Tee Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/front-runner-modern-classic-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/205485_US_000_1.jpg?width=1200&height=1200&v=1708990284",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.168922",
+      "colors": [
+        "black"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Spray Bull Denim 91 Short Washed Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/xlarge-spray-bull-denim-91-short-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406690_US_043.jpg?width=1200&height=1200&v=1741926363",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.169009",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Blue/White Stripe",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-royalty-boxy-resort-shirt-blue-white-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408123_US_019.jpg?width=1200&height=1200&v=1758583223",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.169123",
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Organic Cropped Street Tee Black",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/open-archive-organic-cropped-street-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410090_US_000.jpg?width=1200&height=1200&v=1754628249",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.169219",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Relaxed Cargo Short Light Blue Denim",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-relaxed-cargo-short-light-blue-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406865_US_006.jpg?width=1200&height=1200&v=1741225084",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.169318",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "On Lock Oversize Shirt Blue Check",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-on-lock-oversize-shirt-blue-check",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405928_US_002.jpg?width=1200&height=1200&v=1759120194",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:46:35.169415",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    }
+  ]
+}

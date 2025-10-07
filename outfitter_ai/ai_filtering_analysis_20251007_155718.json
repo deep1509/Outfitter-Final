@@ -1,0 +1,602 @@
+{
+  "timestamp": "2025-10-07T15:57:18.139498",
+  "user_request": "white shoes size 9",
+  "total_original": 82,
+  "total_kept": 0,
+  "total_filtered": 82,
+  "overall_filtering_rate": "100.0%",
+  "store_analysis": {
+    "CultureKings": {
+      "original_count": 50,
+      "kept_count": 0,
+      "filtered_count": 50,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Universal Store": {
+      "original_count": 32,
+      "kept_count": 0,
+      "filtered_count": 32,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    }
+  },
+  "kept_products": [],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Carre International Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 1,
+      "name": "Jordan Brooklyn Fleece Printed Hoodie Black/Sail",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 2,
+      "name": "Jordan Essential Fleece Pullover Hoodie Hemp/Sail",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 3,
+      "name": "Reebok X Market All Over Print Hoodie Real Tree Camo",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 4,
+      "name": "Saint Morta Sacred Script Hoodie Brown",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "red"
+    },
+    {
+      "index": 5,
+      "name": "Saint Morta Shadow Mark Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 6,
+      "name": "The Anti Order Alpha Logo Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 7,
+      "name": "The Anti Order Reverse Logo Hoodie Charcoal Grey",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 8,
+      "name": "Adidas Originals Golf Driver Headcover Green",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "green"
+    },
+    {
+      "index": 9,
+      "name": "Adidas Originals Golf Towel Night Indigo",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 10,
+      "name": "Adidas Originals Knit Stripe Polo T-Shirt Night Indigo/Green",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "green"
+    },
+    {
+      "index": 11,
+      "name": "American Thrift Block Fit T-Shirt Off White",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "white"
+    },
+    {
+      "index": 12,
+      "name": "American Thrift Block Fit T-Shirt White",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "white"
+    },
+    {
+      "index": 13,
+      "name": "American Thrift Everyday Oversized T-Shirt Black",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "black"
+    },
+    {
+      "index": 14,
+      "name": "American Thrift Everyday Oversized T-Shirt Brown",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "brown"
+    },
+    {
+      "index": 15,
+      "name": "American Thrift Everyday Oversized T-Shirt Off White",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "white"
+    },
+    {
+      "index": 16,
+      "name": "American Thrift Everyday Oversized T-Shirt Washed Charcoal",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "unknown"
+    },
+    {
+      "index": 17,
+      "name": "American Thrift New Standard T-Shirt Black",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "black"
+    },
+    {
+      "index": 18,
+      "name": "American Thrift New Standard T-Shirt Black Acidwash",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "black"
+    },
+    {
+      "index": 19,
+      "name": "American Thrift New Standard T-Shirt Off White",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "white"
+    },
+    {
+      "index": 20,
+      "name": "American Thrift New Standard T-Shirt White",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "white"
+    },
+    {
+      "index": 21,
+      "name": "American Thrift The Block T-Shirt Black Wash",
+      "store_name": "CultureKings",
+      "category": "shirt",
+      "color": "black"
+    },
+    {
+      "index": 22,
+      "name": "Carre Premium Essentials Hoodie Light Brown",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "brown"
+    },
+    {
+      "index": 23,
+      "name": "Carre Rivet Hoodie Charcoal",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 24,
+      "name": "Casio AQ230A-2A1 Watch Silver/Turquoise",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 25,
+      "name": "Clarks Originals Wallabee Green",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "green"
+    },
+    {
+      "index": 26,
+      "name": "Jordan Brooklyn Collegiate Pullover Hoodie Birch Heather Grey",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 27,
+      "name": "Jordan Brooklyn Fleece Pullover Hoodie Grey Heather/White",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 28,
+      "name": "Loiter Slither Zip Hoodie Grey",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 29,
+      "name": "Loiter Weezy Rhinestone Zip Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 30,
+      "name": "Loiter Weezy Rhinestone Zip Hoodie Pink",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "pink"
+    },
+    {
+      "index": 31,
+      "name": "Nike Air Force 1 '07 LV8 Sail/Midnight Navy",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "navy"
+    },
+    {
+      "index": 32,
+      "name": "Nike Air Force 1 '07 LV8 Sail/Night Maroon",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 33,
+      "name": "Nike Club Pullover Fleece Hoodie Dark Grey Heather",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "grey"
+    },
+    {
+      "index": 34,
+      "name": "Nike Club Pullover Fleece Hoodie White/White/Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 35,
+      "name": "Nike Nocta Fleece Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 36,
+      "name": "Nike Nocta Fleece Hoodie Khaki",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 37,
+      "name": "Nike Nocta Fleece Hoodie Lt Orewood Brown",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "brown"
+    },
+    {
+      "index": 38,
+      "name": "Nike ReactX Rejuven8 Slides Orange",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "orange"
+    },
+    {
+      "index": 39,
+      "name": "Nike Sportswear Tech Fleece Windrunner Jacket Dusty Sage",
+      "store_name": "CultureKings",
+      "category": "jacket",
+      "color": "unknown"
+    },
+    {
+      "index": 40,
+      "name": "Nixon 51-30 Chrono Gold",
+      "store_name": "CultureKings",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 41,
+      "name": "Puma X Scuderia Ferrari Monza Hoodie Rosso Corsa",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 42,
+      "name": "Puma X Scuderia Ferrari Monza Hoodie Steer Blue",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "blue"
+    },
+    {
+      "index": 43,
+      "name": "S Double Choose Your Weapon Hoodie Washed White",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 44,
+      "name": "S Double Combo Platter Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 45,
+      "name": "S Double Combo Platter Hoodie Washed Chocolate",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 46,
+      "name": "S Double Crown Dot Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 47,
+      "name": "S Double Goosebumps Hoodie Washed Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 48,
+      "name": "S Double Small Stock Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 49,
+      "name": "X-Large Mark Zip Through Hoodie Black",
+      "store_name": "CultureKings",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 50,
+      "name": "Bluey Classic Clog Blue",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "blue"
+    },
+    {
+      "index": 51,
+      "name": "Frozen Elsa Classic Clog Toddler Multi",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 52,
+      "name": "Arch Support Slides Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 53,
+      "name": "Arch Support Slides Chocolate Brown",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "brown"
+    },
+    {
+      "index": 54,
+      "name": "Arch Support Thong Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 55,
+      "name": "Arch Support Thong Chocolate Brown",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "brown"
+    },
+    {
+      "index": 56,
+      "name": "Arch Support Thong White",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "white"
+    },
+    {
+      "index": 57,
+      "name": "Arizona Birkibuc Narrow Stone",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 58,
+      "name": "Arizona Birkibuc Regular Mocca",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 59,
+      "name": "Arizona Birkibuc Regular Stone",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 60,
+      "name": "Arizona Birkibuc Regular Velvet Grey",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "grey"
+    },
+    {
+      "index": 61,
+      "name": "Arizona Birko Flor Narrow Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 62,
+      "name": "Arizona Birko Flor Regular Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 63,
+      "name": "Arizona Natural Leather Regular Vintage Wood Black",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 64,
+      "name": "Arizona Oiled Leather Regular Oiled Tobacco",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 65,
+      "name": "Arizona Smooth Leather Regular Black Smooth",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 66,
+      "name": "Arizona Vegan Regular Thyme",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 67,
+      "name": "Boston Oiled Leather Regular Tobacco Brown",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "brown"
+    },
+    {
+      "index": 68,
+      "name": "Boston Sfb Suede Leather Narrow Mocca",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 69,
+      "name": "Boston Suede Leather Regular Stone Coin",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 70,
+      "name": "Boston Tabacco Oiled Leather Narrow Brown",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "brown"
+    },
+    {
+      "index": 71,
+      "name": "Classic Clog Atmosphere",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 72,
+      "name": "Classic Clog Minecraft",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 73,
+      "name": "Classic Elephant",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 74,
+      "name": "Classic Nylon Sneaker Campus Brown",
+      "store_name": "Universal Store",
+      "category": "shoes",
+      "color": "brown"
+    },
+    {
+      "index": 75,
+      "name": "Club C 85 Chalk",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 76,
+      "name": "Club C 85 White/Royal/Gum",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "white"
+    },
+    {
+      "index": 77,
+      "name": "Club C Revenge Sneaker Chalk/Burgundy",
+      "store_name": "Universal Store",
+      "category": "shoes",
+      "color": "unknown"
+    },
+    {
+      "index": 78,
+      "name": "Ghostbuster Classic Clog Multi",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 79,
+      "name": "Krispy Kreme Classic Clog Golden Hour",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 80,
+      "name": "Rubber Logo Black Blue",
+      "store_name": "Universal Store",
+      "category": "unknown",
+      "color": "black"
+    },
+    {
+      "index": 81,
+      "name": "Top Surfer Thong New Graphite",
+      "store_name": "Universal Store",
+      "category": "shirt",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": []
+}

@@ -23,6 +23,7 @@ from agents.intent_classifier import RobustIntentClassifier
 from agents.conversation_agents.greeterAgent import GreeterAgent
 from agents.conversation_agents.clarificationAgent import ClarificationAgent
 from agents.conversation_agents.generalResponderAgent import SimpleGeneralResponder
+from agents.conversation_agents.upsellAgent import UpsellAgent
 
 from tools.simple_product_verifier import SimpleProductVerifier
 from agents.conversation_agents.selectionHandler import SelectionHandler
@@ -51,6 +52,7 @@ class OutfitterAssistant:
         self.memory = MemorySaver()
         self.graph = None
         self.session_id = str(uuid.uuid4())
+        self.upsell_agent = UpsellAgent() 
         
         # Store products and state for Gradio access
         self.last_products = []
@@ -71,7 +73,9 @@ class OutfitterAssistant:
         workflow.add_node("general_responder", self._general_responder_node)
         workflow.add_node("parallel_searcher", self._real_parallel_searcher)
         workflow.add_node("product_presenter", self._product_presenter_node)
+        workflow.add_node("empty_results_handler", self._empty_results_handler_node)
         workflow.add_node("selection_handler", self._selection_handler_node)
+        workflow.add_node("upsell_agent", self._upsell_node)
         workflow.add_node("cart_manager", self._cart_manager_node)
         workflow.add_node("checkout_handler", self._mock_checkout_handler)
         
@@ -89,7 +93,8 @@ class OutfitterAssistant:
                 "cart_manager": "cart_manager",  # ADDED: Direct cart routing
                 "checkout_handler": "checkout_handler",
                 "general_responder": "general_responder",
-                "clarification_asker": "clarification_asker"
+                "clarification_asker": "clarification_asker",
+                "upsell_agent": "upsell_agent"  # ADDED: Upsell routing
             }
         )
         
@@ -119,6 +124,7 @@ class OutfitterAssistant:
             self._route_after_search,
             {
                 "product_presenter": "product_presenter",
+                "empty_results_handler": "empty_results_handler",
                 "clarification_asker": "clarification_asker",
                 "general_responder": "general_responder"
             }
@@ -144,6 +150,15 @@ class OutfitterAssistant:
             }
         )
         
+        # Empty results handler routing
+        workflow.add_conditional_edges(
+            "empty_results_handler",
+            self._route_after_empty_results,
+            {
+                "wait_for_user": END
+            }
+        )
+        
         # Selection handler routing - CRITICAL for cart
         workflow.add_conditional_edges(
             "selection_handler",
@@ -163,13 +178,15 @@ class OutfitterAssistant:
             {
                 "wait_for_user": END,
                 "product_presenter": "product_presenter",
-                "checkout_handler": "checkout_handler"
+                "checkout_handler": "checkout_handler",
+                "upsell_agent": "upsell_agent"  # ADDED: Route to upsell after cart
             }
         )
         
         # End states
         workflow.add_edge("general_responder", END)
         workflow.add_edge("checkout_handler", END)
+        workflow.add_edge("upsell_agent", END)
         
         # Compile with memory
         self.graph = workflow.compile(checkpointer=self.memory)
@@ -225,6 +242,10 @@ class OutfitterAssistant:
         
         return result
     
+    def _upsell_node(self, state: OutfitterState) -> Dict[str, Any]:
+        """Upsell agent node"""
+        return self.upsell_agent.suggest_upsell(state)
+    
     def _selection_handler_node(self, state: OutfitterState) -> Dict[str, Any]:
         """
         Handle product selections.
@@ -239,6 +260,12 @@ class OutfitterAssistant:
         print(f"   🔍 Pending additions: {len(result.get('pending_cart_additions', []))}")
         print(f"   🔍 Existing cart preserved: {len(result.get('selected_products', []))}")
         
+        # CRITICAL FIX: Ensure state is properly merged
+        # The issue is that LangGraph might not be merging the state properly
+        # Let's explicitly ensure the state is updated
+        if 'pending_cart_additions' in result:
+            print(f"   🔧 FIX: Setting pending_cart_additions: {len(result['pending_cart_additions'])} items")
+        
         return result
     
     def _cart_manager_node(self, state: OutfitterState) -> Dict[str, Any]:
@@ -250,6 +277,11 @@ class OutfitterAssistant:
         print(f"   📦 Current cart: {len(state.get('selected_products', []))} items")
         print(f"   ➕ Pending additions: {len(state.get('pending_cart_additions', []))} items")
         print(f"   🔧 Operation: {state.get('cart_operation', 'add')}")
+        
+        # CRITICAL DEBUG: Check if pending_cart_additions is actually in state
+        pending = state.get('pending_cart_additions', [])
+        print(f"   🔍 DEBUG: pending_cart_additions type: {type(pending)}")
+        print(f"   🔍 DEBUG: pending_cart_additions content: {pending}")
         
         result = self.cart_manager.process_cart_action(state)
         
@@ -405,7 +437,21 @@ Would you like me to:
         next_step = state.get("next_step", "general_responder")
         current_intent = state.get("current_intent", "")
         
-        # Check if products are shown and awaiting interaction
+        # PRIORITY 1: Respect intent classifier decisions first
+        if current_intent == "search":
+            print(f"   🔍 Routing: SEARCH intent → needs_analyzer")
+            return "needs_analyzer"
+        
+        if current_intent == "cart":
+            print(f"   🛒 Routing: CART intent → cart_manager")
+            return "cart_manager"
+        
+        # Check if this is an upsell search
+        if state.get("upsell_search", False):
+            print(f"   🎁 Routing: UPSELL SEARCH → needs_analyzer")
+            return "needs_analyzer"
+        
+        # PRIORITY 2: Handle product selection when products are shown
         products_shown = state.get("products_shown", [])
         awaiting_selection = state.get("awaiting_selection", False)
         
@@ -430,7 +476,7 @@ Would you like me to:
                     'get me', 'buy', 'purchase'
                 ]
                 
-                # Question indicators
+                # Question indicators (but NOT for search queries)
                 question_keywords = [
                     'how', 'what', 'why', 'which', 'when', 'where',
                     'should i', 'can you', 'tell me', 'show me more',
@@ -452,15 +498,17 @@ Would you like me to:
                     has_ordinal
                 )
                 
-                is_question = any(keyword in content_lower for keyword in question_keywords)
+                # FIXED: Don't treat "show me [product]" as a question when products are shown
+                # Only treat as question if it's asking about the shown products specifically
+                is_question_about_shown_products = any(keyword in content_lower for keyword in question_keywords) and not any(search_term in content_lower for search_term in ['show me', 'looking for', 'need', 'want'])
                 
                 # Route based on primary intent
-                if is_selection and not is_question:
+                if is_selection and not is_question_about_shown_products:
                     print(f"   🛒 Routing: SELECTION detected → selection_handler")
                     return "selection_handler"
                 
-                if is_question:
-                    print(f"   💬 Routing: QUESTION detected → general_responder")
+                if is_question_about_shown_products:
+                    print(f"   💬 Routing: QUESTION about shown products → general_responder")
                     return "general_responder"
                 
                 # If unclear but has numbers, assume selection
@@ -468,15 +516,7 @@ Would you like me to:
                     print(f"   🔢 Routing: Numbers detected → selection_handler")
                     return "selection_handler"
         
-        # Cart intent routing
-        if current_intent == "cart":
-            print(f"   🛒 Routing: CART intent → cart_manager")
-            return "cart_manager"
-        
-        # Existing routing logic
-        if next_step == "clarification_asker" and current_intent == "search":
-            return "needs_analyzer"
-        
+        # PRIORITY 3: Handle clarification needs
         if state.get("needs_clarification", False):
             return "clarification_asker"
         
@@ -523,33 +563,37 @@ Would you like me to:
             print(f"✅ Found {len(search_results)} products - routing to product_presenter")
             return "product_presenter"
         
+        # CRITICAL FIX: Handle empty results properly instead of clarification loop
+        if len(search_results) == 0:
+            print("❌ No products found - routing to empty results handler")
+            return "empty_results_handler"
+        
         # Error handling
         if scraping_error:
             print("❌ Routing to general_responder (scraping error)")
             return "general_responder"
         
-        # Default
-        print("🔄 Routing to clarification_asker")
-        return "clarification_asker"
+        # Default fallback
+        print("🔄 Routing to general_responder (fallback)")
+        return "general_responder"
     
     def _route_after_selection(self, state: OutfitterState) -> str:
-        """
-        Route after selection - CRITICAL for cart persistence.
-        """
-        next_step = state.get("next_step", "cart_manager")
+        """Route after user makes selection"""
+        next_step = state.get("next_step", "wait_for_user")
         
         print(f"   🔄 Routing after selection: next_step = {next_step}")
         
+        # CRITICAL: Route to cart_manager first to add items
+        if next_step == "cart_manager":
+            print(f"   🛒 → cart_manager (to add items)")
+            return "cart_manager"
+        
+        # Then check for upsell after cart is updated
         if next_step == "checkout_handler":
             return "checkout_handler"
         
-        if next_step == "product_presenter":
-            return "product_presenter"
-        
-        # DEFAULT: Route to cart_manager to persist selections
-        print(f"   🔄 → cart_manager (to add items)")
-        return "cart_manager"
-    
+        return "wait_for_user"
+
     def _route_after_presentation(self, state: OutfitterState) -> str:
         """Route after showing products"""
         products_shown = state.get("products_shown", [])
@@ -557,6 +601,11 @@ Would you like me to:
         if products_shown:
             return "wait_for_user"
         
+        return "wait_for_user"
+    
+    def _route_after_empty_results(self, state: OutfitterState) -> str:
+        """Route after empty results - always wait for user"""
+        print("🔄 Routing after empty results: wait_for_user")
         return "wait_for_user"
     
     def _route_after_cart_action(self, state: OutfitterState) -> str:
@@ -567,6 +616,15 @@ Would you like me to:
         next_step = state.get("next_step", "wait_for_user")
         
         print(f"   🔄 Routing after cart action: {next_step}")
+        
+        # Check if we should show upsell after adding items
+        selected_products = state.get("selected_products", [])
+        already_showed = state.get("showed_upsell", False)
+        
+        # Show upsell once after they add something to cart
+        if selected_products and not already_showed:
+            print("   🎯 → Routing to upsell_agent (after cart update)")
+            return "upsell_agent"
         
         if next_step == "product_presenter":
             return "product_presenter"
@@ -694,17 +752,17 @@ Would you like me to:
     
     def _handle_empty_presentation(self, query: str) -> Dict[str, Any]:
         """Handle case where no products to present"""
-        message = f"""I don't have any products to show you right now for '{query}'. 
+        message = f"""I'd love to show you some great {query} options, but I checked our stores and unfortunately don't have exactly what you're looking for right now. 
 
-This could be because:
-• No products were found in the search
-• There was a technical issue with the stores
-• The search criteria might need adjustment
+But don't worry! I can help you find something similar that you'll love:
 
-Would you like to:
-1. Try searching for something different
-2. Broaden your search terms
-3. Get some fashion advice while we figure out what you need"""
+✨ **Let's try these alternatives:**
+• Search for a broader category (e.g., "shirts" instead of "red button-up shirts")
+• Try different color options 
+• Look at similar styles that might work for you
+• I can show you what's currently trending
+
+What would you like to explore? I'm here to help you find the perfect pieces!"""
 
         return {
             "messages": [AIMessage(content=message)],
@@ -713,14 +771,59 @@ Would you like to:
             "next_step": "clarification_asker"
         }
     
+    def _empty_results_handler_node(self, state: OutfitterState) -> Dict[str, Any]:
+        """Handle case where no products are found after filtering"""
+        print("❌ EmptyResultsHandler: No products found after filtering")
+        
+        # Get search context
+        search_query = state.get("search_query", "items")
+        search_criteria = state.get("search_criteria", {})
+        
+        # Build personalized message based on what they were looking for
+        category = search_criteria.get("category", "items")
+        color = search_criteria.get("color_preference", "")
+        style = search_criteria.get("style_preference", "")
+        
+        # Build description of what they were looking for
+        search_description = f"{color} {style} {category}".strip()
+        if not search_description or search_description == "items":
+            search_description = f"{search_query}"
+        
+        message = f"""I'd love to show you some great {search_description} options, but I checked our stores and unfortunately don't have exactly what you're looking for right now. 
+
+But don't worry! I can help you find something similar that you'll love:
+
+✨ **Let's try these alternatives:**
+• Search for a broader category (e.g., "shirts" instead of "red button-up shirts")
+• Try different color options 
+• Look at similar styles that might work for you
+• I can show you what's currently trending
+
+What would you like to explore? I'm here to help you find the perfect pieces!"""
+
+        return {
+            "messages": [AIMessage(content=message)],
+            "search_results": [],
+            "search_query": search_query,
+            "search_successful": False,
+            "needs_clarification": True,
+            "conversation_stage": "discovery", 
+            "next_step": "wait_for_user"
+        }
+
     def _handle_no_products_found_sync(self, query: str, criteria: Dict[str, Any]) -> Dict[str, Any]:
         """Handle case where no products are found"""
-        message = f"""I searched for '{query}' but couldn't find any products right now. 
+        message = f"""I'd love to show you some amazing {query} options, but I checked our stores and unfortunately don't have exactly what you're looking for right now. 
 
-Would you like me to:
-1. Try a broader search with different terms
-2. Search for similar items  
-3. Help you refine your search criteria"""
+But don't worry! I can help you find something similar that you'll love:
+
+✨ **Let's try these alternatives:**
+• Search for a broader category (e.g., "shirts" instead of "red button-up shirts")
+• Try different color options 
+• Look at similar styles that might work for you
+• I can show you what's currently trending
+
+What would you like to explore? I'm here to help you find the perfect pieces!"""
 
         return {
             "messages": [AIMessage(content=message)],
@@ -800,12 +903,27 @@ Would you like me to:
         # Build state
         user_message_count = len([msg for msg in messages if isinstance(msg, HumanMessage)])
         
+        # CRITICAL FIX: Preserve cart state between interactions
+        existing_cart = []
+        existing_products_shown = []
+        existing_cart_operation = "add"  # Default cart operation
+        if hasattr(self, '_last_state') and self._last_state:
+            existing_cart = self._last_state.get("selected_products", [])
+            existing_products_shown = self._last_state.get("products_shown", [])
+            existing_cart_operation = self._last_state.get("cart_operation", "add")
+            print(f"🛒 Preserving cart with {len(existing_cart)} items from previous state")
+            print(f"🛍️ Preserving {len(existing_products_shown)} products shown from previous state")
+            print(f"🔧 Preserving cart operation: {existing_cart_operation}")
+        
         state = {
             "messages": messages,
             "current_intent": None,
             "search_criteria": {},
             "search_results": [],
-            "selected_products": [],
+            "selected_products": existing_cart,  # PRESERVE CART
+            "products_shown": existing_products_shown,  # PRESERVE: Products currently shown to user
+            "pending_cart_additions": [],  # ADD: Items waiting to be added
+            "cart_operation": existing_cart_operation,  # PRESERVE: Cart operation from previous state
             "next_step": None,
             "needs_clarification": False,
             "conversation_stage": "greeting" if user_message_count == 1 else "discovery",

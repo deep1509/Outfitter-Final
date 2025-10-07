@@ -69,13 +69,18 @@ QUESTION GUIDELINES:
 
 PRIORITY ORDER:
 1. Product category (if missing) - "What type of clothing are you looking for?"
-2. Specific details (if category exists) - size, color, style preferences  
+2. Specific details (if category exists) - color, style preferences (size is optional)
 3. Context/occasion - "What's this for?" or "Any particular style in mind?"
+
+IMPORTANT:
+- Size is NOT required - don't ask for it unless specifically needed
+- Gender defaults to mens if not specified
+- Focus on helping them find what they want, not collecting all details
 
 Examples:
 - Missing everything: "What type of clothing are you looking for today?"
-- Have category, missing details: "Any particular size or color you prefer for the [category]?"
-- Very specific: "I can help you find that! Any size preference?"
+- Have category, missing details: "Any particular color or style you prefer for the [category]?"
+- Very specific: "I can help you find that! Any color preference?"
 """
 
         user_prompt = f"""Customer's latest message: "{latest_user_message}"

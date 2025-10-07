@@ -140,7 +140,7 @@ class RobustIntentClassifier:
         # Build comprehensive context
         return ConversationContext(
             current_stage=state.get("conversation_stage", "greeting"),
-            products_shown=len(state.get("search_results", [])),
+            products_shown=len(state.get("products_shown", [])),  # FIXED: Use products_shown field
             cart_items=len(state.get("selected_products", [])),
             previous_intents=previous_intents[-3:],  # Last 3 intents
             conversation_length=len(messages),
@@ -201,6 +201,9 @@ class RobustIntentClassifier:
         
         system_prompt = self._build_system_prompt(context)
         
+        # DEBUG: Print context for debugging
+        print(f"   🔍 Intent Context: products_shown={context.products_shown}, cart_items={context.cart_items}, stage={context.current_stage}")
+        
         # Create the classification prompt
         classification_prompt = f"""
 CUSTOMER MESSAGE: "{message}"
@@ -260,10 +263,13 @@ Analyze this customer message like an experienced salesperson would. Consider:
 
     CART INTENT DETECTION:  # NEW SECTION
     Detect "cart" intent when user wants to:
-    - View their cart: "show my cart", "what's in my cart", "view cart"
+    - View their cart: "show my cart", "what's in my cart", "view cart", "what's in my cart right now"
     - Remove items: "remove #2", "delete item 1", "take out the hoodie"
     - Clear cart: "clear cart", "empty my cart", "start over"
     - Ask about cart: "how much is my total", "what did I select"
+    
+    IMPORTANT: When user asks "what's in my cart right now?" or similar viewing questions,
+    classify as "cart" intent and mention "viewing cart" in your reasoning.
 
     CUSTOMER CONTEXT UNDERSTANDING:
     - Early conversation (turns 1-3): Often greeting or search intent
@@ -272,11 +278,25 @@ Analyze this customer message like an experienced salesperson would. Consider:
     - Negative language: Could be complaint or clarification need
     - Multiple topics: Identify primary and secondary intents
 
-    SELECTION vs CART DISTINCTION:  # NEW
-    - "I want #2" → selection (adding to cart for first time)
-    - "add #2" → selection (adding new item)
+    SELECTION vs SEARCH vs CART DISTINCTION:  # IMPROVED
+    - "I want #2" → selection (choosing from shown products)
+    - "I like option 1" → selection (choosing from shown products)
+    - "I like the option 1" → selection (choosing from shown products)
+    - "add #2" → selection (adding to cart)
+    - "choose option 3" → selection (choosing from shown products)
+    - "pick the first one" → selection (choosing from shown products)
+    - "I'll take number 2" → selection (choosing from shown products)
+    - "show me black shirts" → search (looking for new products)
+    - "show me these products" → search (wanting to see different products)
+    - "show me white shirts" → search (new product search)
     - "show my cart" → cart (viewing existing cart)
     - "remove #1" → cart (modifying existing cart)
+    
+    CRITICAL SELECTION DETECTION:
+    - If user mentions "option", "number", "#", "first", "second", "third", etc. AND products are shown → SELECTION
+    - If user says "I like", "I want", "choose", "pick" with numbers/options → SELECTION
+    - "show me [product type]" = SEARCH, not selection!
+    - Only classify as SELECTION when user is choosing from already shown products.
 
     SALESPERSON MINDSET:
     - Always prioritize customer satisfaction
@@ -296,13 +316,17 @@ Analyze this customer message like an experienced salesperson would. Consider:
         """Manual classification when AI fails"""
         message_lower = message.lower()
         
-        # Simple but robust fallback logic
+        # Improved fallback logic with better search vs selection distinction
         if context.conversation_length <= 2:
             intent = "greeting"
-        elif any(word in message_lower for word in ["looking", "need", "want", "find", "show"]):
-            intent = "search"
-        elif any(word in message_lower for word in ["like", "choose", "pick", "number"]) and context.products_shown > 0:
-            intent = "selection"
+        elif any(word in message_lower for word in ["remove", "delete", "take out"]) and context.cart_items > 0:
+            intent = "cart"  # Cart removal
+        elif any(word in message_lower for word in ["cart", "basket", "bag"]) and context.cart_items > 0:
+            intent = "cart"  # Cart operations
+        elif any(word in message_lower for word in ["show me", "looking for", "need", "want", "find"]) and not any(word in message_lower for word in ["#", "number", "option"]):
+            intent = "search"  # New product search
+        elif any(word in message_lower for word in ["like", "choose", "pick", "number", "#", "option"]) and context.products_shown > 0:
+            intent = "selection"  # Choosing from shown products
         elif any(word in message_lower for word in ["buy", "purchase", "checkout"]):
             intent = "checkout"
         else:
@@ -354,7 +378,7 @@ Analyze this customer message like an experienced salesperson would. Consider:
         # Map to actual nodes in your graph
         intent_actions = {
             "greeting": "greeter",
-            "search": "clarification_asker",
+            "search": "needs_analyzer",  # FIXED: Route search directly to needs_analyzer
             "selection": "selection_handler", 
             "cart": "cart_manager",
             "checkout": "checkout_handler",
@@ -365,16 +389,18 @@ Analyze this customer message like an experienced salesperson would. Consider:
         base_action = intent_actions.get(analysis.primary_intent, "general_responder")
         
         # Context-based refinements
-        if analysis.primary_intent == "search" and context.products_shown > 10:
-            return "clarification_asker"
-        
-        if analysis.primary_intent == "search" and not analysis.extracted_entities:
-            return "clarification_asker"
+        # REMOVED: Search intents should always go to needs_analyzer
+        # The needs_analyzer will determine if clarification is needed
         
         # FIXED: Cart-specific routing (simplified without _get_latest_message_lower)
         if analysis.primary_intent == "cart":
             # Cart operations will be determined by cart_manager itself
             return "cart_manager"
+        
+        # Handle upsell conversations
+        if context.current_stage == "upselling":
+            # If we're in upselling stage, route back to upsell_agent
+            return "upsell_agent"
         
         return base_action
 
@@ -400,6 +426,34 @@ Analyze this customer message like an experienced salesperson would. Consider:
         
         # Default to add (when adding new items)
         return "add"
+    
+    def _extract_cart_operation_from_reasoning(self, reasoning: str) -> str:
+        """
+        Extract cart operation from AI reasoning with improved detection.
+        Returns: "view", "remove", "clear", or "add"
+        """
+        reasoning_lower = reasoning.lower()
+        
+        # View cart - IMPROVED detection
+        view_keywords = [
+            "what's in my cart", "what's in my cart right now", "show my cart", 
+            "view cart", "see cart", "display cart", "what did i select",
+            "what's in", "show me my cart", "cart contents", "my cart",
+            "viewing", "showing", "displaying", "checking cart"
+        ]
+        if any(keyword in reasoning_lower for keyword in view_keywords):
+            return "view"
+        
+        # Remove from cart
+        if any(word in reasoning_lower for word in ["remove", "delete", "take out", "get rid"]):
+            return "remove"
+        
+        # Clear cart
+        if any(word in reasoning_lower for word in ["clear", "empty", "reset", "start over"]):
+            return "clear"
+        
+        # Default to view for cart intents (safer default)
+        return "view"
 
     
     def _convert_to_state_update(self, analysis: IntentAnalysis, context: ConversationContext) -> Dict[str, Any]:
@@ -421,19 +475,8 @@ Analyze this customer message like an experienced salesperson would. Consider:
         
         # FIXED: Cart operation handling without missing method
         if analysis.primary_intent == "cart":
-            # Extract cart operation from the analysis reasoning or entities
-            # The AI model should have already determined the operation type
-            cart_operation = "view"  # Default to view
-            
-            # Try to determine from analysis reasoning
-            reasoning_lower = analysis.reasoning.lower()
-            if any(word in reasoning_lower for word in ["remove", "delete"]):
-                cart_operation = "remove"
-            elif any(word in reasoning_lower for word in ["clear", "empty"]):
-                cart_operation = "clear"
-            elif any(word in reasoning_lower for word in ["add"]):
-                cart_operation = "add"
-            
+            # Extract cart operation from the reasoning or use improved detection
+            cart_operation = self._extract_cart_operation_from_reasoning(analysis.reasoning)
             state_update["cart_operation"] = cart_operation
         
         return state_update
@@ -493,7 +536,7 @@ Analyze this customer message like an experienced salesperson would. Consider:
         """Simple intent to action mapping"""
         mapping = {
             "greeting": "greeter",
-            "search": "clarification_asker",  # ← Changed from needs_analyzer
+            "search": "needs_analyzer",  # FIXED: Route search to needs_analyzer
             "selection": "selection_handler",
             "checkout": "checkout_handler",
             "general": "general_responder"

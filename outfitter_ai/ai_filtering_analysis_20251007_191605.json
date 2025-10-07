@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-10-07T19:16:05.804375",
+  "user_request": "pants size 30 denim",
+  "total_original": 5,
+  "total_kept": 2,
+  "total_filtered": 3,
+  "overall_filtering_rate": "60.0%",
+  "store_analysis": {
+    "CultureKings": {
+      "original_count": 4,
+      "kept_count": 1,
+      "filtered_count": 3,
+      "filtering_rate": "75.0%",
+      "kept_rate": "25.0%"
+    },
+    "Universal Store": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Saint Morta Dynasty Jean Black",
+      "price": "$129.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/saint-morta-dynasty-jean-black",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/03004964-YB001_mens_000010.jpg?v=1718677411",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T19:16:04.109781"
+    },
+    {
+      "name": "Briggs Elastic Waist Cargo Jean Fog Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-briggs-elastic-waist-cargo-jean-fog-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411277_US_003.jpg?width=1200&height=1200&v=1756874837",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T19:16:02.933547"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Loiter Sketch Cargo Pants Off White",
+      "store_name": "CultureKings",
+      "category": "pants",
+      "color": "white"
+    },
+    {
+      "index": 1,
+      "name": "XXIII Torrent Cargo Pant Black",
+      "store_name": "CultureKings",
+      "category": "pants",
+      "color": "black"
+    },
+    {
+      "index": 2,
+      "name": "Carré 202X Cargo Jogger Pants Black",
+      "store_name": "CultureKings",
+      "category": "pants",
+      "color": "black"
+    }
+  ],
+  "kept_indices": [
+    3,
+    4
+  ]
+}
