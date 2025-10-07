@@ -1,0 +1,641 @@
+{
+  "timestamp": "2025-10-06T19:23:02.149478",
+  "search_query": "black hoodies",
+  "search_criteria": {
+    "category": "hoodies",
+    "color_preference": "black",
+    "size": "M"
+  },
+  "stage": "before_ai_filtering",
+  "total_products": 62,
+  "products_by_store": {
+    "CultureKings": [
+      {
+        "name": "Carre International Hoodie Black",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-international-hoodie-black-2-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053809-YB001_mens_0010.jpg?v=1757465239",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136603"
+      },
+      {
+        "name": "Jordan Brooklyn Fleece Printed Hoodie Black/Sail",
+        "price": "$74.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-brooklyn-fleece-printed-hoodie-black-sail-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054492-YB699_mens_0000010.jpg?v=1757459333",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136638"
+      },
+      {
+        "name": "Jordan Essential Fleece Pullover Hoodie Hemp/Sail",
+        "price": "$84.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-essential-fleece-pullover-hoodie-hemp-sail-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02045108-YH104_mens_0010.jpg?v=1757485893",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136575"
+      },
+      {
+        "name": "Reebok X Market All Over Print Hoodie Real Tree Camo",
+        "price": "$104.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/reebok-x-market-all-over-print-hoodie-real-tree-camo-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054376-YR245_mens_000010.gif?v=1755647977",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136661"
+      },
+      {
+        "name": "Saint Morta Sacred Script Hoodie Brown",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/saint-morta-sacred-script-hoodie-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053812-YX300_mens_0010.jpg?v=1757465753",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136593"
+      },
+      {
+        "name": "Saint Morta Shadow Mark Hoodie Black",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/saint-morta-shadow-mark-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053813-YB001_mens_0010.jpg?v=1757465531",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136600"
+      },
+      {
+        "name": "The Anti Order Alpha Logo Hoodie Black",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/the-anti-order-alpha-logo-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053816-YB001_mens_0000010.jpg?v=1757462071",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136644"
+      },
+      {
+        "name": "The Anti Order Reverse Logo Hoodie Charcoal Grey",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/the-anti-order-reverse-logo-hoodie-charcoal-grey-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053817-YD720_mens_0000010.jpg?v=1757461837",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:01.136647"
+      },
+      {
+        "name": "Carre Premium Essentials Hoodie Light Brown",
+        "price": "$99.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-premium-essentials-hoodie-light-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054919-YL207_mens_0010.jpg?v=1757465154",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136606"
+      },
+      {
+        "name": "Carre Rivet Hoodie Charcoal",
+        "price": "$109.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-rivet-hoodie-charcoal-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054898-YC300_mens_0010.jpg?v=1757466933",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136571"
+      },
+      {
+        "name": "Jordan Brooklyn Collegiate Pullover Hoodie Birch Heather Grey",
+        "price": "$105.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-brooklyn-collegiate-pullover-hoodie-birch-heather-grey-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054497-YH081_mens_0000010.jpg?v=1757459573",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136635"
+      },
+      {
+        "name": "Jordan Brooklyn Fleece Pullover Hoodie Grey Heather/White",
+        "price": "$95.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-brooklyn-fleece-pullover-hoodie-grey-heather-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054501-YQ021_mens_0010.jpg?v=1757459113",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136653"
+      },
+      {
+        "name": "Loiter Slither Zip Hoodie Grey",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/loiter-slither-zip-hoodie-grey-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054833-YQ001_mens_0010.jpg?v=1755651353",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136658"
+      },
+      {
+        "name": "Loiter Weezy Rhinestone Zip Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/loiter-weezy-rhinestone-zip-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054835-YB001_mens_0010.jpg?v=1757463906",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136641"
+      },
+      {
+        "name": "Loiter Weezy Rhinestone Zip Hoodie Pink",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/loiter-weezy-rhinestone-zip-hoodie-pink-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054835-YP001_mens_0010.jpg?v=1758239330",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136564"
+      },
+      {
+        "name": "Nike Club Pullover Fleece Hoodie Dark Grey Heather",
+        "price": "$75.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-club-pullover-fleece-hoodie-dark-grey-heather-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054476-YD597_mens_0010.jpg?v=1758244963",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136561"
+      },
+      {
+        "name": "Nike Club Pullover Fleece Hoodie White/White/Black",
+        "price": "$75.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-club-pullover-fleece-hoodie-white-white-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054463-YW241_mens_0010.jpg?v=1757459263",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136632"
+      },
+      {
+        "name": "Nike Nocta Fleece Hoodie Black",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-nocta-fleece-hoodie-black-2-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054781-YB001_mens_0010.jpg?v=1757484881",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136618"
+      },
+      {
+        "name": "Nike Nocta Fleece Hoodie Khaki",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-nocta-fleece-hoodie-khaki-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054784-YK001_mens_0010.jpg?v=1757484277",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136624"
+      },
+      {
+        "name": "Nike Nocta Fleece Hoodie Lt Orewood Brown",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-nocta-fleece-hoodie-lt-orewood-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054783-YL480_mens_0010.jpg?v=1757484590",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136621"
+      },
+      {
+        "name": "Nike Sportswear Tech Fleece Windrunner Jacket Dusty Sage",
+        "price": "$150.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-sportswear-tech-fleece-windrunner-jacket-dusty-sage-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054472-YD343_mens_0010.jpg?v=1756157036",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136656"
+      },
+      {
+        "name": "Puma X Scuderia Ferrari Monza Hoodie Rosso Corsa",
+        "price": "$180.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/puma-x-scuderia-ferrari-monza-hoodie-rosso-corsa-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055087-YR255_mens_0010.jpg?v=1757484185",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136629"
+      },
+      {
+        "name": "Puma X Scuderia Ferrari Monza Hoodie Steer Blue",
+        "price": "$180.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/puma-x-scuderia-ferrari-monza-hoodie-steer-blue-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055088-YS959_mens_0010.jpg?v=1757484224",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136627"
+      },
+      {
+        "name": "S Double Choose Your Weapon Hoodie Washed White",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-choose-your-weapon-hoodie-washed-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054088-YX630_mens_0010.jpg?v=1757485476",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136612"
+      },
+      {
+        "name": "S Double Combo Platter Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-combo-platter-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054089-YB001_mens_0010.jpg?v=1758245730",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136487"
+      },
+      {
+        "name": "S Double Combo Platter Hoodie Washed Chocolate",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-combo-platter-hoodie-washed-chocolate-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054089-YW534_mens_0010.jpg?v=1758245444",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136555"
+      },
+      {
+        "name": "S Double Crown Dot Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-crown-dot-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054920-YB001_mens_0010.jpg?v=1757485361",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136615"
+      },
+      {
+        "name": "S Double Goosebumps Hoodie Washed Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-goosebumps-hoodie-washed-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054090-YW607_mens_0010.jpg?v=1757977962",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136567"
+      },
+      {
+        "name": "S Double Small Stock Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-small-stock-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054924-YB001_mens_0010.jpg?v=1757485554",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136610"
+      },
+      {
+        "name": "X-Large Mark Zip Through Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/x-large-mark-zip-through-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054382-YB001_mens_0010.jpg?v=1756157997",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T19:23:01.136650"
+      }
+    ],
+    "Universal Store": [
+      {
+        "name": "Better Zip Hood Ash grey",
+        "price": "$54.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/barney-cools-better-zip-hood-ash-grey",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411683_US_000.jpg?width=1200&height=1200&v=1752807315",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:02.146482"
+      },
+      {
+        "name": "Cities Boxy Hoodie Black",
+        "price": "$41.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-cities-boxy-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410677_US_018.jpg?width=1200&height=1200&v=1751933399",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:02.145362"
+      },
+      {
+        "name": "Minimal Boxy Hoodie Washed Black",
+        "price": "$48.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-minimal-boxy-hoodie-washed-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410676_US_012.jpg?width=1200&height=1200&v=1751933373",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:02.146672"
+      },
+      {
+        "name": "PCR Hood Slate",
+        "price": "$48.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/barney-cools-pcr-hood-slate",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411682_US_000.jpg?width=1200&height=1200&v=1752807325",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T19:23:02.146758"
+      },
+      {
+        "name": "2K Sing 2.0 Hooded Fleece Ecru Marle",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/rusty-2k-sing-hooded-fleece-ecru-marle",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/406812_US_000.jpg?width=1200&height=1200&v=1743915926",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.147013"
+      },
+      {
+        "name": "Blitz Street Hoodie Sunfade Light Blue",
+        "price": "$95.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-blitz-street-hoodie-sunfade-light-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408921_US_019.jpg?width=1200&height=1200&v=1752798240",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144985"
+      },
+      {
+        "name": "Bolter Crew Fleece Navy Blue",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/rusty-bolter-crew-fleece-navy-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/0p8a0117.jpg?width=1200&height=1200&v=1745819607",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145819"
+      },
+      {
+        "name": "Botanica Boxy Hoodie Coffee Brown",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-botanica-boxy-hoodie-coffee-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408892_US_000.jpg?width=1200&height=1200&v=1748571754",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145113"
+      },
+      {
+        "name": "Boxy Hoodie Black",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-boxy-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/0p8a9803.jpg?width=1200&height=1200&v=1745819881",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146933"
+      },
+      {
+        "name": "Boxy Hoodie Cocoa Brown",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-boxy-hoodie-cocoa-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407932_us_022.jpg?width=1200&height=1200&v=1750385977",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146004"
+      },
+      {
+        "name": "Boxy Hoodie Washed Black",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-boxy-hoodie-washed-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407934_us_022.jpg?width=1200&height=1200&v=1750385736",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146572"
+      },
+      {
+        "name": "Cena Zip Through Street Hoodie Camo",
+        "price": "$95.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-cena-zip-through-street-hoodie-camo",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408134_US_00.jpg?width=1200&height=1200&v=1746685434",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146189"
+      },
+      {
+        "name": "Cities Boxy Hoodie Misty Blue",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-cities-boxy-hoodie-misty-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408891_US_000.jpg?width=1200&height=1200&v=1747890267",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144292"
+      },
+      {
+        "name": "Compose Boxy Hoodie Black",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-compose-boxy-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408004_US_027.jpg?width=1200&height=1200&v=1753770822",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.143906"
+      },
+      {
+        "name": "Flora Boxy Hoodie Off White",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-flora-boxy-hoodie-off-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410678_us_022.jpg?width=1200&height=1200&v=1755841146",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146287"
+      },
+      {
+        "name": "Form Quarter Zip Sweater Ecru",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-form-quarter-zip-sweater-cream",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/401484_US_015.jpg?width=1200&height=1200&v=1752706103",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145732"
+      },
+      {
+        "name": "Freestyle Street Hoodie Asphalt",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-freestyle-street-hoodie-asphalt",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407347_US_001.jpg?width=1200&height=1200&v=1742359261",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144582"
+      },
+      {
+        "name": "Glory Quarter Zip Fleece Washed Black",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/thrills-glory-quarter-zip-fleece-washed-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407543_US_000.jpg?width=1200&height=1200&v=1747890407",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146386"
+      },
+      {
+        "name": "Gloves Up Hoodie Black",
+        "price": "$95.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/engage-gloves-up-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/412441_us_023.jpg?width=1200&height=1200&v=1758608836",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144022"
+      },
+      {
+        "name": "Interval Street Hoodie Black",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-interval-street-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408920_US_000.jpg?width=1200&height=1200&v=1749534301",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.147204"
+      },
+      {
+        "name": "Kaen Street Hoodie Grey",
+        "price": "$95.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-kaen-street-hoodie-grey",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/406850_us_022.jpg?width=1200&height=1200&v=1757309847",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144707"
+      },
+      {
+        "name": "Nova Street Hoodie Black",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-nova-street-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/universal_stay_cosy1695.jpg?width=1200&height=1200&v=1754550198",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.143775"
+      },
+      {
+        "name": "Nova Street Hoodie Off White",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-nova-street-hoodie-off-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407310_us_044.jpg?width=1200&height=1200&v=1750748801",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.143619"
+      },
+      {
+        "name": "NWO Knit Black",
+        "price": "$135.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/barney-cools-nwo-knit-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407579_US_001.jpg?width=1200&height=1200&v=1758779280",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146848"
+      },
+      {
+        "name": "Panela Anderson 2.0 Hooded Fleece Black",
+        "price": "$95.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/rusty-panela-anderson-2-0-hooded-fleece-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/409108_US_099.jpg?width=1200&height=1200&v=1749622437",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.146089"
+      },
+      {
+        "name": "Panela Anderson Hooded Fleece Atlantic Blue",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/rusty-panela-anderson-hooded-fleece-atlantic-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/406807_US_000.jpg?width=1200&height=1200&v=1745985540",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.147113"
+      },
+      {
+        "name": "Running Dept Hoodie Grey",
+        "price": "$114.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/front-runner-running-dept-hoodie-grey",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/409059_US_000.jpg?width=1200&height=1200&v=1756274447",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145611"
+      },
+      {
+        "name": "Slipstream Street Hoodie Black",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-slipstream-street-hoodie-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/409411_us_022.jpg?width=1200&height=1200&v=1753683621",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145913"
+      },
+      {
+        "name": "Striker Quarter Zip Polar Fleece Black",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/worship-striker-quarter-zip-polar-fleece-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407565_US_006.jpg?width=1200&height=1200&v=1749699546",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144451"
+      },
+      {
+        "name": "Surge Zip Through Street Hoodie Sunfade Black",
+        "price": "$95.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-surge-zip-through-street-hoodie-sunfade-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408922_us_022.jpg?width=1200&height=1200&v=1754550071",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.144851"
+      },
+      {
+        "name": "Throttle Elastic Quarter Zip Crew Black",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-throttle-elastic-quarter-zip-crew-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/405980_US_007.jpg?width=1200&height=1200&v=1758498801",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145493"
+      },
+      {
+        "name": "Tide Raglan Boxy Hoodie Asphalt",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-tide-raglan-boxy-hoodie-asphalt",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408087_US_001.jpg?width=1200&height=1200&v=1745472876",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T19:23:02.145238"
+      }
+    ]
+  },
+  "store_counts": {
+    "CultureKings": 30,
+    "Universal Store": 32
+  }
+}

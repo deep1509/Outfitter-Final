@@ -25,6 +25,7 @@ from agents.conversation_agents.clarificationAgent import ClarificationAgent
 from agents.conversation_agents.generalResponderAgent import SimpleGeneralResponder
 
 from tools.simple_product_verifier import SimpleProductVerifier
+from agents.conversation_agents.selectionHandler import SelectionHandler
 
 
 
@@ -44,11 +45,14 @@ class OutfitterAssistant:
         self.needs_analyzer = NeedsAnalyzer()  # NEW
         self.clarification_asker = SimpleClarificationAsker()  # UPDATED
         self.general_responder = SimpleGeneralResponder()
+        self.selection_handler = SelectionHandler()
         
         # Memory for conversation persistence
         self.memory = MemorySaver()
         self.graph = None
         self.session_id = str(uuid.uuid4())
+        
+        
         
         self.last_products = []
 
@@ -67,8 +71,8 @@ class OutfitterAssistant:
         workflow.add_node("general_responder", self._general_responder_node)
         workflow.add_node("parallel_searcher", self._real_parallel_searcher)
         workflow.add_node("product_presenter", self._product_presenter_node)
-        workflow.add_node("selection_handler", self._enhanced_selection_handler)
         workflow.add_node("checkout_handler", self._mock_checkout_handler)
+        workflow.add_node("selection_handler", self._selection_handler_node)
         
         # CRITICAL FIX: Ensure state updates propagate properly
         workflow.add_edge(START, "intent_classifier")
@@ -128,8 +132,27 @@ class OutfitterAssistant:
             }
         )
         
+        workflow.add_conditional_edges(
+            "product_presenter",
+            self._route_after_presentation,
+            {
+                "selection_handler": "selection_handler",
+                "wait_for_user": END
+            }
+        )
+        
+        #routing from selection_handler
+        workflow.add_conditional_edges(
+            "selection_handler",
+            self._route_after_selection,
+            {
+                "checkout_handler": "checkout_handler",
+                "product_presenter": "product_presenter",
+                "wait_for_user": END
+            }
+        )
+        
         # End states
-        workflow.add_edge("product_presenter", END)
         workflow.add_edge("general_responder", END)
         workflow.add_edge("selection_handler", END)
         workflow.add_edge("checkout_handler", END)
@@ -162,9 +185,30 @@ class OutfitterAssistant:
         """Simple clarification question generator node"""  
         return self.clarification_asker.ask_clarification(state)
     
+
     def _general_responder_node(self, state: OutfitterState) -> Dict[str, Any]:
         """Enhanced AI-powered general response node"""
-        return self.general_responder.respond_to_general_query(state)
+        print("💬 GeneralResponder: Handling general query...")
+        
+        result = self.general_responder.respond_to_general_query(state)
+        
+        # CRITICAL: Preserve products_shown and awaiting_selection
+        # So user can still select after asking questions
+        products_shown = state.get("products_shown", [])
+        awaiting_selection = state.get("awaiting_selection", False)
+        
+        if products_shown and awaiting_selection:
+            print(f"   ✓ Preserving {len(products_shown)} shown products for selection")
+            result["products_shown"] = products_shown
+            result["awaiting_selection"] = True
+            result["conversation_stage"] = "presenting"  # Stay in presenting mode
+        
+        return result
+    
+    # NEW NODE: Selection Handler
+    def _selection_handler_node(self, state: OutfitterState) -> Dict[str, Any]:
+        """Handle product selections"""
+        return self.selection_handler.handle_selection(state)
     
     # ============ REAL SCRAPING INTEGRATION NODES ============
         
@@ -187,7 +231,7 @@ class OutfitterAssistant:
             # Run async scraping
             products = asyncio.run(search_all_stores(
                 query=search_query,
-                max_products=30  # Get more since we'll filter
+                max_products=100  # Get more since we'll filter
             ))
             
             print(f"✅ Found {len(products)} products from scraping")
@@ -207,6 +251,37 @@ class OutfitterAssistant:
                 }
                 product_dicts.append(product_dict)
             
+            # ============ DEBUG: SAVE PRODUCTS BY STORE BEFORE FILTERING ============
+            import json
+            from datetime import datetime
+            
+            # Group products by store before filtering
+            products_by_store_before = {}
+            for product in product_dicts:
+                store_name = product.get("store_name", "Unknown Store")
+                if store_name not in products_by_store_before:
+                    products_by_store_before[store_name] = []
+                products_by_store_before[store_name].append(product)
+            
+            # Save before filtering debug data
+            debug_before_data = {
+                "timestamp": datetime.now().isoformat(),
+                "search_query": search_query,
+                "search_criteria": search_criteria,
+                "stage": "before_ai_filtering",
+                "total_products": len(product_dicts),
+                "products_by_store": products_by_store_before,
+                "store_counts": {store: len(products) for store, products in products_by_store_before.items()}
+            }
+            
+            debug_before_filename = f"debug_products_before_filtering_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(debug_before_filename, 'w', encoding='utf-8') as f:
+                json.dump(debug_before_data, f, indent=2, ensure_ascii=False)
+            
+            print(f"💾 DEBUG: Saved {len(product_dicts)} products BEFORE filtering to {debug_before_filename}")
+            print(f"📊 Store breakdown BEFORE filtering: {debug_before_data['store_counts']}")
+            # ============================================
+            
             # ============ CLIENT-SIDE FILTERING ============
             # Universal Store search doesn't work via URL, so filter client-side
             if len(product_dicts) > 0:
@@ -225,24 +300,39 @@ class OutfitterAssistant:
                 print(f"📊 Filtering result: {original_count} → {len(product_dicts)} products")
             # ============================================
             
-            # ============ DEBUG: SAVE TO FILE ============
-            import json
-            from datetime import datetime
+            # ============ DEBUG: SAVE PRODUCTS BY STORE AFTER FILTERING ============
+            # Group products by store after filtering
+            products_by_store_after = {}
+            for product in product_dicts:
+                store_name = product.get("store_name", "Unknown Store")
+                if store_name not in products_by_store_after:
+                    products_by_store_after[store_name] = []
+                products_by_store_after[store_name].append(product)
             
-            debug_data = {
+            # Save after filtering debug data
+            debug_after_data = {
                 "timestamp": datetime.now().isoformat(),
                 "search_query": search_query,
                 "search_criteria": search_criteria,
-                "products_found_after_filtering": len(product_dicts),
-                "products": product_dicts
+                "stage": "after_ai_filtering",
+                "total_products": len(product_dicts),
+                "products_by_store": products_by_store_after,
+                "store_counts": {store: len(products) for store, products in products_by_store_after.items()},
+                "filtering_summary": {
+                    "original_total": original_count,
+                    "filtered_total": len(product_dicts),
+                    "filtered_out": original_count - len(product_dicts),
+                    "filtering_rate": f"{((original_count - len(product_dicts)) / original_count * 100):.1f}%" if original_count > 0 else "0%"
+                }
             }
             
-            # Save to debug file
-            debug_filename = f"debug_scraped_products_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-            with open(debug_filename, 'w', encoding='utf-8') as f:
-                json.dump(debug_data, f, indent=2, ensure_ascii=False)
+            debug_after_filename = f"debug_products_after_filtering_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(debug_after_filename, 'w', encoding='utf-8') as f:
+                json.dump(debug_after_data, f, indent=2, ensure_ascii=False)
             
-            print(f"💾 DEBUG: Saved scraped products to {debug_filename}")
+            print(f"💾 DEBUG: Saved {len(product_dicts)} products AFTER filtering to {debug_after_filename}")
+            print(f"📊 Store breakdown AFTER filtering: {debug_after_data['store_counts']}")
+            print(f"📊 Filtering summary: {debug_after_data['filtering_summary']}")
             # ============================================
             
             if len(product_dicts) > 0:
@@ -363,7 +453,74 @@ class OutfitterAssistant:
         # AI VERIFICATION - Simple and direct
         from tools.simple_product_verifier import SimpleProductVerifier  # Make sure this import works
         verifier = SimpleProductVerifier()
+        
+        # ============ DEBUG: SAVE PRODUCTS BEFORE AI VERIFICATION IN PRESENTER ============
+        import json
+        from datetime import datetime
+        
+        # Group products by store before AI verification in presenter
+        products_by_store_presenter_before = {}
+        for product in search_results:
+            store_name = product.get("store_name", "Unknown Store")
+            if store_name not in products_by_store_presenter_before:
+                products_by_store_presenter_before[store_name] = []
+            products_by_store_presenter_before[store_name].append(product)
+        
+        # Save before AI verification in presenter
+        debug_presenter_before_data = {
+            "timestamp": datetime.now().isoformat(),
+            "search_query": search_query,
+            "search_criteria": search_criteria,
+            "stage": "before_ai_verification_in_presenter",
+            "total_products": len(search_results),
+            "products_by_store": products_by_store_presenter_before,
+            "store_counts": {store: len(products) for store, products in products_by_store_presenter_before.items()}
+        }
+        
+        debug_presenter_before_filename = f"debug_products_presenter_before_verification_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with open(debug_presenter_before_filename, 'w', encoding='utf-8') as f:
+            json.dump(debug_presenter_before_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"💾 DEBUG: Saved {len(search_results)} products BEFORE AI verification in presenter to {debug_presenter_before_filename}")
+        print(f"📊 Store breakdown BEFORE AI verification: {debug_presenter_before_data['store_counts']}")
+        # ============================================
+        
         relevant_products = verifier.filter_relevant_products(user_request, search_results)
+        
+        # ============ DEBUG: SAVE PRODUCTS AFTER AI VERIFICATION IN PRESENTER ============
+        # Group products by store after AI verification in presenter
+        products_by_store_presenter_after = {}
+        for product in relevant_products:
+            store_name = product.get("store_name", "Unknown Store")
+            if store_name not in products_by_store_presenter_after:
+                products_by_store_presenter_after[store_name] = []
+            products_by_store_presenter_after[store_name].append(product)
+        
+        # Save after AI verification in presenter
+        debug_presenter_after_data = {
+            "timestamp": datetime.now().isoformat(),
+            "search_query": search_query,
+            "search_criteria": search_criteria,
+            "stage": "after_ai_verification_in_presenter",
+            "total_products": len(relevant_products),
+            "products_by_store": products_by_store_presenter_after,
+            "store_counts": {store: len(products) for store, products in products_by_store_presenter_after.items()},
+            "verification_summary": {
+                "original_total": len(search_results),
+                "verified_total": len(relevant_products),
+                "filtered_out": len(search_results) - len(relevant_products),
+                "verification_rate": f"{((len(search_results) - len(relevant_products)) / len(search_results) * 100):.1f}%" if len(search_results) > 0 else "0%"
+            }
+        }
+        
+        debug_presenter_after_filename = f"debug_products_presenter_after_verification_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with open(debug_presenter_after_filename, 'w', encoding='utf-8') as f:
+            json.dump(debug_presenter_after_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"💾 DEBUG: Saved {len(relevant_products)} products AFTER AI verification in presenter to {debug_presenter_after_filename}")
+        print(f"📊 Store breakdown AFTER AI verification: {debug_presenter_after_data['store_counts']}")
+        print(f"📊 Verification summary: {debug_presenter_after_data['verification_summary']}")
+        # ============================================
         
         # CRITICAL: STORE PRODUCTS FOR GRADIO ACCESS
         self.last_products = relevant_products  # This is what Gradio will access
@@ -383,10 +540,11 @@ class OutfitterAssistant:
 
             return {
                 "messages": [AIMessage(content=message)],
-                "products_shown": [],
+                "products_shown": search_results,
                 "verification_failed": True,
-                "conversation_stage": "discovery",
-                "next_step": "clarification_asker"
+                "conversation_stage": "presenting",
+                "next_step": "wait_for_user",
+                "awaiting_selection": True
             }
         
         # PRESENT ONLY RELEVANT PRODUCTS using existing logic
@@ -415,19 +573,87 @@ class OutfitterAssistant:
     # ============ ENHANCED ROUTING LOGIC ============
     
     def _route_after_intent_classification(self, state: OutfitterState) -> str:
-        """Route based on enhanced intent classification results"""
-        next_step = state.get("next_step", "general_responder")
+        """
+        Smart routing based on intent - UPDATED for Stage 3
         
-        # Map search intents to needs_analyzer instead of clarification_asker
-        if next_step == "clarification_asker" and state.get("current_intent") == "search":
+        When products are shown:
+        - Questions/advice → general_responder
+        - Selections → selection_handler
+        """
+        import re
+        
+        next_step = state.get("next_step", "general_responder")
+        current_intent = state.get("current_intent", "")
+        
+        # Check if products are shown and awaiting interaction
+        products_shown = state.get("products_shown", [])
+        awaiting_selection = state.get("awaiting_selection", False)
+        
+        if products_shown and awaiting_selection:
+            # Get user's message
+            messages = state.get("messages", [])
+            if messages:
+                last_msg = messages[-1]
+                content = ""
+                if hasattr(last_msg, 'content'):
+                    content = last_msg.content
+                elif isinstance(last_msg, dict):
+                    content = last_msg.get('content', '')
+                
+                content_lower = content.lower()
+                
+                # SELECTION INDICATORS - Clear intent to select products
+                selection_keywords = [
+                    '#', 'number', 'option',
+                    'i want', 'i\'ll take', 'i like', 
+                    'add', 'choose', 'select', 'pick',
+                    'get me', 'buy', 'purchase'
+                ]
+                
+                # QUESTION INDICATORS - Asking for help/advice
+                question_keywords = [
+                    'how', 'what', 'why', 'which', 'when', 'where',
+                    'should i', 'can you', 'tell me', 'show me more',
+                    'style', 'match', 'wear', 'look', 'advice',
+                    'recommend', 'suggest', 'help', 'think'
+                ]
+                
+                # Check for ordinal numbers (first, second, third)
+                ordinals = ['first', 'second', 'third', 'fourth', 'fifth']
+                has_ordinal = any(ord in content_lower for ord in ordinals)
+                
+                # Check for explicit numbers
+                has_numbers = bool(re.search(r'\b\d+\b', content))
+                
+                # Decision logic
+                is_selection = (
+                    any(keyword in content_lower for keyword in selection_keywords) or
+                    (has_numbers and not any(q in content_lower for q in question_keywords)) or
+                    has_ordinal
+                )
+                
+                is_question = any(keyword in content_lower for keyword in question_keywords)
+                
+                # Route based on primary intent
+                if is_selection and not is_question:
+                    print(f"   🛒 Routing: SELECTION detected → selection_handler")
+                    return "selection_handler"
+                
+                if is_question:
+                    print(f"   💬 Routing: QUESTION detected → general_responder")
+                    return "general_responder"
+                
+                # If unclear but has numbers, assume selection
+                if has_numbers:
+                    print(f"   🔢 Routing: Numbers detected → selection_handler")
+                    return "selection_handler"
+        
+        # Existing routing logic for other intents
+        if next_step == "clarification_asker" and current_intent == "search":
             return "needs_analyzer"
         
-        # Handle special routing cases
         if state.get("needs_clarification", False):
             return "clarification_asker"
-        
-        if state.get("urgency_flag", False):
-            return next_step
         
         return next_step
 
@@ -509,6 +735,34 @@ class OutfitterAssistant:
         print("      - There's an issue in _real_parallel_searcher return values")
         
         return "clarification_asker"
+    
+    def _route_after_selection(self, state: OutfitterState) -> str:
+        """Route after user makes selection"""
+        next_step = state.get("next_step", "wait_for_user")
+        
+        # If user wants to checkout
+        if next_step == "checkout_handler":
+            return "checkout_handler"
+        
+        # If user wants to see more products
+        if next_step == "product_presenter":
+            return "product_presenter"
+        
+        # Default: wait for user action
+        return "wait_for_user"
+    
+    # NEW ROUTING: After product presentation
+    def _route_after_presentation(self, state: OutfitterState) -> str:
+        """Route after showing products"""
+        # If products were shown, wait for selection
+        products_shown = state.get("products_shown", [])
+        
+        if products_shown:
+            # Check if next message is a selection
+            # This will be determined by intent classifier on next turn
+            return "wait_for_user"
+        
+        return "wait_for_user"
 
 
     def _build_search_query_from_criteria(self, criteria: Dict[str, Any]) -> str:
@@ -718,49 +972,6 @@ Would you like to:
             "conversation_stage": "discovery",
             "next_step": "clarification_asker"
         }
-    
-    # ============ ENHANCED SELECTION HANDLER ============
-    
-    def _enhanced_selection_handler(self, state: OutfitterState) -> Dict[str, Any]:
-        """Enhanced selection handler that works with real products"""
-        products_shown = state.get("products_shown", [])
-        
-        if not products_shown:
-            return {
-                "messages": [AIMessage(content="I don't see any products that were shown to select from. Would you like me to search for something?")],
-                "conversation_stage": "discovery",
-                "next_step": "clarification_asker"
-            }
-        
-        # Get user message for selection analysis
-        messages = state.get("messages", [])
-        user_input = ""
-        for msg in reversed(messages):
-            if hasattr(msg, 'content') and isinstance(msg.content, str) and not isinstance(msg, AIMessage):
-                user_input = msg.content
-                break
-        
-        response = f"""I can see you're interested in selecting from the {len(products_shown)} products I showed you.
-
-Your selection: "{user_input}"
-
-🔧 [SELECTION PROCESSING]
-Enhanced selection handling with real products will be fully implemented in the next stage. For now, I can help you with:
-
-• More details about specific products
-• Different search queries  
-• Styling advice and recommendations
-• General shopping questions
-
-What would you like to explore?"""
-        
-        return {
-            "messages": [AIMessage(content=response)],
-            "conversation_stage": "presenting",
-            "next_step": "wait_for_user"
-        }
-    
-    # ============ REMAINING MOCK NODES ============
     
    
     def _mock_checkout_handler(self, state: OutfitterState) -> Dict[str, Any]:

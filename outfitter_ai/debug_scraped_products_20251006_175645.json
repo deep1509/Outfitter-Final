@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-10-06T17:56:45.019361",
+  "search_query": "black shirts",
+  "search_criteria": {
+    "category": "shirts",
+    "color_preference": "black"
+  },
+  "products_found_after_filtering": 7,
+  "products": [
+    {
+      "name": "Ascend Short Sleeve Rugby Polo Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-ascend-short-sleeve-rugby-polo-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.639124"
+    },
+    {
+      "name": "Austin Pleated Polo Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-austin-pleated-polo-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.638063"
+    },
+    {
+      "name": "Fallen Cross Oversize Shirt Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-fallen-cross-oversize-shirt-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.637600"
+    },
+    {
+      "name": "Lineup Resort Shirt Black Check",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-lineup-resort-shirt-black-check",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.637992"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-royalty-boxy-cropped-resort-shirt-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.636713"
+    },
+    {
+      "name": "Sakura Resort Shirt Off Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-sakura-resort-shirt-off-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.638883"
+    },
+    {
+      "name": "Von Dutch Mix Men's Collared Shirt BlackFrom",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/von-dutch-von-dutch-mix-mens-collared-shirt-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T17:56:39.639044"
+    }
+  ]
+}

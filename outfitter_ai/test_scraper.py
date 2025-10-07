@@ -17,7 +17,7 @@ async def test_search(query: str):
     
     try:
         # Run search
-        products = await search_all_stores(query, max_products=20)
+        products = await search_all_stores(query, max_products=100)
         
         if not products:
             print(f"⚠️ No products found for '{query}'\n")
@@ -88,7 +88,7 @@ async def test_individual_stores():
     # Test Universal Store
     print("\n🧪 Testing Universal Store (Firecrawl)...")
     try:
-        from tools.universalstore_scraper import scrape_universalstore
+        from tools.universalstore_firecrawl import scrape_universalstore
         us_products = scrape_universalstore("black hoodies", max_products=5)
         print(f"✅ Universal Store: {len(us_products)} products")
         if us_products:
@@ -96,11 +96,11 @@ async def test_individual_stores():
     except Exception as e:
         print(f"❌ Universal Store failed: {e}")
     
-    # Test CultureKings Google Shopping
-    print("\n🧪 Testing CultureKings (Google Shopping)...")
+    # Test CultureKings Serper + Shopify
+    print("\n🧪 Testing CultureKings (Serper + Shopify)...")
     try:
-        from tools.culturekings_google_shopping import scrape_culturekings_google_shopping
-        ck_products = scrape_culturekings_google_shopping("black hoodies", max_products=5)
+        from tools.culturekings_serper_shopify import scrape_culturekings_serper
+        ck_products = scrape_culturekings_serper("black hoodies", max_products=5)
         print(f"✅ CultureKings: {len(ck_products)} products")
         if ck_products:
             print(f"   Sample: {ck_products[0].name} - {ck_products[0].price}")
@@ -144,7 +144,7 @@ def check_environment():
     
     required_keys = {
         "FIRECRAWL_API_KEY": "Universal Store scraping",
-        "SERPAPI_KEY": "CultureKings Google Shopping"
+        "SERPER_API_KEY": "CultureKings Serper + Shopify"
     }
     
     all_configured = True
@@ -160,8 +160,8 @@ def check_environment():
     if not all_configured:
         print("\n⚠️ Missing API keys. Add them to your .env file:")
         print("   FIRECRAWL_API_KEY=your_key_here")
-        print("   SERPAPI_KEY=your_key_here")
-        print("\n   Get SerpAPI key: https://serpapi.com/ (100 free searches/month)")
+        print("   SERPER_API_KEY=your_key_here")
+        print("\n   Get Serper key: https://serper.dev/ (2500 free searches/month)")
         print("   Get Firecrawl key: https://firecrawl.dev/\n")
         return False
     
@@ -172,7 +172,7 @@ def check_environment():
 if __name__ == "__main__":
     print("🚀 Starting Enhanced Scraper Tests...")
     print("   • Universal Store: Firecrawl")
-    print("   • CultureKings: Google Shopping API")
+    print("   • CultureKings: Serper API + Shopify JSON")
     
     # Check environment first
     if not check_environment():

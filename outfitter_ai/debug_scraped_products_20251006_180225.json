@@ -1,0 +1,132 @@
+{
+  "timestamp": "2025-10-06T18:02:25.388133",
+  "search_query": "black hoodies",
+  "search_criteria": {
+    "category": "hoodies",
+    "color_preference": "black",
+    "size": "M"
+  },
+  "products_found_after_filtering": 12,
+  "products": [
+    {
+      "name": "Cities Boxy Hoodie Black",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-cities-boxy-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-06T18:02:19.446115"
+    },
+    {
+      "name": "Minimal Boxy Hoodie Washed Black",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-minimal-boxy-hoodie-washed-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-06T18:02:19.447053"
+    },
+    {
+      "name": "Boxy Hoodie Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-boxy-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.447243"
+    },
+    {
+      "name": "Boxy Hoodie Washed Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/open-archive-boxy-hoodie-washed-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.446974"
+    },
+    {
+      "name": "Compose Boxy Hoodie Black",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/common-need-compose-boxy-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.445283"
+    },
+    {
+      "name": "Gloves Up Hoodie Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/engage-gloves-up-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.445362"
+    },
+    {
+      "name": "Interval Street Hoodie Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-interval-street-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.447449"
+    },
+    {
+      "name": "Nova Street Hoodie Black",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-nova-street-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.445195"
+    },
+    {
+      "name": "Panela Anderson 2.0 Hooded Fleece Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/rusty-panela-anderson-2-0-hooded-fleece-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.446605"
+    },
+    {
+      "name": "Slipstream Street Hoodie Black",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-slipstream-street-hoodie-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.446475"
+    },
+    {
+      "name": "Surge Zip Through Street Hoodie Sunfade Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-surge-zip-through-street-hoodie-sunfade-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.445811"
+    },
+    {
+      "name": "Throttle Elastic Quarter Zip Crew Black",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-hoodies-jumpers/products/neovision-throttle-elastic-quarter-zip-crew-black",
+      "image_url": null,
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:02:19.446194"
+    }
+  ]
+}

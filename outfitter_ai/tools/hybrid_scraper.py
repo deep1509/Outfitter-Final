@@ -1,7 +1,7 @@
 """
 Hybrid scraper combining multiple approaches:
 - Universal Store: Firecrawl scraping
-- CultureKings: Google Shopping API (via SerpAPI)
+- CultureKings: Serper API + Shopify JSON API
 - Extensible for more stores
 
 This is a drop-in replacement for your existing search_all_stores function.
@@ -18,7 +18,7 @@ from agents.state import ProductData
 
 # Import individual store scrapers
 from tools.universalstore_firecrawl import scrape_universalstore
-from tools.culturekings_google_shopping import scrape_culturekings_google_shopping
+from tools.culturekings_serper_shopify import scrape_culturekings_serper
 
 load_dotenv()
 
@@ -32,7 +32,7 @@ async def search_all_stores(query: str, max_products: int = 30) -> List[ProductD
     
     Store Configuration:
     - Universal Store: Firecrawl scraping
-    - CultureKings: Google Shopping API
+    - CultureKings: Serper API + Shopify JSON API
     
     Args:
         query: Search query (e.g., "red hoodies", "black shoes")
@@ -102,16 +102,17 @@ async def search_universalstore_async(query: str, max_products: int) -> List[Pro
 
 async def search_culturekings_async(query: str, max_products: int) -> List[ProductData]:
     """
-    Async wrapper for CultureKings Google Shopping search.
+    Async wrapper for CultureKings Serper + Shopify scraping.
+    Uses Serper API to find product URLs, then fetches data from Shopify's JSON API.
     """
     try:
-        logger.info(f"🔍 CultureKings: Searching via Google Shopping for '{query}'")
+        logger.info(f"🔍 CultureKings: Searching via Serper + Shopify for '{query}'")
         
-        # Run sync Google Shopping in thread pool
+        # Run sync scraper in thread pool
         loop = asyncio.get_event_loop()
         products = await loop.run_in_executor(
             None,
-            scrape_culturekings_google_shopping,
+            scrape_culturekings_serper,
             query,
             max_products
         )

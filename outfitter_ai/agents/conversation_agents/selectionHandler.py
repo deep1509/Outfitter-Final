@@ -1,33 +1,20 @@
 """
-Intelligent Selection Handler for Outfitter.ai
-Parses user product selections and extracts variant preferences.
-Uses AI to understand natural language selections like "I like #2 in black" or "show me the first hoodie".
+Selection Handler Agent - Stage 3
+Parses user product selections from natural language without variant complexity.
+Uses default sizes for simplicity.
 """
 
 from typing import Dict, Any, List, Optional
-from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage
 from agents.state import OutfitterState
-from pydantic import BaseModel, Field
 import re
 
-class SelectionResult(BaseModel):
-    """Structured selection result"""
-    selected_indices: List[int] = Field(description="Indices of selected products (0-based)")
-    variant_preferences: Dict[str, Any] = Field(default={}, description="Size, color preferences")
-    selection_intent: str = Field(description="buy, compare, more_info, save_for_later")
-    confidence: float = Field(description="Confidence in selection parsing 0.0-1.0")
-    reasoning: str = Field(description="Why this selection was interpreted this way")
 
 class SelectionHandler:
     """
     AI-powered selection handler that understands natural language product selections.
-    
-    Handles patterns like:
-    - "I like #2" → selects product at index 1
-    - "Show me 1 and 3" → selects products at indices 0 and 2
-    - "The black hoodie" → finds hoodie by color
-    - "First one in size M" → selects with size preference
+    Simplified version without variant extraction - uses defaults.
     """
     
     def __init__(self):
@@ -35,282 +22,207 @@ class SelectionHandler:
     
     def handle_selection(self, state: OutfitterState) -> Dict[str, Any]:
         """
-        Main selection handling function.
+        Main handler for processing product selections.
         
-        Flow:
-        1. Extract user's selection message
-        2. Get products that were shown to user
-        3. Use AI to parse selection intent
-        4. Validate selections
-        5. Return selected products with preferences
+        Args:
+            state: Current conversation state with products_shown
+            
+        Returns:
+            Updated state with selected products
         """
-        print("🎯 SelectionHandler: Processing user selection...")
+        print("🛒 SelectionHandler: Processing product selection...")
         
-        try:
-            # Get context
-            products_shown = state.get("products_shown", [])
-            user_message = self._get_latest_user_message(state)
-            
-            if not products_shown:
-                return self._handle_no_products_shown()
-            
-            if not user_message:
-                return self._handle_empty_selection()
-            
-            # Parse selection using AI
-            selection_result = self._parse_selection_with_ai(user_message, products_shown)
-            
-            print(f"📊 Parsed selection: {len(selection_result.selected_indices)} products")
-            print(f"   Intent: {selection_result.selection_intent}")
-            print(f"   Preferences: {selection_result.variant_preferences}")
-            
-            # Validate and extract selected products
-            selected_products = self._extract_selected_products(
-                selection_result.selected_indices, 
-                products_shown
-            )
-            
-            if not selected_products:
-                return self._handle_invalid_selection(user_message)
-            
-            # Build response based on intent
-            response = self._build_selection_response(
-                selected_products, 
-                selection_result
-            )
-            
+        products_shown = state.get("products_shown", [])
+        
+        if not products_shown:
             return {
-                "messages": [AIMessage(content=response)],
-                "selected_products": selected_products,
-                "variant_preferences": selection_result.variant_preferences,
-                "selection_intent": selection_result.selection_intent,
-                "conversation_stage": "selection_confirmed",
-                "next_step": self._determine_next_step(selection_result.selection_intent)
+                "messages": [{"role": "assistant", "content": "I don't see any products that were shown to select from. Would you like me to search for something?"}],
+                "conversation_stage": "discovery",
+                "next_step": "needs_analyzer"
             }
-            
-        except Exception as e:
-            print(f"❌ SelectionHandler error: {e}")
-            return self._fallback_selection_handler(state)
-    
-    def _get_latest_user_message(self, state: OutfitterState) -> Optional[str]:
-        """Extract latest user message"""
+        
+        # Get user's latest message
         messages = state.get("messages", [])
-        
+        user_message = ""
         for msg in reversed(messages):
-            if hasattr(msg, 'content') and isinstance(msg.content, str) and not isinstance(msg, AIMessage):
-                return msg.content.strip()
+            if hasattr(msg, 'type') and msg.type == 'human':
+                user_message = msg.content
+                break
+            elif isinstance(msg, dict) and msg.get('role') == 'user':
+                user_message = msg.get('content', '')
+                break
         
-        return None
+        if not user_message:
+            return {
+                "messages": [{"role": "assistant", "content": "I didn't catch that. Which products would you like?"}],
+                "conversation_stage": "presenting",
+                "next_step": "wait_for_user"
+            }
+        
+        print(f"   User input: '{user_message}'")
+        print(f"   Available products: {len(products_shown)}")
+        
+        # Parse selections using AI
+        selected_indices = self._parse_selections_with_ai(user_message, len(products_shown))
+        
+        if not selected_indices:
+            return self._handle_no_selection(user_message, products_shown)
+        
+        # Get selected products with default variants
+        selected_products = []
+        for idx in selected_indices:
+            if 0 <= idx < len(products_shown):
+                product = products_shown[idx].copy()
+                # Add default variant info
+                product['selected_variant'] = 'default'  # Simplified
+                product['selected_size'] = 'M'  # Default to Medium
+                selected_products.append(product)
+        
+        print(f"   ✓ Selected {len(selected_products)} products")
+        
+        # Build response
+        response = self._build_selection_confirmation(selected_products)
+        
+        return {
+            "messages": [{"role": "assistant", "content": response}],
+            "selected_products": selected_products,
+            "conversation_stage": "cart",
+            "next_step": "cart_manager",
+            "awaiting_cart_action": True
+        }
     
-    def _parse_selection_with_ai(self, user_message: str, products: List[Dict]) -> SelectionResult:
+    def _parse_selections_with_ai(self, user_message: str, num_products: int) -> List[int]:
         """
-        Use AI to parse natural language selection into structured format.
+        Use AI to parse product selections from natural language.
+        Returns 0-based indices.
         """
-        
-        # Build product reference list
-        product_list = []
-        for i, product in enumerate(products[:20]):  # Limit to first 20 for context
-            name = product.get("name", "Unknown")
-            price = product.get("price", "N/A")
-            product_list.append(f"{i+1}. {name} - {price}")
-        
-        system_prompt = """You are a product selection parser for a shopping assistant.
+        system_prompt = """You are a selection parser. Extract product numbers from user messages.
 
-Your job: Parse the user's selection message and identify which products they selected.
+Users can reference products in many ways:
+- Numbers: "I want #2 and #5" → [1, 4] (convert to 0-based)
+- Ordinals: "the first and third one" → [0, 2]
+- References: "the red hoodie" → try to match by description
+- Multiple: "show me 1, 3, and 5" → [0, 2, 4]
 
-SELECTION PATTERNS TO RECOGNIZE:
-- Numbers: "I like #2", "2 and 5", "number 3", "the first one"
-- Descriptions: "the black hoodie", "show me the Nike shoes"
-- Positions: "the first one", "last item", "second product"
-- Multiple: "1, 3, and 5", "the first and third items"
+IMPORTANT:
+- Convert 1-based numbers to 0-based indices (user says "1" = index 0)
+- Only return indices that exist (0 to N-1)
+- If unclear or no selection, return empty list
 
-VARIANT PREFERENCES:
-- Size: "in size M", "large", "size 10"
-- Color: "in black", "the red one", "blue version"
-
-INTENT CLASSIFICATION:
-- buy: "I'll take", "add to cart", "I want to buy"
-- compare: "compare these", "tell me more about", "what's the difference"
-- more_info: "show me details", "more info on", "tell me about"
-- save_for_later: "save this", "bookmark", "remember this"
-
-Return the product indices (1-based converted to 0-based), variant preferences, and intent.
-
-IMPORTANT: Product indices in the list are 1-based (1, 2, 3...) but you must return 0-based indices (0, 1, 2...)."""
+Return ONLY a JSON array of indices: [0, 2, 4]"""
 
         user_prompt = f"""User message: "{user_message}"
 
-Products shown to user:
-{chr(10).join(product_list)}
+Number of products shown: {num_products}
 
-Parse this selection and return structured data."""
-
-        from langchain_core.output_parsers import PydanticOutputParser
-        parser = PydanticOutputParser(pydantic_object=SelectionResult)
-        
-        full_prompt = f"""{user_prompt}
-
-{parser.get_format_instructions()}"""
+Parse which products the user wants. Return JSON array of 0-based indices:"""
 
         try:
             response = self.llm.invoke([
                 SystemMessage(content=system_prompt),
-                HumanMessage(content=full_prompt)
+                HumanMessage(content=user_prompt)
             ])
             
-            return parser.parse(response.content)
+            response_text = response.content.strip()
+            
+            # Extract JSON array
+            import json
+            json_match = re.search(r'\[[\d,\s]*\]', response_text)
+            
+            if json_match:
+                indices = json.loads(json_match.group())
+                # Validate indices
+                valid_indices = [i for i in indices if 0 <= i < num_products]
+                
+                print(f"   AI parsed indices: {valid_indices}")
+                return valid_indices
+            
+            # Fallback: Try simple number extraction
+            numbers = re.findall(r'\b(\d+)\b', user_message)
+            if numbers:
+                # Convert to 0-based indices
+                indices = [int(n) - 1 for n in numbers]
+                valid_indices = [i for i in indices if 0 <= i < num_products]
+                print(f"   Fallback parsed indices: {valid_indices}")
+                return valid_indices
+            
+            return []
             
         except Exception as e:
-            print(f"⚠️ AI selection parsing failed: {e}")
-            # Fallback to regex parsing
-            return self._regex_fallback_parsing(user_message, products)
+            print(f"   Parse error: {e}")
+            return []
     
-    def _regex_fallback_parsing(self, user_message: str, products: List[Dict]) -> SelectionResult:
-        """Fallback selection parsing using regex patterns"""
+    def _handle_no_selection(self, user_message: str, products_shown: List[Dict]) -> Dict[str, Any]:
+        """Handle cases where no valid selection was made."""
         
-        selected_indices = []
+        # Check if user is asking questions about products
+        question_keywords = ['how', 'what', 'which', 'where', 'when', 'size', 'color', 'price', 'available']
         
-        # Pattern 1: "#2", "number 3", etc.
-        number_pattern = r'#?(\d+)|number\s+(\d+)'
-        matches = re.findall(number_pattern, user_message.lower())
+        if any(keyword in user_message.lower() for keyword in question_keywords):
+            response = """I'm here to help! You can:
+
+• Select products by number (e.g., "I want #2" or "add 1 and 3")
+• Ask questions about the products
+• Request to see more options
+• Ask for styling advice
+
+What would you like to know?"""
+        else:
+            response = f"""I didn't catch which product(s) you want. 
+
+I'm showing you {len(products_shown)} products. You can select them by:
+• Saying the number (e.g., "I like #2")
+• Multiple numbers (e.g., "add 1, 3, and 5")
+• Describing what you want (e.g., "the black hoodie")
+
+Which ones interest you?"""
         
-        for match in matches:
-            num = int(match[0] or match[1])
-            if 1 <= num <= len(products):
-                selected_indices.append(num - 1)  # Convert to 0-based
-        
-        # Pattern 2: "first", "second", etc.
-        position_words = {
-            'first': 0, 'second': 1, 'third': 2, 'fourth': 3, 'fifth': 4,
-            'last': len(products) - 1
+        return {
+            "messages": [{"role": "assistant", "content": response}],
+            "conversation_stage": "presenting",
+            "next_step": "wait_for_user"
         }
-        
-        for word, idx in position_words.items():
-            if word in user_message.lower() and idx < len(products):
-                selected_indices.append(idx)
-        
-        # Extract variant preferences
-        variant_preferences = {}
-        
-        # Size extraction
-        size_pattern = r'\b(size\s+)?([XS|S|M|L|XL|XXL]+|[2-9][0-9]?)\b'
-        size_match = re.search(size_pattern, user_message, re.IGNORECASE)
-        if size_match:
-            variant_preferences["size"] = size_match.group(2).upper()
-        
-        # Color extraction
-        colors = ["black", "white", "red", "blue", "green", "grey", "gray", "navy", "brown"]
-        for color in colors:
-            if color in user_message.lower():
-                variant_preferences["color"] = color
-                break
-        
-        # Determine intent
-        intent = "more_info"  # Default
-        if any(word in user_message.lower() for word in ["buy", "purchase", "take", "cart", "checkout"]):
-            intent = "buy"
-        elif any(word in user_message.lower() for word in ["compare", "difference", "versus"]):
-            intent = "compare"
-        
-        return SelectionResult(
-            selected_indices=selected_indices or [0],  # Default to first if none found
-            variant_preferences=variant_preferences,
-            selection_intent=intent,
-            confidence=0.6,  # Lower confidence for regex fallback
-            reasoning="Regex fallback parsing used"
-        )
     
-    def _extract_selected_products(self, indices: List[int], products: List[Dict]) -> List[Dict]:
-        """Extract products by indices with validation"""
-        selected = []
-        
-        for idx in indices:
-            if 0 <= idx < len(products):
-                selected.append(products[idx])
-            else:
-                print(f"⚠️ Invalid index {idx} (products count: {len(products)})")
-        
-        return selected
-    
-    def _build_selection_response(self, selected_products: List[Dict], 
-                                   selection_result: SelectionResult) -> str:
-        """Build response message based on selection"""
+    def _build_selection_confirmation(self, selected_products: List[Dict]) -> str:
+        """Build confirmation message for selected products."""
         
         if len(selected_products) == 1:
             product = selected_products[0]
-            name = product.get("name", "item")
-            price = product.get("price", "N/A")
-            store = product.get("store_name", "store")
-            
-            response = f"Great choice! You've selected:\n\n"
-            response += f"**{name}**\n"
-            response += f"💰 {price}\n"
-            response += f"🏪 {store}\n"
-            
-            # Add variant info if preferences specified
-            if selection_result.variant_preferences:
-                response += f"\n📋 Your preferences: {selection_result.variant_preferences}\n"
-            
-            # Next steps based on intent
-            if selection_result.selection_intent == "buy":
-                response += "\n✅ Ready to add this to your cart?"
-            elif selection_result.selection_intent == "more_info":
-                response += "\n💡 Would you like more details about this item, or ready to add it to your cart?"
-            
+            response = f"""Perfect! I've added this to your selection:
+
+**{product.get('name', 'Product')}**
+💰 {product.get('price', 'N/A')}
+🏪 {product.get('store_name', 'Unknown')}
+📏 Size: M (default)
+
+Would you like to:
+• Add more items
+• View your cart
+• Proceed to checkout
+• Continue shopping"""
         else:
-            response = f"You've selected {len(selected_products)} items:\n\n"
+            items_list = "\n".join([
+                f"{i+1}. **{p.get('name', 'Product')}** - {p.get('price', 'N/A')}"
+                for i, p in enumerate(selected_products)
+            ])
             
-            for i, product in enumerate(selected_products[:5], 1):
-                name = product.get("name", "item")
-                price = product.get("price", "N/A")
-                response += f"{i}. **{name}** - {price}\n"
-            
-            if selection_result.selection_intent == "buy":
-                response += "\n✅ Ready to add these to your cart?"
-            elif selection_result.selection_intent == "compare":
-                response += "\n🔍 Would you like me to compare these items for you?"
+            response = f"""Great choices! I've added {len(selected_products)} items to your selection:
+
+{items_list}
+
+📏 All items: Size M (default)
+
+What would you like to do next?
+• Add more items
+• View full cart details
+• Proceed to checkout
+• Keep shopping"""
         
         return response
-    
-    def _determine_next_step(self, intent: str) -> str:
-        """Determine next node based on selection intent"""
-        intent_routing = {
-            "buy": "wait_for_user",  # Stage 2 will add "cart_manager"
-            "compare": "general_responder",  # Use general responder for comparison
-            "more_info": "general_responder",
-            "save_for_later": "wait_for_user"
-        }
-        
-        return intent_routing.get(intent, "wait_for_user")
-    
-    def _handle_no_products_shown(self) -> Dict[str, Any]:
-        """Handle case where no products were shown"""
-        return {
-            "messages": [AIMessage(content="I don't see any products that were shown for you to select from. Would you like me to search for something?")],
-            "conversation_stage": "discovery",
-            "next_step": "clarification_asker"
-        }
-    
-    def _handle_empty_selection(self) -> Dict[str, Any]:
-        """Handle empty selection message"""
-        return {
-            "messages": [AIMessage(content="I didn't catch which product you're interested in. Could you tell me the number or describe the item?")],
-            "conversation_stage": "presenting",
-            "next_step": "wait_for_user"
-        }
-    
-    def _handle_invalid_selection(self, user_message: str) -> Dict[str, Any]:
-        """Handle invalid selection"""
-        return {
-            "messages": [AIMessage(content=f"I couldn't identify which product you meant from '{user_message}'. Could you specify the product number (like #2) or describe it?")],
-            "conversation_stage": "presenting",
-            "next_step": "wait_for_user"
-        }
-    
-    def _fallback_selection_handler(self, state: OutfitterState) -> Dict[str, Any]:
-        """Emergency fallback"""
-        return {
-            "messages": [AIMessage(content="I'm having trouble processing your selection. Could you try telling me the product number?")],
-            "conversation_stage": "presenting",
-            "next_step": "wait_for_user"
-        }
+
+
+# Helper function for main.py integration
+def create_selection_handler_node(state: OutfitterState) -> Dict[str, Any]:
+    """Node wrapper for LangGraph integration."""
+    handler = SelectionHandler()
+    return handler.handle_selection(state)

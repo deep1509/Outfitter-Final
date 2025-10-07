@@ -162,11 +162,15 @@ class ProductionShoppingUI:
             return history, self.create_empty_products_html(), gr.update()
         
         try:
-            # Convert Gradio tuple format to dictionary format for the assistant
+            # Convert Gradio messages format to dictionary format for the assistant
             history_dicts = []
-            for msg_tuple in history:
-                if len(msg_tuple) == 2:
-                    user_msg, assistant_msg = msg_tuple
+            for msg in history:
+                if isinstance(msg, dict) and "role" in msg and "content" in msg:
+                    # Already in correct format
+                    history_dicts.append(msg)
+                elif isinstance(msg, list) and len(msg) == 2:
+                    # Old tuple format - convert
+                    user_msg, assistant_msg = msg
                     if user_msg:
                         history_dicts.append({"role": "user", "content": user_msg})
                     if assistant_msg:
@@ -175,29 +179,8 @@ class ProductionShoppingUI:
             # Process message with your backend
             updated_history_dicts = await self.assistant.run_conversation(message, history_dicts)
             
-            # Convert dictionary format back to tuple format for Gradio
-            updated_history = []
-            
-            for i in range(0, len(updated_history_dicts), 2):
-                if i + 1 < len(updated_history_dicts):
-                    # We have both user and assistant messages
-                    user_msg = updated_history_dicts[i]
-                    assistant_msg = updated_history_dicts[i + 1]
-                    
-                    if user_msg["role"] == "user" and assistant_msg["role"] == "assistant":
-                        updated_history.append([user_msg["content"], assistant_msg["content"]])
-                    else:
-                        # Handle case where messages might be out of order
-                        user_content = user_msg["content"] if user_msg["role"] == "user" else ""
-                        assistant_content = assistant_msg["content"] if assistant_msg["role"] == "assistant" else ""
-                        updated_history.append([user_content, assistant_content])
-                else:
-                    # Only one message left (shouldn't happen, but handle gracefully)
-                    msg = updated_history_dicts[i]
-                    if msg["role"] == "user":
-                        updated_history.append([msg["content"], ""])
-                    else:
-                        updated_history.append(["", msg["content"]])
+            # Return dictionary format for Gradio messages type
+            updated_history = updated_history_dicts
             
             # Extract products from the conversation
             products = self.extract_products_from_state(updated_history_dicts)
@@ -219,7 +202,7 @@ class ProductionShoppingUI:
             import traceback
             traceback.print_exc()
             error_msg = f"I encountered an error while processing your request. Please try again."
-            error_history = history + [[message, error_msg]]
+            error_history = history + [{"role": "user", "content": message}, {"role": "assistant", "content": error_msg}]
             return error_history, self.create_error_html(str(e)), gr.update(visible=False)
 
     def create_modern_css(self):
@@ -620,6 +603,9 @@ class ProductionShoppingUI:
         price = html.escape(product.get("price", "Price unavailable"))
         url = product.get("url", "#")
         image_url = product.get("image_url", "https://via.placeholder.com/300x300/f1f5f9/64748b?text=No+Image")
+        
+        # Create fallback image URL for better loading
+        fallback_url = "https://via.placeholder.com/400x400/f1f5f9/64748b?text=Loading+Image..."
         store = html.escape(product.get("store_name", "Unknown Store"))
         is_on_sale = product.get("is_on_sale", False)
         relevance_score = product.get("relevance_score", 0)
@@ -653,8 +639,9 @@ class ProductionShoppingUI:
                     src="{image_url}" 
                     alt="{name}"
                     class="product-image"
-                    onerror="this.src='https://via.placeholder.com/300x300/f1f5f9/64748b?text=No+Image'"
+                    onerror="this.src='{fallback_url}'"
                     loading="lazy"
+                    style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
                 />
                 {sale_badge}
                 {relevance_indicator}
@@ -957,7 +944,8 @@ def create_complete_interface():
                     avatar_images=("👤", "🤖"),
                     bubble_full_width=False,
                     show_copy_button=True,
-                    elem_classes=["chat-container"]
+                    elem_classes=["chat-container"],
+                    type="messages"
                 )
                 
                 # Input area
