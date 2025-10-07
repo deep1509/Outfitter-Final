@@ -1,0 +1,641 @@
+{
+  "timestamp": "2025-10-06T18:46:17.753750",
+  "search_query": "white shirts",
+  "search_criteria": {
+    "category": "shirts",
+    "color_preference": "white",
+    "size": "M"
+  },
+  "stage": "before_ai_filtering",
+  "total_products": 62,
+  "products_by_store": {
+    "CultureKings": [
+      {
+        "name": "Adidas Chip In NYC Graphic T-Shirt White",
+        "price": "$60.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-chip-in-nyc-graphic-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055381-YW100_mens_0010.jpg?v=1759266806",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749379"
+      },
+      {
+        "name": "Adidas Originals Knit Stripe Polo T-Shirt Night Indigo/Green",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-originals-knit-stripe-polo-t-shirt-night-indigo-green-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055377-YN184_mens_0010.jpg?v=1759361641",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749375"
+      },
+      {
+        "name": "Adidas Originals Wind Jacket Night Indigo",
+        "price": "$200.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-originals-wind-jacket-night-indigo-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055378-YI065_mens_0010.jpg?v=1759267857",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749389"
+      },
+      {
+        "name": "Adidas Teamgeist T-Shirt Green/Black",
+        "price": "$60.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-teamgeist-t-shirt-green-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055078-YG604_mens_0010.jpg?v=1759266764",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749382"
+      },
+      {
+        "name": "Adidas Teamgeist T-Shirt White/Black",
+        "price": "$60.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-teamgeist-t-shirt-white-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054742-YW110_mens_0010.jpg?v=1759267966",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749385"
+      },
+      {
+        "name": "American Thrift Block Fit T-Shirt Off White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-off-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YO007_mens_0010.jpg?v=1759363410",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749358"
+      },
+      {
+        "name": "American Thrift Block Fit T-Shirt White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YW100_mens_0010.jpg?v=1759363434",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749347"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Black",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YB001_mens_0010.jpg?v=1759363326",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749371"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Brown",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YX300_mens_0010.jpg?v=1759363542",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749333"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Off White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-off-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YO007_mens_0010.jpg?v=1759363696",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749321"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Washed Charcoal",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-washed-charcoal-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YC071_mens_0010.jpg?v=1759363495",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749343"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt Black",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YB001_mens_0010.jpg?v=1759363742",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749302"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt Black Acidwash",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-black-acidwash-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YB017_mens_0010.jpg?v=1759363651",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749326"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt Off White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-off-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YO007_mens_0010.jpg?v=1759363628",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749367"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YW100_mens_0010.jpg?v=1759363593",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749330"
+      },
+      {
+        "name": "American Thrift The Block T-Shirt Black Wash",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-black-wash-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YB295_mens_0010.jpg?v=1759363382",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749363"
+      },
+      {
+        "name": "Carre Pocket T-Shirt Black",
+        "price": "$69.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-pocket-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054896-YB001_mens_0010.jpg?v=1758673063",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749396"
+      },
+      {
+        "name": "Key Street R34 GTR Premium Hoodie Black",
+        "price": "$99.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/key-street-r34-gtr-premium-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055074-YB001_mens_0010.jpg?v=1758673240",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749392"
+      },
+      {
+        "name": "New Era Chicago Bulls Paisley Oversized T-Shirt Black",
+        "price": "$70.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-chicago-bulls-paisley-oversized-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053087-YB001_mens_0010.jpg?v=1758672721",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749406"
+      },
+      {
+        "name": "New Era Chicago White Sox 'Hyperfly Katakana x MLB' T-Shirt Black",
+        "price": "$85.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-chicago-white-sox-hyperfly-katakana-x-mlb-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054452-YB001_mens_0010.jpg?v=1758578306",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749432"
+      },
+      {
+        "name": "New Era Detroit Tigers Paisley Oversized T-Shirt White",
+        "price": "$70.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-detroit-tigers-paisley-oversized-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053088-YW100_mens_0010.jpg?v=1758672601",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749409"
+      },
+      {
+        "name": "New Era Las Vegas Raiders Paisley Oversized T-Shirt Black",
+        "price": "$70.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-las-vegas-raiders-paisley-oversized-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053089-YB001_mens_0010.jpg?v=1758578528",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749426"
+      },
+      {
+        "name": "New Era Los Angeles Dodgers Paisley Oversized T-Shirt Black",
+        "price": "$70.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-los-angeles-dodgers-paisley-oversized-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053090-YB001_mens_0010.jpg?v=1758672867",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749399"
+      },
+      {
+        "name": "New Era New York Yankees 'Hyperfly Katakana x MLB' T-Shirt Navy",
+        "price": "$85.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-new-york-yankees-hyperfly-katakana-x-mlb-t-shirt-navy-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054455-YN200_mens_0010.jpg?v=1758578498",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749429"
+      },
+      {
+        "name": "New Era New York Yankees Paisley Oversized T-Shirt White",
+        "price": "$70.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-new-york-yankees-paisley-oversized-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053091-YW100_mens_0010.jpg?v=1758672838",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749402"
+      },
+      {
+        "name": "New Era San Diego Padres 'Hyperfly Katakana x MLB' T-Shirt Dark Brown",
+        "price": "$85.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/new-era-san-diego-padres-hyperfly-katakana-x-mlb-t-shirt-dark-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054456-YX564_mens_0010.jpg?v=1758578465",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749435"
+      },
+      {
+        "name": "Nike Draymond Green Golden State Warriors #23 Icon Edition 2022/23 Nike Dri-FIT NBA Swingman Jersey Rush Blue",
+        "price": "$130.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-draymond-green-golden-state-warriors-23-icon-edition-2022-23-nike-dri-fit-nba-swingman-jersey-rush-blue-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055569-YX178_mens_0010.jpg?v=1758672523",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749412"
+      },
+      {
+        "name": "Snoop Dogg Long Beach T-Shirt Black",
+        "price": "$59.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/snoop-dogg-long-beach-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055558-YB001_mens_0010.jpg?v=1758671987",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749416"
+      },
+      {
+        "name": "Snoop Dogg Smoke Session T-Shirt Black",
+        "price": "$59.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/snoop-dogg-smoke-session-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055073-YB001_mens_0010.jpg?v=1758671742",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749422"
+      },
+      {
+        "name": "Snoop Dogg The Dogg T-Shirt Sand",
+        "price": "$59.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/snoop-dogg-the-dogg-t-shirt-sand-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055559-YS214_mens_0010.jpg?v=1758671961",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:46:17.749419"
+      }
+    ],
+    "Universal Store": [
+      {
+        "name": "Radar Oversize Short Sleeve Shirt Blue",
+        "price": "$41.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-radar-oversize-short-sleeve-shirt-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/wk17-web_crops-_0000s_0007_dsc03416.jpg?width=1200&height=1200&v=1746158630",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:46:16.134634"
+      },
+      {
+        "name": "Alfie Boxy Polo White",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-alaric-boxy-polo-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411930_US_003.jpg?width=1200&height=1200&v=1759219162",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133969"
+      },
+      {
+        "name": "Ascend Short Sleeve Rugby Polo Black",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-ascend-short-sleeve-rugby-polo-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410562_US_1201.jpg?width=1200&height=1200&v=1749097089",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134891"
+      },
+      {
+        "name": "Austin Pleated Polo Black",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-austin-pleated-polo-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/404804_001.jpg?width=1200&height=1200&v=1741333393",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134220"
+      },
+      {
+        "name": "Best Interest Boxy Cropped Shirt Cream Leopard",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-best-interest-boxy-cropped-shirt-cream-leopard",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410561_US_003.jpg?width=1200&height=1200&v=1758779309",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134027"
+      },
+      {
+        "name": "Bloomed Linen Resort Shirt White",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-bloomed-linen-resort-shirt-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411243_US_000.jpg?width=1200&height=1200&v=1758779355",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133469"
+      },
+      {
+        "name": "Boathouse Shirt Green Stripe",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/barney-cools-boathouse-shirt-green-stripe",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407578_US_001.jpg?width=1200&height=1200&v=1758779262",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133617"
+      },
+      {
+        "name": "Break Oversize Cropped Shirt Blue Check",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-break-oversize-cropped-shirt-blue-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/409406_US_008.jpg?width=1200&height=1200&v=1752715244",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134791"
+      },
+      {
+        "name": "Break Oversize Cropped Shirt Cream Check",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-break-oversize-cropped-shirt-cream-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407823_US_010.jpg?width=1200&height=1200&v=1739421856",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134320"
+      },
+      {
+        "name": "Divine Boxy Resort Shirt Off Black",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-divine-boxy-resort-shirt-off-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408122_US_020.jpg?width=1200&height=1200&v=1759383119",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133570"
+      },
+      {
+        "name": "Dungeon Oversize Shirt Multi",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-dungeon-oversize-shirt-multi",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411232_US_026.jpg?width=1200&height=1200&v=1759278693",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133829"
+      },
+      {
+        "name": "Fallen Cross Oversize Shirt Black",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-fallen-cross-oversize-shirt-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411952_US_001.jpg?width=1200&height=1200&v=1759220112",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133925"
+      },
+      {
+        "name": "Imperium Rugby Shirt Off White/Brown",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-imperium-rugby-shirt-off-white-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407435_US_000.jpg?width=1200&height=1200&v=1743046346",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133520"
+      },
+      {
+        "name": "Lineup Cropped Rugby Shirt Light Blue/White",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-lineup-cropped-rugby-shirt-light-blue-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/1200x1800_0074__glw8205.jpg?width=1200&height=1200&v=1758786030",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133673"
+      },
+      {
+        "name": "Lineup Resort Shirt Black Check",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-lineup-resort-shirt-black-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411241_US_000.jpg?width=1200&height=1200&v=1756274010",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134176"
+      },
+      {
+        "name": "Myles Long Sleeve Shirt Olive Stripe",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-myles-long-sleeve-shirt-olive-stripe",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/401795_US_050.jpg?width=1200&height=1200&v=1747175756",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134270"
+      },
+      {
+        "name": "Niko Boxy Cropped Resort Shirt Navy Check",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-niko-boxy-resort-shirt-navy-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408974_US_000.jpg?width=1200&height=1200&v=1748572640",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134372"
+      },
+      {
+        "name": "Niko Boxy Resort Shirt Brown Check",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-niko-boxy-resort-shirt-brown-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/405850_us_001.jpg?width=1200&height=1200&v=1748585182",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134534"
+      },
+      {
+        "name": "Nova Loopback Oversize Shirt Asphalt",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-nova-loopback-oversize-shirt-asphalt",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410015_US_000.jpg?width=1200&height=1200&v=1758780025",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133878"
+      },
+      {
+        "name": "On Lock Oversize Shirt Blue Check",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-on-lock-oversize-shirt-blue-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/405928_US_002.jpg?width=1200&height=1200&v=1759120194",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133281"
+      },
+      {
+        "name": "On Lock Oversize Short Sleeve Shirt White/Black Check",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-on-lock-oversize-short-sleeve-shirt-white-black-check",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/405927_US_016.jpg?width=1200&height=1200&v=1741333298",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134430"
+      },
+      {
+        "name": "Pathfinder Boxy Shirt Blue Stripe",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-pathfinder-boxy-shirt-blue-stripe",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407923_US_009.jpg?width=1200&height=1200&v=1745274122",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134582"
+      },
+      {
+        "name": "Percival Boxy Cropped Shirt Washed Brown",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-percival-boxy-cropped-shirt-washed-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410557_US_000.jpg?width=1200&height=1200&v=1754628163",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133783"
+      },
+      {
+        "name": "Rosebud Oversize Cropped Long Sleeve Shirt White/Black Stripe",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-rosebud-oversize-cropped-long-sleeve-shirt-white-black-stripe",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410041_US_000.jpg?width=1200&height=1200&v=1752562436",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134695"
+      },
+      {
+        "name": "Royalty Boxy Cropped Resort Shirt Black",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-royalty-boxy-cropped-resort-shirt-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/410551_US_000.jpg?width=1200&height=1200&v=1755152380",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133419"
+      },
+      {
+        "name": "Royalty Boxy Cropped Resort Shirt Blue/White Stripe",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-royalty-boxy-resort-shirt-blue-white-stripe",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408123_US_019.jpg?width=1200&height=1200&v=1758583223",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133362"
+      },
+      {
+        "name": "Royalty Boxy Long Sleeve Resort Shirt Blue Stripe",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-royalty-boxy-long-sleeve-resort-shirt-blue-stripe",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408977_US_000.jpg?width=1200&height=1200&v=1758779320",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.133731"
+      },
+      {
+        "name": "Sakura Resort Shirt Off Black",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-sakura-resort-shirt-off-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/409412_US_000.jpg?width=1200&height=1200&v=1749096613",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134742"
+      },
+      {
+        "name": "Token Boxy Cropped Resort Shirt White",
+        "price": "$68.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-token-boxy-cropped-resort-shirt-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411925_US_000.jpg?width=1200&height=1200&v=1759219284",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134077"
+      },
+      {
+        "name": "Trace Check Short Sleeve Shirt Green/Blue",
+        "price": "$61.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-trace-check-short-sleeve-shirt-green-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407925_US_003.jpg?width=1200&height=1200&v=1742460959",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134128"
+      },
+      {
+        "name": "Truth Resort Collar Shirt Oatmeal",
+        "price": "$54.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-truth-resort-collar-shirt-oatmeal",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/163392_US_000_1.jpg?width=1200&height=1200&v=1723785992",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134482"
+      },
+      {
+        "name": "Von Dutch Mix Men's Collared Shirt BlackFrom",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/von-dutch-von-dutch-mix-mens-collared-shirt-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407929_US_000.jpg?width=1200&height=1200&v=1755741090",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:46:16.134842"
+      }
+    ]
+  },
+  "store_counts": {
+    "CultureKings": 30,
+    "Universal Store": 32
+  }
+}

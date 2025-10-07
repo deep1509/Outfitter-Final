@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-10-06T18:38:24.400798",
+  "search_query": "blue pants",
+  "search_criteria": {
+    "category": "pants",
+    "color_preference": "blue",
+    "size": "30"
+  },
+  "products_found_after_filtering": 3,
+  "products": [
+    {
+      "name": "Saint Morta Abolished Joggers Light Blue",
+      "price": "$59.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/saint-morta-saint-morta-abolished-jogger-light-blue",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/03001797-YL200_mens_006_470e1889-a639-48a0-b933-cd04896c96a9.jpg?v=1723680848",
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-06T18:38:23.584408"
+    },
+    {
+      "name": "Briggs Elastic Waist Cargo Jean Fog Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-briggs-elastic-waist-cargo-jean-fog-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411277_US_003.jpg?width=1200&height=1200&v=1756874837",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:38:23.572196"
+    },
+    {
+      "name": "Costa Baggy Pant Blue Stripe",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-pants/products/common-need-costa-baggy-pant-blue-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410583_US_003.jpg?width=1200&height=1200&v=1754628097",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:38:23.571511"
+    }
+  ]
+}

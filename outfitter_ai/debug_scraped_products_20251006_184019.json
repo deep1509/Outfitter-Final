@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-10-06T18:40:19.178808",
+  "search_query": "black shoes casual",
+  "search_criteria": {
+    "category": "shoes",
+    "size": "UK 9",
+    "style_preference": "casual",
+    "color_preference": "black"
+  },
+  "products_found_after_filtering": 4,
+  "products": [
+    {
+      "name": "Arizona Birko Flor Narrow Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-narrow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/159068_001.jpg?width=1200&height=1200&v=1736319632",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:40:17.828650"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:40:17.827498"
+    },
+    {
+      "name": "Arizona Natural Leather Regular Vintage Wood Black",
+      "price": "$163.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-natural-leather-regular-vintage-wood-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411137_US_002.jpg?width=1200&height=1200&v=1750999309",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:40:17.829926"
+    },
+    {
+      "name": "Arizona Smooth Leather Regular Black Smooth",
+      "price": "$143.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-smooth-leather-regular-black-smooth",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147270_45_1.jpg?width=1200&height=1200&v=1732846094",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:40:17.828462"
+    }
+  ]
+}

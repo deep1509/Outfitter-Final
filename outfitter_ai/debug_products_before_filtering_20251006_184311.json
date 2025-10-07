@@ -1,0 +1,842 @@
+{
+  "timestamp": "2025-10-06T18:43:11.546524",
+  "search_query": "black shoes casual",
+  "search_criteria": {
+    "category": "shoes",
+    "color_preference": "black",
+    "size": "UK 9",
+    "style_preference": "casual"
+  },
+  "stage": "before_ai_filtering",
+  "total_products": 82,
+  "products_by_store": {
+    "CultureKings": [
+      {
+        "name": "Carre International Hoodie Black",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-international-hoodie-black-2-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053809-YB001_mens_0010.jpg?v=1757465239",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912297"
+      },
+      {
+        "name": "Jordan Brooklyn Fleece Printed Hoodie Black/Sail",
+        "price": "$74.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-brooklyn-fleece-printed-hoodie-black-sail-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054492-YB699_mens_0000010.jpg?v=1757459333",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912332"
+      },
+      {
+        "name": "Jordan Essential Fleece Pullover Hoodie Hemp/Sail",
+        "price": "$84.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-essential-fleece-pullover-hoodie-hemp-sail-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02045108-YH104_mens_0010.jpg?v=1757485893",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912277"
+      },
+      {
+        "name": "Reebok X Market All Over Print Hoodie Real Tree Camo",
+        "price": "$104.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/reebok-x-market-all-over-print-hoodie-real-tree-camo-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054376-YR245_mens_000010.gif?v=1755647977",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912362"
+      },
+      {
+        "name": "Saint Morta Sacred Script Hoodie Brown",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/saint-morta-sacred-script-hoodie-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053812-YX300_mens_0010.jpg?v=1757465753",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912288"
+      },
+      {
+        "name": "Saint Morta Shadow Mark Hoodie Black",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/saint-morta-shadow-mark-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053813-YB001_mens_0010.jpg?v=1757465531",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912294"
+      },
+      {
+        "name": "The Anti Order Alpha Logo Hoodie Black",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/the-anti-order-alpha-logo-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053816-YB001_mens_0000010.jpg?v=1757462071",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912338"
+      },
+      {
+        "name": "The Anti Order Reverse Logo Hoodie Charcoal Grey",
+        "price": "$54.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/the-anti-order-reverse-logo-hoodie-charcoal-grey-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053817-YD720_mens_0000010.jpg?v=1757461837",
+        "store_name": "CultureKings",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:10.912341"
+      },
+      {
+        "name": "Adidas Originals Golf Driver Headcover Green",
+        "price": "$90.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-originals-golf-driver-headcover-green",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/06011307-YG600_default_0020.jpg?v=1758840676",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116918"
+      },
+      {
+        "name": "Adidas Originals Golf Towel Night Indigo",
+        "price": "$90.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-originals-golf-towel-night-indigo",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/06011302-YI065_default_0020.jpg?v=1758840696",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116916"
+      },
+      {
+        "name": "Adidas Originals Knit Stripe Polo T-Shirt Night Indigo/Green",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/adidas-originals-knit-stripe-polo-t-shirt-night-indigo-green-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055377-YN184_mens_0010.jpg?v=1759361641",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116899"
+      },
+      {
+        "name": "American Thrift Block Fit T-Shirt Off White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-off-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YO007_mens_0010.jpg?v=1759363410",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116889"
+      },
+      {
+        "name": "American Thrift Block Fit T-Shirt White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YW100_mens_0010.jpg?v=1759363434",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116887"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Black",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YB001_mens_0010.jpg?v=1759363326",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116896"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Brown",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YX300_mens_0010.jpg?v=1759363542",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116882"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Off White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-off-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YO007_mens_0010.jpg?v=1759363696",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116874"
+      },
+      {
+        "name": "American Thrift Everyday Oversized T-Shirt Washed Charcoal",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-washed-charcoal-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YC071_mens_0010.jpg?v=1759363495",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116884"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt Black",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YB001_mens_0010.jpg?v=1759363742",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116862"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt Black Acidwash",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-black-acidwash-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YB017_mens_0010.jpg?v=1759363651",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116877"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt Off White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-off-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YO007_mens_0010.jpg?v=1759363628",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116894"
+      },
+      {
+        "name": "American Thrift New Standard T-Shirt White",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YW100_mens_0010.jpg?v=1759363593",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116879"
+      },
+      {
+        "name": "American Thrift The Block T-Shirt Black Wash",
+        "price": "$29.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-black-wash-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YB295_mens_0010.jpg?v=1759363382",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116892"
+      },
+      {
+        "name": "Carre Premium Essentials Hoodie Light Brown",
+        "price": "$99.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-premium-essentials-hoodie-light-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054919-YL207_mens_0010.jpg?v=1757465154",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912300"
+      },
+      {
+        "name": "Carre Rivet Hoodie Charcoal",
+        "price": "$109.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/carre-rivet-hoodie-charcoal-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054898-YC300_mens_0010.jpg?v=1757466933",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912271"
+      },
+      {
+        "name": "Casio AQ230A-2A1 Watch Silver/Turquoise",
+        "price": "$129.99",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/casio-aq230a-2a1-watch-silver-turquoise",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/09001751-YS694_default_0010.jpg?v=1759275615",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116914"
+      },
+      {
+        "name": "Clarks Originals Wallabee Green",
+        "price": "$269.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/clarks-originals-wallabee-green",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/05013634-YG600_default_0010.jpg?v=1759184380",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116906"
+      },
+      {
+        "name": "Jordan Brooklyn Collegiate Pullover Hoodie Birch Heather Grey",
+        "price": "$105.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-brooklyn-collegiate-pullover-hoodie-birch-heather-grey-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054497-YH081_mens_0000010.jpg?v=1757459573",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912329"
+      },
+      {
+        "name": "Jordan Brooklyn Fleece Pullover Hoodie Grey Heather/White",
+        "price": "$95.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/jordan-brooklyn-fleece-pullover-hoodie-grey-heather-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054501-YQ021_mens_0010.jpg?v=1757459113",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912347"
+      },
+      {
+        "name": "Loiter Slither Zip Hoodie Grey",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/loiter-slither-zip-hoodie-grey-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054833-YQ001_mens_0010.jpg?v=1755651353",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912359"
+      },
+      {
+        "name": "Loiter Weezy Rhinestone Zip Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/loiter-weezy-rhinestone-zip-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054835-YB001_mens_0010.jpg?v=1757463906",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912335"
+      },
+      {
+        "name": "Loiter Weezy Rhinestone Zip Hoodie Pink",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/loiter-weezy-rhinestone-zip-hoodie-pink-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054835-YP001_mens_0010.jpg?v=1758239330",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912264"
+      },
+      {
+        "name": "Nike Air Force 1 '07 LV8 Sail/Midnight Navy",
+        "price": "$190.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-air-force-1-07-lv8-sail-midnight-navy",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/05013752-YS036_default_0010.jpg?v=1759266328",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116902"
+      },
+      {
+        "name": "Nike Air Force 1 '07 LV8 Sail/Night Maroon",
+        "price": "$190.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-air-force-1-07-lv8-sail-night-maroon",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/05013753-YS036_default_0010.jpg?v=1759184173",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116909"
+      },
+      {
+        "name": "Nike Club Pullover Fleece Hoodie Dark Grey Heather",
+        "price": "$75.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-club-pullover-fleece-hoodie-dark-grey-heather-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054476-YD597_mens_0010.jpg?v=1758244963",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912260"
+      },
+      {
+        "name": "Nike Club Pullover Fleece Hoodie White/White/Black",
+        "price": "$75.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-club-pullover-fleece-hoodie-white-white-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054463-YW241_mens_0010.jpg?v=1757459263",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912326"
+      },
+      {
+        "name": "Nike Nocta Fleece Hoodie Black",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-nocta-fleece-hoodie-black-2-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054781-YB001_mens_0010.jpg?v=1757484881",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912312"
+      },
+      {
+        "name": "Nike Nocta Fleece Hoodie Khaki",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-nocta-fleece-hoodie-khaki-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054784-YK001_mens_0010.jpg?v=1757484277",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912318"
+      },
+      {
+        "name": "Nike Nocta Fleece Hoodie Lt Orewood Brown",
+        "price": "$160.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-nocta-fleece-hoodie-lt-orewood-brown-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054783-YL480_mens_0010.jpg?v=1757484590",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912315"
+      },
+      {
+        "name": "Nike ReactX Rejuven8 Slides Orange",
+        "price": "$90.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-reactx-rejuven8-slides-orange",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/05013764-YO200_default_0010.jpg?v=1759266305",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116904"
+      },
+      {
+        "name": "Nike Sportswear Tech Fleece Windrunner Jacket Dusty Sage",
+        "price": "$150.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nike-sportswear-tech-fleece-windrunner-jacket-dusty-sage-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054472-YD343_mens_0010.jpg?v=1756157036",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912350"
+      },
+      {
+        "name": "Nixon 51-30 Chrono Gold",
+        "price": "$679.99",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/nixon-51-30-chrono-gold-2",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/09001750-YG200_default_0010.jpg?v=1759183340",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:11.116911"
+      },
+      {
+        "name": "Puma X Scuderia Ferrari Monza Hoodie Rosso Corsa",
+        "price": "$180.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/puma-x-scuderia-ferrari-monza-hoodie-rosso-corsa-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055087-YR255_mens_0010.jpg?v=1757484185",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912323"
+      },
+      {
+        "name": "Puma X Scuderia Ferrari Monza Hoodie Steer Blue",
+        "price": "$180.00",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/puma-x-scuderia-ferrari-monza-hoodie-steer-blue-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055088-YS959_mens_0010.jpg?v=1757484224",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912321"
+      },
+      {
+        "name": "S Double Choose Your Weapon Hoodie Washed White",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-choose-your-weapon-hoodie-washed-white-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054088-YX630_mens_0010.jpg?v=1757485476",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912306"
+      },
+      {
+        "name": "S Double Combo Platter Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-combo-platter-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054089-YB001_mens_0010.jpg?v=1758245730",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912232"
+      },
+      {
+        "name": "S Double Combo Platter Hoodie Washed Chocolate",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-combo-platter-hoodie-washed-chocolate-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054089-YW534_mens_0010.jpg?v=1758245444",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912249"
+      },
+      {
+        "name": "S Double Crown Dot Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-crown-dot-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054920-YB001_mens_0010.jpg?v=1757485361",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912309"
+      },
+      {
+        "name": "S Double Goosebumps Hoodie Washed Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-goosebumps-hoodie-washed-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054090-YW607_mens_0010.jpg?v=1757977962",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912267"
+      },
+      {
+        "name": "S Double Small Stock Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/s-double-small-stock-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054924-YB001_mens_0010.jpg?v=1757485554",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912303"
+      },
+      {
+        "name": "X-Large Mark Zip Through Hoodie Black",
+        "price": "$119.95",
+        "brand": "CultureKings",
+        "url": "https://culturekings.com.au/products/x-large-mark-zip-through-hoodie-black-mens",
+        "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054382-YB001_mens_0010.jpg?v=1756157997",
+        "store_name": "CultureKings",
+        "is_on_sale": null,
+        "extracted_at": "2025-10-06T18:43:10.912344"
+      }
+    ],
+    "Universal Store": [
+      {
+        "name": "Bluey Classic Clog Blue",
+        "price": "$27.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-bluey-classic-clog-blue",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/402890_US_001.jpg?width=1200&height=1200&v=1732492170",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:11.545095"
+      },
+      {
+        "name": "Frozen Elsa Classic Clog Toddler Multi",
+        "price": "$21.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-frozen-elsa-classic-clog-multi",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/207211_US_001.jpg?width=1200&height=1200&v=1728624646",
+        "store_name": "Universal Store",
+        "is_on_sale": true,
+        "extracted_at": "2025-10-06T18:43:11.544915"
+      },
+      {
+        "name": "Arch Support Slides Black",
+        "price": "$41.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-slides-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/409242_US_001.jpg?width=1200&height=1200&v=1743916730",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544147"
+      },
+      {
+        "name": "Arch Support Slides Chocolate Brown",
+        "price": "$41.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-slides-chocolate-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/413174_US_001.jpg?width=1200&height=1200&v=1758779819",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543410"
+      },
+      {
+        "name": "Arch Support Thong Black",
+        "price": "$27.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/0004_407632_us_001.jpg?width=1200&height=1200&v=1733368722",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543829"
+      },
+      {
+        "name": "Arch Support Thong Chocolate Brown",
+        "price": "$27.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-chocolate-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/413172_US_001.jpg?width=1200&height=1200&v=1758780043",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543247"
+      },
+      {
+        "name": "Arch Support Thong White",
+        "price": "$27.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/archies-footwear-arch-support-thong-white",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/0005_407633_us_001.jpg?width=1200&height=1200&v=1733368670",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544745"
+      },
+      {
+        "name": "Arizona Birkibuc Narrow Stone",
+        "price": "$131.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birkibuc-narrow-stone",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408658_US_001.jpg?width=1200&height=1200&v=1742358709",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544025"
+      },
+      {
+        "name": "Arizona Birkibuc Regular Mocca",
+        "price": "$137.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/152637_001.jpg?width=1200&height=1200&v=1699029881",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543479"
+      },
+      {
+        "name": "Arizona Birkibuc Regular Stone",
+        "price": "$137.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-mens-arizona-birkibuc-regular-stone",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/167910_us_00007.jpg?width=1200&height=1200&v=1733101087",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544287"
+      },
+      {
+        "name": "Arizona Birkibuc Regular Velvet Grey",
+        "price": "$137.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birkibuc-regular-velvet-grey",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411134_US_001.jpg?width=1200&height=1200&v=1750999289",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544428"
+      },
+      {
+        "name": "Arizona Birko Flor Narrow Black",
+        "price": "$125.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-narrow-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/159068_001.jpg?width=1200&height=1200&v=1736319632",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544357"
+      },
+      {
+        "name": "Arizona Birko Flor Regular Black",
+        "price": "$125.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-birko-flor-regular-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543548"
+      },
+      {
+        "name": "Arizona Natural Leather Regular Vintage Wood Black",
+        "price": "$163.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-natural-leather-regular-vintage-wood-black",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411137_US_002.jpg?width=1200&height=1200&v=1750999309",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.545242"
+      },
+      {
+        "name": "Arizona Oiled Leather Regular Oiled Tobacco",
+        "price": "$156.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-oiled-leather-regular-oiled-tobacco",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/154387_US_002.jpg?width=1200&height=1200&v=1709274635",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543906"
+      },
+      {
+        "name": "Arizona Smooth Leather Regular Black Smooth",
+        "price": "$143.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-smooth-leather-regular-black-smooth",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/147270_45_1.jpg?width=1200&height=1200&v=1732846094",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544221"
+      },
+      {
+        "name": "Arizona Vegan Regular Thyme",
+        "price": "$131.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-arizona-vegan-regular-thyme",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408317_US_201.jpg?width=1200&height=1200&v=1743135771",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544547"
+      },
+      {
+        "name": "Boston Oiled Leather Regular Tobacco Brown",
+        "price": "$201.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-oiled-leather-regular-tobacco-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/177275_US_000.jpg?width=1200&height=1200&v=1699035340",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543690"
+      },
+      {
+        "name": "Boston Sfb Suede Leather Narrow Mocca",
+        "price": "$214.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-sfb-suede-leather-narrow-mocca",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411131_US_001.jpg?width=1200&height=1200&v=1750999304",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.545039"
+      },
+      {
+        "name": "Boston Suede Leather Regular Stone Coin",
+        "price": "$201.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-suede-leather-regular-stone-coin",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411000_US_001.jpg?width=1200&height=1200&v=1750143016",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.545314"
+      },
+      {
+        "name": "Boston Tabacco Oiled Leather Narrow Brown",
+        "price": "$201.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/birkenstock-boston-tabacco-oiled-leather-narrow-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/411128_US_002.jpg?width=1200&height=1200&v=1750999313",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544680"
+      },
+      {
+        "name": "Classic Clog Atmosphere",
+        "price": "$54.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-classic-clog-atmosphere",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/194146_US_001.jpg?width=1200&height=1200&v=1699034650",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544484"
+      },
+      {
+        "name": "Classic Clog Minecraft",
+        "price": "$75.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-classic-clog-minecraft",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/404388_US_253.jpg?width=1200&height=1200&v=1758255648",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544800"
+      },
+      {
+        "name": "Classic Elephant",
+        "price": "$54.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-mens-classic-elephant",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/191947_US_001.jpg?width=1200&height=1200&v=1699034137",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543959"
+      },
+      {
+        "name": "Classic Nylon Sneaker Campus Brown",
+        "price": "$88.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-classic-nylon-sneaker-campus-brown",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407115_US_001.jpg?width=1200&height=1200&v=1758779328",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543758"
+      },
+      {
+        "name": "Club C 85 Chalk",
+        "price": "$108.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-club-c-85-chalk",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/180896_US_001.jpg?width=1200&height=1200&v=1699028016",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544848"
+      },
+      {
+        "name": "Club C 85 White/Royal/Gum",
+        "price": "$102.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-club-c-85-white-royal-gum",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/158731_000012.jpg?width=1200&height=1200&v=1698980526",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544968"
+      },
+      {
+        "name": "Club C Revenge Sneaker Chalk/Burgundy",
+        "price": "$115.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/reebok-club-c-revenge-sneaker-chalk-burgundy",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/407121_US_001.jpg?width=1200&height=1200&v=1753321291",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.545163"
+      },
+      {
+        "name": "Ghostbuster Classic Clog Multi",
+        "price": "$78.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-ghostbuster-classic-clog-multi",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408074_US_001.jpg?width=1200&height=1200&v=1758255652",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544607"
+      },
+      {
+        "name": "Krispy Kreme Classic Clog Golden Hour",
+        "price": "$81.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/crocs-krispy-kreme-classic-clog-golden-hour",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408072_US_001.jpg?width=1200&height=1200&v=1758255655",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543335"
+      },
+      {
+        "name": "Rubber Logo Black Blue",
+        "price": "$27.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/havaianas-rubber-logo-black-blue-1",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/413694_US_001.jpg?width=1200&height=1200&v=1759278291",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.544080"
+      },
+      {
+        "name": "Top Surfer Thong New Graphite",
+        "price": "$31.00",
+        "brand": "Universal Store",
+        "url": "https://www.universalstore.com/collections/mens-shoes/products/havaianas-top-surfer-thong-new-graphite",
+        "image_url": "https://www.universalstore.com/cdn/shop/files/408038_US_001.jpg?width=1200&height=1200&v=1758779332",
+        "store_name": "Universal Store",
+        "is_on_sale": false,
+        "extracted_at": "2025-10-06T18:43:11.543615"
+      }
+    ]
+  },
+  "store_counts": {
+    "CultureKings": 50,
+    "Universal Store": 32
+  }
+}

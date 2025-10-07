@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-10-06T18:21:28.875393",
+  "search_query": "red hoodies",
+  "search_criteria": {
+    "category": "hoodies",
+    "color_preference": "red"
+  },
+  "products_found_after_filtering": 5,
+  "products": [
+    {
+      "name": "Champion Rochester Graphic Hoodie Red",
+      "price": "$69.95",
+      "brand": "CultureKings",
+      "url": "https://www.culturekings.com.au/products/champion-rochester-graphic-hoodie-red-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053671-YR001_mens_00010.jpg?width=1200&height=1200&v=1740008124",
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-06T18:21:26.535711"
+    },
+    {
+      "name": "Champion Time Capsule Full Zip-Through Hoodie Red",
+      "price": "$99.95",
+      "brand": "CultureKings",
+      "url": "https://www.culturekings.com.au/products/champion-time-capsule-full-zip-through-hoodie-red",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02051155-YR001_mens_0010.jpg?width=1200&height=1200&v=1745987244",
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-06T18:21:27.042091"
+    },
+    {
+      "name": "Loiter Metal Rhinestone Hoodie Red",
+      "price": "$79.95",
+      "brand": "CultureKings",
+      "url": "https://www.culturekings.com.au/products/loiter-metal-rhinestone-hoodie-red-womens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02052739-YR001_womens_00010.jpg?width=1200&height=1200&v=1738729766",
+      "store_name": "CultureKings",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-06T18:21:26.842285"
+    },
+    {
+      "name": "Champion Rev Weave Hoodie Red",
+      "price": "$99.99",
+      "brand": "CultureKings",
+      "url": "https://www.culturekings.com.au/products/champion-champion-rev-weave-hoodie-red-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02012313-YR001_mens_010.jpg?width=1200&height=1200&v=1732596025",
+      "store_name": "CultureKings",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:21:26.655213"
+    },
+    {
+      "name": "Champion Rev Weave Hoodie Red",
+      "price": "$99.99",
+      "brand": "CultureKings",
+      "url": "https://www.culturekings.com.au/products/champion-champion-rev-weave-hoodie-red-womens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02012313-YR001_womens_0010.jpg?width=1200&height=1200&v=1732596031",
+      "store_name": "CultureKings",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-06T18:21:27.419392"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ def main():
     interface = create_complete_interface()
     interface.launch(
         server_name="127.0.0.1",  # Local only for security
-        server_port=7860,
+        server_port=7861,
         share=False,  # Set to True for public tunnel
         show_error=True,
         debug=False
