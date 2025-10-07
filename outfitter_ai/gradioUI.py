@@ -18,6 +18,7 @@ class AssistifyUI:
         self.conversation_history = []
         self.current_products = []
         self.current_cart = []
+        self.current_user_photo = None
         
     def extract_products_from_state(self, conversation_result: List[Dict]) -> List[Dict[str, Any]]:
         """Extract products from conversation state"""
@@ -70,11 +71,11 @@ class AssistifyUI:
             traceback.print_exc()
             return []
     
-    async def handle_conversation(self, message: str, history: List) -> Tuple[List, str, str]:
+    async def handle_conversation(self, message: str, history: List) -> Tuple[List, str, str, gr.Column]:
         """Handle conversation with product and cart extraction"""
         
         if not message.strip():
-            return history, self.create_empty_products_html(), self.format_cart_page_html([])
+            return history, self.create_empty_products_html(), self.format_cart_page_html([]), gr.update(visible=False)
         
         try:
             # Convert message format
@@ -107,7 +108,10 @@ class AssistifyUI:
             products_html = self.create_products_grid_html(products) if products else self.create_empty_products_html()
             cart_html = self.format_cart_page_html(cart_items) if cart_items else self.format_cart_page_html([])
             
-            return updated_history_dicts, products_html, cart_html
+            # Show virtual try-on sidebar if cart has items
+            sidebar_visible = len(cart_items) > 0
+            
+            return updated_history_dicts, products_html, cart_html, gr.update(visible=sidebar_visible)
             
         except Exception as e:
             print(f"❌ Error: {e}")
@@ -118,7 +122,7 @@ class AssistifyUI:
                 {"role": "user", "content": message}, 
                 {"role": "assistant", "content": error_msg}
             ]
-            return error_history, self.create_error_html(str(e)), self.format_cart_page_html([])
+            return error_history, self.create_error_html(str(e)), self.format_cart_page_html([]), gr.update(visible=False)
 
     def create_assistify_css(self):
         """🎨 Assistify-Inspired CSS - Professional AI Startup Design"""
@@ -977,6 +981,40 @@ class AssistifyUI:
             text-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
         }
         
+        /* 🎭 Virtual Try-On Styles */
+        .tryon-results {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+            margin: 10px 0;
+        }
+        
+        .tryon-category {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tryon-item {
+            margin-top: 10px;
+        }
+        
+        .tryon-item img {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tryon-error {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 107, 107, 0.2);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+        
         /* 📋 CART SUMMARY CARD */
         .cart-summary-card {
             background: var(--bg-card);
@@ -1374,6 +1412,77 @@ class AssistifyUI:
             </div>
         </div>
         """
+    
+    def process_virtual_tryon(self, cart_items: List[Dict[str, Any]], photo_path: str) -> str:
+        """Process virtual try-on request"""
+        try:
+            if not cart_items:
+                return "<div class='empty-state'><div class='empty-state-icon'>🛒</div><p>Your cart is empty!</p></div>"
+            
+            if not photo_path:
+                return "<div class='empty-state'><div class='empty-state-icon'>📸</div><p>Please upload your photo first!</p></div>"
+            
+            # Import and use the actual virtual try-on agent
+            try:
+                from agents.conversation_agents.virtualTryOnAgent import VirtualTryOnAgent
+                
+                # Create virtual try-on agent
+                virtual_tryon_agent = VirtualTryOnAgent()
+                
+                # Prepare state for virtual try-on
+                state = {
+                    "selected_products": cart_items,
+                    "user_photo": photo_path
+                }
+                
+                # Process virtual try-on
+                result = virtual_tryon_agent.process_virtual_tryon(state)
+                
+                # Extract results from the agent response
+                tryon_results = result.get("virtual_tryon_results", {})
+                
+                if not tryon_results:
+                    return "<div class='error-state'><p>❌ No try-on results generated</p></div>"
+                
+                # Build HTML display for results
+                html_content = "<div class='tryon-results'>"
+                html_content += "<h3>🎭 Virtual Try-On Results</h3>"
+                
+                for category, result_data in tryon_results.items():
+                    if result_data.get('success', False):
+                        item = result_data.get('item', {})
+                        tryon_image = result_data.get('tryon_image', '')
+                        
+                        if tryon_image:
+                            html_content += f"""
+                            <div class='tryon-category'>
+                                <h4>🎭 {category.title()} Try-On</h4>
+                                <div class='tryon-item'>
+                                    <p><strong>{item.get('name', 'Unknown Item')}</strong> - {item.get('price', 'N/A')}</p>
+                                    <img src="data:image/jpeg;base64,{tryon_image}" 
+                                         style="max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0;" />
+                                </div>
+                            </div>
+                            """
+                    else:
+                        error = result_data.get('error', 'Unknown error')
+                        html_content += f"""
+                        <div class='tryon-error'>
+                            <h4>❌ {category.title()} Try-On Failed</h4>
+                            <p>Error: {error}</p>
+                        </div>
+                        """
+                
+                html_content += "</div>"
+                return html_content
+                
+            except ImportError as e:
+                return f"<div class='error-state'><p>❌ Virtual try-on agent not available: {str(e)}</p></div>"
+            except Exception as e:
+                return f"<div class='error-state'><p>❌ Virtual try-on processing error: {str(e)}</p></div>"
+            
+        except Exception as e:
+            return f"<div class='error-state'><p>❌ Error: {str(e)}</p></div>"
 
 def create_assistify_interface():
     """🚀 Create Assistify-inspired interface"""
@@ -1439,32 +1548,108 @@ def create_assistify_interface():
                 
                 # Cart Tab
                 with gr.Tab("🛒 Cart", id="cart"):
-                    gr.HTML('<div class="section-header"><span class="icon">🛒</span>Shopping Cart</div>')
-                    cart_display = gr.HTML(
-                        value='<div class="empty-state"><div class="empty-state-icon">🛒</div><h3 class="empty-state-title">Your cart is empty</h3></div>'
-                    )
+                    with gr.Row(equal_height=False):
+                        # Cart Items Section
+                        with gr.Column(scale=2, min_width=500):
+                            gr.HTML('<div class="section-header"><span class="icon">🛒</span>Shopping Cart</div>')
+                            cart_display = gr.HTML(
+                                value='<div class="empty-state"><div class="empty-state-icon">🛒</div><h3 class="empty-state-title">Your cart is empty</h3></div>'
+                            )
+                        
+                        # Virtual Try-On Sidebar
+                        with gr.Column(scale=1, min_width=400, visible=False, elem_id="virtual_tryon_sidebar") as virtual_tryon_sidebar:
+                            gr.HTML('<div class="section-header"><span class="icon">🎭</span>Virtual Try-On</div>')
+                            
+                            # Photo Upload Section
+                            with gr.Group():
+                                gr.Markdown("### 📸 Upload Your Photo")
+                                photo_upload = gr.File(
+                                    label="Upload your photo",
+                                    file_types=["image"],
+                                    type="filepath"
+                                )
+                                upload_btn = gr.Button("📸 Use This Photo", variant="primary", size="sm")
+                            
+                            # Try-On Results Section
+                            with gr.Group():
+                                tryon_results = gr.HTML(
+                                    value="<div class='empty-state'><div class='empty-state-icon'>🎭</div><p>Upload your photo and try on items!</p></div>"
+                                )
+                                tryon_btn = gr.Button("🎭 Try On Items", variant="secondary", visible=False)
+                            
+                            # Instructions
+                            gr.Markdown("""
+                            <div style="color: white;">
+                            **How it works:**
+                            1. Upload a clear photo of yourself
+                            2. Click "Try On Items" to see how your cart items look on you
+                            3. The AI will overlay the clothing onto your photo realistically
+                            </div>
+                            """)
         
         # Event Handlers
         async def send_message(message, history):
             return await ui.handle_conversation(message, history)
         
         def clear_conversation():
-            return [], ui.create_empty_products_html(), ui.format_cart_page_html([]), ""
+            return [], ui.create_empty_products_html(), ui.format_cart_page_html([]), "", gr.update(visible=False)
         
         # Bind Events
         send_btn.click(
             send_message,
             inputs=[msg, chatbot],
-            outputs=[chatbot, products_display, cart_display]
+            outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar]
         ).then(lambda: "", outputs=[msg])
         
         msg.submit(
             send_message,
             inputs=[msg, chatbot],
-            outputs=[chatbot, products_display, cart_display]
+            outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar]
         ).then(lambda: "", outputs=[msg])
         
-        clear_btn.click(clear_conversation, outputs=[chatbot, products_display, cart_display, msg])
+        clear_btn.click(clear_conversation, outputs=[chatbot, products_display, cart_display, msg, virtual_tryon_sidebar])
+        
+        # Virtual Try-On Event Handlers
+        def handle_photo_upload(photo_path):
+            """Handle photo upload for virtual try-on"""
+            if photo_path:
+                try:
+                    # Process the photo and store it
+                    ui.current_user_photo = photo_path
+                    return gr.update(visible=True), "✅ Photo uploaded! Ready for virtual try-on."
+                except Exception as e:
+                    return gr.update(visible=False), f"❌ Error uploading photo: {str(e)}"
+            return gr.update(visible=False), "Please upload a photo first."
+        
+        def handle_virtual_tryon():
+            """Handle virtual try-on request"""
+            try:
+                if not ui.current_user_photo:
+                    return "❌ Please upload your photo first!"
+                
+                # Get current cart items
+                cart_items = ui.extract_cart_from_state([])
+                if not cart_items:
+                    return "❌ Your cart is empty! Add some items first."
+                
+                # Process virtual try-on
+                result = ui.process_virtual_tryon(cart_items, ui.current_user_photo)
+                return result
+                
+            except Exception as e:
+                return f"❌ Virtual try-on error: {str(e)}"
+        
+        # Bind Virtual Try-On Events
+        upload_btn.click(
+            handle_photo_upload,
+            inputs=[photo_upload],
+            outputs=[tryon_btn, tryon_results]
+        )
+        
+        tryon_btn.click(
+            handle_virtual_tryon,
+            outputs=[tryon_results]
+        )
     
     return interface
 

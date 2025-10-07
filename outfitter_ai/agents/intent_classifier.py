@@ -267,9 +267,16 @@ Analyze this customer message like an experienced salesperson would. Consider:
     - Remove items: "remove #2", "delete item 1", "take out the hoodie"
     - Clear cart: "clear cart", "empty my cart", "start over"
     - Ask about cart: "how much is my total", "what did I select"
+    - Virtual try-on: "try on", "virtual try on", "see how it looks", "try these on"
     
     IMPORTANT: When user asks "what's in my cart right now?" or similar viewing questions,
     classify as "cart" intent and mention "viewing cart" in your reasoning.
+    
+    VIRTUAL TRY-ON DETECTION:
+    Detect "virtual_tryon" intent when user wants to:
+    - Try on items: "try on", "virtual try on", "see how it looks", "try these on"
+    - Upload photo: "upload my photo", "use my picture", "try on with my photo"
+    - Visualize items: "see how this looks on me", "visualize this outfit"
 
     CUSTOMER CONTEXT UNDERSTANDING:
     - Early conversation (turns 1-3): Often greeting or search intent
@@ -381,6 +388,7 @@ Analyze this customer message like an experienced salesperson would. Consider:
             "search": "needs_analyzer",  # FIXED: Route search directly to needs_analyzer
             "selection": "selection_handler", 
             "cart": "cart_manager",
+            "virtual_tryon": "virtual_tryon",  # NEW: Virtual try-on intent
             "checkout": "checkout_handler",
             "general": "general_responder",
             "clarification": "clarification_asker"

@@ -152,7 +152,7 @@ class CartManager:
         }
     
     def _view_cart(self, state: OutfitterState) -> Dict[str, Any]:
-        """Display current cart contents."""
+        """Display current cart contents with virtual try-on option."""
         print("   👀 Viewing cart...")
         
         cart = state.get("selected_products", [])
@@ -166,11 +166,19 @@ Would you like to:
 • Get some shopping recommendations"""
         else:
             response = self._build_cart_display(cart)
+            
+            # Add virtual try-on option if cart has items
+            if cart:
+                response += """
+
+🎭 **Virtual Try-On Available!**
+Upload your photo in the sidebar to see how these items look on you!"""
         
         return {
             "messages": [AIMessage(content=response)],
             "conversation_stage": "cart" if cart else "discovery",
-            "next_step": "wait_for_user"
+            "next_step": "wait_for_user",
+            "show_virtual_tryon": len(cart) > 0  # Enable virtual try-on if cart has items
         }
     
     def _clear_cart(self, state: OutfitterState) -> Dict[str, Any]:

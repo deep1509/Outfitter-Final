@@ -77,6 +77,7 @@ class OutfitterAssistant:
         workflow.add_node("selection_handler", self._selection_handler_node)
         workflow.add_node("upsell_agent", self._upsell_node)
         workflow.add_node("cart_manager", self._cart_manager_node)
+        workflow.add_node("virtual_tryon", self._virtual_tryon_node)
         workflow.add_node("checkout_handler", self._mock_checkout_handler)
         
         # Start edge
@@ -91,6 +92,7 @@ class OutfitterAssistant:
                 "needs_analyzer": "needs_analyzer",
                 "selection_handler": "selection_handler",
                 "cart_manager": "cart_manager",  # ADDED: Direct cart routing
+                "virtual_tryon": "virtual_tryon",  # NEW: Virtual try-on routing
                 "checkout_handler": "checkout_handler",
                 "general_responder": "general_responder",
                 "clarification_asker": "clarification_asker",
@@ -179,7 +181,17 @@ class OutfitterAssistant:
                 "wait_for_user": END,
                 "product_presenter": "product_presenter",
                 "checkout_handler": "checkout_handler",
-                "upsell_agent": "upsell_agent"  # ADDED: Route to upsell after cart
+                "upsell_agent": "upsell_agent",  # ADDED: Route to upsell after cart
+                "virtual_tryon": "virtual_tryon"  # ADDED: Route to virtual try-on
+            }
+        )
+        
+        # Virtual try-on routing
+        workflow.add_conditional_edges(
+            "virtual_tryon",
+            self._route_after_virtual_tryon,
+            {
+                "wait_for_user": END
             }
         )
         
@@ -288,6 +300,24 @@ class OutfitterAssistant:
         print(f"   ✅ After processing: {len(result.get('selected_products', []))} items in cart")
         
         return result
+    
+    def _virtual_tryon_node(self, state: OutfitterState) -> Dict[str, Any]:
+        """
+        Handle virtual try-on operations.
+        """
+        print("🎭 VIRTUAL TRY-ON NODE CALLED")
+        
+        try:
+            from agents.conversation_agents.virtualTryOnAgent import VirtualTryOnAgent
+            virtual_tryon_agent = VirtualTryOnAgent()
+            return virtual_tryon_agent.process_virtual_tryon(state)
+        except Exception as e:
+            print(f"❌ Virtual try-on error: {e}")
+            return {
+                "messages": [AIMessage(content=f"❌ Sorry, virtual try-on is temporarily unavailable: {str(e)}")],
+                "conversation_stage": "cart",
+                "next_step": "wait_for_user"
+            }
     
     # ============ REAL SCRAPING INTEGRATION NODES ============
     
@@ -606,6 +636,11 @@ Would you like me to:
     def _route_after_empty_results(self, state: OutfitterState) -> str:
         """Route after empty results - always wait for user"""
         print("🔄 Routing after empty results: wait_for_user")
+        return "wait_for_user"
+    
+    def _route_after_virtual_tryon(self, state: OutfitterState) -> str:
+        """Route after virtual try-on - always wait for user"""
+        print("🔄 Routing after virtual try-on: wait_for_user")
         return "wait_for_user"
     
     def _route_after_cart_action(self, state: OutfitterState) -> str:
