@@ -1,6 +1,5 @@
 """
-Updated main.py with real scraping integration and complete cart management
-All cart persistence fixes applied
+Final version Ready.
 """
 
 import os
