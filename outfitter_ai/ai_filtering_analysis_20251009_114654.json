@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-10-09T11:46:54.883367",
+  "user_request": "mens blue pants",
+  "total_original": 9,
+  "total_kept": 8,
+  "total_filtered": 1,
+  "overall_filtering_rate": "11.1%",
+  "store_analysis": {
+    "Lowes": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Ringers Western": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Tactical Gear": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Theiconic": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Auski Australia": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Frontlinesafety": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Costco": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Mens Blue Stripe Flannelette Pyjama Pant",
+      "price": "19.95",
+      "brand": "Traders",
+      "url": "https://www.lowes.com.au/mens-blue-stripe-flannelette-pyjama-pant-m-55188",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/5/5/55188_f_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548227"
+    },
+    {
+      "name": "Tennant Creek Mens Rip Stop Work Pant - Dark Navy",
+      "price": "89.95",
+      "brand": "Ringers Western",
+      "url": "https://www.ringerswestern.com/products/tennant-creek-mens-rip-stop-work-pants-dark-navy-ns58412",
+      "image_url": "https://www.ringerswestern.com/cdn/shop/products/DEAN_WORKWEAR_STUDIO_72DPI-111.jpg?v=1651633491&width=480",
+      "store_name": "Ringers Western",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548265"
+    },
+    {
+      "name": "Mens Blue Checked Pyjama Pant",
+      "price": null,
+      "brand": "Traders",
+      "url": "https://www.lowes.com.au/m-mens-blue-checked-pyjama-pant-60362",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/6/0/60362_f_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548268"
+    },
+    {
+      "name": "MilSpec Tactical BDU Pants Midnight Navy Blue",
+      "price": "99.50",
+      "brand": "MilSpec",
+      "url": "https://tacticalgear.com.au/products/milspec-tactical-bdu-pants-midnight-navy-blue",
+      "image_url": "https://tacticalgear.com.au/cdn/shop/files/milspec-tactical-bdu-pants-midnight-navy-blue-milspec-tactical-gear-distributors-australia.jpg?v=1724277753&width=1024",
+      "store_name": "Tactical Gear",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548271"
+    },
+    {
+      "name": "Blue Pants | Blue Pants Online | Buy Men's Blue Pants Australia |- THE ICONIC",
+      "price": "119.99",
+      "brand": null,
+      "url": "https://www.theiconic.com.au/mens-blue-pants/",
+      "image_url": "https://img1.theiconic.com.au/-tpLKYAO_XaA-m-Ylw8BBwvU4Ok=/fit-in/406x512/filters:fill(ffffff):quality(90):format(webp)/https%3A%2F%2Fstatic.theiconic.com.au%2Fp%2Fyd-1892-7397871-1.jpg",
+      "store_name": "Theiconic",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548273"
+    },
+    {
+      "name": "HPX Tactical Pant Mens Navy (No Melt No Drip)",
+      "price": null,
+      "brand": null,
+      "url": "https://frontlinesafety.com.au/hpx-duty-pant-navy/",
+      "image_url": "https://cdn11.bigcommerce.com/s-odxf1zx595/images/stencil/1280x1280/products/1527/1968/duty_wear_F__33130.1554699125.jpg?c=2",
+      "store_name": "Frontlinesafety",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548278"
+    },
+    {
+      "name": "Nike Men's Fleece Pants Navy",
+      "price": "7.01",
+      "brand": "Costco",
+      "url": "https://www.costco.com.au/Clothing-Luggage-Handbags/Mens-Clothing/Nike-Mens-Fleece-Pants-Navy/p/1200780-NVY-LG",
+      "image_url": "https://www.costco.com.au/medias/sys_master/images/h9e/h24/30955948605470.jpg",
+      "store_name": "Costco",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548283"
+    },
+    {
+      "name": "MilSpec Tactical BDU Pants Midnight Navy Blue",
+      "price": "99.50",
+      "brand": "MilSpec",
+      "url": "https://tacticalgear.com.au/products/milspec-tactical-bdu-pants-midnight-navy-blue",
+      "image_url": "https://tacticalgear.com.au/cdn/shop/files/milspec-tactical-bdu-pants-midnight-navy-blue-milspec-tactical-gear-distributors-australia.jpg?v=1724277753&width=1024",
+      "store_name": "Tactical Gear",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:46:52.548285"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 5,
+      "name": "Men&#39;s Ski Pant 2023",
+      "store_name": "Auski Australia",
+      "category": "pants",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8
+  ]
+}

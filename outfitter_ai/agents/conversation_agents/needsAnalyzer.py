@@ -95,12 +95,15 @@ OTHER CRITERIA:
 - Style: casual, formal, streetwear, vintage, etc.
 - Brand: Nike, Adidas, CultureKings, etc.
 
+IMPORTANT: If the user is asking for a NEW category (like "show me sneakers" after searching for hoodies), prioritize the NEW request and ignore old criteria.
+
 Return ONLY a JSON object with extracted criteria. Only include fields where you're confident.
 
 EXAMPLES:
 "show me red t-shirts" → {"category": "shirts", "color_preference": "red"}
 "I need black hoodies under $50" → {"category": "hoodies", "color_preference": "black", "budget_max": 50}
 "looking for size M casual shirts" → {"category": "shirts", "size": "M", "style_preference": "casual"}
+"show me some sneakers" → {"category": "shoes"}
 "I want something nice" → {"intent": "shopping", "specificity": "vague"}"""
 
         user_prompt = f"""Current criteria from previous conversation: {current_criteria}
@@ -129,6 +132,35 @@ Extract shopping criteria as JSON:"""
                 merged_criteria = current_criteria.copy()
                 merged_criteria.update(extracted)
                 
+                # CRITICAL FIX: If user is asking for a new category, clear old category
+                # This handles cases like "show me sneakers" after searching for hoodies
+                if "category_2" in merged_criteria and merged_criteria["category_2"]:
+                    # User is asking for a new category, replace the old one
+                    merged_criteria["category"] = merged_criteria["category_2"]
+                    del merged_criteria["category_2"]
+                    # Clear old color/brand preferences for new category
+                    if "color_preference" in merged_criteria:
+                        del merged_criteria["color_preference"]
+                    if "brand" in merged_criteria:
+                        del merged_criteria["brand"]
+                
+                # ADDITIONAL FIX: Check if user is asking for a completely new category
+                # Look for keywords that indicate a new search request
+                new_category_keywords = ["show me", "find me", "looking for", "need", "want"]
+                if any(keyword in conversation_text.lower() for keyword in new_category_keywords):
+                    # If we have a new category and old criteria, prioritize the new category
+                    if "category" in merged_criteria and current_criteria.get("category") != merged_criteria["category"]:
+                        # Clear old preferences when switching categories
+                        old_preferences = ["color_preference", "brand", "style_preference"]
+                        for pref in old_preferences:
+                            if pref in merged_criteria and pref in current_criteria:
+                                # Keep new preferences, clear old ones
+                                pass
+                
+                # Set default gender to "mens" if not specified
+                if "gender" not in merged_criteria or merged_criteria["gender"] is None:
+                    merged_criteria["gender"] = "mens"
+                
                 return merged_criteria
             else:
                 print("⚠️ No JSON found in AI response, using current criteria")
@@ -147,8 +179,14 @@ Extract shopping criteria as JSON:"""
 SUFFICIENCY RULES:
 - SUFFICIENT: If you have a clear product category (shirts, hoodies, pants, shoes, etc.) 
 - SUFFICIENT: If you have specific product mentions ("red t-shirts", "black jeans", etc.)
+- SUFFICIENT: Even with just category - size and gender are NOT required
 - INSUFFICIENT: If request is too vague ("I need something", "show me clothes", "help me shop")
 - INSUFFICIENT: If user asks questions without specifying products ("what do you have?", "what's popular?")
+
+IMPORTANT:
+- Size is NOT compulsory - we can search without it
+- Gender defaults to "mens" if not specified - don't require it
+- It's better to search with partial info than over-question the customer
 
 Consider the customer experience - it's better to search with partial info than over-question.
 

@@ -1,0 +1,173 @@
+{
+  "timestamp": "2025-10-09T11:39:37.751564",
+  "user_request": "men blue hoodies",
+  "total_original": 10,
+  "total_kept": 6,
+  "total_filtered": 4,
+  "overall_filtering_rate": "40.0%",
+  "store_analysis": {
+    "The Official Cricket Shop": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Lowes": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Guts Fishing Apparel": {
+      "original_count": 2,
+      "kept_count": 1,
+      "filtered_count": 1,
+      "filtering_rate": "50.0%",
+      "kept_rate": "50.0%"
+    },
+    "Brixton Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Football Australia": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Asics": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "U.S. Polo Assn. Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Merrellaustralia": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Canterburynz": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Mens Hoodie With Kanagroo Pockets Blue",
+      "price": "39.95",
+      "brand": "Lowes",
+      "url": "https://www.lowes.com.au/mens-hoodie-with-kanagroo-pockets-blue-m-28515",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/2/8/28515_f_1_6.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:39:36.658731"
+    },
+    {
+      "name": "True Blue Australian Hoodie – Guts Fishing Apparel",
+      "price": "69.95",
+      "brand": null,
+      "url": "https://gutsfishingapparel.com.au/products/australia-hoodie",
+      "image_url": "http://gutsfishingapparel.com.au/cdn/shop/files/Australia-flag-hoodie-shirt_1200x1200.png?v=1691370821",
+      "store_name": "Guts Fishing Apparel",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:39:36.658735"
+    },
+    {
+      "name": "Men's Blanket Fleece Hoodie Sweatshirt - Joe Blue – Brixton Australia",
+      "price": "44.98",
+      "brand": null,
+      "url": "https://au.brixton.com/products/blanket-fleece-hood-joe-blue",
+      "image_url": "http://au.brixton.com/cdn/shop/products/cmmse6ybpdkgcguqclan.jpg?crop=center&height=1200&v=1659141714&width=1200",
+      "store_name": "Brixton Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:39:36.658737"
+    },
+    {
+      "name": "CRICKET AUSTRALIA REPLICA TRAINING HOODIE | Men | Legion Blue ...",
+      "price": null,
+      "brand": null,
+      "url": "https://www.asics.com/au/en-au/cricket-australia-replica-training-hoodie/p/AOP_2111A051-400.html",
+      "image_url": "https://images.asics.com/is/image/asics/2111A051_400_GM_FT_GLB?$sfcc-product$",
+      "store_name": "Asics",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:39:36.658742"
+    },
+    {
+      "name": "Mens Double Horsemen Loopback Zip Hoodie in Dark Sapphire Navy / Haute – U.S. Polo Assn. Australia",
+      "price": "130.00",
+      "brand": null,
+      "url": "https://uspoloassn.com.au/products/mens-double-horsemen-loopback-zip-hoodie-in-dark-sapphire-navy-haute-red-dhm",
+      "image_url": "http://uspoloassn.com.au/cdn/shop/files/MUP4413-L45-MS_1.JPG?v=1742613278",
+      "store_name": "U.S. Polo Assn. Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:39:36.658744"
+    },
+    {
+      "name": "MENS UGLIES HOODIE BLUE",
+      "price": "99.99",
+      "brand": "Canterbury of New Zealand",
+      "url": "https://www.canterburynz.com.au/mens-uglies-hoodie-blue/15850433.html",
+      "image_url": "https://static.thcdn.com/productimg/300/300/15850433-1085213937436956.jpg",
+      "store_name": "Canterburynz",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:39:36.658748"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Cricket Australia Mens Training Hoodie",
+      "store_name": "The Official Cricket Shop",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 4,
+      "name": "Australia Club Fleece Hoodie | Football Australia",
+      "store_name": "Football Australia",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 7,
+      "name": "Men's Patches Fleece Hoody in Mariana | Men's Hoody | Merrell ...",
+      "store_name": "Merrellaustralia",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 9,
+      "name": "True Blue Australian Hoodie – Guts Fishing Apparel",
+      "store_name": "Guts Fishing Apparel",
+      "category": "hoodie",
+      "color": "blue"
+    }
+  ],
+  "kept_indices": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    8
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "timestamp": "2025-10-07T21:01:24.349590",
+  "user_request": "black shirts",
+  "total_original": 17,
+  "total_kept": 16,
+  "total_filtered": 1,
+  "overall_filtering_rate": "5.9%",
+  "store_analysis": {
+    "CultureKings": {
+      "original_count": 11,
+      "kept_count": 11,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Universal Store": {
+      "original_count": 6,
+      "kept_count": 5,
+      "filtered_count": 1,
+      "filtering_rate": "16.7%",
+      "kept_rate": "83.3%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "American Thrift Everyday Oversized T-Shirt Black",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-everyday-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055503-YB001_mens_0010.jpg?v=1759363326",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050750"
+    },
+    {
+      "name": "American Thrift New Standard T-Shirt Black",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YB001_mens_0010.jpg?v=1759363742",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050632"
+    },
+    {
+      "name": "American Thrift New Standard T-Shirt Black Acidwash",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-new-standard-t-shirt-black-acidwash-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055504-YB017_mens_0010.jpg?v=1759363651",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050696"
+    },
+    {
+      "name": "American Thrift The Block T-Shirt Black Wash",
+      "price": "$29.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/american-thrift-the-block-fit-t-shirt-black-wash-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055502-YB295_mens_0010.jpg?v=1759363382",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050741"
+    },
+    {
+      "name": "Carre Pocket T-Shirt Black",
+      "price": "$69.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/carre-pocket-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054896-YB001_mens_0010.jpg?v=1758673063",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050791"
+    },
+    {
+      "name": "New Era Chicago Bulls Paisley Oversized T-Shirt Black",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-chicago-bulls-paisley-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053087-YB001_mens_0010.jpg?v=1758672721",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050802"
+    },
+    {
+      "name": "New Era Chicago White Sox 'Hyperfly Katakana x MLB' T-Shirt Black",
+      "price": "$85.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-chicago-white-sox-hyperfly-katakana-x-mlb-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02054452-YB001_mens_0010.jpg?v=1758578306",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050829"
+    },
+    {
+      "name": "New Era Las Vegas Raiders Paisley Oversized T-Shirt Black",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-las-vegas-raiders-paisley-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053089-YB001_mens_0010.jpg?v=1758578528",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050823"
+    },
+    {
+      "name": "New Era Los Angeles Dodgers Paisley Oversized T-Shirt Black",
+      "price": "$70.00",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/new-era-los-angeles-dodgers-paisley-oversized-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02053090-YB001_mens_0010.jpg?v=1758672867",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050795"
+    },
+    {
+      "name": "Snoop Dogg Long Beach T-Shirt Black",
+      "price": "$59.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/snoop-dogg-long-beach-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055558-YB001_mens_0010.jpg?v=1758671987",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050813"
+    },
+    {
+      "name": "Snoop Dogg Smoke Session T-Shirt Black",
+      "price": "$59.95",
+      "brand": "CultureKings",
+      "url": "https://culturekings.com.au/products/snoop-dogg-smoke-session-t-shirt-black-mens",
+      "image_url": "https://cdn.shopify.com/s/files/1/1023/3455/files/02055073-YB001_mens_0010.jpg?v=1758671742",
+      "store_name": "CultureKings",
+      "is_on_sale": null,
+      "extracted_at": "2025-10-07T21:01:20.050820"
+    },
+    {
+      "name": "Ascend Short Sleeve Rugby Polo Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-ascend-short-sleeve-rugby-polo-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410562_US_1201.jpg?width=1200&height=1200&v=1749097089",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T21:01:20.822302"
+    },
+    {
+      "name": "Austin Pleated Polo Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-austin-pleated-polo-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404804_001.jpg?width=1200&height=1200&v=1741333393",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T21:01:20.820899"
+    },
+    {
+      "name": "Fallen Cross Oversize Shirt Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/neovision-fallen-cross-oversize-shirt-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411952_US_001.jpg?width=1200&height=1200&v=1759220112",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T21:01:20.820156"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/common-need-royalty-boxy-cropped-resort-shirt-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410551_US_000.jpg?width=1200&height=1200&v=1755152380",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T21:01:20.818622"
+    },
+    {
+      "name": "Von Dutch Mix Men's Collared Shirt BlackFrom",
+      "price": "$81.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-shirts-polos/products/von-dutch-von-dutch-mix-mens-collared-shirt-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407929_US_000.jpg?width=1200&height=1200&v=1755741090",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T21:01:20.822201"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 14,
+      "name": "Lineup Resort Shirt Black Check",
+      "store_name": "Universal Store",
+      "category": "shirt",
+      "color": "black"
+    }
+  ],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16
+  ]
+}

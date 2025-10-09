@@ -1,5 +1,6 @@
 """
 Firecrawl-powered scraping with URL mapping for Universal Store
+Now includes Google Custom Search integration
 """
 
 import os
@@ -11,6 +12,15 @@ from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
 from agents.state import ProductData
 from config.universal_store_urls import get_category_url
+
+# Import Google search functionality
+try:
+    from .google_search_scraper import GoogleSearchScraper
+    GOOGLE_SEARCH_AVAILABLE = True
+    print("✅ Google Custom Search available")
+except ImportError as e:
+    GOOGLE_SEARCH_AVAILABLE = False
+    print(f"⚠️ Google Custom Search not available - {e}")
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
@@ -228,14 +238,145 @@ class FirecrawlScraper:
         return products
 
 async def search_all_stores(query: str, max_products: int = 30) -> List[ProductData]:
-    """Search both stores using Firecrawl"""
-    scraper = FirecrawlScraper()
+    """
+    DEPRECATED: Old store-specific search method.
+    Now redirects to Google Custom Search for better results.
+    """
+    logger.warning("🔧 DEPRECATED: search_all_stores() called - redirecting to Google Custom Search")
+    return search_products_google_only(query, max_products)
+
+# =========================
+# Google Custom Search Integration
+# =========================
+
+def search_with_google(query: str, max_products: int = 10) -> List[ProductData]:
+    """
+    Search for products using Google Custom Search.
+    This provides broader results from any Australian store.
+    """
+    if not GOOGLE_SEARCH_AVAILABLE:
+        logger.warning("Google Custom Search not available")
+        return []
     
-    # Scrape both stores (not async since Firecrawl is sync)
-    culturekings_products = scraper.scrape_culturekings(query, max_products=15)
-    universalstore_products = scraper.scrape_universalstore(query, max_products=15)
+    try:
+        scraper = GoogleSearchScraper()
+        results = scraper.search_products(query, num_results=max_products)
+        
+        # Convert to ProductData objects
+        products = []
+        for result in results:
+            products.append(ProductData(
+                name=result.get('name', 'Unknown Product'),
+                price=result.get('price', 'Price not available'),
+                brand=result.get('brand', 'Unknown Brand'),
+                url=result.get('url', ''),
+                image_url=result.get('image_url', ''),
+                store_name=result.get('store_name', 'Unknown Store'),
+                is_on_sale=result.get('is_on_sale', False),
+                extracted_at=datetime.now()
+            ))
+        
+        logger.info(f"Google Search found {len(products)} products")
+        return products
+        
+    except Exception as e:
+        logger.error(f"Google Search error: {e}")
+        return []
+
+async def search_hybrid(query: str, max_products: int = 20, include_google: bool = True) -> List[ProductData]:
+    """
+    Hybrid search combining store-specific scrapers with Google Custom Search.
     
-    # Combine results
-    all_products = culturekings_products + universalstore_products
+    Args:
+        query: Search query
+        max_products: Maximum total products to return
+        include_google: Whether to include Google Custom Search results
     
-    return all_products[:max_products]
+    Returns:
+        Combined list of products from all sources
+    """
+    if not GOOGLE_SEARCH_AVAILABLE:
+        logger.warning("Google Custom Search not available, using store scrapers only")
+        return await search_all_stores(query, max_products)
+    
+    try:
+        scraper = HybridGoogleScraper()
+        
+        # Calculate max results per source
+        max_per_source = max_products // 3 if include_google else max_products // 2
+        
+        results = scraper.search_products(
+            query=query,
+            include_google=include_google,
+            include_culturekings=True,
+            include_universalstore=True,
+            max_results_per_source=max_per_source
+        )
+        
+        # Convert to ProductData objects
+        products = []
+        for result in results:
+            products.append(ProductData(
+                name=result.get('name', 'Unknown Product'),
+                price=result.get('price', 'Price not available'),
+                brand=result.get('brand', 'Unknown Brand'),
+                url=result.get('url', ''),
+                image_url=result.get('image_url', ''),
+                store_name=result.get('store_name', 'Unknown Store'),
+                is_on_sale=result.get('is_on_sale', False),
+                extracted_at=datetime.now()
+            ))
+        
+        logger.info(f"Hybrid search found {len(products)} products")
+        return products
+        
+    except Exception as e:
+        logger.error(f"Hybrid search error: {e}")
+        # Fallback to store scrapers only
+        return await search_all_stores(query, max_products)
+
+# =========================
+# Enhanced search function with Google integration
+# =========================
+
+async def search_products_enhanced(query: str, max_products: int = 30, 
+                                 use_google: bool = True) -> List[ProductData]:
+    """
+    DEPRECATED: Use search_products_google_only() instead.
+    This function now redirects to Google-only search.
+    """
+    logger.warning("🔧 DEPRECATED: search_products_enhanced() called - redirecting to Google-only search")
+    return search_products_google_only(query, max_products)
+
+# =========================
+# Google-Only Search Functions
+# =========================
+
+def search_products_google_only(query: str, max_products: int = 30) -> List[ProductData]:
+    """
+    Search products using ONLY Google Custom Search.
+    This is the new primary search method.
+    
+    Args:
+        query: Search query (will automatically add "australia" if not present)
+        max_products: Maximum products to return
+    
+    Returns:
+        List of products from Google Custom Search
+    """
+    if not GOOGLE_SEARCH_AVAILABLE:
+        logger.error("Google Custom Search not available")
+        return []
+    
+    try:
+        logger.info(f"🔍 Google Custom Search: '{query}'")
+        return search_with_google(query, max_products)
+    except Exception as e:
+        logger.error(f"Google Custom Search error: {e}")
+        return []
+
+async def search_products_google_only_async(query: str, max_products: int = 30) -> List[ProductData]:
+    """
+    Async wrapper for Google-only search.
+    """
+    return search_products_google_only(query, max_products)

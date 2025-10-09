@@ -1,0 +1,188 @@
+{
+  "timestamp": "2025-10-09T11:27:58.425214",
+  "user_request": "black hoodies",
+  "total_original": 10,
+  "total_kept": 10,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "BigTees Australia": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Bliss n Eso": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Brixton Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Australian Native T-Shirts": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "YETI Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Jetpilot Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "bikersgearaustralia.com.au": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "kickpush.com.au": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Antler Luggage Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Plain Blank Hoodie (Black, Regular and Big Sizes) | BigTees Australia Big Mens Clothing",
+      "price": "45.95",
+      "brand": null,
+      "url": "https://www.bigtees.com.au/products/plain-blank-hoodie-black-regular-and-big-sizes",
+      "image_url": "http://www.bigtees.com.au/cdn/shop/products/Black-Hoodie_1024x1024.png?v=1656981732",
+      "store_name": "BigTees Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369590"
+    },
+    {
+      "name": "Australia Hoodie Black",
+      "price": "119.99",
+      "brand": "Bliss n Eso",
+      "url": "https://blissneso.com/products/australia-hoodie-black",
+      "image_url": "https://blissneso.com/cdn/shop/files/BNE-FITP-HOODIE-BLACK-F_1000x.jpg?v=1728868015",
+      "store_name": "Bliss n Eso",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369747"
+    },
+    {
+      "name": "Men's Embroidered Heavyweight Oversized Hoodie in Washed Black – Brixton Australia",
+      "price": "64.98",
+      "brand": null,
+      "url": "https://au.brixton.com/products/embroidered-heavyweight-oversized-hoodie-washed-black",
+      "image_url": "http://au.brixton.com/cdn/shop/files/f0321caa18cf4d9a43bc91f288deedfbebe38e51.jpg?crop=center&height=1200&v=1739145441&width=1200",
+      "store_name": "Brixton Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369756"
+    },
+    {
+      "name": "Roo Park Hoodie (Black, Regular and Big Sizes) | BigTees Australia Big Mens Clothing",
+      "price": "49.95",
+      "brand": null,
+      "url": "https://www.bigtees.com.au/products/roo-park-hoodie-black-regular-and-big-sizes",
+      "image_url": "http://www.bigtees.com.au/cdn/shop/products/HD1017BK_1024x1024.jpg?v=1618625141",
+      "store_name": "BigTees Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369762"
+    },
+    {
+      "name": "Australia Kangaroo & Emu Hoodie (Black, Back Print Only)",
+      "price": "45.95",
+      "brand": "BigTees Australia",
+      "url": "https://www.australian-native.com.au/products/australia-kangaroo-emu-hoodie-black-back-print-only",
+      "image_url": "https://www.australian-native.com.au/cdn/shop/files/HD1020BK_738x.jpg?v=1715832760",
+      "store_name": "Australian Native T-Shirts",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369768"
+    },
+    {
+      "name": "Brushed Fleece Hoodie Pullover Black",
+      "price": "125.0",
+      "brand": "YETI",
+      "url": "https://au.yeti.com/products/bfleece-hoodie-pullover-black",
+      "image_url": "https://au.yeti.com/cdn/shop/products/YETI_2H21_M_BFleece_Hoodie_Full_Pullover_Elevated_Black_Front_0319_B_17806138-1752-47cf-b517-9f94caa92ece.png?v=1662717879&width=506",
+      "store_name": "YETI Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369773"
+    },
+    {
+      "name": "Jetpilot Fueled 2 Mens Zip Up Hoodie - Black",
+      "price": "69.99",
+      "brand": "Jetpilot",
+      "url": "https://jetpilot.com.au/collections/black-friday/products/fueled-2-mens-zip-up-hoodie",
+      "image_url": "https://jetpilot.com.au/cdn/shop/products/JPW64-BLACK-01_450x450.jpg?v=1646617586",
+      "store_name": "Jetpilot Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369779"
+    },
+    {
+      "name": "BGA Alpha Protective Kevlar Lined Motorcycle Hoodie Black - Bikers Gear Australia",
+      "price": "199",
+      "brand": null,
+      "url": "https://www.bikersgearaustralia.com.au/bga-alpha-protective-kevlar-lined-motorcycle-hoodie-black",
+      "image_url": "https://www.bikersgearaustralia.com.au/assets/full/HoodMulti.jpg?20230711090905",
+      "store_name": "bikersgearaustralia.com.au",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369789"
+    },
+    {
+      "name": "Stussy Extra Tough 50-50 Pigment Black Hoodie",
+      "price": "120",
+      "brand": null,
+      "url": "https://www.kickpush.com.au/stussy-extra-tough-50-50-pigment-black-hoodie",
+      "image_url": "https://www.kickpush.com.au/assets/full/1344426.jpg?20230628101033",
+      "store_name": "kickpush.com.au",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369797"
+    },
+    {
+      "name": "Travel Essential Hoodie in Charcoal Black",
+      "price": "145.0",
+      "brand": "Antler",
+      "url": "https://www.antler.com.au/products/travel-essential-hoodie-charcoal-black",
+      "image_url": "https://www.antler.com.au/cdn/shop/files/Antler-01-Hoodie-Charcoal-Front.jpg?v=1746110424&width=1920",
+      "store_name": "Antler Luggage Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:27:57.369802"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

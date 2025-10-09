@@ -20,15 +20,11 @@ class SelectionHandler:
     def __init__(self):
         self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
     
+
     def handle_selection(self, state: OutfitterState) -> Dict[str, Any]:
         """
         Main handler for processing product selections.
-        
-        Args:
-            state: Current conversation state with products_shown
-            
-        Returns:
-            Updated state with selected products
+        FIXED: Uses pending_cart_additions to preserve existing cart
         """
         print("🛒 SelectionHandler: Processing product selection...")
         
@@ -69,33 +65,55 @@ class SelectionHandler:
             return self._handle_no_selection(user_message, products_shown)
         
         # Get selected products with default variants
-        selected_products = []
+        newly_selected = []
         for idx in selected_indices:
             if 0 <= idx < len(products_shown):
                 product = products_shown[idx].copy()
                 # Add default variant info
-                product['selected_variant'] = 'default'  # Simplified
-                product['selected_size'] = 'M'  # Default to Medium
-                selected_products.append(product)
+                product['selected_variant'] = 'default'
+                product['selected_size'] = 'M'
+                newly_selected.append(product)
         
-        print(f"   ✓ Selected {len(selected_products)} products")
+        print(f"   ✓ Selected {len(newly_selected)} products")
         
-        # Build response
-        response = self._build_selection_confirmation(selected_products)
+        # CRITICAL FIX: Get existing cart and preserve it
+        existing_cart = state.get("selected_products", [])
         
+        # CRITICAL FIX: Don't create message here - let cart_manager handle confirmation
+        # The cart_manager will create the proper confirmation message
         return {
-            "messages": [{"role": "assistant", "content": response}],
-            "selected_products": selected_products,
+            "pending_cart_additions": newly_selected,  # NEW items to add
+            "selected_products": existing_cart,  # PRESERVE existing cart
             "conversation_stage": "cart",
-            "next_step": "cart_manager",
+            "next_step": "cart_manager",  # Route to cart_manager to merge
             "awaiting_cart_action": True
         }
-    
+
     def _parse_selections_with_ai(self, user_message: str, num_products: int) -> List[int]:
         """
         Use AI to parse product selections from natural language.
         Returns 0-based indices.
         """
+        # First try simple number extraction (more reliable)
+        numbers = re.findall(r'\b(\d+)\b', user_message)
+        if numbers:
+            # Convert to 0-based indices
+            indices = [int(n) - 1 for n in numbers]
+            valid_indices = [i for i in indices if 0 <= i < num_products]
+            if valid_indices:
+                print(f"   Fallback parsed indices: {valid_indices}")
+                return valid_indices
+        
+        # Try to extract product references like "product 9" or "option 2"
+        product_refs = re.findall(r'(?:product|option|item|choice)\s+(\d+)', user_message, re.IGNORECASE)
+        if product_refs:
+            indices = [int(n) - 1 for n in product_refs]
+            valid_indices = [i for i in indices if 0 <= i < num_products]
+            if valid_indices:
+                print(f"   Product reference parsed indices: {valid_indices}")
+                return valid_indices
+        
+        # Then try AI parsing for more complex cases
         system_prompt = """You are a selection parser. Extract product numbers from user messages.
 
 Users can reference products in many ways:
@@ -137,15 +155,6 @@ Parse which products the user wants. Return JSON array of 0-based indices:"""
                 print(f"   AI parsed indices: {valid_indices}")
                 return valid_indices
             
-            # Fallback: Try simple number extraction
-            numbers = re.findall(r'\b(\d+)\b', user_message)
-            if numbers:
-                # Convert to 0-based indices
-                indices = [int(n) - 1 for n in numbers]
-                valid_indices = [i for i in indices if 0 <= i < num_products]
-                print(f"   Fallback parsed indices: {valid_indices}")
-                return valid_indices
-            
             return []
             
         except Exception as e:
@@ -156,9 +165,32 @@ Parse which products the user wants. Return JSON array of 0-based indices:"""
         """Handle cases where no valid selection was made."""
         
         # Check if user is asking questions about products
-        question_keywords = ['how', 'what', 'which', 'where', 'when', 'size', 'color', 'price', 'available']
+        question_keywords = ['how', 'what', 'which', 'where', 'when', 'size', 'color', 'price', 'available', 'good', 'summer', 'winter', 'quality', 'material']
         
         if any(keyword in user_message.lower() for keyword in question_keywords):
+            # Check if they're asking about a specific product by number
+            product_refs = re.findall(r'(?:product|option|item|choice)\s+(\d+)', user_message, re.IGNORECASE)
+            if product_refs:
+                # They're asking about a specific product - treat as selection
+                indices = [int(n) - 1 for n in product_refs]
+                valid_indices = [i for i in indices if 0 <= i < len(products_shown)]
+                if valid_indices:
+                    # Process as selection
+                    newly_selected = []
+                    for idx in valid_indices:
+                        product = products_shown[idx].copy()
+                        product['selected_variant'] = 'default'
+                        product['selected_size'] = 'M'
+                        newly_selected.append(product)
+                    
+                    return {
+                        "pending_cart_additions": newly_selected,
+                        "selected_products": [],
+                        "conversation_stage": "cart",
+                        "next_step": "cart_manager",
+                        "awaiting_cart_action": True
+                    }
+            
             response = """I'm here to help! You can:
 
 • Select products by number (e.g., "I want #2" or "add 1 and 3")

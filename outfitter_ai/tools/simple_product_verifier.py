@@ -33,6 +33,7 @@ class SimpleProductVerifier:
 
 MATCHING PHILOSOPHY:
 ✅ STRICT: Product category must match (hoodies ≠ shirts ≠ pants ≠ shoes)
+✅ STRICT: Gender must match (men's ≠ women's ≠ kids')
 ✅ FLEXIBLE: Colors should match semantically, including similar shades and tones
 ✅ SMART: Use natural language understanding, not exact keyword matching
 
@@ -55,6 +56,19 @@ CATEGORY MATCHING:
 - Shoes = sneakers, boots, trainers, footwear
 - Jackets = coats, outerwear, windbreakers (may include hooded jackets)
 
+GENDER MATCHING RULES:
+✅ STRICT: Gender must match exactly
+- Men's products: "men", "mens", "male", "man", "guys", "boys" (adult)
+- Women's products: "women", "womens", "female", "woman", "girls", "ladies"
+- Kids' products: "kids", "children", "child", "toddler", "baby", "infant"
+- Unisex products: "unisex", "gender neutral" (can match any gender)
+
+GENDER INDICATORS IN PRODUCT NAMES:
+- Men's: "Men's", "Mens", "Male", "Man", "Guys", "Boys" (adult), "Him", "His"
+- Women's: "Women's", "Womens", "Female", "Woman", "Girls", "Ladies", "Her", "Hers"
+- Kids': "Kids", "Children", "Child", "Toddler", "Baby", "Infant", "Youth"
+- Unisex: "Unisex", "Gender Neutral", "All Gender"
+
 EXAMPLES:
 User: "red hoodies"
 ✅ KEEP: "Crimson Pullover Hoodie", "Burgundy Zip Hoodie", "Maroon Hooded Sweatshirt"
@@ -68,12 +82,26 @@ User: "hoodies" (no color specified)
 ✅ KEEP: Any color hoodie - "Red Hoodie", "Blue Hoodie", "Green Hoodie"
 ❌ FILTER: "T-Shirt", "Jacket" (unless it's specifically a hooded jacket)
 
+GENDER EXAMPLES:
+User: "men's black jeans"
+✅ KEEP: "Men's Black Jeans", "Mens Dark Denim", "Male Black Pants"
+❌ FILTER: "Women's Black Jeans", "Ladies Black Pants", "Kids Black Jeans"
+
+User: "women's red dress"
+✅ KEEP: "Women's Red Dress", "Ladies Crimson Gown", "Female Red Outfit"
+❌ FILTER: "Men's Red Shirt", "Kids Red Dress", "Unisex Red Top"
+
+User: "black shoes" (no gender specified)
+✅ KEEP: Any gender - "Men's Black Shoes", "Women's Black Shoes", "Unisex Black Shoes"
+❌ FILTER: Only if clearly wrong gender context
+
 DECISION PROCESS:
 1. Does the product category match? If no → filter out
-2. If color specified, is it in the same color family? If yes → keep
-3. If color doesn't match but category does → STILL KEEP (be very generous)
-4. When in doubt, ALWAYS keep the product (be generous, not strict)
-5. Only filter out if category clearly doesn't match
+2. Does the gender match? If no → filter out (STRICT)
+3. If color specified, is it in the same color family? If yes → keep
+4. If color doesn't match but category does → STILL KEEP (be very generous)
+5. When in doubt, ALWAYS keep the product (be generous, not strict)
+6. Only filter out if category or gender clearly doesn't match
 
 IMPORTANT: For "red hoodies" - keep ALL hoodies regardless of color!
 
@@ -94,8 +122,9 @@ Available products:
 
 Think through which products match:
 1. What category is the user looking for?
-2. What color (if any) did they specify?
-3. Which products fit that category and color family?
+2. What gender (if any) did they specify?
+3. What color (if any) did they specify?
+4. Which products fit that category, gender, and color family?
 
 Return ONLY a JSON array of matching product indices:"""
 

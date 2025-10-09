@@ -1,0 +1,900 @@
+{
+  "category": "outerwear",
+  "store": "universalstore",
+  "last_updated": "2025-10-07T14:47:37.822311",
+  "total_products": 59,
+  "products": [
+    {
+      "name": "Gravity Hooded Sherpa Jacket Charcoal",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/neovision-gravity-hooded-sherpa-jacket-charcoal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406545_US_009.jpg?width=1200&height=1200&v=1751613291",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.552473",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Pilot Recycled PU Leather Jacket Washed Brown",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-pilot-recycled-pu-leather-jacket-washed-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408552_us_022_1_86a1a524-6b0d-4b38-ba8c-89182239fa4a.jpg?width=1200&height=1200&v=1755757974",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.552739",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Global Track Suit Jacket Black/Grey",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/engage-global-track-suit-jacket-black-grey",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/412440_us_029.jpg?width=1200&height=1200&v=1758608569",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.552849",
+      "colors": [
+        "black",
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Harrington Jacket Black",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-canvas-harrington-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/1200x1800_0066__glw8597.jpg?width=1200&height=1200&v=1758785873",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.552966",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "London Double Breasted Blazer Brown Tweed",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-london-double-breasted-blazer-brown-tweed",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407904_us_024.jpg?width=1200&height=1200&v=1751957409",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:25.553091",
+      "colors": [
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Heritage Cut and Sew QZ India Ink",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/canterbury-heritage-cut-amp-sew-qz-india-ink",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407305_US_000.jpg?width=1200&height=1200&v=1755740959",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553218",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Oversize Coat Black",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-oversize-coat-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/401394_US_005.jpg?width=1200&height=1200&v=1748573077",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553306",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Ridgeway Harrington Jacket Off White/Brown",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-ridgeway-harrington-jacket-off-white-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405976_US_024.jpg?width=1200&height=1200&v=1743136123",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553428",
+      "colors": [
+        "white",
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Clipper Sherpa Jacket Blue",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/worship-clipper-sherpa-jacket-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409198_US_003.jpg?width=1200&height=1200&v=1750999226",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553519",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Vancouver Recycled Puffer Jacket Jet Black",
+      "price": "$95.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-vancouver-recycled-puffer-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/401665_US_000_1.jpg?width=1200&height=1200&v=1747367606",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553635",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Tarpan Jacket Black",
+      "price": "$135.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/wrangler-tarpan-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406427_US_000.jpg?width=1200&height=1200&v=1747114050",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553728",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Unknown Hooded Bomber Jacket Washed Stone",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/neovision-unknown-hooded-bomber-jacket-washed-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408184_US_000.jpg?width=1200&height=1200&v=1745986029",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553854",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Panthers Jacket Black",
+      "price": "$155.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/front-runner-panthers-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407892_US_016.jpg?width=1200&height=1200&v=1745986060",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.553944",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Walter Zip Thru Work Jacket Olive Green",
+      "price": "$122.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-walter-zip-thru-work-jacket-olive-green",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406351_US_024.jpg?width=1200&height=1200&v=1744786228",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554051",
+      "colors": [
+        "green"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Swerve Spray Jacket Black",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/neovision-swerve-spray-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407454_US_00.jpg?width=1200&height=1200&v=1743916847",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554140",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Tag hood Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/xlarge-tag-hood-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407819_US_005.jpg?width=1200&height=1200&v=1751508506",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:25.554232",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Lock Out Hooded Jacket Black",
+      "price": "$136.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/rusty-lock-out-hooded-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410011_US_000.jpg?width=1200&height=1200&v=1750142898",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554318",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Service Work Jacket Black",
+      "price": "$115.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/deus-ex-machina-service-work-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409051_US_003.jpg?width=1200&height=1200&v=1757657753",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554415",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nebular Collared Bomber Jacket Washed Black",
+      "price": "$109.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/neovision-nebular-collared-bomber-jacket-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407409_US_008.jpg?width=1200&height=1200&v=1759386491",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554520",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Viper Boxy Jacket Black",
+      "price": "$115.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/front-runner-viper-boxy-jacket-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407877_US_041.jpg?width=1200&height=1200&v=1743917849",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554636",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Galaxy Oversize Denim Jacket Raw Indigo",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/neovision-galaxy-oversize-denim-jacket-raw-indigo",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408156_us_023.jpg?width=1200&height=1200&v=1750919629",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:25.554740",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "RBK Hoodie Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/reebok-rbk-hoodie-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/403531_US_001.jpg?width=1200&height=1200&v=1744786224",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:25.554820",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Built Tough Service Jacket Dark Charcoal",
+      "price": "$115.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/hard-yakka-create-built-tough-service-jacket-dark-charcoal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406311_US_006.jpg?width=1200&height=1200&v=1739941212",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.554951",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Colt Panelled Spray Jacket Dark Green",
+      "price": "$102.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-colt-panelled-spray-jacket-dark-green",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408155_US_002.jpg?width=1200&height=1200&v=1750119347",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.555054",
+      "colors": [
+        "green"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Barrio Work Jacket Dark Charcoal",
+      "price": "$122.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/thrills-barrio-work-jacket-dark-charcoal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407545_US_003.jpg?width=1200&height=1200&v=1747890398",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:25.555148",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Voyager Zip Thru Sherpa Jacket ECRU",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/common-need-voyager-zip-thru-sherpa-jacket-ecru",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409030_US_000.jpg?width=1200&height=1200&v=1749533544",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:25.555252",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Heritage Panelled Hoodie Navy",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens-jackets-coats/products/canterbury-heritage-panelled-hoodie-navy",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407306_US_000.jpg?width=1200&height=1200&v=1755740964",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:25.555347",
+      "colors": [
+        "navy"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Compose Heavyweight Easy Tee White",
+      "price": "$41.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-compose-heavyweight-easy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404542_US_000.jpg?width=1200&height=1200&v=1729740403",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349662",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Panela Anderson Hooded Fleece Atlantic Blue",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/rusty-panela-anderson-hooded-fleece-atlantic-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406807_US_000.jpg?width=1200&height=1200&v=1745985540",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349713",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Washed Black Canvas Embroidery Patch Destroyed Wash Cap Black Wash/Grey Embro",
+      "price": "$54.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/von-dutch-washed-black-canvas-embroidery-patch-destroyed-wash-cap-black-wash-grey-embro",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203281_020.jpg?width=1200&height=1200&v=1758869942",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349784",
+      "colors": [
+        "black",
+        "grey"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Running Dept. Tee Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/front-runner-running-dept-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404590_US_000.jpg?width=1200&height=1200&v=1730424802",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349829",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "The Quencher H2.O Flowstate Tumbler 40oz Rose Quartz",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/stanley-the-quencher-h2-o-flowstate-tumbler-40oz-rose-quartz",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405487_US_001.jpg?width=1200&height=1200&v=1728531709",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349876",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birko Flor Regular Black",
+      "price": "$125.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-arizona-birko-flor-regular-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/158852_001.jpg?width=1200&height=1200&v=1731641162",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349924",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Sway Zip Off Cargo Pant Black",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-sway-zip-off-cargo-pant-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405635_US_009_1.jpg?width=1200&height=1200&v=1734669163",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.349969",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nova Street Hoodie Off White",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-nova-street-hoodie-off-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407310_us_044.jpg?width=1200&height=1200&v=1750748801",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350013",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Austin Pleated Polo Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-austin-pleated-polo-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/404804_001.jpg?width=1200&height=1200&v=1741333393",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350057",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Birkibuc Regular Mocca",
+      "price": "$138.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-mens-arizona-birkibuc-regular-mocca",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/152637_001.jpg?width=1200&height=1200&v=1699029881",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350103",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Kamen Oversize Super Heavy Tee Washed Basil",
+      "price": "$48.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-kamen-oversize-super-heavy-tee-washed-basil",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410421_US_025.jpg?width=1200&height=1200&v=1758090736",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350155",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arkos Street Super Heavy Tee White",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-arkos-street-super-heavy-tee-white",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/411177_US_000.jpg?width=1200&height=1200&v=1756875274",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350201",
+      "colors": [
+        "white"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Carpenter Jean Short Worship Worn Blue",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-carpenter-jean-short-worship-worn-blue",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203126_US_000_7e6dacdd-9ea7-4258-ba5c-5ba31363233d.jpg?width=1200&height=1200&v=1756170473",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350250",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Throttle Elastic Quarter Zip Crew Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-throttle-elastic-quarter-zip-crew-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405980_US_007.jpg?width=1200&height=1200&v=1758498801",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350298",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Nullvoid Cropped Street Super Heavy Tee Acid Snow Black",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-nullvoid-cropped-street-super-heavy-tee-acid-snow-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/409970_US_000.jpg?width=1200&height=1200&v=1758089779",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350358",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic 5 Panel Cap Brown",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-classic-5-panel-cap-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/400213_US_001.jpg?width=1200&height=1200&v=1699031351",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350396",
+      "colors": [
+        "brown"
+      ],
+      "style": "vintage",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Strukt Zip Off Cargo Pant Black/Teal",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-metrik-zip-off-cargo-pant-black-teal",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410177_US_031.jpg?width=1200&height=1200&v=1752574222",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:30.350442",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Rosebud Oversized Super Heavy Tee ASPHALT",
+      "price": "$55.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-rosebud-oversized-super-heavy-tee-asphalt",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408853_us_022.jpg?width=1200&height=1200&v=1754550014",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350492",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Machine Black",
+      "price": "$24.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/unity-eyewear-machine-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/189130_US_002_1.jpg?width=1200&height=1200&v=1729834547",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350529",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Red Stripe",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-royalty-boxy-cropped-resort-shirt-red-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410550_us_022.jpg?width=1200&height=1200&v=1756170407",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350582",
+      "colors": [
+        "red"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Arizona Oiled Leather Regular Habana",
+      "price": "$156.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/birkenstock-arizona-oiled-leather-regular-habana",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/147271_001.jpg?width=1200&height=1200&v=1731641155",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350629",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "luxury"
+    },
+    {
+      "name": "Behemoth Super Baggy Jean Onyx",
+      "price": "$88.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-behemoth-super-baggy-jean-onyx",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406361_US_025.jpg?width=1200&height=1200&v=1755223232",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350674",
+      "colors": [
+        "unknown"
+      ],
+      "style": "streetwear",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Imperium Rugby Shirt Off White/Brown",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-imperium-rugby-shirt-off-white-brown",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/407435_US_000.jpg?width=1200&height=1200&v=1743046346",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350722",
+      "colors": [
+        "white",
+        "brown"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Wildstyle Distressed Dad Cap Stone",
+      "price": "$14.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-wildstyle-distressed-dad-cap-stone",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/402705_US_001.jpg?width=1200&height=1200&v=1720160792",
+      "store_name": "Universal Store",
+      "is_on_sale": true,
+      "extracted_at": "2025-10-07T14:47:30.350769",
+      "colors": [
+        "unknown"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Blanco Pleated Tailored Trouser Black",
+      "price": "$82.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-blanco-pleated-tailored-trouser-black-1",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/1200x1800_0056_hero_1.jpg?width=1200&height=1200&v=1758785800",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350816",
+      "colors": [
+        "black",
+        "red"
+      ],
+      "style": "fitted",
+      "price_tier": "premium"
+    },
+    {
+      "name": "Carpenter Jean Short Used Black",
+      "price": "$75.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/worship-carpenter-jean-short-used-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/203127_US_004_1.jpg?width=1200&height=1200&v=1757563754",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350869",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Classic Tee Black",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/front-runner-modern-classic-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/205485_US_000_1.jpg?width=1200&height=1200&v=1708990284",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350911",
+      "colors": [
+        "black"
+      ],
+      "style": "vintage",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Spray Bull Denim 91 Short Washed Black",
+      "price": "$68.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/xlarge-spray-bull-denim-91-short-washed-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406690_US_043.jpg?width=1200&height=1200&v=1741926363",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.350955",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Royalty Boxy Cropped Resort Shirt Blue/White Stripe",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-royalty-boxy-resort-shirt-blue-white-stripe",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/408123_US_019.jpg?width=1200&height=1200&v=1758583223",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.351010",
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "Organic Cropped Street Tee Black",
+      "price": "$28.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/open-archive-organic-cropped-street-tee-black",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/410090_US_000.jpg?width=1200&height=1200&v=1754628249",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.351056",
+      "colors": [
+        "black"
+      ],
+      "style": "casual",
+      "price_tier": "budget"
+    },
+    {
+      "name": "Relaxed Cargo Short Light Blue Denim",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/common-need-relaxed-cargo-short-light-blue-denim",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/406865_US_006.jpg?width=1200&height=1200&v=1741225084",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.351104",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    },
+    {
+      "name": "On Lock Oversize Shirt Blue Check",
+      "price": "$61.00",
+      "brand": "Universal Store",
+      "url": "https://www.universalstore.com/collections/mens/products/neovision-on-lock-oversize-shirt-blue-check",
+      "image_url": "https://www.universalstore.com/cdn/shop/files/405928_US_002.jpg?width=1200&height=1200&v=1759120194",
+      "store_name": "Universal Store",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T14:47:30.351151",
+      "colors": [
+        "blue"
+      ],
+      "style": "casual",
+      "price_tier": "mid"
+    }
+  ]
+}
