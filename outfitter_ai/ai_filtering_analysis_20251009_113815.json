@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-10-09T11:38:15.562596",
+  "user_request": "black hoodies",
+  "total_original": 6,
+  "total_kept": 4,
+  "total_filtered": 2,
+  "overall_filtering_rate": "33.3%",
+  "store_analysis": {
+    "Unknown Store": {
+      "original_count": 6,
+      "kept_count": 4,
+      "filtered_count": 2,
+      "filtering_rate": "33.3%",
+      "kept_rate": "66.7%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Men's Black Hoodie",
+      "price": "$50",
+      "store": "Store1"
+    },
+    {
+      "name": "Women's Black Hoodie",
+      "price": "$45",
+      "store": "Store2"
+    },
+    {
+      "name": "Kids Black Hoodie",
+      "price": "$30",
+      "store": "Store3"
+    },
+    {
+      "name": "Unisex Black Hoodie",
+      "price": "$40",
+      "store": "Store4"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 4,
+      "name": "Men's Blue Jeans",
+      "store_name": "Unknown Store",
+      "category": "pants",
+      "color": "blue"
+    },
+    {
+      "index": 5,
+      "name": "Women's Blue Jeans",
+      "store_name": "Unknown Store",
+      "category": "pants",
+      "color": "blue"
+    }
+  ],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

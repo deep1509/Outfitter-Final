@@ -675,6 +675,11 @@ Would you like me to:
         """Build a search query string from extracted user criteria"""
         query_parts = []
         
+        # Add gender first for better targeting
+        gender = criteria.get("gender", "").strip()
+        if gender:
+            query_parts.append(gender)
+        
         color = criteria.get("color_preference", "").strip()
         if color:
             query_parts.append(color)
@@ -697,6 +702,11 @@ Would you like me to:
     def _build_user_request_string(self, criteria: Dict[str, Any], query: str) -> str:
         """Build clear user request string for AI verification"""
         parts = []
+        
+        # Add gender first for better AI understanding
+        gender = criteria.get("gender", "")
+        if gender:
+            parts.append(gender)
         
         color = criteria.get("color_preference", "")
         if color:

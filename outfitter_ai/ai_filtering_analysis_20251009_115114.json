@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-10-09T11:51:14.558868",
+  "user_request": "mens white shoes",
+  "total_original": 3,
+  "total_kept": 3,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "Asics": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "REEF": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "GEL-550TR (2E WIDE) | Men | White/White | Men's Walking Shoes ...",
+      "price": null,
+      "brand": null,
+      "url": "https://www.asics.com/au/en-au/gel-550tr-2e-wide/p/AOP_1131A047-111.html",
+      "image_url": "https://images.asics.com/is/image/asics/1131A047_111_SR_RT_GLB?$sfcc-product$",
+      "store_name": "Asics",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:51:12.941883"
+    },
+    {
+      "name": "GEL-KAYANO 27 | Men | White/White | Men's Running Shoes | ASICS ...",
+      "price": null,
+      "brand": null,
+      "url": "https://www.asics.com/au/en-au/gel-kayano-27/p/AOP_1011A767-101.html",
+      "image_url": "https://images.asics.com/is/image/asics/1011A767_101_SR_RT_GLB-1?$sfcc-product$",
+      "store_name": "Asics",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:51:12.941886"
+    },
+    {
+      "name": "Mens Bom Dia - White | SHOES | REEF AUSTRALIA",
+      "price": "90.00",
+      "brand": null,
+      "url": "https://www.shop-reef.com.au/products/mens-bom-dia-white",
+      "image_url": "http://www.shop-reef.com.au/cdn/shop/files/CJ7086_BOMDIA_WHITE_MAIN_WB.jpg?crop=center&height=1200&v=1738119342&width=1200",
+      "store_name": "REEF",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:51:12.941887"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2
+  ]
+}
