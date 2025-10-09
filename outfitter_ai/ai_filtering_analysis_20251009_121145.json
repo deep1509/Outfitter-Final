@@ -1,0 +1,154 @@
+{
+  "timestamp": "2025-10-09T12:11:45.353891",
+  "user_request": "mens beige shoes loafers",
+  "total_original": 10,
+  "total_kept": 3,
+  "total_filtered": 7,
+  "overall_filtering_rate": "70.0%",
+  "store_analysis": {
+    "Aquila": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Ubuy Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Etsy": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Manyavar": {
+      "original_count": 2,
+      "kept_count": 0,
+      "filtered_count": 2,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "VITKAC": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Ebay": {
+      "original_count": 2,
+      "kept_count": 0,
+      "filtered_count": 2,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Theiconic": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "temu": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Men's Beige Slip On Loafers - Hey Dude Wally, Size 9 Australia | Ubuy",
+      "price": "21",
+      "brand": null,
+      "url": "https://www.u-buy.com.au/product/3VN357GJW-hey-dude-men-s-wally-stretch-loafer",
+      "image_url": "https://i5.walmartimages.com/seo/Men-s-Hey-Dude-Casual-Shoes-Size-9-Wally-Stretch-Beige-Slip-on-Shoes_d3b8b130-bda4-4383-b4a3-493ea319addf.d881d50d3ea9f6d7e15c816ec32f9548.jpeg",
+      "store_name": "Ubuy Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:11:44.425892"
+    },
+    {
+      "name": "Men Cream/off White/ Ivory Embroidery Suede Men Loafers Mojdi Slip ...",
+      "price": null,
+      "brand": null,
+      "url": "https://www.etsy.com/au/listing/1204914934/men-creamoff-white-ivory-embroidery",
+      "image_url": "https://i.etsystatic.com/24480679/r/il/6257bf/4664196639/il_570xN.4664196639_9yo5.jpg",
+      "store_name": "Etsy",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:11:44.425895"
+    },
+    {
+      "name": "Beige ‘Loafers’ shoes Gucci - Vitkac Australia",
+      "price": "1,284.50",
+      "brand": null,
+      "url": "https://www.vitkac.com/au/p/loafers-shoes-gucci-shoes-fadmu-1716806",
+      "image_url": "https://img.vitkac.com/uploads/product_thumb/BUTY%20795117%20FADMU-9750/lg/1.png",
+      "store_name": "VITKAC",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:11:44.425900"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Men's Loafers - Shop Penny & Leather Loafers Online Australia",
+      "store_name": "Aquila",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 3,
+      "name": "Cream Loafers Style Shoes",
+      "store_name": "Manyavar",
+      "category": "shoes",
+      "color": "cream"
+    },
+    {
+      "index": 5,
+      "name": "Beige Cream Paisley and Floral Embroidered Jootis",
+      "store_name": "Manyavar",
+      "category": "unknown",
+      "color": "red"
+    },
+    {
+      "index": 6,
+      "name": "Pardon our interruption...",
+      "store_name": "Ebay",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 7,
+      "name": "Loafers | Loafer Online For Men | Buy Men's Loafers Australia - THE ICONIC",
+      "store_name": "Theiconic",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 8,
+      "name": "lightweight design mens lightweight loafers - Temu Australia",
+      "store_name": "temu",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 9,
+      "name": "Pardon our interruption...",
+      "store_name": "Ebay",
+      "category": "unknown",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": [
+    1,
+    2,
+    4
+  ]
+}

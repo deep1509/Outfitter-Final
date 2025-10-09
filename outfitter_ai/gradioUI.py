@@ -422,7 +422,7 @@ class AssistifyUI:
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: var(--space-lg);
         }
         
@@ -727,6 +727,13 @@ class AssistifyUI:
                 font-size: 1rem;
             }
             
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Very small screens - single column for better readability */
+        @media (max-width: 480px) {
             .products-grid {
                 grid-template-columns: 1fr;
             }

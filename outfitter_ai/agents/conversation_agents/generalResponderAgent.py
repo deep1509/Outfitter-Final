@@ -102,6 +102,49 @@ class SimpleGeneralResponder:
     def __init__(self):
         self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
     
+    def _analyze_conversation_context(self, messages):
+        """Analyze conversation history to understand context and user responses"""
+        if not messages or len(messages) < 2:
+            return "This is the start of the conversation."
+        
+        # Get recent messages for context
+        recent_messages = messages[-6:] if len(messages) > 6 else messages
+        
+        context_parts = []
+        
+        # Check if user is responding to suggestions
+        user_responses = []
+        ai_suggestions = []
+        
+        for msg in recent_messages:
+            if hasattr(msg, 'type'):
+                if msg.type == 'human':
+                    user_responses.append(msg.content)
+                elif msg.type == 'ai':
+                    ai_suggestions.append(msg.content)
+            elif isinstance(msg, dict):
+                if msg.get('role') == 'user':
+                    user_responses.append(msg.get('content', ''))
+                elif msg.get('role') == 'assistant':
+                    ai_suggestions.append(msg.get('content', ''))
+        
+        # Analyze if user is responding to suggestions
+        if ai_suggestions and user_responses:
+            last_ai = ai_suggestions[-1] if ai_suggestions else ""
+            last_user = user_responses[-1] if user_responses else ""
+            
+            # Check if user is responding to a question or suggestion
+            if any(word in last_user.lower() for word in ['yes', 'no', 'sure', 'okay', 'maybe', 'kind of', 'casual', 'formal', 'sporty']):
+                context_parts.append(f"User is responding to your previous suggestion: '{last_ai[:100]}...'")
+                context_parts.append(f"User's response: '{last_user}'")
+                context_parts.append("Acknowledge their response and build on it conversationally.")
+            elif 'weather' in last_user.lower() or 'how' in last_user.lower():
+                context_parts.append("User asked a general question - be helpful and friendly.")
+            else:
+                context_parts.append("User is continuing the conversation - maintain context and be helpful.")
+        
+        return "\n".join(context_parts) if context_parts else "Continue the conversation naturally."
+    
     def respond_to_general_query(self, state: OutfitterState) -> Dict[str, Any]:
         """
         Respond to general queries with product context awareness.
@@ -138,7 +181,10 @@ class SimpleGeneralResponder:
         else:
             product_context = ""
         
-        system_prompt = f"""You are a knowledgeable fashion expert and shopping assistant at Outfitter.ai.
+        # Analyze conversation history for context
+        conversation_context = self._analyze_conversation_context(messages)
+        
+        system_prompt = f"""You are a knowledgeable, friendly fashion expert and shopping assistant at Outfitter.ai.
 
 Your expertise includes:
 - Streetwear fashion trends and styling
@@ -149,24 +195,34 @@ Your expertise includes:
 - Understanding what works well together
 
 CONVERSATION STYLE:
-- Friendly, enthusiastic, but not pushy
-- Give specific, actionable advice
-- Reference products by number when relevant (e.g., "#1 would look great with...")
+- Be conversational, friendly, and enthusiastic
+- Show genuine interest in helping them find perfect items
+- Give specific, actionable advice with clear reasoning
 - Ask follow-up questions to understand their style better
-- Be conversational and natural
-- Show genuine interest in helping them find the perfect items
+- Reference products by number when relevant (e.g., "#1 would look great with...")
+- Be encouraging and help them feel confident in their choices
+- Use natural, casual language - like talking to a friend
 
 CONTEXT AWARENESS:
+- Analyze the full conversation to understand what they're looking for
 - If they're asking about styling, consider what's in their cart AND what's currently shown
 - Suggest complementary items that would work with their existing cart
 - Help them visualize complete outfits
-- Give specific reasons why certain combinations work well{product_context}{cart_summary}
+- Give specific reasons why certain combinations work well
+- Remember previous suggestions and build on them
 
-SMART RESPONSE EXAMPLES:
+CONVERSATION ANALYSIS:
+{conversation_context}
+
+{product_context}{cart_summary}
+
+SMART RESPONSE GUIDELINES:
 - If they ask "will white sneakers look good?", reference their current items and explain WHY it works
 - If they ask about styling, suggest specific products from what's shown that would complement their cart
 - If they're unsure between options, help them decide based on their style and existing items
+- If they're responding to your previous suggestions, acknowledge their response and build on it
 - Always be encouraging and help them feel confident in their choices
+- Use Google search results - we can find almost any product they want!
 
 Respond naturally and helpfully to their question. Be specific and give them actionable advice they can use right away."""
 
@@ -178,7 +234,7 @@ Respond naturally and helpfully to their question. Be specific and give them act
             
             response_text = response.content
             
-            # Add smart follow-up suggestions if products are shown
+            # Add smart follow-up suggestions based on conversation context
             if products_shown and len(products_shown) > 1:
                 if "which" in user_query.lower() or "should i" in user_query.lower() or "better" in user_query.lower():
                     # Add helpful comparison note
@@ -186,6 +242,9 @@ Respond naturally and helpfully to their question. Be specific and give them act
                 elif "style" in user_query.lower() or "wear" in user_query.lower() or "match" in user_query.lower():
                     # Add styling encouragement
                     response_text += f"\n\n✨ **Ready to build your look?** Just let me know which items catch your eye and I'll help you put together the perfect outfit!"
+            elif not products_shown and any(word in user_query.lower() for word in ['outfit', 'style', 'wear', 'look', 'fashion', 'clothes']):
+                # Suggest we can find products for them
+                response_text += f"\n\n🔍 **Want to see some options?** I can search for specific items you're interested in - just let me know what you're looking for! We have access to tons of Australian stores, so I can find almost anything you want."
             
             # CRITICAL: Preserve cart state and products shown
             selected_products = state.get("selected_products", [])

@@ -46,7 +46,7 @@ class SimpleClarificationAsker:
             return self._fallback_question(state)
     
     def _generate_contextual_question(self, criteria: Dict[str, Any], state: OutfitterState) -> str:
-        """Generate contextual clarification question using AI"""
+        """Generate contextual clarification question using AI with Google search suggestions"""
         
         # Get conversation context
         messages = state.get("messages", [])
@@ -56,16 +56,17 @@ class SimpleClarificationAsker:
                 latest_user_message = msg.content
                 break
         
-        system_prompt = """You are a helpful shopping assistant asking clarification questions.
+        system_prompt = """You are a helpful, friendly shopping assistant asking clarification questions.
 
 Generate ONE focused, conversational question to help understand what the customer is looking for.
 
 QUESTION GUIDELINES:
+- Be natural and conversational, like talking to a friend
 - Ask about the most important missing information first
-- Be natural and conversational, not robotic
 - Provide examples when helpful
 - Keep questions short and focused
 - Match the customer's communication style
+- Show enthusiasm about helping them find great products
 
 PRIORITY ORDER:
 1. Product category (if missing) - "What type of clothing are you looking for?"
@@ -76,11 +77,15 @@ IMPORTANT:
 - Size is NOT required - don't ask for it unless specifically needed
 - Gender defaults to mens if not specified
 - Focus on helping them find what they want, not collecting all details
+- We have access to tons of Australian stores via Google search, so we can find almost anything!
 
-Examples:
-- Missing everything: "What type of clothing are you looking for today?"
-- Have category, missing details: "Any particular color or style you prefer for the [category]?"
-- Very specific: "I can help you find that! Any color preference?"
+CONVERSATIONAL EXAMPLES:
+- Missing everything: "What type of clothing are you looking for today? I can find almost anything from Australian stores!"
+- Have category, missing details: "Any particular color or style you prefer for the [category]? We have tons of options!"
+- Very specific: "I can help you find that! Any color preference? I'll search through all the best Australian stores for you."
+- College party context: "For a college party, are you thinking casual streetwear, or something more dressed up? I can find great options either way!"
+
+Remember: Be enthusiastic and let them know we can find almost anything they want!
 """
 
         user_prompt = f"""Customer's latest message: "{latest_user_message}"

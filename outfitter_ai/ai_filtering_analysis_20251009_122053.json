@@ -1,0 +1,170 @@
+{
+  "timestamp": "2025-10-09T12:20:53.097502",
+  "user_request": "mens black shirts",
+  "total_original": 10,
+  "total_kept": 7,
+  "total_filtered": 3,
+  "overall_filtering_rate": "30.0%",
+  "store_analysis": {
+    "Lowes": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Suit Lab Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Asics": {
+      "original_count": 2,
+      "kept_count": 1,
+      "filtered_count": 1,
+      "filtering_rate": "50.0%",
+      "kept_rate": "50.0%"
+    },
+    "U.S. Polo Assn. Australia": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "la haute couture": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Angeljackets": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Island Style Clothing": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Etsy": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Big Mens Long Sleeve Shirt Black",
+      "price": "59.95",
+      "brand": "BUILT N FIT",
+      "url": "https://www.lowes.com.au/m-big-mens-long-sleeve-shirt-black-60432",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/6/0/60431_f_1_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141461"
+    },
+    {
+      "name": "Mens Dress Shirt Black",
+      "price": "40.0",
+      "brand": "Relaxed Fit",
+      "url": "https://www.suitlab.com.au/products/mens-dress-shirt-black",
+      "image_url": "https://www.suitlab.com.au/cdn/shop/products/RPS76389.jpg?v=1552393389",
+      "store_name": "Suit Lab Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141569"
+    },
+    {
+      "name": "CRICKET AUSTRALIA REPLICA T20 SHIRT | Men | Performance Black ...",
+      "price": null,
+      "brand": null,
+      "url": "https://www.asics.com/au/en-au/cricket-australia-replica-t20-shirt/p/AOP_2111B148-001.html",
+      "image_url": "https://images.asics.com/is/image/asics/2111B148_001_GM_FT_AOP?$sfcc-product$",
+      "store_name": "Asics",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141577"
+    },
+    {
+      "name": "Mens Stripe Textured Zip Polo Shirt in Black Bright White DHM – U.S. Polo Assn. Australia",
+      "price": "120.00",
+      "brand": null,
+      "url": "https://uspoloassn.com.au/products/mens-stripe-textured-zip-polo-shirt-in-black-bright-white-dhm",
+      "image_url": "http://uspoloassn.com.au/cdn/shop/files/MUP3992-M12-MS_1.JPG?v=1741885423",
+      "store_name": "U.S. Polo Assn. Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141581"
+    },
+    {
+      "name": "Stain Resistant Slim Fit Tee | Black | Mens T-Shirts Australia | La Haute",
+      "price": "69.00",
+      "brand": null,
+      "url": "https://lahaute.com.au/products/slim-fit-tee-black",
+      "image_url": "http://lahaute.com.au/cdn/shop/products/La_Haute_38870.jpg?v=1668659275&width=2048",
+      "store_name": "la haute couture",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141585"
+    },
+    {
+      "name": "Mens Zip Knit Polo Shirt in Black Bright White DHM – U.S. Polo Assn. Australia",
+      "price": "140.00",
+      "brand": null,
+      "url": "https://uspoloassn.com.au/products/mens-zip-knit-polo-shirt-in-black-bright-white-dhm",
+      "image_url": "http://uspoloassn.com.au/cdn/shop/files/MUP3369-M12-MS_1.jpg?v=1741608461",
+      "store_name": "U.S. Polo Assn. Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141603"
+    },
+    {
+      "name": "Mens Black Linen Shirt: Oversized Long Sleeve Button Up - Etsy ...",
+      "price": null,
+      "brand": null,
+      "url": "https://www.etsy.com/au/listing/588812613/mens-black-linen-shirt-oversized-long",
+      "image_url": "https://i.etsystatic.com/7789766/r/il/7df95e/1526151779/il_570xN.1526151779_56q3.jpg",
+      "store_name": "Etsy",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:20:52.141622"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 5,
+      "name": "Men's Classic Black Leather Jacket with Shirt Collar In Australia",
+      "store_name": "Angeljackets",
+      "category": "shirt",
+      "color": "black"
+    },
+    {
+      "index": 6,
+      "name": "Midnight Oasis Mens Hawaiian Shirt | Palm Tree Hawaiian Shirts – Island Style Clothing",
+      "store_name": "Island Style Clothing",
+      "category": "shirt",
+      "color": "unknown"
+    },
+    {
+      "index": 7,
+      "name": "CRICKET AUSTRALIA INDIGENOUS T20 REPLICA SHIRT | Men | Performance ...",
+      "store_name": "Asics",
+      "category": "shirt",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    8,
+    9
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-10-09T12:08:32.043863",
+  "user_request": "mens light grey pants chino",
+  "total_original": 3,
+  "total_kept": 3,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "Amazon": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Hm": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "COOFANDY Men's Casual Pants Relaxed Fit Flat Front Expandable Waist Chino Slack Trousers, Light Grey, Small : Amazon.com.au: Clothing, Shoes & Accessories",
+      "price": "29",
+      "brand": null,
+      "url": "https://www.amazon.com.au/COOFANDY-Casual-Relaxed-Expandable-Trousers/dp/B0CKTR26YD",
+      "image_url": "https://m.media-amazon.com/images/I/31XpTc5KR3L._SY1000_.jpg",
+      "store_name": "Amazon",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:08:30.507154"
+    },
+    {
+      "name": "SERAMY Golf Pants Men 31\" Inseam 5 Pockets Slim Fit Stretch Lightweight Quick Dry Dress Chino Trousers for Work Casual, Light Grey, 32 : Amazon.com.au: Clothing, Shoes & Accessories",
+      "price": "56",
+      "brand": null,
+      "url": "https://www.amazon.com.au/SERAMY-Pockets-Stretch-Lightweight-Trousers/dp/B0D94FRHBF",
+      "image_url": "https://m.media-amazon.com/images/I/31pBNjNo-FL._SY1000_.jpg",
+      "store_name": "Amazon",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:08:30.507162"
+    },
+    {
+      "name": "Slim Fit Cargo Pants - Light grey - Men | H&M AU",
+      "price": null,
+      "brand": null,
+      "url": "https://www2.hm.com/en_au/productpage.1230885004.html",
+      "image_url": "https://image.hm.com/assets/hm/f8/cd/f8cdaedf11293f18397fecffa5a942a5411b2224.jpg?imwidth=2160",
+      "store_name": "Hm",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T12:08:30.507166"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2
+  ]
+}
