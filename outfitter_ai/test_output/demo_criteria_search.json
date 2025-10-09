@@ -1,0 +1,55 @@
+{
+  "test_description": "Criteria-based search: white men's t-shirts",
+  "timestamp": "2025-10-08T00:00:36.271561",
+  "total_results": 4,
+  "results": [
+    {
+      "name": "Patagonia Men`s P-6 Logo Responsibili T-Shirt White",
+      "price": "59.99",
+      "brand": null,
+      "store_name": "Surf Sail Australia",
+      "url": "https://www.surfsailaustralia.com.au/product/patagonia-mens-p-6-logo-responsibili-t-shirt-white",
+      "image_url": "https://vsrv1assets4.gtp.com.au/clients/s/surfsailaustralia/largeimages/39174b.jpg",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T13:00:31.355106+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Plain White T-Shirt | Plain White T-Shirts Online | Buy Men's Plain White T-Shirts Australia |- THE ICONIC",
+      "price": "40.00",
+      "brand": null,
+      "store_name": "Theiconic",
+      "url": "https://www.theiconic.com.au/mens-plain-white-t-shirts/",
+      "image_url": "https://img1.theiconic.com.au/gVtITYBfynxbpzp4RiLtbDw4YrU=/fit-in/406x512/filters:fill(ffffff):quality(90):format(webp)/https%3A%2F%2Fstatic.theiconic.com.au%2Fp%2Fwrangler-0323-0747871-1.jpg",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T13:00:33.157081+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Vans",
+      "price": null,
+      "brand": null,
+      "store_name": "Vans",
+      "url": "https://www.vans.com.au/vans-australia-t-shirt-vn00c0dwht-wht.html",
+      "image_url": "https://www.vans.com.au/media/catalog/product/p/r/product_images_48_.jpg?auto=webp&quality=85&format=pjpg&width=100%25&fit=cover",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T13:00:33.963099+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Stain Resistant Slim Fit Tee | White | Mens T-Shirts Australia | La Haute",
+      "price": "69.00",
+      "brand": null,
+      "store_name": "la haute couture",
+      "url": "https://lahaute.com.au/products/slim-fit-tee-white",
+      "image_url": "http://lahaute.com.au/cdn/shop/products/La_Haute_38892.jpg?v=1668659461&width=2048",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T13:00:35.566240+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    }
+  ]
+}

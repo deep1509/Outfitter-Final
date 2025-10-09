@@ -1,0 +1,41 @@
+{
+  "test_description": "Google Custom Search Performance Test Results",
+  "timestamp": "2025-10-08T00:11:27.128005",
+  "performance_metrics": {
+    "total_searches": 5,
+    "total_products_found": 0,
+    "average_products_per_search": 0.0,
+    "total_time_seconds": 0.00010895729064941406,
+    "average_time_per_search": 2.1791458129882814e-05,
+    "stores_discovered": [],
+    "search_times": [
+      {
+        "scenario": "Men's Hoodies",
+        "time_seconds": 4.7206878662109375e-05,
+        "products_found": 0
+      },
+      {
+        "scenario": "Women's Jeans",
+        "time_seconds": 1.5974044799804688e-05,
+        "products_found": 0
+      },
+      {
+        "scenario": "Nike Shoes",
+        "time_seconds": 1.0013580322265625e-05,
+        "products_found": 0
+      },
+      {
+        "scenario": "Leather Bags",
+        "time_seconds": 1.0967254638671875e-05,
+        "products_found": 0
+      },
+      {
+        "scenario": "Winter Jackets",
+        "time_seconds": 9.059906005859375e-06,
+        "products_found": 0
+      }
+    ]
+  },
+  "total_results": 0,
+  "results": []
+}

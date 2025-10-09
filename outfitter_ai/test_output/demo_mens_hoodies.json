@@ -1,0 +1,55 @@
+{
+  "test_description": "Search for men's blue hoodies from Australian stores",
+  "timestamp": "2025-10-08T00:00:02.752243",
+  "total_results": 4,
+  "results": [
+    {
+      "name": "Mens Hoodie With Kanagroo Pockets Blue",
+      "price": "39.95",
+      "brand": "Lowes",
+      "store_name": "Lowes",
+      "url": "https://www.lowes.com.au/mens-hoodie-with-kanagroo-pockets-blue-m-28515",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/2/8/28515_f_1_6.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:59:58.530380+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Cricket Australia Mens Training Hoodie",
+      "price": "140.0",
+      "brand": "ASICS",
+      "store_name": "The Official Cricket Shop",
+      "url": "https://shop.cricket.com.au/products/cricket-australia-mens-training-hoodie",
+      "image_url": "https://shop.cricket.com.au/cdn/shop/files/2111B996_400_FL_FT.png?v=1756443698&width=1920",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:59:59.670743+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "True Blue Australian Hoodie – Guts Fishing Apparel",
+      "price": "69.95",
+      "brand": null,
+      "store_name": "Guts Fishing Apparel",
+      "url": "https://gutsfishingapparel.com.au/products/australia-hoodie",
+      "image_url": "http://gutsfishingapparel.com.au/cdn/shop/files/Australia-flag-hoodie-shirt_1200x1200.png?v=1691370821",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T13:00:00.818552+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Men's Blanket Fleece Hoodie Sweatshirt - Joe Blue – Brixton Australia",
+      "price": "44.98",
+      "brand": null,
+      "store_name": "Brixton Australia",
+      "url": "https://au.brixton.com/products/blanket-fleece-hood-joe-blue",
+      "image_url": "http://au.brixton.com/cdn/shop/products/cmmse6ybpdkgcguqclan.jpg?crop=center&height=1200&v=1659141714&width=1200",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T13:00:02.046976+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    }
+  ]
+}

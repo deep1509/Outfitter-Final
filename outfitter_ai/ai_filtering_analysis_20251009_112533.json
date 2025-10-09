@@ -1,0 +1,162 @@
+{
+  "timestamp": "2025-10-09T11:25:33.061560",
+  "user_request": "clothing",
+  "total_original": 10,
+  "total_kept": 5,
+  "total_filtered": 5,
+  "overall_filtering_rate": "50.0%",
+  "store_analysis": {
+    "About UPS-CA": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "The VOU": {
+      "original_count": 2,
+      "kept_count": 1,
+      "filtered_count": 1,
+      "filtering_rate": "50.0%",
+      "kept_rate": "50.0%"
+    },
+    "Ngv": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "ELLE": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Island Style Clothing": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "The Australia Institute": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Woman & Home": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Clothing The Gaps": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Hawaiian Shirts | Hawaiian Clothing | Island Style Clothing | B2B",
+      "price": "65.00",
+      "brand": null,
+      "url": "https://www.islandstyleclothing.com.au/",
+      "image_url": "http://www.islandstyleclothing.com.au/cdn/shop/files/island-style-clothing-logo_5b0d57cb-1e45-4fe0-b4ab-a65aca84fa63.png?v=1749104508",
+      "store_name": "Island Style Clothing",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:25:30.983600"
+    },
+    {
+      "name": "These are the Australian clothing brands to have on your radar | Woman & Home",
+      "price": "£6",
+      "brand": null,
+      "url": "https://www.womanandhome.com/fashion/australian-clothing-brands/",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/NhSuEaD9K3xxVNm6qEZSZ-1600-80.jpg",
+      "store_name": "Woman & Home",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:25:30.983606"
+    },
+    {
+      "name": "Locally Made – Clothing The Gaps",
+      "price": "100.00",
+      "brand": null,
+      "url": "https://www.clothingthegaps.com.au/pages/locally-made",
+      "image_url": "http://www.clothingthegaps.com.au/cdn/shop/files/Logos_Web_CTG-CIRCLE-2_5071b844-d1a3-4414-9aa9-c66f8048db87.png?v=1681349089",
+      "store_name": "Clothing The Gaps",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:25:30.983619"
+    },
+    {
+      "name": "Australia's Dress Code - 5 Representative Fashion Styles | The VOU",
+      "price": "£ 147.00",
+      "brand": null,
+      "url": "https://thevou.com/blog/australia-dress-code-fashion-styles/",
+      "image_url": "https://thevou.com/wp-content/uploads/2024/11/australia-dress-code-fashion-styles.jpg",
+      "store_name": "The VOU",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:25:30.983624"
+    },
+    {
+      "name": "Hawaiian Shirts | Hawaiian Clothing | Island Style Clothing | B2B",
+      "price": "65.00",
+      "brand": null,
+      "url": "https://www.islandstyleclothing.com.au/",
+      "image_url": "http://www.islandstyleclothing.com.au/cdn/shop/files/island-style-clothing-logo_5b0d57cb-1e45-4fe0-b4ab-a65aca84fa63.png?v=1749104508",
+      "store_name": "Island Style Clothing",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:25:30.983626"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Australian clothing brand leans on UPS for sustainable shipping and U.S. growth",
+      "store_name": "About UPS-CA",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 1,
+      "name": "Australia's Dress Code - 5 Representative Fashion Styles | The VOU",
+      "store_name": "The VOU",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 2,
+      "name": "200 Years of Australian Fashion | NGV",
+      "store_name": "Ngv",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 3,
+      "name": "The 22 Best Australian Clothing Brands To Know In 2025",
+      "store_name": "ELLE",
+      "category": "unknown",
+      "color": "unknown"
+    },
+    {
+      "index": 5,
+      "name": "Australians revealed as world’s biggest fashion consumers, fuelling waste crisis - The Australia Institute",
+      "store_name": "The Australia Institute",
+      "category": "unknown",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": [
+    4,
+    6,
+    7,
+    8,
+    9
+  ]
+}

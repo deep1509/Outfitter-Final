@@ -1,0 +1,67 @@
+{
+  "test_description": "Search for women's black jeans",
+  "timestamp": "2025-10-07T23:53:40.901630",
+  "total_results": 5,
+  "results": [
+    {
+      "name": "Classics Mid Waist Bootcut Jean Black | BOOTCUT JEANS | Wrangler ...",
+      "price": null,
+      "brand": null,
+      "store_name": "Wrangler",
+      "url": "https://wrangler.com.au/product/classics-mid-waist-bootcut-jean/W_091049_616.html",
+      "image_url": "https://wrangler.com.au/dw/image/v2/BDFS_PRD/on/demandware.static/-/Sites-wrangler-master-catalog/default/dwa727206c/images/W_091049_/W_091049_616_4.jpg?sw=1000&sh=1000",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:36.089178+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Echo Straight Jeans - Retro Black",
+      "price": "139.95",
+      "brand": "Dr Denim",
+      "store_name": "Dr Denim Jeans - Australia & NZ",
+      "url": "https://drdenim.com.au/products/echo-jeans-retro-black",
+      "image_url": "https://drdenim.com.au/cdn/shop/products/DDOnlineProducts_33.png?v=1628750247&width=1920",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:37.213402+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Hi Bells Flared Jean Highway Black | WINTER 25 | Wrangler Australia",
+      "price": null,
+      "brand": null,
+      "store_name": "Wrangler",
+      "url": "https://wrangler.com.au/product/hi-bells-flared-jean/W_953185_NU6.html",
+      "image_url": "https://wrangler.com.au/dw/image/v2/BDFS_PRD/on/demandware.static/-/Sites-wrangler-master-catalog/default/dwe6bd6f4f/images/W_953185_/W_953185_NU6_2.jpg?sw=1000&sh=1000",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:38.006236+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Womens Jeans | Dr Denim Jeans Australia & NZ – Tagged \"Moxy\" – Dr Denim Jeans - Australia & NZ",
+      "price": "139.95",
+      "brand": null,
+      "store_name": "Dr Denim Jeans - Australia & NZ",
+      "url": "https://drdenim.com.au/collections/womens-jeans/moxy",
+      "image_url": "http://drdenim.com.au/cdn/shop/collections/ROSY-202.jpg?v=1667180492",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:39.404985+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Low Bella Baggy Relaxed Jean Black Rock | AUTUMN 25 | Wrangler ...",
+      "price": null,
+      "brand": null,
+      "store_name": "Wrangler",
+      "url": "https://wrangler.com.au/product/low-bella-baggy-relaxed-jean/W_953222_A30.html",
+      "image_url": "https://wrangler.com.au/dw/image/v2/BDFS_PRD/on/demandware.static/-/Sites-wrangler-master-catalog/default/dwea2e89b3/images/W_953222_/W_953222_A30_1.jpg?sw=1000&sh=1000",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:40.196185+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    }
+  ]
+}

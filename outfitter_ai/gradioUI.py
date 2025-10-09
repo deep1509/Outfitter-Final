@@ -1203,11 +1203,11 @@ class AssistifyUI:
     
     def create_product_card_html(self, product: Dict[str, Any], index: int) -> str:
         """Create product card"""
-        name = html.escape(product.get("name", "Unknown Product"))
-        price = html.escape(product.get("price", "Price unavailable"))
-        url = product.get("url", "#")
-        image_url = product.get("image_url", "")
-        store = html.escape(product.get("store_name", "Unknown Store"))
+        name = html.escape(product.get("name") or "Unknown Product")
+        price = html.escape(product.get("price") or "Price unavailable")
+        url = product.get("url") or "#"
+        image_url = product.get("image_url") or ""
+        store = html.escape(product.get("store_name") or "Unknown Store")
         is_on_sale = product.get("is_on_sale", False)
         
         if not image_url:
@@ -1309,10 +1309,10 @@ class AssistifyUI:
         cart_items_html = ""
         for index, item in enumerate(cart_items, 1):
             quantity = item.get("quantity", 1)
-            name = html.escape(item.get('name', 'Unknown Product'))
-            price_str = html.escape(item.get('price', 'N/A'))
-            store = html.escape(item.get('store_name', 'Unknown Store'))
-            size = html.escape(item.get('selected_size', 'M'))
+            name = html.escape(item.get('name') or 'Unknown Product')
+            price_str = html.escape(item.get('price') or 'N/A')
+            store = html.escape(item.get('store_name') or 'Unknown Store')
+            size = html.escape(item.get('selected_size') or 'M')
             image_url = item.get("image_url", "")
             
             # Calculate item total

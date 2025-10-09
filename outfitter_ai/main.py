@@ -16,7 +16,7 @@ from langchain_core.messages import AIMessage
 from agents.conversation_agents.needsAnalyzer import NeedsAnalyzer
 from agents.conversation_agents.simpleClarificationAsker import SimpleClarificationAsker
 
-from tools.hybrid_scraper import search_all_stores
+from tools.scraping_tools import search_products_google_only
 
 from agents.state import OutfitterState
 from agents.intent_classifier import RobustIntentClassifier
@@ -333,11 +333,11 @@ class OutfitterAssistant:
         print(f"🔎 Searching for: '{search_query}' with criteria: {search_criteria}")
         
         try:
-            # Run async scraping
-            products = asyncio.run(search_all_stores(
+            # Run Google-only scraping (no fallback to old methods)
+            products = search_products_google_only(
                 query=search_query,
                 max_products=100
-            ))
+            )
             
             print(f"✅ Found {len(products)} products from scraping")
             

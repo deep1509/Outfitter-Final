@@ -1,0 +1,67 @@
+{
+  "test_description": "Brand-specific search for Nike men's shoes",
+  "timestamp": "2025-10-07T23:53:56.410108",
+  "total_results": 5,
+  "results": [
+    {
+      "name": "Men's Nike Shoes: Slides, Sneakers & Running Shoes - JD Sports AU",
+      "price": null,
+      "brand": null,
+      "store_name": "Jd-sports",
+      "url": "https://www.jd-sports.com.au/men/mens-footwear/brand/nike/",
+      "image_url": "https://i8.amplience.net/t/jpl/jdau_product_list?plu=jd_CW2288-111_C_0010_al&qlt=85&qlt=92&w=320&h=320&v=1&fmt=auto",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:41.824065+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Men's Sale. Nike AU",
+      "price": "240",
+      "brand": null,
+      "store_name": "Nike.com",
+      "url": "https://www.nike.com/au/w/mens-sale-3yaepznik1",
+      "image_url": "https://www.nike.com/android-icon-192x192.png",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:43.560012+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Nike Uplift Running Shoes Mens",
+      "price": "109.98",
+      "brand": "Nike",
+      "store_name": "SportsDirect.com Australia",
+      "url": "https://au.sportsdirect.com/nike-uplift-running-shoes-mens-122575",
+      "image_url": "https://www.sportsdirect.com/images/products/12257502_l.jpg",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:53.184387+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Men's Shoes, Clothing & Accessories. Nike AU",
+      "price": null,
+      "brand": null,
+      "store_name": "Nike.com",
+      "url": "https://www.nike.com/au/men",
+      "image_url": "https://static.nike.com/a/images/w_1920,c_limit/wzrqsjqpg6pslrevtkpl/image.png",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:54.174275+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    },
+    {
+      "name": "Nike Downshifter 12 Mens Running Shoes – SportsPower Australia",
+      "price": "99.99",
+      "brand": null,
+      "store_name": "SportsPower Australia",
+      "url": "https://www.sportspower.com.au/products/nike-downshifter-12-dd9293",
+      "image_url": "http://www.sportspower.com.au/cdn/shop/files/DD9293-001-NikeDownshifter11Men_sRunningShoes-Lateral-web.jpg?v=1748411732",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-07T12:53:55.704765+00:00",
+      "selected_variant": "default",
+      "selected_size": "M"
+    }
+  ]
+}

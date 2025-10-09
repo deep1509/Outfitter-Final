@@ -1,0 +1,159 @@
+{
+  "timestamp": "2025-10-09T11:29:05.813527",
+  "user_request": "black pants",
+  "total_original": 10,
+  "total_kept": 6,
+  "total_filtered": 4,
+  "overall_filtering_rate": "40.0%",
+  "store_analysis": {
+    "Karmaeast": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Kowtow Australia": {
+      "original_count": 3,
+      "kept_count": 0,
+      "filtered_count": 3,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Karma East": {
+      "original_count": 2,
+      "kept_count": 1,
+      "filtered_count": 1,
+      "filtering_rate": "50.0%",
+      "kept_rate": "50.0%"
+    },
+    "WorkwearHub": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Lowes": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Leina + Fleur": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Philosophy Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Lightweight Cotton Harem Pants Black | Karma East Australia",
+      "price": null,
+      "brand": null,
+      "url": "https://www.karmaeast.com.au/products/acapulco-pants-black",
+      "image_url": "https://www.karmaeast.com.au/cdn/shop/products/IMG_3169_1cd5ff7b-4f63-4c1f-b4b0-841388541aa6.jpg?v=1749710581&width=1200",
+      "store_name": "Karmaeast",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:29:04.891132"
+    },
+    {
+      "name": "Wide Legged Cotton Janis Pant Black | Karma East Australia",
+      "price": "79.00",
+      "brand": null,
+      "url": "https://www.karmaeast.com.au/products/janis-pant-black",
+      "image_url": "http://karmaeast.com.au/cdn/shop/files/Janis_Pants_Black.jpg?crop=center&height=1200&v=1731912243&width=1200",
+      "store_name": "Karma East",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:29:04.891191"
+    },
+    {
+      "name": "8 Pocket Cargo Pants - Black",
+      "price": "39.95",
+      "brand": "Bisley",
+      "url": "/products/bisley-8-pocket-cargo-pants-black",
+      "image_url": "https://www.workwearhub.com.au/cdn/shop/products/14a_48bb6c36-fc22-4fa7-809d-37c0b1b6b6c8.jpg?v=1636076964",
+      "store_name": "WorkwearHub",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:29:04.891193"
+    },
+    {
+      "name": "Ladies Black Tailored Pants",
+      "price": "52.95",
+      "brand": "Lowes",
+      "url": "https://www.lowes.com.au/sco-ladies-black-tailored-pants-54646",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/7/9/79219_15.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:29:04.891196"
+    },
+    {
+      "name": "Corbin Pant in Black",
+      "price": "249.00",
+      "brand": "Core",
+      "url": "https://leinaandfleur.com.au/products/corbin-pant-in-black",
+      "image_url": "https://leinaandfleur.com.au/cdn/shop/files/CORBIN-PANT-BLACK-1_b226a816-d697-4a1e-9907-9037e76501e5.jpg?v=1754615583&width=1024",
+      "store_name": "Leina + Fleur",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:29:04.891198"
+    },
+    {
+      "name": "Linear Foundation slinky jersey pant in black",
+      "price": "99.0",
+      "brand": "Philosophy Australia",
+      "url": "https://www.philosophyaustralia.com.au/products/linear-jersey-pant-in-black",
+      "image_url": "http://www.philosophyaustralia.com.au/cdn/shop/files/Linear-Jersey-Pant-Black-Philosophy-Australia-b.jpg?v=1740979870",
+      "store_name": "Philosophy Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-09T11:29:04.891201"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 1,
+      "name": "Franz Pant",
+      "store_name": "Kowtow Australia",
+      "category": "pants",
+      "color": "unknown"
+    },
+    {
+      "index": 7,
+      "name": "Wide Leg Pant",
+      "store_name": "Kowtow Australia",
+      "category": "pants",
+      "color": "unknown"
+    },
+    {
+      "index": 8,
+      "name": "Wide Legged Cotton Janis Pant Black | Karma East Australia",
+      "store_name": "Karma East",
+      "category": "pants",
+      "color": "black"
+    },
+    {
+      "index": 9,
+      "name": "Staple Pant",
+      "store_name": "Kowtow Australia",
+      "category": "pants",
+      "color": "unknown"
+    }
+  ],
+  "kept_indices": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}
