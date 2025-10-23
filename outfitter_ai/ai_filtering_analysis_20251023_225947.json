@@ -1,0 +1,181 @@
+{
+  "timestamp": "2025-10-23T22:59:47.135352",
+  "user_request": "mens white shirts",
+  "total_original": 10,
+  "total_kept": 10,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "David Smith Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Menzclub": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "G3fashion": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "U.S. Polo Assn. Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Firstfilbio": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Lowes": {
+      "original_count": 2,
+      "kept_count": 2,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Suit Lab Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Kentaur Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "LANIKAI LINEN SHIRT - WHITE",
+      "price": "178.0",
+      "brand": "Relaxed Fit",
+      "url": "https://davidsmithaustralia.com.au/products/mens-white-linen-shirt-long-sleeve",
+      "image_url": "https://davidsmithaustralia.com.au/cdn/shop/files/Lanikai-Linen-White-Shirt.jpg?v=1702090106&width=750",
+      "store_name": "David Smith Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922005"
+    },
+    {
+      "name": "Alten White Dress Shirt - Men's Shirts at Menzclub",
+      "price": "149.95",
+      "brand": null,
+      "url": "https://menzclub.com.au/products/alten-shirt-white",
+      "image_url": "http://menzclub.com.au/cdn/shop/products/alten-shirt-buy-formal-shirts-at-menzclub-724387.jpg?crop=center&height=1200&v=1660539164&width=1200",
+      "store_name": "Menzclub",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922022"
+    },
+    {
+      "name": "LEVIS solid white mens casual shirt",
+      "price": "52",
+      "brand": "G3+Fashion: Shop Men, Women, Kids Indian Ethnic Wear Online",
+      "url": "https://g3fashion.com/en-au/product/levis-solid-white-mens-casual-shirt-as3230478",
+      "image_url": "https://pictures.kartmax.in/inside/live/1200x1200/quality=6/sites/9s145MyZrWdIAwpU0JYS/product-images/levis_solid_white_mens_casual_shirt_17406350790002t_0010_1_copy.jpg",
+      "store_name": "G3fashion",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922025"
+    },
+    {
+      "name": "Mens Texture Open Collar Knit Polo Shirt in Bright White – U.S. Polo Assn. Australia",
+      "price": "130.00",
+      "brand": null,
+      "url": "https://uspoloassn.com.au/products/mens-texture-open-collar-knit-polo-shirt-in-bright-white",
+      "image_url": "http://uspoloassn.com.au/cdn/shop/files/MUP4142-002-MS_1.jpg?v=1745424865",
+      "store_name": "U.S. Polo Assn. Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922027"
+    },
+    {
+      "name": "White T Shirt Style Men Stain Resistant Slim Fit Tee White Mens T ...",
+      "price": null,
+      "brand": null,
+      "url": "https://firstfilbio.com/?m=90873556041200",
+      "image_url": "https://pyxis.nymag.com/v1/imgs/963/ddf/87747f64f606691fbc2ce88d169c5f5694-The-Big-Favorite-Relaxed-Crew.jpg",
+      "store_name": "Firstfilbio",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922030"
+    },
+    {
+      "name": "Big Mens Long Sleeve Shirt White",
+      "price": "59.95",
+      "brand": "BUILT N FIT",
+      "url": "https://www.lowes.com.au/big-mens-long-sleeve-shirt-white-m-60430",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/6/0/60430_f.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922032"
+    },
+    {
+      "name": "Mens Soft White Textured Shirt with Black Buttons",
+      "price": "40.0",
+      "brand": "Relaxed Fit",
+      "url": "https://www.suitlab.com.au/products/mens-soft-white-textured-shirt-with-black-buttons",
+      "image_url": "https://www.suitlab.com.au/cdn/shop/files/RPS99470_BB.jpg?v=1692410254",
+      "store_name": "Suit Lab Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922035"
+    },
+    {
+      "name": "LEVIS plain white cotton shirt for men",
+      "price": "58",
+      "brand": "G3+Fashion: Shop Men, Women, Kids Indian Ethnic Wear Online",
+      "url": "https://g3fashion.com/en-au/product/levis-plain-white-cotton-shirt-for-men-as3310034",
+      "image_url": "https://pictures.kartmax.in/inside/live/1200x1200/quality=6/sites/9s145MyZrWdIAwpU0JYS/product-images/levis_plain_white_cotton_shirt_for_men_1749546187a1323_0127_1.jpg",
+      "store_name": "G3fashion",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922037"
+    },
+    {
+      "name": "Cavalleria Toscana 'Tech Jersey L/S' Mens Competition Shirt",
+      "price": "253.64",
+      "brand": "Cavalleria Toscana",
+      "url": "https://kentauraustralia.com/en-jp/products/cavalleria-toscana-tech-jersey-ls-mens-competition-shirt",
+      "image_url": "https://kentauraustralia.com/cdn/shop/products/cavalleria-toscana-tech-jersey-ls-mens-competition-shirt-white-0001-m-kentaur-australia-416.jpg?v=1672728247",
+      "store_name": "Kentaur Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922039"
+    },
+    {
+      "name": "Big Mens Microfibre Shirt White",
+      "price": "59.95",
+      "brand": "DBK",
+      "url": "https://www.lowes.com.au/big-mens-microfibre-shirt-white-m-86438",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/6/4/64847_f-2.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T22:59:44.922042"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

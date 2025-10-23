@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-10-23T23:05:04.334502",
+  "user_request": "mens shorts",
+  "total_original": 8,
+  "total_kept": 8,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "Surf Sail Australia": {
+      "original_count": 3,
+      "kept_count": 3,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Aqua Blu Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Uniformsaustralia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Fila": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "SIRL THE BRAND": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "Tom and Teddy Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Element Source Mens Cargo Shorts Khaki",
+      "price": "89.99",
+      "brand": null,
+      "url": "https://www.surfsailaustralia.com.au/product/element-source-mens-cargo-shorts-khaki",
+      "image_url": "https://vsrv1assets4.gtp.com.au/clients/s/surfsailaustralia/largeimages/193351.jpg",
+      "store_name": "Surf Sail Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756865"
+    },
+    {
+      "name": "Poseidon Lycra Swim Shorts",
+      "price": "20.99",
+      "brand": "Aqua Blu Australia",
+      "url": "https://aquablu.com.au/products/poseidon-mens-lycra-swim-shorts",
+      "image_url": "https://aquablu.com.au/cdn/shop/products/Aqua-Blu-Australia-Men-Swimwear-Poseidon-AM2012PD-FR.jpg?v=1659312212&width=800",
+      "store_name": "Aqua Blu Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756901"
+    },
+    {
+      "name": "Element Source Men`s Cargo Shorts Olive",
+      "price": "89.99",
+      "brand": null,
+      "url": "https://www.surfsailaustralia.com.au/product/element-source-mens-cargo-shorts-olive",
+      "image_url": "https://vsrv1assets4.gtp.com.au/clients/s/surfsailaustralia/largeimages/ulyws00100-1.jpg",
+      "store_name": "Surf Sail Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756904"
+    },
+    {
+      "name": "NEW Mens Short - CL960M | Work Smart Uniforms Australia - Buy Online",
+      "price": null,
+      "brand": null,
+      "url": "https://uniformsaustralia.clothing/uniforms/new-mens-short-cl960m/",
+      "image_url": "https://uniformsaustralia.clothing/wp-content/uploads/2019/08/Talent_CL960MS_Black_AUSNZ_01-1030x1030.jpg",
+      "store_name": "Uniformsaustralia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756907"
+    },
+    {
+      "name": "Element Source Mens Cargo Shorts Off Black",
+      "price": "89.99",
+      "brand": null,
+      "url": "https://www.surfsailaustralia.com.au/product/element-source-mens-cargo-shorts-black",
+      "image_url": "https://vsrv1assets4.gtp.com.au/clients/s/surfsailaustralia/largeimages/ULYWS00100KTA0.jpg",
+      "store_name": "Surf Sail Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756909"
+    },
+    {
+      "name": "Classic 2.0 Men's Short",
+      "price": "25.00",
+      "brand": "FILA",
+      "url": "https://fila.com.au/products/classic-20-mens-short-001",
+      "image_url": "//fila.com.au/cdn/shop/products/ASS13090_001_M_1_small.jpg?v=1687347078",
+      "store_name": "Fila",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756912"
+    },
+    {
+      "name": "Made In Australia | Men's Swim Shorts | Boardshorts – SIRL THE BRAND",
+      "price": null,
+      "brand": null,
+      "url": "https://www.sirlthebrand.com.au/",
+      "image_url": "https://cdn.shopify.com/s/files/1/0597/6244/2434/files/banner_final_copy_4227b217-8578-4236-b99a-0019df5b517b.jpg?v=1655091784",
+      "store_name": "SIRL THE BRAND",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756917"
+    },
+    {
+      "name": "Men's Shorts | Deep Ocean | Tom & Teddy – Tom and Teddy Australia",
+      "price": "70.00",
+      "brand": null,
+      "url": "https://tomandteddy.com.au/products/mens-shorts-deep-ocean",
+      "image_url": "http://tomandteddy.com.au/cdn/shop/products/Mens-Deep-Ocean-Shorts-Front-Flatlay_800x.jpg?v=1626267509",
+      "store_name": "Tom and Teddy Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:05:01.756919"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

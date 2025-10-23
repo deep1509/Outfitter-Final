@@ -160,15 +160,34 @@ class VirtualTryOnAgent:
             # Create comprehensive prompt for complete outfit
             outfit_description = self._build_outfit_description(outfit_items)
             prompt = f"""
-Create a complete outfit try-on image showing the person wearing all these items together:
+CRITICAL INSTRUCTIONS - READ CAREFULLY:
+
+1. PERSON IDENTITY:
+   - The FIRST image is the person who MUST appear in the final result
+   - USE ONLY THIS PERSON'S FACE AND BODY
+   - PRESERVE their face, skin tone, hair, body shape, pose, and background exactly as shown
+   - IGNORE any models or people in the clothing product images
+
+2. CLOTHING PRODUCTS:
+The following images show clothing items to overlay onto the first person:
 {outfit_description}
 
-Instructions:
-- Show the person wearing ALL items as a complete outfit
-- Ensure proper fit and realistic appearance
-- Maintain the person's pose and lighting
-- Make it look like a cohesive, styled outfit
-- Return only the final edited image with no text
+3. PRODUCT ACCURACY - EXTREMELY IMPORTANT:
+   - Show each clothing item EXACTLY as it appears in its product image
+   - DO NOT add logos, text, patterns, or designs that are not in the original product image
+   - DO NOT remove logos, text, patterns, or designs that ARE in the original product image
+   - If a product is plain/solid color, keep it plain - DO NOT add any branding or decorations
+   - If a product has logos/graphics, keep them exactly as shown - DO NOT alter or remove them
+   - PRESERVE the exact color, texture, style, and all visual details of each product
+   - DO NOT modify, enhance, or "improve" the products in any way
+
+4. FINAL OUTPUT:
+   - Show the person wearing ALL items as a complete outfit
+   - Ensure proper fit and realistic appearance
+   - Maintain natural lighting and shadows
+   - Return only the final edited image with no text or annotations
+
+REMEMBER: Show products EXACTLY as they are - no additions, no removals, no modifications.
 """
             
             # Convert bytes to PIL Images
@@ -182,8 +201,9 @@ Instructions:
             model = genai.GenerativeModel(self.model_name)
             
             print(f"   🚀 Calling Gemini for complete outfit with {len(item_pil_images)} items")
+            print(f"   👤 User image will be prioritized as the primary person")
             
-            # Create content list with user image and all item images
+            # Create content list with user image FIRST and emphasized, then item images
             content_list = [prompt, user_image] + item_pil_images
             response = self._call_gemini_with_retries(model, content_list)
             
@@ -209,8 +229,10 @@ Instructions:
     def _build_outfit_description(self, outfit_items: Dict[str, Dict]) -> str:
         """Build a description of the complete outfit"""
         description_parts = []
+        image_num = 2  # First image is user, so clothing starts at 2
         for category, item in outfit_items.items():
-            description_parts.append(f"- {category.title()}: {item['name']}")
+            description_parts.append(f"- Image {image_num} ({category.title()}): {item['name']}")
+            image_num += 1
         return "\n".join(description_parts)
 
     # --- MODIFIED ---
@@ -246,10 +268,25 @@ Instructions:
         """
         try:
             prompt = (
-                "Overlay the apparel image onto the person realistically. "
-                "Preserve the person's pose, lighting, and shadows. "
-                "Make the clothing fit naturally. "
-                "Return only the final edited image and no text."
+                "CRITICAL INSTRUCTIONS:\n\n"
+                "1. PERSON IDENTITY:\n"
+                "   - The FIRST image shows the person who MUST appear in the final result\n"
+                "   - PRESERVE their exact face, skin tone, hair, body shape, pose, and background\n"
+                "   - IGNORE any model or person shown in the clothing image\n\n"
+                "2. CLOTHING PRODUCT:\n"
+                "   - The SECOND image shows a clothing item to overlay onto the person\n"
+                "   - Show this clothing item EXACTLY as it appears in the product image\n"
+                "   - DO NOT add logos, text, patterns, or designs that are not in the original\n"
+                "   - DO NOT remove logos, text, patterns, or designs that ARE in the original\n"
+                "   - If the product is plain, keep it plain - DO NOT add branding\n"
+                "   - If the product has graphics, keep them exactly as shown\n"
+                "   - PRESERVE the exact color, texture, and all visual details\n\n"
+                "3. FINAL OUTPUT:\n"
+                "   - Overlay ONLY the clothing item onto the person from the first image\n"
+                "   - Make the clothing fit naturally and realistically\n"
+                "   - Maintain the person's original pose, lighting, and background\n"
+                "   - Return only the final edited image with no text\n\n"
+                "REMEMBER: Show the product EXACTLY as it is - no modifications whatsoever."
             )
             
             # Convert bytes to PIL Images for the API
@@ -259,7 +296,8 @@ Instructions:
             model = genai.GenerativeModel(self.model_name)
             
             print(f"   🚀 Calling Gemini image preview model: {self.model_name}")
-            response = self._call_gemini_with_retries(model, prompt, user_image, item_image)
+            print(f"   👤 Preserving user's face from uploaded photo")
+            response = self._call_gemini_with_retries(model, [prompt, user_image, item_image])
 
             if not response:
                 logger.warning("Gemini response was empty.")

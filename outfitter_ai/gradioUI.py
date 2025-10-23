@@ -19,6 +19,29 @@ class AssistifyUI:
         self.current_products = []
         self.current_cart = []
         self.current_user_photo = None
+        self.pending_cart_removal = None  # Track pending cart removal
+    
+    def _safe_price_calculation(self, item: Dict[str, Any]) -> float:
+        """Safely calculate price * quantity, handling string prices"""
+        try:
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            
+            # Convert price to float if it's a string
+            if isinstance(price, str):
+                # Remove currency symbols and convert to float
+                price_str = price.replace('$', '').replace(',', '').strip()
+                price = float(price_str)
+            elif not isinstance(price, (int, float)):
+                price = 0.0
+            
+            # Ensure quantity is numeric
+            if not isinstance(quantity, (int, float)):
+                quantity = 1
+            
+            return price * quantity
+        except (ValueError, TypeError):
+            return 0.0
         
     def extract_products_from_state(self, conversation_result: List[Dict]) -> List[Dict[str, Any]]:
         """Extract products from conversation state"""
@@ -71,11 +94,121 @@ class AssistifyUI:
             traceback.print_exc()
             return []
     
+    async def handle_cart_removal(self, index: int) -> Tuple[List, str, str, gr.Column]:
+        """Handle cart item removal by index"""
+        print(f"🗑️ Handling cart removal for index: {index}")
+        
+        # Get current cart from state
+        cart_items = self.extract_cart_from_state([])
+        
+        if 0 <= index < len(cart_items):
+            # Remove the item
+            removed_item = cart_items.pop(index)
+            print(f"   ✅ Removed item: {removed_item.get('name', 'Unknown')}")
+            
+            # Update the assistant's state
+            if hasattr(self.assistant, '_last_state'):
+                self.assistant._last_state['selected_products'] = cart_items
+            
+            # Create removal message
+            message = f"remove item #{index + 1} from cart"
+            
+            # Process with backend to get proper response
+            try:
+                result = await self.assistant.run_conversation(message, self.conversation_history)
+                self.conversation_history = result.get("messages", [])
+                
+                # Extract updated cart
+                updated_cart = result.get("selected_products", cart_items)
+                
+                return (
+                    self.conversation_history,
+                    self.create_empty_products_html(),
+                    self.format_cart_page_html_simple(updated_cart),
+                    gr.update(visible=False)
+                )
+            except Exception as e:
+                print(f"❌ Error processing cart removal: {e}")
+                return (
+                    self.conversation_history,
+                    self.create_empty_products_html(),
+                    self.format_cart_page_html_simple(cart_items),
+                    gr.update(visible=False)
+                )
+        else:
+            print(f"❌ Invalid index for removal: {index}")
+            return (
+                self.conversation_history,
+                self.create_empty_products_html(),
+                self.format_cart_page_html_simple(cart_items),
+                gr.update(visible=False)
+            )
+
+    def handle_direct_removal(self, item_index: int, history: List[Dict[str, str]]) -> Tuple[List[Dict[str, str]], str, str, gr.update, gr.update, gr.update, *List[gr.update]]:
+        """Handle direct removal of cart item by index"""
+        try:
+            # Get current cart items
+            cart_items = self.extract_cart_from_state([])
+            
+            if not cart_items or item_index >= len(cart_items):
+                error_msg = "Item not found in cart."
+                error_history = history + [
+                    {"role": "user", "content": f"Remove item #{item_index + 1}"}, 
+                    {"role": "assistant", "content": error_msg}
+                ]
+                # Get empty remove button updates
+                row_updates, button_updates = self.get_remove_button_updates([])
+                return error_history, self.create_error_html(error_msg), self.create_direct_cart_display([]), gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), *row_updates, *button_updates
+            
+            # Remove the item
+            removed_item = cart_items.pop(item_index)
+            removed_item_name = removed_item.get('name', 'Unknown Product')
+            
+            # Update the assistant's state
+            if hasattr(self, 'assistant') and hasattr(self.assistant, 'state'):
+                self.assistant.state['cart'] = cart_items
+            
+            # Update current cart
+            self.current_cart = cart_items
+            
+            # Create success message
+            success_msg = f"✅ Removed '{removed_item_name}' from your cart."
+            updated_history = history + [
+                {"role": "user", "content": f"Remove item #{item_index + 1}"}, 
+                {"role": "assistant", "content": success_msg}
+            ]
+            
+            # Create updated displays
+            products_html = self.create_products_grid_html(self.current_products) if self.current_products else self.create_empty_products_html()
+            cart_html = self.create_direct_cart_display(cart_items)
+            
+            # Show virtual try-on sidebar if cart has items
+            sidebar_visible = len(cart_items) > 0
+            remove_controls_visible = len(cart_items) > 0
+            
+            # Get remove button updates
+            row_updates, button_updates = self.get_remove_button_updates(cart_items)
+            
+            return updated_history, products_html, cart_html, gr.update(visible=sidebar_visible), gr.update(visible=remove_controls_visible), gr.update(visible=remove_controls_visible), *row_updates, *button_updates
+            
+        except Exception as e:
+            print(f"❌ Error in direct removal: {e}")
+            import traceback
+            traceback.print_exc()
+            error_msg = "I encountered an error removing the item. Please try again."
+            error_history = history + [
+                {"role": "user", "content": f"Remove item #{item_index + 1}"}, 
+                {"role": "assistant", "content": error_msg}
+            ]
+            # Get empty remove button updates
+            row_updates, button_updates = self.get_remove_button_updates([])
+            return error_history, self.create_error_html(str(e)), self.create_direct_cart_display([]), gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), *row_updates, *button_updates
+
     async def handle_conversation(self, message: str, history: List) -> Tuple[List, str, str, gr.Column]:
         """Handle conversation with product and cart extraction"""
         
         if not message.strip():
-            return history, self.create_empty_products_html(), self.format_cart_page_html([]), gr.update(visible=False)
+            return history, self.create_empty_products_html(), self.format_cart_page_html_simple([]), gr.update(visible=False)
         
         try:
             # Convert message format
@@ -106,12 +239,16 @@ class AssistifyUI:
                 self.current_cart = cart_items
             
             products_html = self.create_products_grid_html(products) if products else self.create_empty_products_html()
-            cart_html = self.format_cart_page_html(cart_items) if cart_items else self.format_cart_page_html([])
+            cart_html = self.create_direct_cart_display(cart_items) if cart_items else self.create_direct_cart_display([])
             
             # Show virtual try-on sidebar if cart has items
             sidebar_visible = len(cart_items) > 0
+            remove_controls_visible = len(cart_items) > 0
             
-            return updated_history_dicts, products_html, cart_html, gr.update(visible=sidebar_visible)
+            # Get remove button updates
+            row_updates, button_updates = self.get_remove_button_updates(cart_items)
+            
+            return updated_history_dicts, products_html, cart_html, gr.update(visible=sidebar_visible), gr.update(visible=remove_controls_visible), gr.update(visible=remove_controls_visible), *row_updates, *button_updates
             
         except Exception as e:
             print(f"❌ Error: {e}")
@@ -122,7 +259,9 @@ class AssistifyUI:
                 {"role": "user", "content": message}, 
                 {"role": "assistant", "content": error_msg}
             ]
-            return error_history, self.create_error_html(str(e)), self.format_cart_page_html([]), gr.update(visible=False)
+            # Get empty remove button updates
+            row_updates, button_updates = self.get_remove_button_updates([])
+            return error_history, self.create_error_html(str(e)), self.create_direct_cart_display([]), gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), *row_updates, *button_updates
 
     def create_assistify_css(self):
         """🎨 Assistify-Inspired CSS - Professional AI Startup Design"""
@@ -924,6 +1063,104 @@ class AssistifyUI:
             transform: scale(1.1);
         }
         
+        .cart-item-remove-instruction {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+        
+        .cart-instructions {
+            background: rgba(255, 107, 157, 0.1);
+            border: 1px solid var(--accent-pink);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .cart-instructions h4 {
+            color: var(--accent-pink);
+            margin: 0 0 var(--space-xs) 0;
+            font-size: 1rem;
+        }
+        
+        .cart-instructions p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .remove-controls-header h4 {
+            color: var(--accent-pink);
+            margin: 0 0 var(--space-sm) 0;
+            font-size: 1.1rem;
+        }
+        
+        .remove-button {
+            background: #dc3545 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: var(--border-radius) !important;
+            padding: var(--space-sm) var(--space-md) !important;
+            font-weight: 600 !important;
+            transition: var(--transition) !important;
+        }
+        
+        .remove-button:hover {
+            background: #c82333 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3) !important;
+        }
+        
+        .remove-instructions {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: var(--space-xs);
+        }
+        
+        .cart-item-number {
+            background: rgba(255, 107, 157, 0.2);
+            color: var(--accent-pink);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .cart-item-remove-btn {
+            background: #dc3545 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 50% !important;
+            width: 28px !important;
+            height: 28px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+            font-weight: bold !important;
+            transition: all 0.2s ease !important;
+            line-height: 1 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .cart-item-remove-btn:hover {
+            background: #c82333 !important;
+            transform: scale(1.1) !important;
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3) !important;
+        }
+        
+        .cart-item-remove-btn:active {
+            transform: scale(0.95) !important;
+        }
+        
         .cart-item-details {
             display: flex;
             flex-direction: column;
@@ -1284,54 +1521,46 @@ class AssistifyUI:
         </div>
         """
     
-    def format_cart_page_html(self, cart_items: List[Dict[str, Any]]) -> str:
-        """Format cart page with modern list card design"""
+    def format_cart_page_html_with_buttons(self, cart_items: List[Dict[str, Any]]) -> Tuple[str, List[gr.Button]]:
+        """Format cart page with individual remove buttons for each item"""
         if not cart_items:
-            return """
-            <div class="cart-section">
-                <div class="empty-state">
-                    <div class="empty-state-icon">🛒</div>
-                    <h3 class="empty-state-title">Your cart is empty</h3>
-                    <p class="empty-state-text">Select products from search results to add them to your cart</p>
-                </div>
-            </div>
-            """
+            return '<div class="empty-state"><div class="empty-state-icon">🛒</div><h3 class="empty-state-title">Your cart is empty</h3></div>', []
         
-        # Calculate totals
-        total_items = 0
-        total_price = 0.0
+        total_items = len(cart_items)
+        total_price = sum(self._safe_price_calculation(item) for item in cart_items)
         
-        for item in cart_items:
-            quantity = item.get("quantity", 1)
-            total_items += quantity
-            
-            # Calculate price
-            price_str = item.get("price", "$0.00")
-            price_match = re.search(r'\d+\.?\d*', price_str.replace(',', ''))
-            if price_match:
-                price_value = float(price_match.group())
-                total_price += price_value * quantity
-        
-        # Build modern cart HTML
         cart_items_html = ""
-        for index, item in enumerate(cart_items, 1):
-            quantity = item.get("quantity", 1)
-            name = html.escape(item.get('name') or 'Unknown Product')
-            price_str = html.escape(item.get('price') or 'N/A')
-            store = html.escape(item.get('store_name') or 'Unknown Store')
-            size = html.escape(item.get('selected_size') or 'M')
-            image_url = item.get("image_url", "")
+        remove_buttons = []
+        
+        for index, item in enumerate(cart_items):
+            name = item.get('name', 'Unknown Product')
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            size = item.get('size', 'One Size')
+            store = item.get('store', 'Unknown Store')
+            image_url = item.get('image_url', '')
             
-            # Calculate item total
-            price_match = re.search(r'\d+\.?\d*', price_str.replace(',', ''))
-            item_total = 0.0
-            if price_match:
-                item_price = float(price_match.group())
-                item_total = item_price * quantity
+            # Format price safely
+            try:
+                if isinstance(price, str):
+                    # Remove currency symbols and convert to float
+                    price_str = price.replace('$', '').replace(',', '').strip()
+                    price_float = float(price_str)
+                    price_str = f"${price_float:.2f}"
+                    item_total = price_float * quantity
+                elif isinstance(price, (int, float)):
+                    price_str = f"${price:.2f}"
+                    item_total = price * quantity
+                else:
+                    price_str = str(price)
+                    item_total = 0
+            except (ValueError, TypeError):
+                price_str = str(price)
+                item_total = 0
             
-            # Product image
-            if image_url:
-                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-img" onerror="this.src=\'https://via.placeholder.com/80x80/1a1a2e/ffffff?text=No+Image\'">'
+            # Handle image
+            if image_url and image_url.startswith('http'):
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-image-img" loading="lazy">'
             else:
                 image_html = '<div class="cart-item-placeholder">📦</div>'
             
@@ -1344,7 +1573,7 @@ class AssistifyUI:
                 <div class="cart-item-content">
                     <div class="cart-item-header">
                         <h4 class="cart-item-name">{name}</h4>
-                        <button class="cart-item-remove" onclick="removeCartItem({index})">×</button>
+                        <div class="cart-item-remove-container" id="remove-{index}"></div>
                     </div>
                     
                     <div class="cart-item-details">
@@ -1418,6 +1647,1051 @@ class AssistifyUI:
                 </div>
             </div>
         </div>
+        """, remove_buttons
+
+    def create_cart_components(self, cart_items: List[Dict[str, Any]]) -> Tuple[str, List[gr.Button]]:
+        """Create cart display with individual remove buttons for each item"""
+        if not cart_items:
+            return """
+            <div class="cart-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🛒</div>
+                    <h3 class="empty-state-title">Your cart is empty</h3>
+                    <p class="empty-state-text">Add some items to get started!</p>
+                </div>
+            </div>
+            """, []
+        
+        total_items = len(cart_items)
+        total_price = sum(self._safe_price_calculation(item) for item in cart_items)
+        
+        cart_items_html = ""
+        remove_buttons = []
+        
+        for index, item in enumerate(cart_items):
+            name = item.get('name', 'Unknown Product')
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            size = item.get('size', 'One Size')
+            store = item.get('store', 'Unknown Store')
+            image_url = item.get('image_url', '')
+            
+            # Format price safely
+            try:
+                if isinstance(price, str):
+                    price_str = price.replace('$', '').replace(',', '').strip()
+                    price_float = float(price_str)
+                    price_str = f"${price_float:.2f}"
+                    item_total = price_float * quantity
+                elif isinstance(price, (int, float)):
+                    price_str = f"${price:.2f}"
+                    item_total = price * quantity
+                else:
+                    price_str = str(price)
+                    item_total = 0
+            except (ValueError, TypeError):
+                price_str = str(price)
+                item_total = 0
+            
+            # Handle image
+            if image_url and image_url.startswith('http'):
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-image-img" loading="lazy">'
+            else:
+                image_html = '<div class="cart-item-placeholder">📦</div>'
+            
+            cart_items_html += f"""
+            <div class="cart-item-card" data-index="{index}">
+                <div class="cart-item-image">
+                    {image_html}
+                </div>
+                
+                <div class="cart-item-content">
+                    <div class="cart-item-header">
+                        <h4 class="cart-item-name">{name}</h4>
+                        <div class="cart-item-remove-container" id="remove-btn-{index}">
+                            <!-- Remove button will be inserted here -->
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item-details">
+                        <div class="cart-item-store">
+                            <span class="store-icon">🏪</span>
+                            <span class="store-name">{store}</span>
+                        </div>
+                        
+                        <div class="cart-item-specs">
+                            <span class="spec-item">
+                                <span class="spec-label">Size:</span>
+                                <span class="spec-value">{size}</span>
+                            </span>
+                            <span class="spec-item">
+                                <span class="spec-label">Qty:</span>
+                                <span class="spec-value">{quantity}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item-pricing">
+                    <div class="cart-item-price">{price_str}</div>
+                    <div class="cart-item-total">${item_total:.2f}</div>
+                </div>
+            </div>
+            """
+        
+        cart_html = f"""
+        <div class="cart-section">
+            <div class="cart-header">
+                <div class="cart-title">
+                    <h2>🛒 Shopping Cart</h2>
+                    <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+                </div>
+            </div>
+            
+            <div class="cart-items-container">
+                {cart_items_html}
+            </div>
+            
+            <div class="cart-summary-card">
+                <div class="cart-summary-header">
+                    <h3>Order Summary</h3>
+                </div>
+                
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal ({total_items} items)</span>
+                        <span class="summary-value">${total_price:.2f}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total</span>
+                        <span class="summary-value total-amount">${total_price:.2f}</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="checkout-btn primary-btn">
+                        <span class="btn-icon">💳</span>
+                        Proceed to Checkout
+                    </button>
+                    <button class="continue-btn secondary-btn">
+                        <span class="btn-icon">🛍️</span>
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+        """
+        
+        return cart_html, remove_buttons
+
+    def create_direct_cart_display(self, cart_items: List[Dict[str, Any]]) -> str:
+        """Create cart display with X buttons on each item"""
+        if not cart_items:
+            return """
+            <div class="cart-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🛒</div>
+                    <h3 class="empty-state-title">Your cart is empty</h3>
+                    <p class="empty-state-text">Add some items to get started!</p>
+                </div>
+            </div>
+            """
+        
+        total_items = len(cart_items)
+        total_price = sum(self._safe_price_calculation(item) for item in cart_items)
+        
+        cart_items_html = ""
+        
+        for index, item in enumerate(cart_items):
+            name = item.get('name', 'Unknown Product')
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            size = item.get('size', 'One Size')
+            store = item.get('store', 'Unknown Store')
+            image_url = item.get('image_url', '')
+            
+            # Format price safely
+            try:
+                if isinstance(price, str):
+                    price_str = price.replace('$', '').replace(',', '').strip()
+                    price_float = float(price_str)
+                    price_str = f"${price_float:.2f}"
+                    item_total = price_float * quantity
+                elif isinstance(price, (int, float)):
+                    price_str = f"${price:.2f}"
+                    item_total = price * quantity
+                else:
+                    price_str = str(price)
+                    item_total = 0
+            except (ValueError, TypeError):
+                price_str = str(price)
+                item_total = 0
+            
+            # Handle image
+            if image_url and image_url.startswith('http'):
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-image-img" loading="lazy">'
+            else:
+                image_html = '<div class="cart-item-placeholder">📦</div>'
+            
+            cart_items_html += f"""
+            <div class="cart-item-card" data-index="{index}">
+                <div class="cart-item-image">
+                    {image_html}
+                </div>
+                
+                <div class="cart-item-content">
+                    <div class="cart-item-header">
+                        <h4 class="cart-item-name">{name}</h4>
+                        <div class="cart-item-actions">
+                            <div class="cart-item-number">#{index + 1}</div>
+                            <button class="cart-item-remove-btn" onclick="removeCartItem({index})" title="Remove item #{index + 1}" data-item-index="{index}">×</button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item-details">
+                        <div class="cart-item-store">
+                            <span class="store-icon">🏪</span>
+                            <span class="store-name">{store}</span>
+                        </div>
+                        
+                        <div class="cart-item-specs">
+                            <span class="spec-item">
+                                <span class="spec-label">Size:</span>
+                                <span class="spec-value">{size}</span>
+                            </span>
+                            <span class="spec-item">
+                                <span class="spec-label">Qty:</span>
+                                <span class="spec-value">{quantity}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item-pricing">
+                    <div class="cart-item-price">{price_str}</div>
+                    <div class="cart-item-total">${item_total:.2f}</div>
+                </div>
+            </div>
+            """
+        
+        cart_html = f"""
+        <div class="cart-section">
+            <div class="cart-header">
+                <div class="cart-title">
+                    <h2>🛒 Shopping Cart</h2>
+                    <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+                </div>
+            </div>
+            
+            <div class="cart-items-container">
+                {cart_items_html}
+            </div>
+            
+            <div class="cart-summary-card">
+                <div class="cart-summary-header">
+                    <h3>Order Summary</h3>
+                </div>
+                
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal ({total_items} items)</span>
+                        <span class="summary-value">${total_price:.2f}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total</span>
+                        <span class="summary-value total-amount">${total_price:.2f}</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="checkout-btn primary-btn">
+                        <span class="btn-icon">💳</span>
+                        Proceed to Checkout
+                    </button>
+                    <button class="continue-btn secondary-btn">
+                        <span class="btn-icon">🛍️</span>
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        // Enhanced removeCartItem function for X buttons
+        window.removeCartItem = function(index) {{
+            console.log('X button clicked - removing item at index:', index);
+            
+            // Try multiple ways to find the message input
+            let messageInput = null;
+            const selectors = [
+                'textarea[placeholder*="Tell me what"]',
+                'textarea[placeholder*="Tell me"]',
+                'textarea[data-testid*="textbox"]',
+                'textarea',
+                'input[type="text"]'
+            ];
+            
+            for (const selector of selectors) {{
+                messageInput = document.querySelector(selector);
+                if (messageInput) break;
+            }}
+            
+            if (messageInput) {{
+                console.log('Found message input:', messageInput);
+                
+                // Set the message
+                const message = `remove item #${{index + 1}} from cart`;
+                messageInput.value = message;
+                messageInput.focus();
+                
+                // Trigger multiple events to ensure Gradio picks up the change
+                const events = ['input', 'change', 'keyup', 'keydown', 'blur'];
+                events.forEach(eventType => {{
+                    messageInput.dispatchEvent(new Event(eventType, {{ bubbles: true, cancelable: true }}));
+                }});
+                
+                // Try multiple ways to find the send button
+                let sendButton = null;
+                const buttonSelectors = [
+                    'button:has-text("Send")',
+                    'button[class*="neon-button"]',
+                    'button[type="submit"]',
+                    'button[data-testid*="send"]',
+                    'button:contains("Send")',
+                    'button'
+                ];
+                
+                for (const selector of buttonSelectors) {{
+                    const buttons = document.querySelectorAll(selector);
+                    for (const btn of buttons) {{
+                        if (btn.textContent.includes('Send') || btn.textContent.includes('send')) {{
+                            sendButton = btn;
+                            break;
+                        }}
+                    }}
+                    if (sendButton) break;
+                }}
+                
+                if (sendButton) {{
+                    console.log('Found send button:', sendButton);
+                    // Click the send button with a delay
+                    setTimeout(() => {{
+                        sendButton.click();
+                        console.log('Send button clicked for X button removal');
+                    }}, 300);
+                }} else {{
+                    console.error('Could not find send button');
+                    // Try to trigger form submission
+                    const form = messageInput.closest('form');
+                    if (form) {{
+                        form.submit();
+                    }}
+                }}
+            }} else {{
+                console.error('Could not find message input');
+                alert(`Remove item #${{index + 1}} from cart - Please type this in the chat`);
+            }}
+        }};
+        
+        // Ensure the function is available globally
+        if (typeof window !== 'undefined') {{
+            window.removeCartItem = window.removeCartItem || function(index) {{
+                console.log('Fallback removeCartItem called with index:', index);
+                alert(`Remove item #${{index + 1}} from cart - Please type this in the chat`);
+            }};
+        }}
+        </script>
+        """
+        
+        return cart_html
+
+    def update_remove_buttons(self, cart_items: List[Dict[str, Any]]) -> List[gr.update]:
+        """Update the visibility and content of remove buttons based on cart items"""
+        updates = []
+        
+        for i in range(10):  # Support up to 10 items
+            if i < len(cart_items):
+                # Show this remove button
+                item_name = cart_items[i].get('name', 'Unknown Product')
+                updates.append(gr.update(visible=True, value=f"Remove #{i+1}: {item_name[:30]}..."))
+            else:
+                # Hide this remove button
+                updates.append(gr.update(visible=False))
+        
+        return updates
+
+    def get_remove_button_updates(self, cart_items: List[Dict[str, Any]]) -> List[gr.update]:
+        """Get updates for all remove button rows and buttons"""
+        row_updates = []
+        button_updates = []
+        
+        for i in range(10):  # Support up to 10 items
+            if i < len(cart_items):
+                # Show this remove button row and button
+                item_name = cart_items[i].get('name', 'Unknown Product')
+                row_updates.append(gr.update(visible=True))
+                button_updates.append(gr.update(visible=True, value=f"Remove #{i+1}: {item_name[:30]}..."))
+            else:
+                # Hide this remove button row and button
+                row_updates.append(gr.update(visible=False))
+                button_updates.append(gr.update(visible=False))
+        
+        return row_updates, button_updates
+
+    def create_cart_with_individual_buttons(self, cart_items: List[Dict[str, Any]]) -> Tuple[str, List[gr.Button], bool]:
+        """Create cart display with individual remove buttons for each item using Gradio components"""
+        if not cart_items:
+            return """
+            <div class="cart-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🛒</div>
+                    <h3 class="empty-state-title">Your cart is empty</h3>
+                    <p class="empty-state-text">Add some items to get started!</p>
+                </div>
+            </div>
+            """, [], False
+        
+        total_items = len(cart_items)
+        total_price = sum(self._safe_price_calculation(item) for item in cart_items)
+        
+        # Create individual remove buttons for each item
+        remove_buttons = []
+        cart_items_html = ""
+        
+        for index, item in enumerate(cart_items):
+            name = item.get('name', 'Unknown Product')
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            size = item.get('size', 'One Size')
+            store = item.get('store', 'Unknown Store')
+            image_url = item.get('image_url', '')
+            
+            # Format price safely
+            try:
+                if isinstance(price, str):
+                    price_str = price.replace('$', '').replace(',', '').strip()
+                    price_float = float(price_str)
+                    price_str = f"${price_float:.2f}"
+                    item_total = price_float * quantity
+                elif isinstance(price, (int, float)):
+                    price_str = f"${price:.2f}"
+                    item_total = price * quantity
+                else:
+                    price_str = str(price)
+                    item_total = 0
+            except (ValueError, TypeError):
+                price_str = str(price)
+                item_total = 0
+            
+            # Handle image
+            if image_url and image_url.startswith('http'):
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-image-img" loading="lazy">'
+            else:
+                image_html = '<div class="cart-item-placeholder">📦</div>'
+            
+            cart_items_html += f"""
+            <div class="cart-item-card" data-index="{index}">
+                <div class="cart-item-image">
+                    {image_html}
+                </div>
+                
+                <div class="cart-item-content">
+                    <div class="cart-item-header">
+                        <h4 class="cart-item-name">{name}</h4>
+                        <div class="cart-item-number">#{index + 1}</div>
+                    </div>
+                    
+                    <div class="cart-item-details">
+                        <div class="cart-item-store">
+                            <span class="store-icon">🏪</span>
+                            <span class="store-name">{store}</span>
+                        </div>
+                        
+                        <div class="cart-item-specs">
+                            <span class="spec-item">
+                                <span class="spec-label">Size:</span>
+                                <span class="spec-value">{size}</span>
+                            </span>
+                            <span class="spec-item">
+                                <span class="spec-label">Qty:</span>
+                                <span class="spec-value">{quantity}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item-pricing">
+                    <div class="cart-item-price">{price_str}</div>
+                    <div class="cart-item-total">${item_total:.2f}</div>
+                </div>
+            </div>
+            """
+        
+        cart_html = f"""
+        <div class="cart-section">
+            <div class="cart-header">
+                <div class="cart-title">
+                    <h2>🛒 Shopping Cart</h2>
+                    <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+                </div>
+            </div>
+            
+            <div class="cart-items-container">
+                {cart_items_html}
+            </div>
+            
+            <div class="cart-summary-card">
+                <div class="cart-summary-header">
+                    <h3>Order Summary</h3>
+                </div>
+                
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal ({total_items} items)</span>
+                        <span class="summary-value">${total_price:.2f}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total</span>
+                        <span class="summary-value total-amount">${total_price:.2f}</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="checkout-btn primary-btn">
+                        <span class="btn-icon">💳</span>
+                        Proceed to Checkout
+                    </button>
+                    <button class="continue-btn secondary-btn">
+                        <span class="btn-icon">🛍️</span>
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+        """
+        
+        return cart_html, remove_buttons, True
+
+    def format_cart_page_with_remove_buttons(self, cart_items: List[Dict[str, Any]]) -> Tuple[str, List[str], bool]:
+        """Format cart page with remove button functionality"""
+        if not cart_items:
+            return """
+            <div class="cart-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🛒</div>
+                    <h3 class="empty-state-title">Your cart is empty</h3>
+                    <p class="empty-state-text">Add some items to get started!</p>
+                </div>
+            </div>
+            """, [], False
+        
+        total_items = len(cart_items)
+        total_price = sum(self._safe_price_calculation(item) for item in cart_items)
+        
+        # Create dropdown choices for removal
+        dropdown_choices = []
+        cart_items_html = ""
+        
+        for index, item in enumerate(cart_items):
+            name = item.get('name', 'Unknown Product')
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            size = item.get('size', 'One Size')
+            store = item.get('store', 'Unknown Store')
+            image_url = item.get('image_url', '')
+            
+            # Format price safely
+            try:
+                if isinstance(price, str):
+                    price_str = price.replace('$', '').replace(',', '').strip()
+                    price_float = float(price_str)
+                    price_str = f"${price_float:.2f}"
+                    item_total = price_float * quantity
+                elif isinstance(price, (int, float)):
+                    price_str = f"${price:.2f}"
+                    item_total = price * quantity
+                else:
+                    price_str = str(price)
+                    item_total = 0
+            except (ValueError, TypeError):
+                price_str = str(price)
+                item_total = 0
+            
+            # Create dropdown choice
+            choice_text = f"#{index + 1}: {name} - {price_str}"
+            dropdown_choices.append(choice_text)
+            
+            # Handle image
+            if image_url and image_url.startswith('http'):
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-image-img" loading="lazy">'
+            else:
+                image_html = '<div class="cart-item-placeholder">📦</div>'
+            
+            cart_items_html += f"""
+            <div class="cart-item-card" data-index="{index}">
+                <div class="cart-item-image">
+                    {image_html}
+                </div>
+                
+                <div class="cart-item-content">
+                    <div class="cart-item-header">
+                        <h4 class="cart-item-name">{name}</h4>
+                        <div class="cart-item-actions">
+                            <div class="cart-item-number">#{index + 1}</div>
+                            <button class="cart-item-remove-btn" onclick="removeCartItem({index})" title="Remove item #1" data-item-index="{index}">×</button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item-details">
+                        <div class="cart-item-store">
+                            <span class="store-icon">🏪</span>
+                            <span class="store-name">{store}</span>
+                        </div>
+                        
+                        <div class="cart-item-specs">
+                            <span class="spec-item">
+                                <span class="spec-label">Size:</span>
+                                <span class="spec-value">{size}</span>
+                            </span>
+                            <span class="spec-item">
+                                <span class="spec-label">Qty:</span>
+                                <span class="spec-value">{quantity}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item-pricing">
+                    <div class="cart-item-price">{price_str}</div>
+                    <div class="cart-item-total">${item_total:.2f}</div>
+                </div>
+            </div>
+            """
+        
+        cart_html = f"""
+        <div class="cart-section">
+            <div class="cart-header">
+                <div class="cart-title">
+                    <h2>🛒 Shopping Cart</h2>
+                    <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+                </div>
+            </div>
+            
+            <div class="cart-items-container">
+                {cart_items_html}
+            </div>
+            
+            <div class="cart-summary-card">
+                <div class="cart-summary-header">
+                    <h3>Order Summary</h3>
+                </div>
+                
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal ({total_items} items)</span>
+                        <span class="summary-value">${total_price:.2f}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total</span>
+                        <span class="summary-value total-amount">${total_price:.2f}</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="checkout-btn primary-btn">
+                        <span class="btn-icon">💳</span>
+                        Proceed to Checkout
+                    </button>
+                    <button class="continue-btn secondary-btn">
+                        <span class="btn-icon">🛍️</span>
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        // Make sure the function is available globally
+        window.removeCartItem = function(index) {{
+            console.log('removeCartItem called with index:', index);
+            
+            // Try multiple ways to find the message input
+            let messageInput = null;
+            const selectors = [
+                'textarea[placeholder*="Tell me what"]',
+                'textarea[placeholder*="Tell me"]',
+                'textarea[data-testid*="textbox"]',
+                'textarea',
+                'input[type="text"]'
+            ];
+            
+            for (const selector of selectors) {{
+                messageInput = document.querySelector(selector);
+                if (messageInput) break;
+            }}
+            
+            if (messageInput) {{
+                console.log('Found message input:', messageInput);
+                
+                // Set the message
+                const message = `remove item #${{index + 1}} from cart`;
+                messageInput.value = message;
+                messageInput.focus();
+                
+                // Trigger multiple events to ensure Gradio picks up the change
+                const events = ['input', 'change', 'keyup', 'keydown', 'blur'];
+                events.forEach(eventType => {{
+                    messageInput.dispatchEvent(new Event(eventType, {{ bubbles: true, cancelable: true }}));
+                }});
+                
+                // Try multiple ways to find the send button
+                let sendButton = null;
+                const buttonSelectors = [
+                    'button:has-text("Send")',
+                    'button[class*="neon-button"]',
+                    'button[type="submit"]',
+                    'button[data-testid*="send"]',
+                    'button:contains("Send")',
+                    'button'
+                ];
+                
+                for (const selector of buttonSelectors) {{
+                    const buttons = document.querySelectorAll(selector);
+                    for (const btn of buttons) {{
+                        if (btn.textContent.includes('Send') || btn.textContent.includes('send')) {{
+                            sendButton = btn;
+                            break;
+                        }}
+                    }}
+                    if (sendButton) break;
+                }}
+                
+                if (sendButton) {{
+                    console.log('Found send button:', sendButton);
+                    // Click the send button with a delay
+                    setTimeout(() => {{
+                        sendButton.click();
+                        console.log('Send button clicked for removal');
+                    }}, 300);
+                }} else {{
+                    console.error('Could not find send button');
+                    // Try to trigger form submission
+                    const form = messageInput.closest('form');
+                    if (form) {{
+                        form.submit();
+                    }}
+                }}
+            }} else {{
+                console.error('Could not find message input');
+                alert('Could not find message input. Please try using the dropdown method instead.');
+            }}
+        }};
+        
+        // Also try to attach the function to the window object immediately
+        if (typeof window !== 'undefined') {{
+            window.removeCartItem = window.removeCartItem || function(index) {{
+                console.log('Fallback removeCartItem called with index:', index);
+                alert(`Remove item #${{index + 1}} from cart - Please type this in the chat`);
+            }};
+        }}
+        </script>
+        """
+        
+        return cart_html, dropdown_choices, True
+
+    def format_cart_page_html_simple(self, cart_items: List[Dict[str, Any]]) -> str:
+        """Simple cart display without JavaScript - just shows items with text instructions"""
+        if not cart_items:
+            return """
+            <div class="cart-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🛒</div>
+                    <h3 class="empty-state-title">Your cart is empty</h3>
+                    <p class="empty-state-text">Add some items to get started!</p>
+                </div>
+            </div>
+            """
+        
+        total_items = len(cart_items)
+        total_price = sum(self._safe_price_calculation(item) for item in cart_items)
+        
+        cart_items_html = ""
+        
+        for index, item in enumerate(cart_items):
+            name = item.get('name', 'Unknown Product')
+            price = item.get('price', 0)
+            quantity = item.get('quantity', 1)
+            size = item.get('size', 'One Size')
+            store = item.get('store', 'Unknown Store')
+            image_url = item.get('image_url', '')
+            
+            # Format price safely
+            try:
+                if isinstance(price, str):
+                    # Remove currency symbols and convert to float
+                    price_str = price.replace('$', '').replace(',', '').strip()
+                    price_float = float(price_str)
+                    price_str = f"${price_float:.2f}"
+                    item_total = price_float * quantity
+                elif isinstance(price, (int, float)):
+                    price_str = f"${price:.2f}"
+                    item_total = price * quantity
+                else:
+                    price_str = str(price)
+                    item_total = 0
+            except (ValueError, TypeError):
+                price_str = str(price)
+                item_total = 0
+            
+            # Handle image
+            if image_url and image_url.startswith('http'):
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-image-img" loading="lazy">'
+            else:
+                image_html = '<div class="cart-item-placeholder">📦</div>'
+            
+            cart_items_html += f"""
+            <div class="cart-item-card" data-index="{index}">
+                <div class="cart-item-image">
+                    {image_html}
+                </div>
+                
+                <div class="cart-item-content">
+                    <div class="cart-item-header">
+                        <h4 class="cart-item-name">{name}</h4>
+                        <div class="cart-item-remove-instruction">
+                            <small>To remove: Type "remove item #{index + 1}" in chat</small>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item-details">
+                        <div class="cart-item-store">
+                            <span class="store-icon">🏪</span>
+                            <span class="store-name">{store}</span>
+                        </div>
+                        
+                        <div class="cart-item-specs">
+                            <span class="spec-item">
+                                <span class="spec-label">Size:</span>
+                                <span class="spec-value">{size}</span>
+                            </span>
+                            <span class="spec-item">
+                                <span class="spec-label">Qty:</span>
+                                <span class="spec-value">{quantity}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item-pricing">
+                    <div class="cart-item-price">{price_str}</div>
+                    <div class="cart-item-total">${item_total:.2f}</div>
+                </div>
+            </div>
+            """
+        
+        return f"""
+        <div class="cart-section">
+            <div class="cart-header">
+                <div class="cart-title">
+                    <h2>🛒 Shopping Cart</h2>
+                    <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+                </div>
+            </div>
+            
+            <div class="cart-items-container">
+                {cart_items_html}
+            </div>
+            
+            <div class="cart-summary-card">
+                <div class="cart-summary-header">
+                    <h3>Order Summary</h3>
+                </div>
+                
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal ({total_items} items)</span>
+                        <span class="summary-value">${total_price:.2f}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total</span>
+                        <span class="summary-value total-amount">${total_price:.2f}</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="checkout-btn primary-btn">
+                        <span class="btn-icon">💳</span>
+                        Proceed to Checkout
+                    </button>
+                    <button class="continue-btn secondary-btn">
+                        <span class="btn-icon">🛍️</span>
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+            
+            <div class="cart-instructions">
+                <h4>🗑️ To remove items:</h4>
+                <p>Type "remove item #1" or "remove item #2" etc. in the chat to remove specific items from your cart.</p>
+            </div>
+        </div>
+        """
+
+    def format_cart_page_html(self, cart_items: List[Dict[str, Any]]) -> str:
+        """Format cart page with modern list card design"""
+        if not cart_items:
+            return """
+            <div class="cart-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🛒</div>
+                    <h3 class="empty-state-title">Your cart is empty</h3>
+                    <p class="empty-state-text">Select products from search results to add them to your cart</p>
+                </div>
+            </div>
+            """
+        
+        # Calculate totals
+        total_items = 0
+        total_price = 0.0
+        
+        for item in cart_items:
+            quantity = item.get("quantity", 1)
+            total_items += quantity
+            
+            # Calculate price
+            price_str = item.get("price", "$0.00")
+            price_match = re.search(r'\d+\.?\d*', price_str.replace(',', ''))
+            if price_match:
+                price_value = float(price_match.group())
+                total_price += price_value * quantity
+        
+        # Build modern cart HTML
+        cart_items_html = ""
+        for index, item in enumerate(cart_items, 1):
+            quantity = item.get("quantity", 1)
+            name = html.escape(item.get('name') or 'Unknown Product')
+            price_str = html.escape(item.get('price') or 'N/A')
+            store = html.escape(item.get('store_name') or 'Unknown Store')
+            size = html.escape(item.get('selected_size') or 'M')
+            image_url = item.get("image_url", "")
+            
+            # Calculate item total
+            price_match = re.search(r'\d+\.?\d*', price_str.replace(',', ''))
+            item_total = 0.0
+            if price_match:
+                item_price = float(price_match.group())
+                item_total = item_price * quantity
+            
+            # Product image
+            if image_url:
+                image_html = f'<img src="{image_url}" alt="{name}" class="cart-item-img" onerror="this.src=\'https://via.placeholder.com/80x80/1a1a2e/ffffff?text=No+Image\'">'
+            else:
+                image_html = '<div class="cart-item-placeholder">📦</div>'
+            
+            cart_items_html += f"""
+            <div class="cart-item-card" data-index="{index}">
+                <div class="cart-item-image">
+                    {image_html}
+                </div>
+                
+                <div class="cart-item-content">
+                    <div class="cart-item-header">
+                        <h4 class="cart-item-name">{name}</h4>
+                        <button class="cart-item-remove" data-index="{index}" onclick="removeCartItem({index})">×</button>
+                    </div>
+                    
+                    <div class="cart-item-details">
+                        <div class="cart-item-store">
+                            <span class="store-icon">🏪</span>
+                            <span class="store-name">{store}</span>
+                        </div>
+                        
+                        <div class="cart-item-specs">
+                            <span class="spec-item">
+                                <span class="spec-label">Size:</span>
+                                <span class="spec-value">{size}</span>
+                            </span>
+                            <span class="spec-item">
+                                <span class="spec-label">Qty:</span>
+                                <span class="spec-value">{quantity}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-item-pricing">
+                    <div class="cart-item-price">{price_str}</div>
+                    <div class="cart-item-total">${item_total:.2f}</div>
+                </div>
+            </div>
+            """
+        
+        return f"""
+        <div class="cart-section">
+            <div class="cart-header">
+                <div class="cart-title">
+                    <h2>🛒 Shopping Cart</h2>
+                    <span class="cart-count">{total_items} item{'s' if total_items != 1 else ''}</span>
+                </div>
+            </div>
+            
+            <div class="cart-items-container">
+                {cart_items_html}
+            </div>
+            
+            <div class="cart-summary-card">
+                <div class="cart-summary-header">
+                    <h3>Order Summary</h3>
+                </div>
+                
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal ({total_items} items)</span>
+                        <span class="summary-value">${total_price:.2f}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total</span>
+                        <span class="summary-value total-amount">${total_price:.2f}</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="checkout-btn primary-btn">
+                        <span class="btn-icon">💳</span>
+                        Proceed to Checkout
+                    </button>
+                    <button class="continue-btn secondary-btn">
+                        <span class="btn-icon">🛍️</span>
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+        
         """
     
     def process_virtual_tryon(self, cart_items: List[Dict[str, Any]], photo_path: str) -> str:
@@ -1559,9 +2833,34 @@ def create_assistify_interface():
                         # Cart Items Section
                         with gr.Column(scale=2, min_width=500):
                             gr.HTML('<div class="section-header"><span class="icon">🛒</span>Shopping Cart</div>')
+                            
+                            # Cart display with individual remove buttons
                             cart_display = gr.HTML(
                                 value='<div class="empty-state"><div class="empty-state-icon">🛒</div><h3 class="empty-state-title">Your cart is empty</h3></div>'
                             )
+                            
+                            # Individual remove buttons for each cart item
+                            with gr.Column(visible=False) as cart_remove_buttons_container:
+                                gr.HTML('<div class="remove-controls-header"><h4>🗑️ Remove Items</h4></div>')
+                                
+                                # Create individual remove buttons for up to 10 items (expandable)
+                                remove_buttons = []
+                                remove_rows = []
+                                remove_btn_components = []
+                                
+                                for i in range(10):  # Support up to 10 items
+                                    with gr.Row(visible=False) as remove_row:
+                                        gr.HTML(f'<div class="remove-item-info">Item #{i+1}: <span id="item-name-{i}">Loading...</span></div>')
+                                        remove_btn = gr.Button(
+                                            f"Remove #{i+1}", 
+                                            variant="stop", 
+                                            size="sm",
+                                            elem_classes=["remove-button"],
+                                            visible=False
+                                        )
+                                        remove_buttons.append((remove_row, remove_btn))
+                                        remove_rows.append(remove_row)
+                                        remove_btn_components.append(remove_btn)
                         
                         # Virtual Try-On Sidebar
                         with gr.Column(scale=1, min_width=400, visible=False, elem_id="virtual_tryon_sidebar") as virtual_tryon_sidebar:
@@ -1599,22 +2898,38 @@ def create_assistify_interface():
             return await ui.handle_conversation(message, history)
         
         def clear_conversation():
-            return [], ui.create_empty_products_html(), ui.format_cart_page_html([]), "", gr.update(visible=False)
+            # Get empty remove button updates
+            row_updates, button_updates = ui.get_remove_button_updates([])
+            return [], ui.create_empty_products_html(), ui.create_direct_cart_display([]), "", gr.update(visible=False), gr.update(visible=False), gr.update(visible=False), *row_updates, *button_updates
+        
         
         # Bind Events
         send_btn.click(
             send_message,
             inputs=[msg, chatbot],
-            outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar]
+            outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar, cart_remove_buttons_container, cart_remove_buttons_container] + remove_rows + remove_btn_components
         ).then(lambda: "", outputs=[msg])
+        
+        # Bind individual remove button events
+        def create_remove_handler(index):
+            def remove_handler():
+                return ui.handle_direct_removal(index, [])
+            return remove_handler
+        
+        for i, (remove_row, remove_btn) in enumerate(remove_buttons):
+            remove_btn.click(
+                create_remove_handler(i),
+                inputs=[],
+                outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar, cart_remove_buttons_container, cart_remove_buttons_container] + remove_rows + remove_btn_components
+            )
         
         msg.submit(
             send_message,
             inputs=[msg, chatbot],
-            outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar]
+            outputs=[chatbot, products_display, cart_display, virtual_tryon_sidebar, cart_remove_buttons_container, cart_remove_buttons_container] + remove_rows + remove_btn_components
         ).then(lambda: "", outputs=[msg])
         
-        clear_btn.click(clear_conversation, outputs=[chatbot, products_display, cart_display, msg, virtual_tryon_sidebar])
+        clear_btn.click(clear_conversation, outputs=[chatbot, products_display, cart_display, msg, virtual_tryon_sidebar, cart_remove_buttons_container, cart_remove_buttons_container] + remove_rows + remove_btn_components)
         
         # Virtual Try-On Event Handlers
         def handle_photo_upload(photo_path):
@@ -1664,6 +2979,6 @@ if __name__ == "__main__":
     interface = create_assistify_interface()
     interface.launch(
         server_name="0.0.0.0",
-        server_port=7861,
+        server_port=7863,
         share=False
     )

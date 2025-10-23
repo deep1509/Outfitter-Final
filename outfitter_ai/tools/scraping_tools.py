@@ -9,7 +9,14 @@ from datetime import datetime
 import logging
 from dotenv import load_dotenv
 
-from firecrawl import FirecrawlApp
+# Make firecrawl optional since we're not using it
+try:
+    from firecrawl import FirecrawlApp
+    FIRECRAWL_AVAILABLE = True
+except ImportError:
+    FIRECRAWL_AVAILABLE = False
+    FirecrawlApp = None
+
 from agents.state import ProductData
 from config.universal_store_urls import get_category_url
 
@@ -27,9 +34,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class FirecrawlScraper:
-    """Scraper using Firecrawl API"""
+    """Scraper using Firecrawl API (DEPRECATED - not in use)"""
     
     def __init__(self):
+        if not FIRECRAWL_AVAILABLE:
+            raise ImportError("Firecrawl is not installed. This scraper is deprecated and not needed.")
         api_key = os.getenv("FIRECRAWL_API_KEY")
         if not api_key:
             raise ValueError("FIRECRAWL_API_KEY not found in environment")
