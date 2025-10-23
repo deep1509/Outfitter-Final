@@ -13,15 +13,15 @@ class GreeterAgent:
     def __init__(self):
         # Exciting greeting templates with personality
         self.greeting_templates = [
-            "Hey there! 👋 Welcome to Outfitter.ai - your personal streetwear shopping assistant! I'm here to help you find the sickest pieces from CultureKings and Universal Store. What's your vibe today?",
+            "Hey there! 👋 Welcome to Outfitter.ai - your personal streetwear shopping assistant! I'm here to help you find the sickest pieces from top Australian stores. What's your vibe today?",
             
-            "What's up! 🔥 Ready to discover some fire streetwear? I've got access to the latest drops from CultureKings and Universal Store. Just tell me what you're looking for and I'll hook you up!",
+            "What's up! 🔥 Ready to discover some fire streetwear? I've got access to the latest drops from premium Australian retailers. Just tell me what you're looking for and I'll hook you up!",
             
-            "Yo! 🛍️ Welcome to Outfitter.ai - where we find you the dopest fits! I can search through thousands of pieces from CultureKings and Universal Store. What's on your shopping list today?",
+            "Yo! 🛍️ Welcome to Outfitter.ai - where we find you the dopest fits! I can search through thousands of pieces from Australia's best stores. What's on your shopping list today?",
             
-            "Hey! ✨ Welcome to your personal shopping experience! I'm here to help you find the perfect pieces from CultureKings and Universal Store. Whether you're looking for hoodies, tees, pants, or shoes - I've got you covered!",
+            "Hey! ✨ Welcome to your personal shopping experience! I'm here to help you find the perfect pieces from leading Australian fashion retailers. Whether you're looking for hoodies, tees, pants, or shoes - I've got you covered!",
             
-            "What's good! 🎯 Ready to upgrade your wardrobe? I've got the inside track on all the latest streetwear from CultureKings and Universal Store. What are you feeling today?"
+            "What's good! 🎯 Ready to upgrade your wardrobe? I've got the inside track on all the latest streetwear from Australia's top fashion stores. What are you feeling today?"
         ]
         
         # Time-based greetings
@@ -92,7 +92,7 @@ class GreeterAgent:
     def _simple_fallback_greeting(self) -> Dict[str, Any]:
         """Simple fallback that always works"""
         return {
-            "messages": [AIMessage(content="Hey! 👋 Welcome to Outfitter.ai! I'm your personal shopping assistant for CultureKings and Universal Store. What are you looking for today?")],
+            "messages": [AIMessage(content="Hey! 👋 Welcome to Outfitter.ai! I'm your personal shopping assistant for Australia's best fashion retailers. What are you looking for today?")],
             "conversation_stage": "discovery",
             "user_profile": "new_shopper",
             "session_context": {

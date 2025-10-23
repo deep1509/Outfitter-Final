@@ -325,9 +325,13 @@ Anything else you'd like to do?"""
             price_str = item.get("price", "$0.00")
             quantity = item.get("quantity", 1)
             
+            # Handle None or empty price
+            if price_str is None or price_str == "":
+                price_str = "$0.00"
+            
             # Extract numeric price
             import re
-            price_match = re.search(r'\d+\.?\d*', price_str.replace(',', ''))
+            price_match = re.search(r'\d+\.?\d*', str(price_str).replace(',', ''))
             if price_match:
                 price_value = float(price_match.group())
                 total += price_value * quantity

@@ -3,6 +3,7 @@ Final version Ready.
 """
 
 import os
+import re
 import uuid
 import asyncio 
 from typing import Dict, Any, List
@@ -921,6 +922,37 @@ What would you like to explore? I'm here to help you find the perfect pieces!"""
             print(f"❌ Error getting cart: {e}")
             return []
     
+    # ============ RESPONSE FORMATTING ============
+    
+    def _format_response_for_display(self, response: str) -> str:
+        """
+        Format AI response for better readability in chat interface.
+        Ensures proper spacing, line breaks, and formatting.
+        """
+        # Ensure consistent line breaks
+        response = response.replace('\r\n', '\n')
+        
+        # Add extra line break after headings (lines starting with #)
+        response = re.sub(r'(#+\s+[^\n]+)\n(?!\n)', r'\1\n\n', response)
+        
+        # Add extra line break after bold text blocks (lines with **)
+        response = re.sub(r'(\*\*[^\*]+\*\*)\n(?!\n)', r'\1\n\n', response)
+        
+        # Ensure bullet points have proper spacing
+        # Add line break before bullet point groups if not already there
+        response = re.sub(r'([^\n])\n([\•\-\*]\s)', r'\1\n\n\2', response)
+        
+        # Ensure spacing between sections (emojis followed by text)
+        response = re.sub(r'([^\n])\n([🎯🛒💰🏪✅❌📦➕🔍🎨👕👖👟🎭])', r'\1\n\n\2', response)
+        
+        # Clean up multiple consecutive line breaks (max 2)
+        response = re.sub(r'\n{3,}', '\n\n', response)
+        
+        # Ensure there's a line break after ":" in section headers
+        response = re.sub(r':\n([A-Z])', r':\n\n\1', response)
+        
+        return response.strip()
+    
     # ============ MAIN INTERFACE ============
     
     async def run_conversation(self, message: str, history: List[Dict]) -> List[Dict]:
@@ -994,9 +1026,12 @@ What would you like to explore? I'm here to help you find the perfect pieces!"""
             else:
                 latest_response = "I'm here to help you find great clothing! What are you looking for today?"
             
+            # Format response for better readability
+            formatted_response = self._format_response_for_display(latest_response)
+            
             # Format response for interface
             user_msg = {"role": "user", "content": message}
-            assistant_msg = {"role": "assistant", "content": latest_response}
+            assistant_msg = {"role": "assistant", "content": formatted_response}
             
             return history + [user_msg, assistant_msg]
             

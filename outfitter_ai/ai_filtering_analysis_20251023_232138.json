@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-10-23T23:21:38.841617",
+  "user_request": "mens pants chinos",
+  "total_original": 4,
+  "total_kept": 4,
+  "total_filtered": 0,
+  "overall_filtering_rate": "0.0%",
+  "store_analysis": {
+    "Brixton Australia": {
+      "original_count": 3,
+      "kept_count": 3,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "U.S. Polo Assn. Australia": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Men's Choice Chino Relaxed Pant in Black – Brixton Australia",
+      "price": "59.97",
+      "brand": null,
+      "url": "https://au.brixton.com/products/choice-chino-relaxed-pant-black",
+      "image_url": "http://au.brixton.com/cdn/shop/products/fisxeaj8gbsz6mc7por4.jpg?crop=center&height=1200&v=1739145999&width=1200",
+      "store_name": "Brixton Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:21:37.144491"
+    },
+    {
+      "name": "Men's Choice Chino Relaxed Pants - Military Olive – Brixton Australia",
+      "price": "59.97",
+      "brand": null,
+      "url": "https://au.brixton.com/products/choice-chino-relaxed-pant-military-olive",
+      "image_url": "http://au.brixton.com/cdn/shop/products/shplptc9vixapfietn5q.jpg?crop=center&height=1200&v=1659143038&width=1200",
+      "store_name": "Brixton Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:21:37.144496"
+    },
+    {
+      "name": "Men's Choice Chino Slim Pants - Black – Brixton Australia",
+      "price": "59.97",
+      "brand": null,
+      "url": "https://au.brixton.com/products/choice-chino-slim-pant-black",
+      "image_url": "http://au.brixton.com/cdn/shop/products/5c9d6bc8bb7ce5e718e6c24a4ac0bfb879f7f067.jpg?crop=center&height=1200&v=1725931390&width=1200",
+      "store_name": "Brixton Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:21:37.144501"
+    },
+    {
+      "name": "Mens Linen Blend Chino in Dark Sapphire Navy – U.S. Polo Assn. Australia",
+      "price": "120.00",
+      "brand": null,
+      "url": "https://uspoloassn.com.au/products/mens-linen-blend-chino-in-dark-sapphire-navy",
+      "image_url": "http://uspoloassn.com.au/cdn/shop/files/MUP3610-J09-MS_1.JPG?v=1740583172",
+      "store_name": "U.S. Polo Assn. Australia",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-23T23:21:37.144503"
+    }
+  ],
+  "filtered_products": [],
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

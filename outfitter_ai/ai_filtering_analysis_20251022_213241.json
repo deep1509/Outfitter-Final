@@ -1,0 +1,158 @@
+{
+  "timestamp": "2025-10-22T21:32:41.441655",
+  "user_request": "mens white hoodies",
+  "total_original": 10,
+  "total_kept": 4,
+  "total_filtered": 6,
+  "overall_filtering_rate": "60.0%",
+  "store_analysis": {
+    "Lowes": {
+      "original_count": 2,
+      "kept_count": 1,
+      "filtered_count": 1,
+      "filtering_rate": "50.0%",
+      "kept_rate": "50.0%"
+    },
+    "Ripped in 87": {
+      "original_count": 2,
+      "kept_count": 1,
+      "filtered_count": 1,
+      "filtering_rate": "50.0%",
+      "kept_rate": "50.0%"
+    },
+    "U.S. Polo Assn. Australia": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Billabong AU": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Canterburynz": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    },
+    "SportsDirect.com Australia": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Salty Crew Australia": {
+      "original_count": 1,
+      "kept_count": 0,
+      "filtered_count": 1,
+      "filtering_rate": "100.0%",
+      "kept_rate": "0.0%"
+    },
+    "Theiconic": {
+      "original_count": 1,
+      "kept_count": 1,
+      "filtered_count": 0,
+      "filtering_rate": "0.0%",
+      "kept_rate": "100.0%"
+    }
+  },
+  "kept_products": [
+    {
+      "name": "Men's Signature Collection White Hoodie - Ripped in 87",
+      "price": "149.00",
+      "brand": null,
+      "url": "https://r87.com.au/product/mens-white-hoodie/",
+      "image_url": "https://r87.com.au/wp-content/uploads/tom-white-front-1.jpg",
+      "store_name": "Ripped in 87",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-22T21:32:40.411834"
+    },
+    {
+      "name": "Mens Zip Hoodie With Kangaroo Pockets White",
+      "price": "39.95",
+      "brand": "Lowes",
+      "url": "https://www.lowes.com.au/mens-zip-hoodie-with-kangaroo-pockets-white-m-28512",
+      "image_url": "https://www.lowes.com.au/media/catalog/product/2/8/28512_f_1_7.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=",
+      "store_name": "Lowes",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-22T21:32:40.411839"
+    },
+    {
+      "name": "MENS EVEREST FULL-ZIP HOODIE WHITE",
+      "price": "111.99",
+      "brand": "Canterbury of New Zealand",
+      "url": "https://www.canterburynz.com.au/mens-everest-full-zip-hoodie-white/16622758.html",
+      "image_url": "https://static.thcdn.com/productimg/300/300/16622758-3545263154813097.jpg",
+      "store_name": "Canterburynz",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-22T21:32:40.411851"
+    },
+    {
+      "name": "White Hoodie | Buy Men's White Hoodies Online Australia - THE ICONIC",
+      "price": "75.00",
+      "brand": null,
+      "url": "https://www.theiconic.com.au/mens-white-hoodies/",
+      "image_url": "https://img1.theiconic.com.au/HNvolNPb1muPdddG7D6AYxBYZNA=/fit-in/406x512/filters:fill(ffffff):quality(90):format(webp)/https%3A%2F%2Fstatic.theiconic.com.au%2Fp%2Fnike-5459-9613052-1.jpg",
+      "store_name": "Theiconic",
+      "is_on_sale": false,
+      "extracted_at": "2025-10-22T21:32:40.411863"
+    }
+  ],
+  "filtered_products": [
+    {
+      "index": 0,
+      "name": "Lowes Fleece Popover Hoodie In White",
+      "store_name": "Lowes",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 3,
+      "name": "Mens Double Horsemen Loopback Hoodie in Black Bright White DHM – U.S. Polo Assn. Australia",
+      "store_name": "U.S. Polo Assn. Australia",
+      "category": "hoodie",
+      "color": "black"
+    },
+    {
+      "index": 4,
+      "name": "Men's Signature Collection White Hoodie - Ripped in 87",
+      "store_name": "Ripped in 87",
+      "category": "hoodie",
+      "color": "white"
+    },
+    {
+      "index": 5,
+      "name": "Mens Spec 73 World Pullover Hoodie – Billabong AU",
+      "store_name": "Billabong AU",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 7,
+      "name": "Vans Classic Hoodie Mens",
+      "store_name": "SportsDirect.com Australia",
+      "category": "hoodie",
+      "color": "unknown"
+    },
+    {
+      "index": 8,
+      "name": "Posted Fleece Hoody - Off White | Salty Crew Australia",
+      "store_name": "Salty Crew Australia",
+      "category": "unknown",
+      "color": "white"
+    }
+  ],
+  "kept_indices": [
+    1,
+    2,
+    6,
+    9
+  ]
+}
